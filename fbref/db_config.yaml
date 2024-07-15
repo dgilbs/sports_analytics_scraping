@@ -1,0 +1,16 @@
+players:
+    df_cols:
+        - player_id
+        - player
+    rename_cols:
+        - id
+        - player
+    key: id
+squads:
+    df_cols:
+        - home_team_id
+        - home_team
+    rename_cols:
+        - id
+        - squad
+    key: id
