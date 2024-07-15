@@ -1,0 +1,72 @@
+NWSL:
+ league_id: 182
+ league_table_tag: 'NWSL-Stats'
+ name: NWSL
+ schedule_tag: NWSL-Scores-and-Fixtures
+ multi_year: False
+ folder: nwsl
+ gender: Women
+WSL:
+ league_id: 189
+ league_table_tag: Womens-Super-League-Stats
+ name: WSL
+ schedule_tag: Womens-Super-League-Scores-and-Fixtures
+ multi_year: True
+ folder: wsl
+ gender: Women
+Arkema:
+  league_id: 193
+  league_table_tag: Division-1-Feminine-Stats
+  name: Division 1 Feminine
+  schedule_tag: Division-1-Feminine-Scores-and-Fixtures
+  multi_year: True
+  folder: division_1_feminine
+  gender: Women
+Frauen-Bundesliga:
+  league_id: 183
+  league_table_tag: Frauen-Bundesliga-Stats
+  name: Frauen-Bundesliga
+  schedule_tag: Frauen-Bundesliga-Scores-and-Fixtures
+  multi_year: True
+  folder: frauen_bundesliga
+  gender: Women
+Serie_A_Women:
+  league_id: 208
+  league_table_tag: Serie-A-Stats
+  name: Serie A
+  schedule_tag: Serie-A-Scores-and-Fixtures
+  multi_year: True
+  folder: serie_a_women
+  gender: Women
+Premier-League:
+  league_id: 9
+  league_table_tag: Premier-League-Stats
+  name: Premier League
+  schedule_tag: Premier-League-Scores-and-Fixtures
+  multi_year: True
+  folder: premier_league
+  gender: Men
+Bundesliga:
+  league_id: 20
+  league_table_tag: Bundesliga-Stats
+  name: Bundesliga
+  schedule_tag: Bundesliga-Scores-and-Fixtures
+  multi_year: True
+  folder: bundesliga
+  gender: Men
+A-League-Women:
+  league_id: 196
+  league_table_tag: A-League-Women-Stats
+  name: A-League Women
+  schedule_tag: A-League-Women-Scores-and-Fixtures
+  multi_year: True
+  folder: a_league_women
+  gender: Women
+Womens-World-Cup:
+  league_id: 106
+  league_table_tag: Womens-World-Cup-Stats
+  name: World Cup
+  schedule_tag: Womens-World-Cup-Scores-and-Fixtures
+  multi_year: False
+  folder: womens_world_cup
+  gender: Women
