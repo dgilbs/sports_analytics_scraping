@@ -1,0 +1,26 @@
+CREATE TABLE f_player_match_passing(
+    id varchar(40) primary key,
+    player_id varchar(20),
+    team_id varchar(20),
+    match_id varchar(20),
+    minutes int,
+    passes_completed int,
+    passes_attempted int, 
+    total_pass_distance int,
+    total_progressive_pass_distance int,
+    short_passes_completed int,
+    short_passes_attempted int,
+    medium_passes_completed int,
+    medium_passes_attempted int,
+    long_passes_completed int,
+    long_passes_attempted int,
+    assists int,
+    xag float,
+    xa float,
+    key_passes int,
+    passes_into_final_third int,
+    passes_into_penalty_area int,
+    crosses_into_penalty_area int,
+    progressive_passes int
+    
+);

@@ -5,13 +5,14 @@ import time
 import numpy as np
 import urllib.request
 import ssl
+import itertools
 import json
 import sqlite3
 from datetime import datetime, date, timedelta
-from google.oauth2 import service_account
+# from google.oauth2 import service_account
 from pandas_gbq import to_gbq
 from urllib.request import urlopen
-from google.cloud import storage, bigquery
+# from google.cloud import storage, bigquery
 
 
 def all_files_in_subdirectories(dir_path, key_term=None):
@@ -91,9 +92,10 @@ def scrape_schedule(comp_dict, season):
         cols = i.columns
         if all(item in cols for item in check_cols):
             folder = 'raw_data/schedules/{}'.format(folder)
+            if not os.path.exists(folder):
+                os.makedirs(folder)
             fn = '{}_{}_schedule.pkl'.format(league, season)
             fp = os.path.join(folder, fn)
-            print(fp)
             i.to_pickle(fp)
     return i
 
@@ -128,6 +130,7 @@ def clean_schedule(df, config, league_info, season_str):
     file_name = '{}_schedule.pkl'.format(season_str)
     fp = os.path.join(folder, file_name)
     df.to_pickle(fp)
+    return df
 
 
 def scrape_match_reports(row, scraping_config):
@@ -182,7 +185,7 @@ def clean_match_report(file_path, keyword, config, del_raw=False):
     dtype_str = 'match_report_{}_dtypes'.format(keyword)
     df = cast_dtypes(df, config[dtype_str])
     raw_folder, name = os.path.split(file_path)
-    match_id = name.split('.pkl')[0].split('_')[-1]
+    match_id = name.split('.pkl')[0].split('_')[-1].split('(')[0]
     df['player_id'] = df.apply(lambda row: row['player_link'].split('/')[-2], axis=1)
     df['match_id'] = match_id
     df['id'] = df.apply(lambda row: "-".join([row['player_id'], row['team_id'], row['match_id']]), axis=1)
@@ -212,7 +215,7 @@ def scrape_from_schedule(schedule_df, scraping_config, start_date=None, end_date
     
     for index,i in schedule_df.reset_index(drop=True).iterrows():
         print(index)
-        scrape_match_reports(i, scraping)
+        scrape_match_reports(i, scraping_config)
         time.sleep(10)
 
 
@@ -293,8 +296,10 @@ def upsert_df(df, table_name, db_config):
     cols = info['df_cols']
     idf = df[cols]
     idf.columns = info['rename_cols']
+    for col in idf.columns:
+        idf.loc[:, col] = idf[col].fillna(0)
     idf = idf.drop_duplicates(subset=info['key'])
-    conn = sqlite3.connect('/Users/danny.gilberg/Desktop/databases/soccer/soccer.db')
+    conn = sqlite3.connect('soccer.db')
     cursor = conn.cursor()
     columns = ', '.join(idf.columns)
     placeholders = ', '.join(['?'] * len(idf.columns))
@@ -305,4 +310,43 @@ def upsert_df(df, table_name, db_config):
         ON CONFLICT(id) DO UPDATE SET {update_columns}
         '''
         cursor.execute(sql, tuple(row))
+        
     conn.commit()
+    
+    
+def build_competitions_df(info):
+    rows = list()
+    for i in info:
+        temp_dict = info[i]
+        row = [temp_dict['league_id'], temp_dict['name'], temp_dict['gender']]
+        rows.append(row)
+    df = pd.DataFrame(rows, columns=['id', 'competition', 'gender'])
+    return df
+
+    
+def build_team_schedules(schedule_df):
+    df_rows = list()
+    for index, row in schedule_df.iterrows():
+        home_team = row['home_team_id']
+        away_team = row['away_team_id']
+        season = row['season']
+        competition_id = row['competition_id']
+        home_goals = row['home_goals']
+        away_goals = row['away_goals']
+        home_xg = row['home_xg']
+        away_xg = row['away_xg']
+        match_id = row['id']
+        md = row['match_date']
+        home_id = row['home_team_id'] + '-' + row['id']
+        away_id = row['away_team_id'] + '-' + row['id']
+        home_row = [home_id, home_team, away_team, season, competition_id, home_goals, away_goals, home_xg, away_xg,
+                   match_id, md, 'Home']
+        df_rows.append(home_row)
+        away_row = [away_id, away_team, home_team, season, competition_id, away_goals, home_goals, away_xg, home_xg,
+                   match_id, md, 'Away']
+        df_rows.append(away_row)
+
+    cols = ['id', 'team_id', 'opponent_id', 'season', 'competition_id', 'goals_scored', 'goals_against',
+              'xg_for', 'xg_against', 'match_id', 'match_date', 'home_or_away']
+    final = pd.DataFrame(df_rows, columns=cols)
+    return final

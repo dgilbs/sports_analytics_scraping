@@ -1,4 +1,4 @@
-players:
+dim_players:
     df_cols:
         - player_id
         - player
@@ -6,7 +6,7 @@ players:
         - id
         - player
     key: id
-squads:
+dim_squads:
     df_cols:
         - home_team_id
         - home_team
@@ -14,3 +14,236 @@ squads:
         - id
         - squad
     key: id
+dim_matches:
+    df_cols:
+        - id
+        - competition_id
+        - match_date
+        - home_team_id
+        - away_team_id
+        - referee
+        - season
+        - attendance
+        - venue
+        - home_goals
+        - away_goals
+    rename_cols:
+        - id
+        - competition_id
+        - match_date
+        - home_team_id
+        - away_team_id
+        - referee
+        - season
+        - attendance
+        - venue
+        - home_goals
+        - away_goals
+    key: id
+dim_player_appearances:
+    df_cols: 
+        - id
+        - player_id
+        - match_id
+        - team_id 
+        - shirtnumber
+        - position
+        - age
+        - minutes
+    rename_cols:
+        - id
+        - player_id
+        - match_id
+        - team_id 
+        - shirtnumber
+        - position
+        - age
+        - minutes
+    key: id
+f_player_match_summary:
+    df_cols:
+        - id
+        - player_id
+        - team_id
+        - match_id
+        - minutes
+        - goals
+        - assists
+        - pk_goals
+        - pk_attempts
+        - shots
+        - shots_on_target
+        - yellow_cards
+        - red_cards
+        - touches
+        - tackles
+        - interceptions
+        - blocks
+        - xg
+        - npxg
+        - xag
+        - shot_creating_actions
+        - goal_creating_actions
+    rename_cols:
+        - id
+        - player_id
+        - team_id
+        - match_id
+        - minutes
+        - goals
+        - assists
+        - pk_goals
+        - pk_attempts
+        - shots
+        - shots_on_target
+        - yellow_cards
+        - red_cards
+        - touches
+        - tackles
+        - interceptions
+        - blocks
+        - xg
+        - npxg
+        - xag
+        - shot_creating_actions
+        - goal_creating_actions
+    key: id
+f_player_match_passing:
+    df_cols:
+        - id
+        - player_id
+        - team_id
+        - match_id
+        - min
+        - passes_completed
+        - passes_attempted
+        - total_pass_distance
+        - total_progressive_pass_distance
+        - short_passes_completed
+        - short_passes_attempted
+        - medium_passes_completed
+        - long_passes_completed
+        - long_passes_attempted
+        - assists
+        - xag
+        - xa
+        - key_passes
+        - passes_into_final_third
+        - passes_into_penalty_area
+        - crosses_into_penalty_area
+        - progressive_passes
+    rename_cols:
+        - id
+        - player_id
+        - team_id
+        - match_id
+        - minutes
+        - passes_completed
+        - passes_attempted
+        - total_pass_distance
+        - total_progressive_pass_distance
+        - short_passes_completed
+        - short_passes_attempted
+        - medium_passes_completed
+        - long_passes_completed
+        - long_passes_attempted
+        - assists
+        - xag
+        - xa
+        - key_passes
+        - passes_into_final_third
+        - passes_into_penalty_area
+        - crosses_into_penalty_area
+        - progressive_passes
+    key: id
+f_player_match_possession:
+    df_cols:
+        - id
+        - player_id
+        - team_id
+        - match_id
+        - min
+        - touches
+        - touches_def_penalty_area
+        - touches_def_third
+        - touches_mid_third
+        - touches_att_third
+        - touches_att_penalty_area
+        - touches_live
+        - take_ons_attempted
+        - take_ons_succeeded
+        - carries
+        - total_carries_distance
+        - total_progressive_carries_distance
+        - progressive_carries
+        - carries_into_final_third
+        - carries_into_penalty_area
+        - carries_miscontrolled
+        - carries_disposessed
+        - passes_recieved
+        - progressive_passes_recieved
+    rename_cols:
+        - id
+        - player_id
+        - team_id
+        - match_id
+        - minutes
+        - touches
+        - touches_def_penalty_area
+        - touches_def_third
+        - touches_mid_third
+        - touches_att_third
+        - touches_att_penalty_area
+        - touches_live
+        - take_ons_attempted
+        - take_ons_succeeded
+        - carries
+        - total_carries_distance
+        - total_progressive_carries_distance
+        - progressive_carries
+        - carries_into_final_third
+        - carries_into_penalty_area
+        - carries_miscontrolled
+        - carries_dispossessed
+        - passes_recieved
+        - progressive_passes_recieved
+    key: id
+dim_team_matches:
+    df_cols:
+        - id
+        - team_id
+        - opponent_id
+        - season
+        - competition_id
+        - goals_scored
+        - goals_against
+        - xg_for
+        - xg_against
+        - match_id
+        - match_date
+        - home_or_away
+    rename_cols:
+        - id
+        - team_id
+        - opponent_id
+        - season
+        - competition_id
+        - goals_scored
+        - goals_against
+        - xg_for
+        - xg_against
+        - match_id
+        - match_date
+        - home_or_away
+    key: id
+dim_competitions:
+    df_cols:
+        - id
+        - competition
+        - gender
+    rename_cols:
+        - id
+        - competition
+        - gender
+    key: id
+
