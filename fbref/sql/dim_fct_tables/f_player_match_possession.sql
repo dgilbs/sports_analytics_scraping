@@ -1,0 +1,28 @@
+CREATE TABLE f_player_match_possession(
+    id varchar(40) primary key,
+    player_id varchar(20),
+    team_id varchar(20),
+    match_id varchar(20),
+    minutes int,
+    touches int, 
+    touches_def_penalty_area int,
+    touches_def_third int,
+    touches_mid_third int,
+    touches_att_third int,
+    touches_att_penalty_area,
+    touches_live int,
+    take_ons_attempted int,
+    take_ons_succeeded int,
+    take_ons_tackled int,
+    carries int,
+    total_carries_distance int,
+    total_progressive_carries_distance int,
+    progressive_carries int,
+    carries_into_final_third int,
+    carries_into_penalty_area int,
+    carries_miscontrolled int, 
+    carries_dispossessed int,
+    passes_recieved int,
+    progressive_passes_recieved int
+    
+);
