@@ -6,6 +6,7 @@ import ssl
 import pandas as pd
 
 
+
 ssl._create_default_https_context = ssl._create_unverified_context
 
 with open("data_config.yaml", 'r') as stream:
