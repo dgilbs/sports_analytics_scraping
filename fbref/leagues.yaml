@@ -30,7 +30,7 @@ Frauen-Bundesliga:
   multi_year: True
   folder: frauen_bundesliga
   gender: Women
-Serie_A_Women:
+Serie-A-Women:
   league_id: 208
   league_table_tag: Serie-A-Stats
   name: Serie A
