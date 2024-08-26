@@ -35,8 +35,8 @@ with open("leagues.yaml", 'r') as stream:
     info = yaml.safe_load(stream)
 
 
-league_name = 'Frauen-Bundesliga'
-season = '2022-2023'
+league_name = 'Premier-League'
+season = '2024-2025'
 league = info[league_name]
 
 raw_schedule = scs.scrape_schedule(league, season)
@@ -51,7 +51,6 @@ scs.upsert_df(schedule, 'dim_squads', db_config)
 teams = scs.build_team_schedules(schedule)
 scs.upsert_df(teams, 'dim_team_matches', db_config)
 
-schedule = schedule.iloc[110:]
 
 scs.scrape_from_schedule(schedule, scraping_config)
 
