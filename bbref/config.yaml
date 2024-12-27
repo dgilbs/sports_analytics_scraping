@@ -1,0 +1,81 @@
+schedule_rename_columns:
+    - game_date
+    - away_team
+    - away_pts
+    - home_team
+    - home_pts
+    - box_score
+    - notes
+schedule_link_columns:
+    - away_team
+    - home_team
+    - box_score
+basic_box_score_rename_columns:
+    starters: player
+    mp: minutes_played
+    'fg%': fg_pct
+    '3p': fg_3
+    '3pa': fga_3
+    '3p%': fg_pct_3
+    'ft%': ft_pct
+    '+/-': plus_minus
+basic_box_score_link_columns:
+    - player
+basic_box_score_non_link_columns:
+    - minutes_played
+    - fg
+    - fga
+    - fg_pct
+    - fg_3
+    - fga_3
+    - fg_pct_3
+    - ft
+    - fta
+    - ft_pct
+    - orb
+    - trb
+    - ast
+    - stl
+    - blk
+    - tov
+    - pf
+    - pts
+    - plus_minus
+box_score_dtypes:
+    fg: Int64
+    fga: Int64
+    fg_pct: float
+    fg_3: Int64
+    fga_3: Int64
+    fg_pct_3: float
+    ft: Int64
+    fta: Int64
+    ft_pct: float
+    orb: Int64
+    trb: Int64
+    ast: Int64
+    stl: Int64
+    blk: Int64
+    tov: Int64
+    pf: Int64
+    pts: Int64
+    plus_minus: Int64
+roster_rename_columns:
+    "no.": jersey_number
+    pos: position
+    ht: height
+    wt: weight
+    exp: years_pro
+    college: colleges
+roster_link_columns:
+    - player
+team_schedule_columns:
+    - id
+    - game_date
+    - team_id
+    - opponent_id
+    - team_pts
+    - opponent_pts
+    - is_playoffs 
+    - is_commissioners_cup
+    - season

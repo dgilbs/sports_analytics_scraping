@@ -1,0 +1,136 @@
+dim_players:
+    df_cols:
+        - player_id
+        - player
+    rename_cols:
+        - id
+        - player
+    key: id
+dim_teams:
+    df_cols:
+        - home_team_id
+        - home_team
+    rename_cols:
+        - id
+        - team
+    key: id
+dim_games:
+    df_cols: 
+        - game_id
+        - away_team_id
+        - home_team_id
+        - away_pts
+        - home_pts
+        - is_playoffs
+        - is_commissioners_cup
+        - season
+        - league
+    rename_cols:
+        - id
+        - away_team_id
+        - home_team_id
+        - away_points
+        - home_points
+        - is_playoffs
+        - is_commissioners_cup
+        - season
+        - league
+    key: id
+dim_team_results:
+    df_cols:
+        - id
+        - game_date
+        - team_id
+        - opponent_id
+        - team_pts
+        - opponent_pts
+        - is_playoffs
+        - is_commissioners_cup
+        - season
+        - league
+    rename_cols: 
+        - id
+        - game_date
+        - team_id
+        - opponent_id
+        - team_points
+        - opponent_points
+        - is_playoffs
+        - is_commissioners_cup
+        - season
+        - league
+    key: id
+dim_rosters:
+    df_cols:
+        - id
+        - player_id 
+        - team_id
+        - jersey_number
+        - position
+        - height_inches
+        - weight
+        - birth_date
+        - years_pro
+        - last_college
+        - season
+    rename_cols:
+        - id
+        - player_id
+        - team_id
+        - jersey_number
+        - playing_position
+        - height
+        - weight
+        - birth_date
+        - years_pro
+        - college
+        - season
+    key: id
+f_basic_box_score:
+    df_cols:
+        - id
+        - player_id
+        - game_id
+        - game_quarter
+        - team
+        - league
+        - fg
+        - fga
+        - fg_3
+        - fga_3
+        - ft
+        - fta
+        - orb
+        - trb
+        - ast
+        - stl
+        - blk
+        - tov
+        - pf
+        - pts
+        - plus_minus
+        - minutes_played_int
+    rename_cols:
+        - id
+        - player_id
+        - game_id
+        - game_quarter
+        - team_id
+        - league
+        - fg
+        - fga
+        - fg_3
+        - fga_3
+        - ft
+        - fta
+        - orb
+        - trb
+        - ast
+        - stl
+        - blk
+        - tov
+        - pf
+        - pts
+        - plus_minus
+        - minutes_played
+    key: id
