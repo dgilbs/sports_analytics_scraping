@@ -171,9 +171,10 @@ def clean_match_report(file_path, keyword, config, del_raw=False):
         
     df.columns = columns
     rename_col_str = 'match_report_{}_rename_columns'.format(keyword)
-    df = df.rename(columns=config[rename_col_str])
-    df = df.dropna(subset=['shirtnumber'])
-    link_cols = config['match_report_link_columns']
+    if keyword != 'shots':
+        df = df.rename(columns=config[rename_col_str])
+        df = df.dropna(subset=['shirtnumber'])
+    link_cols = [i for i in df.columns if i in config['match_report_link_columns']]
     non_link_cols = [i for i in df.columns if i not in link_cols and i != 'team_id']
     for j in link_cols:
         new_col = j + '_link'
@@ -185,11 +186,23 @@ def clean_match_report(file_path, keyword, config, del_raw=False):
         
     dtype_str = 'match_report_{}_dtypes'.format(keyword)
     df = cast_dtypes(df, config[dtype_str])
-    raw_folder, name = os.path.split(file_path)
+    name = os.path.split(file_path)[1]
     match_id = name.split('.pkl')[0].split('_')[-1].split('(')[0]
+    if keyword == 'shots':
+        df = df.dropna(subset=['xg'])
     df['player_id'] = df.apply(lambda row: row['player_link'].split('/')[-2], axis=1)
     df['match_id'] = match_id
-    df['id'] = df.apply(lambda row: "-".join([row['player_id'], row['team_id'], row['match_id']]), axis=1)
+    if keyword != 'shots':
+        df['id'] = df.apply(lambda row: "-".join([row['player_id'], row['team_id'], row['match_id']]), axis=1)
+    else:
+        df['row_number'] = df.index + 1
+        df['id'] = df.apply(lambda row: "-".join([row['player_id'], row['match_id'], str(row['row_number'])]), axis=1)
+        df['sca_1_player_id'] = df.apply(lambda row: extract_id(row['sca_1_player_link'], -2), axis=1)
+        df['sca_2_player_id'] = df.apply(lambda row: extract_id(row['sca_2_player_link'], -2), axis=1)
+        
+        df = df.drop(['row_number'], axis=1)
+        df['team_id'] = df.apply(lambda row: extract_squad_id_for_shots(row['squad_link']), axis=1)
+        df['minute'] = df.apply(lambda row: str(row['minute']).split('+')[0], axis=1)
     dir = 'data/match_reports/{}'.format(keyword)
     if not os.path.exists(dir):
         os.makedirs(dir)
@@ -215,7 +228,7 @@ def scrape_from_schedule(schedule_df, scraping_config, start_date=None, end_date
 
     
     for index,i in schedule_df.reset_index(drop=True).iterrows():
-        print(index)
+        print(index, i['match_date'], i['home_team'], i['away_team'])
         scrape_match_reports(i, scraping_config)
         time.sleep(10)
 
@@ -355,69 +368,15 @@ def build_team_schedules(schedule_df):
     return final
 
 
-if __name__ == "__main__":
-    st = datetime.now()
-    
-    
-    ssl._create_default_https_context = ssl._create_unverified_context
-    
-    with open("data_config.yaml", 'r') as stream:
-        data_config = yaml.safe_load(stream)
-        
-    with open("db_config.yaml", 'r') as stream:
-        db_config = yaml.safe_load(stream)
-        
-    with open("scraping_config.yaml", 'r') as stream:
-        scraping_config = yaml.safe_load(stream)
-        
-    with open("scraping_config.yaml", 'r') as stream:
-        scraping_config = yaml.safe_load(stream)
-        
-    with open("config.yaml", 'r') as stream:
-        config = yaml.safe_load(stream)
-    
-    with open("leagues.yaml", 'r') as stream:
-        info = yaml.safe_load(stream)
-    
-    
-    league_name = 'Premier-League'
-    season = '2022-2023'
-    league = info[league_name]
-    
-    raw_schedule = scrape_schedule(league, season)
-    schedule = clean_schedule(raw_schedule, data_config, league, season)
-    
-    upsert_df(schedule, 'dim_matches', db_config)
-    upsert_df(schedule, 'dim_squads', db_config)
-    
-    teams = build_team_schedules(schedule)
-    upsert_df(teams, 'dim_team_matches', db_config)
-    
-    
-    #scrape_from_schedule(schedule, scraping_config)
-    
-    ids = list(schedule.id)
-    categories = ['summary', 'passing', 'possession']
-    combos = list(itertools.product(ids, categories))
-    for j in combos:
-        match_id = j[0]
-        cat = j[1]
-        raw_home_file = 'raw_data/match_reports/{}/home_team_{}_{}.pkl'.format(cat, cat, match_id)
-        raw_away_file = 'raw_data/match_reports/{}/away_team_{}_{}.pkl'.format(cat, cat, match_id)
-        clean_match_report(raw_home_file, cat, data_config)
-        clean_match_report(raw_away_file, cat, data_config)
-        home_file = 'data/match_reports/{}/home_team_{}_{}.pkl'.format(cat, cat, match_id)
-        away_file = 'data/match_reports/{}/away_team_{}_{}.pkl'.format(cat, cat, match_id)
-        home_df = pd.read_pickle(home_file)
-        away_df = pd.read_pickle(away_file)
-        if cat == 'summary':
-            upsert_df(home_df, 'dim_player_appearances', db_config)
-            upsert_df(away_df, 'dim_player_appearances', db_config)
-            upsert_df(home_df, 'dim_players', db_config)
-            upsert_df(away_df, 'dim_players', db_config)
-        table = 'f_player_match_{}'.format(cat)
-        idf = pd.concat([away_df, home_df], ignore_index=True)
-        upsert_df(idf, table, db_config)
-    
-    et = datetime.now()
-    print(et-st)
+def extract_squad_id_for_shots(squad_link_str):
+    arr = squad_link_str.split('/')
+    squad_index = arr.index('squads')
+    return arr[squad_index+1]
+
+
+def extract_id(id_str, id_index):
+    try:
+        id = id_str.split('/')[id_index]
+    except:
+        id = None
+    return id

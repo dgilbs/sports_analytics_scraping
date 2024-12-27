@@ -37,6 +37,7 @@ match_report_defense_dtypes:
   tackles_defensive_third: Int64
   tackles_mid_third: Int64
   tackles_won: Int64
+  minutes: Int64
 match_report_defense_rename_columns:
   tackles_tkl: tackles_att
   tackles_tklw: tackles_won
@@ -52,8 +53,13 @@ match_report_defense_rename_columns:
   err: errors_lead_to_shot
   '#': shirtnumber
   pos: position
+  'tkl+int': tackles_plus_interceptions
+  min: minutes
 match_report_link_columns:
 - player
+- sca_1_player
+- sca_2_player
+- squad
 match_report_misc_dtypes:
   aerial_duals_lost: Int64
   aerial_duals_pct: float
@@ -163,6 +169,7 @@ match_report_passing_types_dtypes:
   switches: Int64
   through_balls: Int64
   throw_ins_taken: Int64
+  minutes: Int64
 match_report_passing_types_rename_columns:
   att: passes_attempted
   pass_types_live: passes_live
@@ -180,6 +187,7 @@ match_report_passing_types_rename_columns:
   outcomes_blocks: passes_blocked
   "#": shirtnumber
   pos: position
+  min: minutes
 match_report_possession_dtypes:
   carries: Int64
   carries_into_final_third: Int64
@@ -226,12 +234,10 @@ match_report_possession_rename_columns:
   receiving_rec: passes_recieved
   receiving_prgr: progressive_passes_recieved
   pos: position
-match_report_shot_data_dtypes:
-  minute: Int64
+match_report_shots_dtypes:
   psxg: float
-  stoppage_time: Int64
   xg: float
-match_report_shot_data_rename_columns:
+match_report_shot_rename_columns:
   event: sca_event_one
   event.1: sca_event_two
   player.1: sca_player_one

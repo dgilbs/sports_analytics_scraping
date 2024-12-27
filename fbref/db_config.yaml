@@ -246,4 +246,172 @@ dim_competitions:
         - competition
         - gender
     key: id
+f_player_match_defense:
+    df_cols:
+        - id
+        - player_id
+        - team_id
+        - match_id
+        - minutes
+        - tackles_att
+        - tackles_won
+        - tackles_def_third
+        - tackles_mid_third
+        - tackles_att_third
+        - challenges_won
+        - challenges_att
+        - blocks
+        - shot_blocks
+        - pass_blocks
+        - interceptions
+        - clearances
+        - errors_lead_to_shot
+    rename_cols:
+        - id
+        - player_id
+        - team_id
+        - match_id
+        - minutes
+        - tackles_att
+        - tackles_won
+        - tackles_def_third
+        - tackles_mid_third
+        - tackles_att_third
+        - challenges_won
+        - challenges_att
+        - blocks
+        - shot_blocks
+        - pass_blocks
+        - interceptions
+        - clearances
+        - errors_lead_to_shot
+    key: id
+f_player_match_passing_types:
+    df_cols:
+        - id
+        - player_id 
+        - team_id 
+        - match_id
+        - minutes
+        - passes_attempted
+        - passes_live
+        - passes_dead_ball
+        - pass_types_crs
+        - passes_throw_ins
+        - passes_switches
+        - corner_kicks_inswinging
+        - corner_kicks_outswinging
+        - corner_kicks_straight
+        - passes_completed
+        - passes_offside
+        - passes_blocked
+    rename_cols:
+        - id
+        - player_id 
+        - team_id 
+        - match_id
+        - minutes
+        - passes_attempted
+        - passes_live
+        - passes_dead_ball
+        - passes_crosses
+        - passes_throw_ins
+        - passes_switches
+        - corner_kicks_inswinging
+        - corner_kicks_outswinging
+        - corner_kicks_straight
+        - passes_completed
+        - passes_offside
+        - passes_blocked
+    key: id
+f_shots:
+    df_cols:
+        - id
+        - xg
+        - psxg
+        - outcome
+        - distance
+        - body_part
+        - notes
+        - player_id
+        - team_id
+        - match_id
+        - sca_1_player_id
+        - sca_2_player_id
+        - sca_1_event
+        - sca_2_event
+    rename_cols:
+        - id
+        - xg
+        - psxg
+        - outcome
+        - distance
+        - body_part
+        - notes
+        - player_id
+        - team_id
+        - match_id
+        - sca_1_player_id
+        - sca_2_player_id
+        - sca_1_event
+        - sca_2_event
+    key: id
+f_player_match_keeper:
+    df_cols:
+        - id
+        - player_id
+        - team_id
+        - match_id
+        - minutes
+        - shots_on_target_against
+        - goals_allowed
+        - saves
+        - psxg
+        - passes_launched_completed
+        - passes_launched_attempted
+        - 'passes_att_(gk)'
+        - throws_attempted
+        - average_pass_length
+        - goal_kicks_attempted
+        - pct_goal_kicks_launched
+        - pct_of_passes_launched
+        - avg_goal_kick_length
+        - crosses_faced
+        - crosses_stopped
+        - defensive_actions_outside_pen_area
+        - avg_distance_of_defensive_actions
+    rename_cols:
+        - id
+        - player_id
+        - team_id
+        - match_id
+        - minutes
+        - shots_on_target_against
+        - goals_allowed
+        - saves
+        - psxg
+        - passes_launched_completed
+        - passes_launched_attempted
+        - passes_attempted_total
+        - throws_attempted
+        - average_pass_length
+        - goal_kicks_attempted
+        - pct_goal_kicks_launched
+        - pct_of_passes_launched
+        - avg_goal_kick_length
+        - crosses_faced
+        - crosses_stopped
+        - defensive_actions_outside_pen_area
+        - avg_distance_of_defensive_actions
+    key: id
 
+
+# 'player', 'nation', 'age', 'minutes', 'shots_on_target_against',
+#        'goals_allowed', 'saves', 'save_pct', 'psxg',
+#        'passes_launched_completed', 'passes_launched_attempted',
+#        'launched_pass_completion_pct', 'passes_att_(gk)', 'throws_attempted',
+#        'pct_of_passes_launched', 'average_pass_length', 'goal_kicks_attempted',
+#        'pct_goal_kicks_launched', 'avg_goal_kick_length', 'crosses_faced',
+#        'crosses_stopped', 'crosses_stp%', 'defensive_actions_outside_pen_area',
+#        'avg_distance_of_defensive_actions', 'team_id', 'player_link',
+#        'player_id', 'match_id', 'id'

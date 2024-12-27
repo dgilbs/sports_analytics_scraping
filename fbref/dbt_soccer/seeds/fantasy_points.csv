@@ -1,0 +1,5 @@
+﻿playing_position,goal_points,tackles_won_points,clean_sheet_points,goals_conceded_points,save_points,penalty_save_points,assist_points,played_60_mins,interception_points,appearance_points,yellow_card_points,red_card_points,pk_converted_points,pk_missed_points,own_goal_points,pass_completion_points,touches_points,block_points,gca_points,take_on_points
+FW,4,1,0,0,0,0,2,2,0.5,1,-2,-6,2,-3,-3,2,2,0.5,0.5,0.5
+MF,5,0.5,2,0,0,0,2,2,0.5,1,-2,-6,2,-3,-3,2,2,0.5,0.5,0.5
+DF,6,0.5,4,-0.5,0,0,2,2,0.5,1,-2,-6,2,-3,-3,2,2,0.5,0.5,0.5
+GK,10,0,5,-1,0.5,5,2,2,0.5,1,-2,-6,2,-3,-3,2,2,0.5,0.5,0.5
