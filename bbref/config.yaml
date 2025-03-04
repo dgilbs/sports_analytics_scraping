@@ -60,6 +60,19 @@ box_score_dtypes:
     pf: Int64
     pts: Int64
     plus_minus: Int64
+    true_shooting_pct: float
+    three_point_attempt_rate: float
+    free_throw_attempt_rate: float
+    offensive_rebound_pct: float
+    defensive_rebound_pct: float
+    total_rebound_pct: float
+    assist_pct: float
+    steal_pct: float
+    block_pct: float
+    turnover_pct: float
+    usage_rate: float
+    offensive_rating: Int64
+    defensive_rating: Int64
 roster_rename_columns:
     "no.": jersey_number
     pos: position
@@ -79,3 +92,40 @@ team_schedule_columns:
     - is_playoffs 
     - is_commissioners_cup
     - season
+    - home_or_away
+    - game_id
+advanced_box_score_link_columns:
+    - player
+advanced_box_score_rename_columns:
+    starters: player
+    mp: minutes_played
+    'ts%': true_shooting_pct
+    'efg%': effective_field_goal_pct
+    '3par': three_point_attempt_rate
+    ftr: free_throw_attempt_rate
+    'orb%': offensive_rebound_pct
+    'drb%': defensive_rebound_pct
+    'trb%': total_rebound_pct
+    'ast%': assist_pct
+    'stl%': steal_pct
+    'blk%': block_pct
+    'tov%': turnover_pct
+    'usg%': usage_rate
+    ortg: offensive_rating
+    drtg: defensive_rating
+advanced_box_score_non_link_columns:
+    - minutes_played
+    - true_shooting_pct
+    - effective_field_goal_pct
+    - three_point_attempt_rate
+    - free_throw_attempt_rate
+    - offensive_rebound_pct
+    - defensive_rebound_pct
+    - total_rebound_pct
+    - assist_pct
+    - steal_pct
+    - block_pct
+    - turnover_pct
+    - usage_rate
+    - offensive_rating
+    - defensive_rating

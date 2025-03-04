@@ -840,3 +840,10 @@ team_schedule_rename_columns:
   poss: possession
   result: match_result
   venue: home_or_away
+roster_use_cols:
+    - player
+    - nation
+    - age
+    - pos
+roster_link_cols:
+    - player

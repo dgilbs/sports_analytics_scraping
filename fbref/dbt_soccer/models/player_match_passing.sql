@@ -11,6 +11,7 @@ ds.squad,
 dsa.squad as opponent,
 dtm.season,
 dc.competition,
+dsr.playing_position,
 dpa."position",
 fpms.minutes,
 passes_completed,
@@ -44,3 +45,5 @@ left join dim_competitions dc
 on dc.id = dtm.competition_id
 left join dim_player_appearances dpa 
 on dpa.id = fpms.id
+left join dim_squad_rosters dsr 
+on dsr.player_id = fpms.player_id and fpms.team_id = dsr.squad_id and dsr.season = dtm.season
