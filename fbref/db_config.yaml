@@ -404,6 +404,24 @@ f_player_match_keeper:
         - defensive_actions_outside_pen_area
         - avg_distance_of_defensive_actions
     key: id
+dim_squad_rosters:
+    df_cols:
+        - id
+        - player_id
+        - squad_id
+        - season
+        - pos
+        - age
+        - nation
+    rename_cols:
+        - id
+        - player_id
+        - squad_id
+        - season
+        - playing_position
+        - age
+        - nation
+    key: id
 
 
 # 'player', 'nation', 'age', 'minutes', 'shots_on_target_against',

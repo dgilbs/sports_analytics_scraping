@@ -380,3 +380,90 @@ def extract_id(id_str, id_index):
     except:
         id = None
     return id
+
+
+def scrape_standings(info, season):
+    league_id = info['league_id']
+    league_name = info['name']
+    league_tag = info['league_table_tag']
+    folder = info['folder']
+    url = 'https://fbref.com/en/comps/{}/{}/{}-{}'.format(league_id, season, season, league_tag)
+    df = pd.read_html(url, extract_links='body')[0]
+    df.columns = [i.lower() for i in df.columns]
+    raw_data_folder = 'raw_data/standings/{}'.format(folder)
+    fp = '{}_{}_standings.pkl'.format(season, league_name)
+    rfp = os.path.join(raw_data_folder, fp)
+    if not os.path.exists(raw_data_folder):
+        os.makedirs(raw_data_folder)
+    df.to_pickle(rfp)
+    
+    link_cols = ['squad']
+    non_link_cols = [i for i in df.columns if i not in link_cols]
+    
+    for i in link_cols:
+        new_col = i + '_link'
+        df[new_col] = df.apply(lambda row: row[i][1], axis=1)
+        df[i] = df.apply(lambda row: row[i][0], axis=1)
+        
+    for j in non_link_cols:
+        df[j] = df.apply(lambda row: row[j][0], axis=1)
+    df['season'] = season
+    df['squad_id'] = df.apply(lambda row: row['squad_link'].split('/')[3], axis=1)
+    data_folder = 'data/standings/{}'.format(folder)
+    dfp = os.path.join(data_folder, fp)
+    if not os.path.exists(data_folder):
+        os.makedirs(data_folder)
+    df.to_pickle(dfp)
+    return df
+
+
+def scrape_rosters_from_standings_row(row, config, info):
+    squad_link = row['squad_link']
+    season = row['season']
+    squad_id = row['squad_id']
+    folder = info['folder']
+    league = info['name']
+    league_id = info['league_id']
+    table_id = 'stats_standard_{}'.format(league_id)
+    url = 'https://fbref.com' + squad_link
+    attrs = {'id': table_id}
+    df = pd.read_html(url, extract_links='body', attrs=attrs)[0]
+    raw_data_folder = 'raw_data/rosters/{}'.format(folder)
+    if not os.path.exists(raw_data_folder):
+        os.makedirs(raw_data_folder)
+    file_name = '{}_{}_roster.pkl'.format(season, squad_id)
+    file_path = os.path.join(raw_data_folder, file_name)
+    df.to_pickle(file_path)
+    return df
+
+def scrape_rosters_from_standings_df(standings, config, info):
+    for index, i in standings.iterrows():
+        print(index, i['squad'], i['season'])
+        scrape_rosters_from_standings_row(i, config, info)
+        time.sleep(10)
+        
+
+def clean_rosters(file_path, config, info):
+    df = pd.read_pickle(file_path)
+    df.columns = [i[1].lower() for i in df.columns]
+    use_cols = config['roster_use_cols']
+    df = df[use_cols]
+    df['player_link'] = df.apply(lambda row: row['player'][1], axis=1)
+    df['player'] = df.apply(lambda row: row['player'][0], axis=1)
+    df = df[~df.player.isin(['S', 'O'])]
+    df['nation'] = df.apply(lambda row: row['nation'][0].split(' ')[-1], axis=1)
+    df['pos'] = df.apply(lambda row: ','.join(list(row['pos'])[:-1]), axis=1)
+    df['age'] = df.apply(lambda row: row['age'][0], axis=1)
+    folder, name = os.path.split(file_path)
+    season = name.split('_')[0]
+    squad_id = name.split('_')[1]
+    df['season'] = season
+    df['squad_id'] = squad_id
+    df['player_id'] = df.apply(lambda row: row['player_link'].split('/')[-2], axis=1)
+    df['id'] = df.apply(lambda row: "-".join([row['player_id'], row['squad_id'], row['season']]), axis=1)
+    data_folder = 'data/rosters/{}'.format(info['folder'])
+    if not os.path.exists(data_folder):
+        os.makedirs(data_folder)
+    fp = os.path.join(data_folder, name)
+    df.to_pickle(fp)
+    return df

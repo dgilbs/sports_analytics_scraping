@@ -48,6 +48,8 @@ dim_team_results:
         - is_commissioners_cup
         - season
         - league
+        - home_or_away
+        - game_id
     rename_cols: 
         - id
         - game_date
@@ -59,6 +61,8 @@ dim_team_results:
         - is_commissioners_cup
         - season
         - league
+        - home_or_away
+        - game_id
     key: id
 dim_rosters:
     df_cols:
