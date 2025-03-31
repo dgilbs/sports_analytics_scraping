@@ -21,10 +21,10 @@ case
 	else 'Tie'
 end as match_result,
 xg_for - xg_against as xg_diff
-from dim_team_matches dtm
-left join dim_squads sq 
+from soccer.dim_team_matches dtm
+left join soccer.dim_squads sq 
 on dtm.team_id = sq.id
-left join dim_squads sqa 
+left join soccer.dim_squads sqa 
 on sqa.id = dtm.opponent_id
-left join dim_competitions comp 
+left join soccer.dim_competitions comp 
 on dtm.competition_id = comp.id

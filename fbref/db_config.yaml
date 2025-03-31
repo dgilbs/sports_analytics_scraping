@@ -39,6 +39,8 @@ dim_matches:
         - venue
         - home_goals
         - away_goals
+    numeric_cols:
+        - attendance
     key: id
 dim_player_appearances:
     df_cols: 
@@ -122,6 +124,7 @@ f_player_match_passing:
         - short_passes_completed
         - short_passes_attempted
         - medium_passes_completed
+        - medium_passes_attempted
         - long_passes_completed
         - long_passes_attempted
         - assists
@@ -145,6 +148,27 @@ f_player_match_passing:
         - short_passes_completed
         - short_passes_attempted
         - medium_passes_completed
+        - medium_passes_attempted
+        - long_passes_completed
+        - long_passes_attempted
+        - assists
+        - xag
+        - xa
+        - key_passes
+        - passes_into_final_third
+        - passes_into_penalty_area
+        - crosses_into_penalty_area
+        - progressive_passes
+    numeric_cols:
+        - minutes
+        - passes_completed
+        - passes_attempted
+        - total_pass_distance
+        - total_progressive_pass_distance
+        - short_passes_completed
+        - short_passes_attempted
+        - medium_passes_completed
+        - medium_passes_attempted
         - long_passes_completed
         - long_passes_attempted
         - assists
@@ -172,6 +196,7 @@ f_player_match_possession:
         - touches_live
         - take_ons_attempted
         - take_ons_succeeded
+        - take_ons_tackled
         - carries
         - total_carries_distance
         - total_progressive_carries_distance
@@ -197,6 +222,29 @@ f_player_match_possession:
         - touches_live
         - take_ons_attempted
         - take_ons_succeeded
+        - take_ons_tackled
+        - carries
+        - total_carries_distance
+        - total_progressive_carries_distance
+        - progressive_carries
+        - carries_into_final_third
+        - carries_into_penalty_area
+        - carries_miscontrolled
+        - carries_dispossessed
+        - passes_recieved
+        - progressive_passes_recieved
+    numeric_cols:
+        - minutes
+        - touches
+        - touches_def_penalty_area
+        - touches_def_third
+        - touches_mid_third
+        - touches_att_third
+        - touches_att_penalty_area
+        - touches_live
+        - take_ons_attempted
+        - take_ons_succeeded
+        - take_ons_tackled
         - carries
         - total_carries_distance
         - total_progressive_carries_distance
@@ -422,14 +470,54 @@ dim_squad_rosters:
         - age
         - nation
     key: id
-
-
-# 'player', 'nation', 'age', 'minutes', 'shots_on_target_against',
-#        'goals_allowed', 'saves', 'save_pct', 'psxg',
-#        'passes_launched_completed', 'passes_launched_attempted',
-#        'launched_pass_completion_pct', 'passes_att_(gk)', 'throws_attempted',
-#        'pct_of_passes_launched', 'average_pass_length', 'goal_kicks_attempted',
-#        'pct_goal_kicks_launched', 'avg_goal_kick_length', 'crosses_faced',
-#        'crosses_stopped', 'crosses_stp%', 'defensive_actions_outside_pen_area',
-#        'avg_distance_of_defensive_actions', 'team_id', 'player_link',
-#        'player_id', 'match_id', 'id'
+f_player_match_misc:
+    df_cols:
+        - id
+        - player_id
+        - team_id
+        - match_id
+        - minutes
+        - yellow_cards
+        - red_cards 
+        - second_yellow_cards
+        - fouls
+        - fouled
+        - offsides 
+        - crosses
+        - pks_won
+        - ball_recoveries
+        - aerial_duels_won
+        - aerial_duels_lost
+        - own_goals
+    rename_cols:
+        - id
+        - player_id
+        - team_id
+        - match_id
+        - minutes
+        - yellow_cards
+        - red_cards 
+        - second_yellow_cards
+        - fouls
+        - fouled
+        - offsides 
+        - crosses
+        - pks_won
+        - ball_recoveries
+        - aerial_duels_won
+        - aerial_duels_lost
+        - own_goals
+    numeric_cols:
+        - yellow_cards
+        - red_cards 
+        - second_yellow_cards
+        - fouls
+        - fouled
+        - offsides 
+        - crosses
+        - pks_won
+        - ball_recoveries
+        - aerial_duels_won
+        - aerial_duels_lost
+        - own_goals
+    key: id

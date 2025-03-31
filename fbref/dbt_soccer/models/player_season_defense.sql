@@ -10,6 +10,7 @@ dp.player,
 ds.squad,
 dtm.season,
 dc.competition,
+dsr.playing_position as roster_position,
 sum(fpms.minutes) as minutes,
 sum(tackles_att) as tackles_att,
 sum(tackles_won) as tackles_won,
@@ -37,17 +38,19 @@ round((sum(pass_blocks) * 1.0/sum(fpms.minutes)) * 90.0,3) as pass_blocks_per_90
 round((sum(interceptions) * 1.0/sum(fpms.minutes)) * 90.0,3) as interceptions_per_90,
 round((sum(clearances) * 1.0/sum(fpms.minutes)) * 90.0,3) as clearances_per_90,
 round((sum(errors_lead_to_shot) * 1.0/sum(fpms.minutes)) * 90.0,3) as errors_lead_to_shot_per_90
-from f_player_match_defense fpms
-left join dim_players dp 
+from soccer.f_player_match_defense fpms
+left join soccer.dim_players dp 
 on dp.id = fpms.player_id
-left join dim_squads ds 
+left join soccer.dim_squads ds 
 on ds.id = fpms.team_id
-left join dim_team_matches dtm
+left join soccer.dim_team_matches dtm
 on dtm.match_id = fpms.match_id and dtm.team_id = fpms.team_id
-left join dim_squads dsa 
+left join soccer.dim_squads dsa 
 on dsa.id = dtm.opponent_id
-left join dim_competitions dc
+left join soccer.dim_competitions dc
 on dc.id = dtm.competition_id
-left join dim_player_appearances dpa 
+left join soccer.dim_player_appearances dpa 
 on dpa.id = fpms.id
-group by 1,2,3,4
+left join soccer.dim_squad_rosters dsr 
+on dsr.player_id = fpms.player_id and fpms.team_id = dsr.squad_id and cast(dsr.season as text) = dtm.season
+group by 1,2,3,4,5
