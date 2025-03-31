@@ -22,9 +22,9 @@ fp.touches_points,
 fp.block_points,
 fp.gca_points,
 fp.take_on_points
-FROM player_season_summary pss
-LEFT JOIN nwsl_fantasy_players fant
+FROM soccer.player_season_summary pss
+LEFT JOIN soccer.nwsl_fantasy_players fant
 ON pss.player = fant.player
-LEFT JOIN fantasy_points fp 
+LEFT JOIN soccer.fantasy_points fp 
 ON fp.playing_position = fant.playing_position
 WHERE competition = 'NWSL' AND season = '2024'

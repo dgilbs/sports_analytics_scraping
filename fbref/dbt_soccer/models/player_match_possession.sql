@@ -34,16 +34,16 @@ ft.carries_miscontrolled,
 ft.carries_dispossessed,
 ft.passes_recieved,
 ft.progressive_passes_recieved 
-from f_player_match_possession ft
-left join dim_players dp 
+from soccer.f_player_match_possession ft
+left join soccer.dim_players dp 
 on dp.id = ft.player_id
-left join dim_squads ds 
+left join soccer.dim_squads ds 
 on ds.id = ft.team_id
-left join dim_team_matches dtm
+left join soccer.dim_team_matches dtm
 on dtm.match_id = ft.match_id and dtm.team_id = ft.team_id
-left join dim_squads dsa 
+left join soccer.dim_squads dsa 
 on dsa.id = dtm.opponent_id
-left join dim_competitions dc
+left join soccer.dim_competitions dc
 on dc.id = dtm.competition_id
-left join dim_player_appearances dpa 
+left join soccer.dim_player_appearances dpa 
 on dpa.id = ft.id

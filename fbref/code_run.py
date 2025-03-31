@@ -58,15 +58,21 @@ if  cr_config['use_start_date']:
 if cr_config['use_end_date']:
     full_schedule = full_schedule[full_schedule.match_date <= cr_config['end_date']]
 
+    
+conn_string =  "postgresql://danielgilberg:password@localhost:5432/projects"
 competitions = scs.build_competitions_df(info)
-scs.upsert_df(competitions, 'dim_competitions', db_config)
+scs.upsert_df(competitions, 'dim_competitions', conn_string, ['id'], db_config, dedupe=True)
+print('competitions done')
 
-scs.upsert_df(full_schedule, 'dim_matches', db_config)
-scs.upsert_df(full_schedule, 'dim_squads', db_config)
+scs.upsert_df(full_schedule, 'dim_matches', conn_string, ['id'], db_config, dedupe=True)
+print('matches done')
+scs.upsert_df(full_schedule, 'dim_squads', conn_string, ['id'], db_config, dedupe=True)
+print('squads done')
 
 teams = scs.build_team_schedules(full_schedule)
-scs.upsert_df(teams, 'dim_team_matches', db_config)
+scs.upsert_df(teams, 'dim_team_matches', conn_string, ['id'], db_config)
 
+#(df, 'f_player_match_passing', conn_string, ['id'], db_config)
 
 
 scs.scrape_from_schedule(full_schedule, scraping_config)
@@ -107,13 +113,16 @@ for j in combos:
     
 
     if cat == 'summary' and idf is not None:
-        scs.upsert_df(idf, 'dim_player_appearances', db_config)
-        scs.upsert_df(idf, 'dim_players', db_config)
+        scs.upsert_df(idf, 'dim_player_appearances', conn_string, ['id'], db_config)
+        scs.upsert_df(idf, 'dim_players', conn_string, ['id'], db_config)
 
     
     if idf is not None:
-        scs.upsert_df(idf, table, db_config)
+        scs.upsert_df(idf, table, conn_string, ['id'], db_config)
 
 et = datetime.now()
-print(len(ids))
+# print(len(ids))
 print(et-st)
+
+
+

@@ -10,6 +10,7 @@ dp.player,
 ds.squad,
 dtm.season,
 dc.competition,
+dsr.playing_position as roster_position,
 sum(ft.minutes) as minutes,
 sum(ft.touches) as touches,
 sum(ft.touches_def_penalty_area) as touches_def_penalty_area,
@@ -51,17 +52,19 @@ round((sum(carries_miscontrolled) * 1.0/sum(ft.minutes)) * 90.0,3) as carries_mi
 round((sum(carries_dispossessed) * 1.0/sum(ft.minutes)) * 90.0,3) as carries_dispossessed_per_90,
 round((sum(passes_recieved) * 1.0/sum(ft.minutes)) * 90.0,3) as passes_recieved_per_90,
 round((sum(progressive_passes_recieved) * 1.0/sum(ft.minutes)) * 90.0,3) as progressive_passes_recieved_per_90
-from f_player_match_possession ft
-left join dim_players dp 
+from soccer.f_player_match_possession ft
+left join soccer.dim_players dp 
 on dp.id = ft.player_id
-left join dim_squads ds 
+left join soccer.dim_squads ds 
 on ds.id = ft.team_id
-left join dim_team_matches dtm
+left join soccer.dim_team_matches dtm
 on dtm.match_id = ft.match_id and dtm.team_id = ft.team_id
-left join dim_squads dsa 
+left join soccer.dim_squads dsa 
 on dsa.id = dtm.opponent_id
-left join dim_competitions dc
+left join soccer.dim_competitions dc
 on dc.id = dtm.competition_id
-left join dim_player_appearances dpa 
+left join soccer.dim_player_appearances dpa 
 on dpa.id = ft.id
-group by 1,2,3,4
+left join soccer.dim_squad_rosters dsr 
+on dsr.player_id = ft.player_id and ft.team_id = dsr.squad_id and cast(dsr.season as text) = dtm.season
+group by 1,2,3,4,5

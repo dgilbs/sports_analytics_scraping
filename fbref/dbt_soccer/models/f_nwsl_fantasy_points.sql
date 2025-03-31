@@ -21,7 +21,7 @@ fpms.goal_creating_actions,
 fk.saves,
 dtm.goals_against,
 CASE 
-	WHEN dtm.goals_against == 0 THEN 1
+	WHEN dtm.goals_against = 0 THEN 1
 	ELSE 0
 END AS is_shutout,
 CASE
@@ -56,23 +56,23 @@ fantpl.touches_points,
 fantpl.block_points,
 fantpl.gca_points,
 fantpl.take_on_points
-from f_player_match_summary fpms
-left join dim_players dp 
+from soccer.f_player_match_summary fpms
+left join soccer.dim_players dp 
 on dp.id = fpms.player_id
-left join dim_squads ds 
+left join soccer.dim_squads ds 
 on ds.id = fpms.team_id
-left join dim_team_matches dtm
+left join soccer.dim_team_matches dtm
 on dtm.match_id = fpms.match_id and dtm.team_id = fpms.team_id
-left join dim_squads dsa 
+left join soccer.dim_squads dsa 
 on dsa.id = dtm.opponent_id
-left join dim_competitions dc
+left join soccer.dim_competitions dc
 on dc.id = dtm.competition_id
-left join dim_player_appearances dpa 
+left join soccer.dim_player_appearances dpa 
 on dpa.id = fpms.id
-LEFT JOIN f_player_match_possession poss
+LEFT JOIN soccer.f_player_match_possession poss
 ON poss.id = dpa.id
-LEFT JOIN f_player_match_keeper fk 
+LEFT JOIN soccer.f_player_match_keeper fk 
 ON fk.id = dpa.id
-JOIN nwsl_fantasy_2024_players fantpl 
+JOIN soccer.nwsl_fantasy_2024_players fantpl 
 ON fantpl.player = dp.player
 WHERE competition = 'NWSL' AND season = '2024'

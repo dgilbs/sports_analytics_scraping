@@ -9,7 +9,10 @@ import itertools
 import json
 import itertools
 import sqlite3
+import psycopg2
 from datetime import datetime, date, timedelta
+from sqlalchemy import create_engine, text
+from psycopg2.extras import execute_values
 # from google.oauth2 import service_account
 # from pandas_gbq import to_gbq
 from urllib.request import urlopen
@@ -305,7 +308,7 @@ def upload_to_bq(bq_config_dict, creds_path):
         print(e)
 
 
-def upsert_df(df, table_name, db_config):
+def upsert_df_sqlite(df, table_name, db_config):
     info = db_config[table_name]
     cols = info['df_cols']
     idf = df[cols]
@@ -467,3 +470,58 @@ def clean_rosters(file_path, config, info):
     fp = os.path.join(data_folder, name)
     df.to_pickle(fp)
     return df
+
+def upsert_df(df, table_name, conn_string, unique_columns, db_config, schema='soccer', dedupe=False):
+    """
+    Upserts a pandas DataFrame to a PostgreSQL table.
+    
+    Parameters:
+        df (pd.DataFrame): The DataFrame to upsert.
+        table_name (str): The name of the target table.
+        conn_string (str): PostgreSQL connection string.
+        unique_columns (list): List of column names that uniquely identify a row.
+    """
+    config = db_config[table_name]
+    df_cols = config['df_cols']
+    rename_cols = config['rename_cols']
+    df = df[df_cols]
+    df.columns = rename_cols
+    if 'numeric_cols' in config:
+        num_cols = config['numeric_cols']
+        for col in num_cols:
+            df[col] = pd.to_numeric(df[col], errors='coerce')
+            df[col] = df[col].fillna(0)
+    
+    if dedupe:
+        df = df.drop_duplicates(subset=unique_columns, ignore_index=True)
+    table_id = '.'.join([schema, table_name])
+    df = df.map(lambda x: x.item() if isinstance(x, (pd.Int64Dtype, pd.Float64Dtype, pd.BooleanDtype)) else x)
+    # Create SQLAlchemy engine
+    engine = create_engine(conn_string)
+    with engine.connect() as conn:
+        with conn.begin():
+            # Ensure column names are valid SQL identifiers
+            df.columns = [col.lower() for col in df.columns]
+            
+            # Get column names
+            columns = list(df.columns)
+            
+            # Generate SQL placeholders
+            placeholders = ', '.join(['%s'] * len(columns))
+            columns_str = ', '.join(columns)
+            updates = ', '.join([f"{col} = EXCLUDED.{col}" for col in columns if col not in unique_columns])
+            
+            # Convert DataFrame to list of tuples
+            data = [tuple(row) for row in df.itertuples(index=False, name=None)]
+            
+            # Generate UPSERT query
+            upsert_query = f'''
+                INSERT INTO {table_id} ({columns_str})
+                VALUES {placeholders}
+                ON CONFLICT ({', '.join(unique_columns)})
+                DO UPDATE SET {updates};
+            '''
+            
+            # Use psycopg2 to execute query efficiently
+            with conn.connection.cursor() as cursor:
+                execute_values(cursor, upsert_query.replace(placeholders, '%s'), data)

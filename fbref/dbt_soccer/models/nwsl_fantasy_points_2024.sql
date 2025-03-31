@@ -25,4 +25,4 @@ goals * goal_points
 + red_cards  * red_card_points
 + is_touches_points * touches_points
 AS fantasy_points
-FROM f_nwsl_fantasy_points
+FROM soccer.f_nwsl_fantasy_points
