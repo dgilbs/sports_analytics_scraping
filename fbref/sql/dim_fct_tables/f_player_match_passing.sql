@@ -1,4 +1,4 @@
-CREATE TABLE f_player_match_passing(
+CREATE TABLE if not exists soccer.f_player_match_passing(
     id varchar(40) primary key,
     player_id varchar(20),
     team_id varchar(20),

@@ -38,3 +38,7 @@ models:
       - models/example/
 quoting:
   database: true
+
+vars:
+  start_date: '2025-05-30'
+  end_date: '2025-06-09'

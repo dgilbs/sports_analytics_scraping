@@ -14,7 +14,28 @@ dtm.season,
 dtm.match_date,
 dc.competition,
 dsr.playing_position as roster_position,
-dpa."position" as match_postion,
+dpa."position" as match_position,
+split_part(dpa."position", ',', 1) as primary_position,
+CASE
+when split_part(dpa."position", ',', 1) in ('FW', 'RW', 'LW') then true
+else false
+end as is_forward,
+case 
+when split_part(dpa."position", ',', 1) in ('AM', 'CM', 'RM', 'LM', 'DM', 'MF') then true
+else false
+end as is_midfielder,
+case 
+when split_part(dpa."position", ',', 1) in ('CB', 'WB', 'RB', 'LB') then true
+else false
+end as is_defender,
+case 
+when split_part(dpa."position", ',', 1) = 'GK' then true
+else false
+end as is_goalkeeper,
+case 
+when split_part(dpa."position", ',', 1) in ('RW', 'LW', 'WB', 'RB', 'LB') then true
+else false
+end as is_winger,
 fpms.minutes,
 goals,
 assists,

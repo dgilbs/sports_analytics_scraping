@@ -10,6 +10,7 @@ dp.player,
 ds.squad,
 dtm.season,
 dc.competition,
+dpa.position as playing_position,
 dsr.playing_position as roster_position,
 sum(fpms.minutes) as minutes,
 sum(tackles_att) as tackles_att,
@@ -53,4 +54,4 @@ left join soccer.dim_player_appearances dpa
 on dpa.id = fpms.id
 left join soccer.dim_squad_rosters dsr 
 on dsr.player_id = fpms.player_id and fpms.team_id = dsr.squad_id and cast(dsr.season as text) = dtm.season
-group by 1,2,3,4,5
+group by 1,2,3,4,5,6

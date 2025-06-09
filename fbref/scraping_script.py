@@ -19,6 +19,8 @@ from urllib.request import urlopen
 # from google.cloud import storage, bigquery
 
 
+
+
 def all_files_in_subdirectories(dir_path, key_term=None):
     """
     a quick an easy way to list the full path of all files in subdirectories
@@ -174,9 +176,11 @@ def clean_match_report(file_path, keyword, config, del_raw=False):
         
     df.columns = columns
     rename_col_str = 'match_report_{}_rename_columns'.format(keyword)
-    if keyword != 'shots':
+    if keyword != 'shots' and keyword != 'keeper':
         df = df.rename(columns=config[rename_col_str])
         df = df.dropna(subset=['shirtnumber'])
+    elif keyword != 'shots':
+        df = df.rename(columns=config[rename_col_str])
     link_cols = [i for i in df.columns if i in config['match_report_link_columns']]
     non_link_cols = [i for i in df.columns if i not in link_cols and i != 'team_id']
     for j in link_cols:
@@ -232,7 +236,10 @@ def scrape_from_schedule(schedule_df, scraping_config, start_date=None, end_date
     
     for index,i in schedule_df.reset_index(drop=True).iterrows():
         print(index, i['match_date'], i['home_team'], i['away_team'])
-        scrape_match_reports(i, scraping_config)
+        try:
+            scrape_match_reports(i, scraping_config)
+        except Exception as e:
+            print(e)
         time.sleep(10)
 
 
@@ -384,7 +391,6 @@ def extract_id(id_str, id_index):
         id = None
     return id
 
-
 def scrape_standings(info, season):
     league_id = info['league_id']
     league_name = info['name']
@@ -439,6 +445,7 @@ def scrape_rosters_from_standings_row(row, config, info):
     df.to_pickle(file_path)
     return df
 
+
 def scrape_rosters_from_standings_df(standings, config, info):
     for index, i in standings.iterrows():
         print(index, i['squad'], i['season'])
@@ -471,6 +478,7 @@ def clean_rosters(file_path, config, info):
     df.to_pickle(fp)
     return df
 
+
 def upsert_df(df, table_name, conn_string, unique_columns, db_config, schema='soccer', dedupe=False):
     """
     Upserts a pandas DataFrame to a PostgreSQL table.
@@ -489,8 +497,10 @@ def upsert_df(df, table_name, conn_string, unique_columns, db_config, schema='so
     if 'numeric_cols' in config:
         num_cols = config['numeric_cols']
         for col in num_cols:
-            df[col] = pd.to_numeric(df[col], errors='coerce')
-            df[col] = df[col].fillna(0)
+            df.loc[:, col] = pd.to_numeric(df[col], errors='coerce')
+            df.loc[:, col] = df[col].fillna(0)
+            #df[col] = df[col].replace({pd.NA: 0, np.nan: 0})
+
     
     if dedupe:
         df = df.drop_duplicates(subset=unique_columns, ignore_index=True)

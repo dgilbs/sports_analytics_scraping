@@ -1,6 +1,6 @@
 -- f_player_match_keeper definition
 
-CREATE TABLE f_player_match_keeper(
+CREATE TABLE if not exists soccer.f_player_match_keeper(
 	id varchar(50) PRIMARY KEY, 
 	player_id varchar(20),
 	team_id varchar(20),

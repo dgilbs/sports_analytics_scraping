@@ -6,13 +6,22 @@ import ssl
 import pandas as pd
 import importlib
 import time
+import sys
+import warnings
 from datetime import date, timedelta, datetime
+current_dir = os.getcwd()
+parent_dir = os.path.abspath(os.path.join(current_dir, '../base_code/'))
+sys.path.append(parent_dir)
+import query_db as qdb
 
+conn_string =  "postgresql://danielgilberg:password@localhost:5432/projects"
 
 
 st = datetime.now()
 
 importlib.reload(scs)
+
+pd.set_option('future.no_silent_downcasting', True)
 
 
 ssl._create_default_https_context = ssl._create_unverified_context
@@ -26,8 +35,6 @@ with open("db_config.yaml", 'r') as stream:
 with open("scraping_config.yaml", 'r') as stream:
     scraping_config = yaml.safe_load(stream)
     
-with open("scraping_config.yaml", 'r') as stream:
-    scraping_config = yaml.safe_load(stream)
     
 with open("config.yaml", 'r') as stream:
     config = yaml.safe_load(stream)
@@ -38,9 +45,13 @@ with open("leagues.yaml", 'r') as stream:
 with open("code_run_config_default.yaml", 'r') as stream:
     cr_config = yaml.safe_load(stream)
 
+if cr_config['filter_leagues']:
+    league_list = cr_config['use_leagues']
+else:
+    league_list = cr_config['data_run'].keys()
 
 schedules = list()
-for key in cr_config['data_run']:
+for key in league_list:
     temp_dict = cr_config['data_run'][key]
     league_tag = temp_dict['league_tag']
     season = temp_dict['season']
@@ -78,10 +89,11 @@ scs.upsert_df(teams, 'dim_team_matches', conn_string, ['id'], db_config)
 scs.scrape_from_schedule(full_schedule, scraping_config)
 
 ids = list(full_schedule.id)
-categories = ['summary', 'passing', 'possession', 'defense','shots', 'possession', 'passing_types', 'keeper']
+categories = ['summary', 'passing', 'possession', 'defense','shots', 'possession', 'passing_types', 'keeper', 'misc']
 combos = list(itertools.product(ids, categories))
 for j in combos:
     print(j)
+    errors = list()
     match_id = j[0]
     cat = j[1]
     if cat != 'shots':
@@ -97,7 +109,8 @@ for j in combos:
             table = 'f_player_match_{}'.format(cat)
             idf = pd.concat([away_df, home_df], ignore_index=True)
         except Exception as e:
-            print(e)
+            row = ['Cleaning', match_id, cat]
+            errors.append(row)
             idf = None
     else:
         try:
@@ -116,13 +129,26 @@ for j in combos:
         scs.upsert_df(idf, 'dim_player_appearances', conn_string, ['id'], db_config)
         scs.upsert_df(idf, 'dim_players', conn_string, ['id'], db_config)
 
-    
     if idf is not None:
-        scs.upsert_df(idf, table, conn_string, ['id'], db_config)
+        try:
+            scs.upsert_df(idf, table, conn_string, ['id'], db_config)
+        except Exception as e:
+            print(e)
+            row = ['Database', match_id, cat]
+            errors.append(row)
 
 et = datetime.now()
 # print(len(ids))
 print(et-st)
+if len(errors) > 0:
+    print('errors found:' )
+    for k in errors:
+        print(k)
+else: 
+    print('no errors found')
+
+qdb.backup_all_soccer_tables(conn_string)
+print('backup complete')
 
 
 

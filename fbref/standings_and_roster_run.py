@@ -4,7 +4,6 @@ import scraping_script as scs
 import time
 import logging
 import datetime
-import warnings
 
 # timestamp = datetime.datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
 # log_filename = f"log_{timestamp}.txt"
@@ -16,7 +15,7 @@ import warnings
 #     format="%(asctime)s - %(levelname)s - %(message)s"
 # )
 
-warnings.filter('ignore')
+
 
 with open("data_config.yaml", 'r') as stream:
     data_config = yaml.safe_load(stream)
