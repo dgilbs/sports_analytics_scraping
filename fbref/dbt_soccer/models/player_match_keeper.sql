@@ -12,7 +12,7 @@ dsa.squad as opponent,
 dtm.season,
 dtm.match_date,
 dc.competition,
-dpa."position",
+dpa."position" as match_position,
 ft.minutes,
 ft.shots_on_target_against,
 ft.goals_allowed,
@@ -31,16 +31,16 @@ ft.crosses_faced,
 ft.crosses_stopped,
 ft.defensive_actions_outside_pen_area,
 ft.avg_distance_of_defensive_actions
-from f_player_match_keeper ft
-left join dim_players dp 
+from soccer.f_player_match_keeper ft
+left join soccer.dim_players dp 
 on dp.id = ft.player_id
-left join dim_squads ds 
+left join soccer.dim_squads ds 
 on ds.id = ft.team_id
-left join dim_team_matches dtm
+left join soccer.dim_team_matches dtm
 on dtm.match_id = ft.match_id and dtm.team_id = ft.team_id
-left join dim_squads dsa 
+left join soccer.dim_squads dsa 
 on dsa.id = dtm.opponent_id
-left join dim_competitions dc
+left join soccer.dim_competitions dc
 on dc.id = dtm.competition_id
-left join dim_player_appearances dpa 
+left join soccer.dim_player_appearances dpa 
 on dpa.id = ft.id

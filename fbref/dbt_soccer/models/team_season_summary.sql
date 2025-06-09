@@ -27,7 +27,10 @@ sum(xg) as xg,
 sum(npxg) as npxg,
 sum(xag) as xag,
 sum(shot_creating_actions) as shot_creating_actions,
-sum(goal_creating_actions) as goal_creating_actions
+sum(goal_creating_actions) as goal_creating_actions,
+sum(goals) - sum(xg) as xg_difference,
+sum(cast(shots_on_target as float))/sum(shots) as shot_ratio,
+sum(xg)/sum(shots_on_target) as xg_per_shot
 from soccer.f_player_match_summary fpms
 left join soccer.dim_squads ds 
 on ds.id = fpms.team_id

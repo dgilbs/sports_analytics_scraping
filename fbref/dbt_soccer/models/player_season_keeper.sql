@@ -23,12 +23,12 @@ sum(ft.goal_kicks_attempted) as goal_kicks_attempted,
 sum(ft.crosses_faced) as crosses_faced,
 sum(ft.crosses_stopped) as crosses_stopped,
 sum(ft.defensive_actions_outside_pen_area) as defensive_actions_outside_pen_area,
-round((sum(shots_on_target_against) * 1.0/sum(fpms.minutes)) * 90.0,3) as shots_on_target_against_per_90,
-round((sum(goals_allowed) * 1.0/sum(fpms.minutes)) * 90.0,3) as goals_allowed_per_90,
-round((sum(saves) * 1.0/sum(fpms.minutes)) * 90.0,3) as saves_per_90,
-round((sum(psxg) * 1.0/sum(fpms.minutes)) * 90.0,3) as psxg_per_90,
-round((sum(crosses_stopped) * 1.0/sum(fpms.minutes)) * 90.0,3) as crosses_stopped_per_90,
-round((sum(defensive_actions_outside_pen_area) * 1.0/sum(fpms.minutes)) * 90.0,3) as defensive_actions_outside_pen_area_per_90
+round((sum(shots_on_target_against) * 1.0/sum(ft.minutes)) * 90.0,3) as shots_on_target_against_per_90,
+round((sum(goals_allowed) * 1.0/sum(ft.minutes)) * 90.0,3) as goals_allowed_per_90,
+round((sum(saves) * 1.0/sum(ft.minutes)) * 90.0,3) as saves_per_90,
+round(sum(psxg::numeric)/sum(ft.minutes) * 90.0, 3) as psxg_per_90,
+round((sum(crosses_stopped) * 1.0/sum(ft.minutes)) * 90.0,3) as crosses_stopped_per_90,
+round((sum(defensive_actions_outside_pen_area) * 1.0/sum(ft.minutes)) * 90.0,3) as defensive_actions_outside_pen_area_per_90
 from soccer.f_player_match_keeper ft
 left join soccer.dim_players dp 
 on dp.id = ft.player_id
@@ -42,3 +42,4 @@ left join soccer.dim_competitions dc
 on dc.id = dtm.competition_id
 left join soccer.dim_player_appearances dpa 
 on dpa.id = ft.id
+group by 1,2,3,4

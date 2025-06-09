@@ -1,4 +1,4 @@
-CREATE TABLE "dim_matches"(
+CREATE TABLE if not exists "soccer.dim_matches"(
     id varchar(30) primary key,
     match_date date,
     competition_id int,

@@ -1,0 +1,785 @@
+﻿nwsfl_team_id,manager_name,player_id,player,fantasy_week,status
+2025_1_7,Danny,32f48f46,Racheal Kundananji,1,PLAY
+2025_1_7,Danny,01079eae,Felicitas Rauch,1,PLAY
+2025_1_7,Danny,e940a089,Vanessa DiBernardo,1,PLAY
+2025_1_7,Danny,24478b0c,Danielle Colaprico,1,PLAY
+2025_1_7,Danny,9d82fe8e,Delphine Cascarino,1,PLAY
+2025_1_7,Danny,f2284088,Claire Emslie,1,PLAY
+2025_1_7,Danny,36008361,Gisele Thompson,1,PLAY
+2025_1_7,Danny,947d22fb,Abby Smith,1,BENCH
+2025_1_7,Danny,2625e415,Paige Monaghan,1,BENCH
+2025_1_7,Danny,43d5b985,Isabel Rodriguez,1,BENCH
+2025_1_7,Danny,c40fd1ac,Jane Campbell,1,PLAY
+2025_1_7,Danny,add26dda,Savannah Demelo,1,PLAY
+2025_1_7,Danny,e47d2297,Jessie Fleming,1,PLAY
+2025_1_7,Danny,714e5fef,Emily Sams,1,PLAY
+2025_1_7,Danny,32f48f46,Racheal Kundananji,7,PLAY
+2025_1_7,Danny,01079eae,Felicitas Rauch,7,PLAY
+2025_1_7,Danny,e940a089,Vanessa DiBernardo,7,PLAY
+2025_1_7,Danny,24478b0c,Danielle Colaprico,7,PLAY
+2025_1_7,Danny,9d82fe8e,Delphine Cascarino,7,PLAY
+2025_1_7,Danny,f2284088,Claire Emslie,7,PLAY
+2025_1_7,Danny,36008361,Gisele Thompson,7,BENCH
+2025_1_7,Danny,947d22fb,Abby Smith,7,BENCH
+2025_1_7,Danny,2625e415,Paige Monaghan,7,BENCH
+2025_1_7,Danny,43d5b985,Isabel Rodriguez,7,PLAY
+2025_1_7,Danny,c40fd1ac,Jane Campbell,7,PLAY
+2025_1_7,Danny,add26dda,Savannah Demelo,7,PLAY
+2025_1_7,Danny,fb6605c0,Bea Franklin,7,PLAY
+2025_1_7,Danny,714e5fef,Emily Sams,7,PLAY
+2025_1_9,Chris,7ca7c385,Alana Cook,7,PLAY
+2025_1_9,Chris,8252bc62,Alanna Kennedy,7,BENCH
+2025_1_9,Chris,6946f9d4,Cassie Miller,7,BENCH
+2025_1_9,Chris,aa0f9aa7,Croix Bethune,7,PLAY
+2025_1_9,Chris,8dd703ab,Gabi Portilho,7,PLAY
+2025_1_9,Chris,0ae418c9,Gia Corley,7,PLAY
+2025_1_9,Chris,77361b23,Jaedyn Shaw,7,PLAY
+2025_1_9,Chris,bb5e99fc,Jess Carter,7,PLAY
+2025_1_9,Chris,fa5e9ae1,Katie Lind,7,PLAY
+2025_1_9,Chris,0ce1f38f,Lorena,7,PLAY
+2025_1_9,Chris,a4a65861,Manaka Matsukubo,7,PLAY
+2025_1_9,Chris,bd325738,Maria Sanchez,7,PLAY
+2025_1_9,Chris,787e8bfd,Ryan Williams,7,PLAY
+2025_1_9,Chris,f593cab9,Jun Endo,7,BENCH
+2025_1_6,Mariam,e91c05ee,Ally Sentnor,7,PLAY
+2025_1_6,Mariam,93504985,Ana Tejada,7,PLAY
+2025_1_6,Mariam,d2de2f84,Ashley Hatch,7,PLAY
+2025_1_6,Mariam,d6ed0c7f,Beatriz,7,PLAY
+2025_1_6,Mariam,ed06502e,Casey Krueger,7,BENCH
+2025_1_6,Mariam,493c384e,Casey Murphy,7,PLAY
+2025_1_6,Mariam,5689807c,Claudia Dickey,7,BENCH
+2025_1_6,Mariam,edb4b4b1,Joelle Anderson,7,PLAY
+2025_1_6,Mariam,c5ca9ed9,Jordyn Bugg,7,PLAY
+2025_1_6,Mariam,4059a68f,Makenna Morris,7,PLAY
+2025_1_6,Mariam,9e5caab3,Melanie Barcenas,7,BENCH
+2025_1_6,Mariam,9b763275,Samantha Staab,7,PLAY
+2025_1_6,Mariam,c6122e4b,Sarah Gorden,7,PLAY
+2025_1_6,Mariam,2f3ffc2d,Denise O'Sullivan,7,PLAY
+2025_1_1,Bill,36355319,Amanda McGlynn,7,PLAY
+2025_1_1,Bill,0ba36ee8,Kayla Sharples,7,PLAY
+2025_1_1,Bill,be5200d5,Kennedy Fuller,7,PLAY
+2025_1_1,Bill,aa902703,Lilly Reale,7,PLAY
+2025_1_1,Bill,f8e41f9d,Malia Berkely,7,BENCH
+2025_1_1,Bill,ee5355a7,Mandy Freeman,7,PLAY
+2025_1_1,Bill,3857e361,Marta,7,PLAY
+2025_1_1,Bill,7bb60dd3,Narumi Miura,7,PLAY
+2025_1_1,Bill,d1a10776,Rafaelle,7,BENCH
+2025_1_1,Bill,1233544d,Rosemonde Kouassi,7,PLAY
+2025_1_1,Bill,8546d3ab,Savannah McCaskill,7,PLAY
+2025_1_1,Bill,e9082a8d,Taylor Huff,7,PLAY
+2025_1_1,Bill,8f146dff,Esther Gonz√°lez,7,PLAY
+2025_1_1,Bill,,Mia Justus,7,BENCH
+2025_1_3,Joey,06115ef0,Angelina Anderson,7,PLAY
+2025_1_3,Joey,7824185a,Barbra Banda,7,PLAY
+2025_1_3,Joey,73eb19a8,Bella Bixby,7,BENCH
+2025_1_3,Joey,08acd418,Emily Sonnett,7,PLAY
+2025_1_3,Joey,1cc6b80b,Kaitlyn Torpey,7,BENCH
+2025_1_3,Joey,1cb43c5f,Kenza Dali,7,PLAY
+2025_1_3,Joey,36e74d61,Leicy Santos,7,PLAY
+2025_1_3,Joey,7fa57813,Ludmila,7,PLAY
+2025_1_3,Joey,bb65b66d,Manaka Hayashi,7,BENCH
+2025_1_3,Joey,ac768b90,Mina Tanaka,7,PLAY
+2025_1_3,Joey,197fe553,Perle Morroni,7,PLAY
+2025_1_3,Joey,77ce913d,Gabrille Carle,7,PLAY
+2025_1_3,Joey,bf9f8b7f,Reyna Reyes,7,PLAY
+2025_1_3,Joey,92075fc4,Julia Grosso,7,PLAY
+2025_1_10,Nancy,85cea0cf,Debinha,7,PLAY
+2025_1_10,Nancy,23a1662b,Asisat Oshoala,7,BENCH
+2025_1_10,Nancy,9d2c6180,Taylor Flint,7,PLAY
+2025_1_10,Nancy,c4f44958,Caprice Dydasco,7,PLAY
+2025_1_10,Nancy,dcd6a67e,Rose Lavelle,7,BENCH
+2025_1_10,Nancy,2e87a8a5,Riley Jackson,7,PLAY
+2025_1_10,Nancy,e31c93ca,Trinity Armstrong,7,PLAY
+2025_1_10,Nancy,b07b7c39,Kennedy Wesley,7,PLAY
+2025_1_10,Nancy,b26a8c1f,Nealy Martin,7,PLAY
+2025_1_10,Nancy,08569d75,Lauren Milliet,7,PLAY
+2025_1_10,Nancy,e70a7484,Katie Lund,7,PLAY
+2025_1_10,Nancy,0ac84745,Lynn Biyendolo,7,PLAY
+2025_1_10,Nancy,,Shelby Hogan,7,BENCH
+2025_1_10,Nancy,b86badfa,Temwa Chawinga,7,PLAY
+2025_1_8,Brock Wallace,938dc3a8,Kiki Pickett,7,PLAY
+2025_1_8,Brock Wallace,453fa0c0,Halle Mackiewicz,7,BENCH
+2025_1_8,Brock Wallace,4c1ee572,Alyssa Naeher,7,PLAY
+2025_1_8,Brock Wallace,70b0fd86,Mallory Swanson,7,BENCH
+2025_1_8,Brock Wallace,580d2856,Shinomi Koyama,7,PLAY
+2025_1_8,Brock Wallace,8d5a8340,Ana María Guzmán,7,BENCH
+2025_1_8,Brock Wallace,3a794757,Grace Chanda,7,PLAY
+2025_1_8,Brock Wallace,37ed9d8f,Hanna Lundkvist,7,PLAY
+2025_1_8,Brock Wallace,8cfb97f5,Kate Del Fava,7,PLAY
+2025_1_8,Brock Wallace,74911ec6,Trinity Rodman,7,PLAY
+2025_1_8,Brock Wallace,60d80b92,Ji So-yun,7,PLAY
+2025_1_8,Brock Wallace,7ec2ba7c,Emma Sears,7,PLAY
+2025_1_8,Brock Wallace,aa1c2ad1,Hina Sugita,7,PLAY
+2025_1_8,Brock Wallace,45cf25bf,Haley McCutcheon,7,PLAY
+2025_1_4,Jackson,50bf36a3,Alyssa Malonson,7,PLAY
+2025_1_4,Jackson,2a0f0a55,Paige Nielsen,7,PLAY
+2025_1_4,Jackson,0f668725,Jameese Joseph,7,PLAY
+2025_1_4,Jackson,61531e4e,Carson Pickett,7,BENCH
+2025_1_4,Jackson,47b9e2ef,Hannah Bebar,7,BENCH
+2025_1_4,Jackson,22502cce,Yazmeen Ryan,7,PLAY
+2025_1_4,Jackson,3d1f29d9,Jordyn Huitema,7,PLAY
+2025_1_4,Jackson,3213cad3,Jaelin Howell,7,PLAY
+2025_1_4,Jackson,be9f3298,Ann-Katrin Berger,7,PLAY
+2025_1_4,Jackson,2d8ec240,Tara McKeown,7,PLAY
+2025_1_4,Jackson,30f6344f,Mackenzie Arnold,7,BENCH
+2025_1_4,Jackson,8dc6b01e,Maggie Graham,7,PLAY
+2025_1_4,Jackson,7db28545,Claire Hutton,7,PLAY
+2025_1_4,Jackson,5dfeb94f,Savy King,7,PLAY
+2025_1_2,Noelle,23b17daa,Kaleigh Kurtz,7,PLAY
+2025_1_2,Noelle,268a4e22,Ella Stevens,7,PLAY
+2025_1_2,Noelle,020eaa4d,Aubrey Kingsbury,7,PLAY
+2025_1_2,Noelle,82f12690,Claudia Zornoza,7,BENCH
+2025_1_2,Noelle,c94c70bc,Margaret Purce,7,PLAY
+2025_1_2,Noelle,56d5fb23,Ally Watt,7,PLAY
+2025_1_2,Noelle,49d6d4a8,Angelina,7,PLAY
+2025_1_2,Noelle,ecacba26,Esme Morgan,7,PLAY
+2025_1_2,Noelle,90ebe6bf,Sandy MacIver,7,BENCH
+2025_1_2,Noelle,ace997a7,Cori Dyke,7,PLAY
+2025_1_2,Noelle,b4ce93ce,Bárbara Olivieri,7,PLAY
+2025_1_2,Noelle,c942bc07,Natalie Jacobs,7,BENCH
+2025_1_2,Noelle,e4ef9beb,Lo'eau LaBonta,7,PLAY
+2025_1_2,Noelle,a69d6298,Ellis Wheeler,7,PLAY
+2025_1_5,Ryne,4c3147d0,Tess Boade,7,PLAY
+2025_1_5,Ryne,52b58405,Abby Dahlkemper,7,PLAY
+2025_1_5,Ryne,56f16bc7,Cari Roccaro,7,PLAY
+2025_1_5,Ryne,8b5135ec,Madison Curry,7,PLAY
+2025_1_5,Ryne,2fcc0a10,Alyssa Thompson,7,PLAY
+2025_1_5,Ryne,feef7ea8,Laurel Ivory,7,BENCH
+2025_1_5,Ryne,f02cb699,Phoebe McClernon,7,PLAY
+2025_1_5,Ryne,45419c74,Kerry Abello,7,PLAY
+2025_1_5,Ryne,883f60f8,Avery Patterson,7,PLAY
+2025_1_5,Ryne,e8f90dc9,Sophie Schmidt,7,PLAY
+2025_1_5,Ryne,271c5edc,Anna Moorhouse,7,PLAY
+2025_1_5,Ryne,4d28a90a,Sam Coffey,7,PLAY
+2025_1_5,Ryne,,Trinity Byars,7,BENCH
+2025_1_5,Ryne,220b9b36,Ainsley McCammon,7,BENCH
+2025_1_11,Cam,2b0527c9,Arin Wright,7,PLAY
+2025_1_11,Cam,9ced946b,Ashley Sanchez,7,PLAY
+2025_1_11,Cam,ef032510,Delanie Sheehan,7,PLAY
+2025_1_11,Cam,277ae96a,Hal Hershfelt,7,BENCH
+2025_1_11,Cam,43466fe0,Janine Beckie,7,PLAY
+2025_1_11,Cam,46b237d3,Kailen Sheridan,7,PLAY
+2025_1_11,Cam,7f140cb9,Kylie Strom,7,PLAY
+2025_1_11,Cam,78d285e6,Madison Pogarch,7,PLAY
+2025_1_11,Cam,2021c04f,Marisa DiGrande,7,PLAY
+2025_1_11,Cam,a0516248,Mary Vignola,7,PLAY
+2025_1_11,Cam,5f97ae2e,Michelle Cooper,7,BENCH
+2025_1_11,Cam,3ee50ac6,Olivia Moultrie,7,PLAY
+2025_1_11,Cam,4f994efc,Summer Yates,7,PLAY
+2025_1_11,Cam,42ecf0e8,Didi Haracic,7,BENCH
+2025_1_7,Danny,32f48f46,Racheal Kundananji,6,PLAY
+2025_1_7,Danny,01079eae,Felicitas Rauch,6,PLAY
+2025_1_7,Danny,e940a089,Vanessa DiBernardo,6,PLAY
+2025_1_7,Danny,24478b0c,Danielle Colaprico,6,PLAY
+2025_1_7,Danny,9d82fe8e,Delphine Cascarino,6,PLAY
+2025_1_7,Danny,f2284088,Claire Emslie,6,PLAY
+2025_1_7,Danny,36008361,Gisele Thompson,6,BENCH
+2025_1_7,Danny,947d22fb,Abby Smith,6,BENCH
+2025_1_7,Danny,2625e415,Paige Monaghan,6,BENCH
+2025_1_7,Danny,43d5b985,Isabel Rodriguez,6,PLAY
+2025_1_7,Danny,c40fd1ac,Jane Campbell,6,PLAY
+2025_1_7,Danny,add26dda,Savannah Demelo,6,PLAY
+2025_1_7,Danny,fb6605c0,Bea Franklin,6,PLAY
+2025_1_7,Danny,714e5fef,Emily Sams,6,PLAY
+2025_1_9,Chris,7ca7c385,Alana Cook,6,PLAY
+2025_1_9,Chris,8252bc62,Alanna Kennedy,6,BENCH
+2025_1_9,Chris,6946f9d4,Cassie Miller,6,BENCH
+2025_1_9,Chris,aa0f9aa7,Croix Bethune,6,PLAY
+2025_1_9,Chris,8dd703ab,Gabi Portilho,6,PLAY
+2025_1_9,Chris,0ae418c9,Gia Corley,6,PLAY
+2025_1_9,Chris,77361b23,Jaedyn Shaw,6,PLAY
+2025_1_9,Chris,bb5e99fc,Jess Carter,6,PLAY
+2025_1_9,Chris,fa5e9ae1,Katie Lind,6,PLAY
+2025_1_9,Chris,0ce1f38f,Lorena,6,PLAY
+2025_1_9,Chris,a4a65861,Manaka Matsukubo,6,PLAY
+2025_1_9,Chris,bd325738,Maria Sanchez,6,PLAY
+2025_1_9,Chris,787e8bfd,Ryan Williams,6,PLAY
+2025_1_9,Chris,f593cab9,Jun Endo,6,BENCH
+2025_1_6,Mariam,e91c05ee,Ally Sentnor,6,PLAY
+2025_1_6,Mariam,93504985,Ana Tejada,6,PLAY
+2025_1_6,Mariam,d2de2f84,Ashley Hatch,6,PLAY
+2025_1_6,Mariam,d6ed0c7f,Beatriz,6,PLAY
+2025_1_6,Mariam,ed06502e,Casey Krueger,6,BENCH
+2025_1_6,Mariam,493c384e,Casey Murphy,6,PLAY
+2025_1_6,Mariam,5689807c,Claudia Dickey,6,BENCH
+2025_1_6,Mariam,edb4b4b1,Joelle Anderson,6,PLAY
+2025_1_6,Mariam,c5ca9ed9,Jordyn Bugg,6,PLAY
+2025_1_6,Mariam,4059a68f,Makenna Morris,6,PLAY
+2025_1_6,Mariam,9e5caab3,Melanie Barcenas,6,BENCH
+2025_1_6,Mariam,9b763275,Samantha Staab,6,PLAY
+2025_1_6,Mariam,c6122e4b,Sarah Gorden,6,PLAY
+2025_1_6,Mariam,2f3ffc2d,Denise O'Sullivan,6,PLAY
+2025_1_1,Bill,36355319,Amanda McGlynn,6,PLAY
+2025_1_1,Bill,0ba36ee8,Kayla Sharples,6,PLAY
+2025_1_1,Bill,be5200d5,Kennedy Fuller,6,PLAY
+2025_1_1,Bill,aa902703,Lilly Reale,6,PLAY
+2025_1_1,Bill,f8e41f9d,Malia Berkely,6,BENCH
+2025_1_1,Bill,ee5355a7,Mandy Freeman,6,BENCH
+2025_1_1,Bill,3857e361,Marta,6,PLAY
+2025_1_1,Bill,7bb60dd3,Narumi Miura,6,PLAY
+2025_1_1,Bill,d1a10776,Rafaelle,6,PLAY
+2025_1_1,Bill,1233544d,Rosemonde Kouassi,6,PLAY
+2025_1_1,Bill,8546d3ab,Savannah McCaskill,6,PLAY
+2025_1_1,Bill,e9082a8d,Taylor Huff,6,PLAY
+2025_1_1,Bill,8f146dff,Esther Gonz√°lez,6,PLAY
+2025_1_1,Bill,,Mia Justus,6,BENCH
+2025_1_3,Joey,06115ef0,Angelina Anderson,6,PLAY
+2025_1_3,Joey,7824185a,Barbra Banda,6,PLAY
+2025_1_3,Joey,73eb19a8,Bella Bixby,6,BENCH
+2025_1_3,Joey,08acd418,Emily Sonnett,6,PLAY
+2025_1_3,Joey,1cc6b80b,Kaitlyn Torpey,6,PLAY
+2025_1_3,Joey,1cb43c5f,Kenza Dali,6,PLAY
+2025_1_3,Joey,36e74d61,Leicy Santos,6,PLAY
+2025_1_3,Joey,7fa57813,Ludmila,6,PLAY
+2025_1_3,Joey,bb65b66d,Manaka Hayashi,6,BENCH
+2025_1_3,Joey,ac768b90,Mina Tanaka,6,BENCH
+2025_1_3,Joey,197fe553,Perle Morroni,6,PLAY
+2025_1_3,Joey,77ce913d,Gabrille Carle,6,PLAY
+2025_1_3,Joey,bf9f8b7f,Reyna Reyes,6,PLAY
+2025_1_3,Joey,92075fc4,Julia Grosso,6,PLAY
+2025_1_10,Nancy,85cea0cf,Debinha,6,PLAY
+2025_1_10,Nancy,23a1662b,Asisat Oshoala,6,BENCH
+2025_1_10,Nancy,9d2c6180,Taylor Flint,6,PLAY
+2025_1_10,Nancy,c4f44958,Caprice Dydasco,6,PLAY
+2025_1_10,Nancy,dcd6a67e,Rose Lavelle,6,BENCH
+2025_1_10,Nancy,2e87a8a5,Riley Jackson,6,PLAY
+2025_1_10,Nancy,e31c93ca,Trinity Armstrong,6,PLAY
+2025_1_10,Nancy,b07b7c39,Kennedy Wesley,6,PLAY
+2025_1_10,Nancy,b26a8c1f,Nealy Martin,6,PLAY
+2025_1_10,Nancy,08569d75,Lauren Milliet,6,PLAY
+2025_1_10,Nancy,e70a7484,Katie Lund,6,PLAY
+2025_1_10,Nancy,0ac84745,Lynn Biyendolo,6,PLAY
+2025_1_10,Nancy,,Shelby Hogan,6,BENCH
+2025_1_10,Nancy,b86badfa,Temwa Chawinga,6,PLAY
+2025_1_8,Brock Wallace,938dc3a8,Kiki Pickett,6,PLAY
+2025_1_8,Brock Wallace,453fa0c0,Halle Mackiewicz,6,BENCH
+2025_1_8,Brock Wallace,4c1ee572,Alyssa Naeher,6,PLAY
+2025_1_8,Brock Wallace,70b0fd86,Mallory Swanson,6,BENCH
+2025_1_8,Brock Wallace,580d2856,Shinomi Koyama,6,PLAY
+2025_1_8,Brock Wallace,8d5a8340,Ana María Guzmán,6,BENCH
+2025_1_8,Brock Wallace,3a794757,Grace Chanda,6,PLAY
+2025_1_8,Brock Wallace,37ed9d8f,Hanna Lundkvist,6,PLAY
+2025_1_8,Brock Wallace,8cfb97f5,Kate Del Fava,6,PLAY
+2025_1_8,Brock Wallace,74911ec6,Trinity Rodman,6,PLAY
+2025_1_8,Brock Wallace,60d80b92,Ji So-yun,6,PLAY
+2025_1_8,Brock Wallace,7ec2ba7c,Emma Sears,6,PLAY
+2025_1_8,Brock Wallace,aa1c2ad1,Hina Sugita,6,PLAY
+2025_1_8,Brock Wallace,45cf25bf,Haley McCutcheon,6,PLAY
+2025_1_4,Jackson,50bf36a3,Alyssa Malonson,6,PLAY
+2025_1_4,Jackson,2a0f0a55,Paige Nielsen,6,PLAY
+2025_1_4,Jackson,0f668725,Jameese Joseph,6,PLAY
+2025_1_4,Jackson,61531e4e,Carson Pickett,6,BENCH
+2025_1_4,Jackson,47b9e2ef,Hannah Bebar,6,BENCH
+2025_1_4,Jackson,22502cce,Yazmeen Ryan,6,PLAY
+2025_1_4,Jackson,3d1f29d9,Jordyn Huitema,6,PLAY
+2025_1_4,Jackson,3213cad3,Jaelin Howell,6,PLAY
+2025_1_4,Jackson,be9f3298,Ann-Katrin Berger,6,PLAY
+2025_1_4,Jackson,2d8ec240,Tara McKeown,6,PLAY
+2025_1_4,Jackson,30f6344f,Mackenzie Arnold,6,BENCH
+2025_1_4,Jackson,8dc6b01e,Maggie Graham,6,PLAY
+2025_1_4,Jackson,7db28545,Claire Hutton,6,PLAY
+2025_1_4,Jackson,5dfeb94f,Savy King,6,PLAY
+2025_1_2,Noelle,23b17daa,Kaleigh Kurtz,6,PLAY
+2025_1_2,Noelle,268a4e22,Ella Stevens,6,PLAY
+2025_1_2,Noelle,020eaa4d,Aubrey Kingsbury,6,PLAY
+2025_1_2,Noelle,82f12690,Claudia Zornoza,6,PLAY
+2025_1_2,Noelle,c94c70bc,Margaret Purce,6,BENCH
+2025_1_2,Noelle,56d5fb23,Ally Watt,6,PLAY
+2025_1_2,Noelle,49d6d4a8,Angelina,6,PLAY
+2025_1_2,Noelle,ecacba26,Esme Morgan,6,PLAY
+2025_1_2,Noelle,90ebe6bf,Sandy MacIver,6,BENCH
+2025_1_2,Noelle,ace997a7,Cori Dyke,6,PLAY
+2025_1_2,Noelle,b4ce93ce,Bárbara Olivieri,6,PLAY
+2025_1_2,Noelle,c942bc07,Natalie Jacobs,6,BENCH
+2025_1_2,Noelle,e4ef9beb,Lo'eau LaBonta,6,PLAY
+2025_1_2,Noelle,a69d6298,Ellis Wheeler,6,PLAY
+2025_1_5,Ryne,4c3147d0,Tess Boade,6,PLAY
+2025_1_5,Ryne,52b58405,Abby Dahlkemper,6,PLAY
+2025_1_5,Ryne,56f16bc7,Cari Roccaro,6,PLAY
+2025_1_5,Ryne,8b5135ec,Madison Curry,6,PLAY
+2025_1_5,Ryne,2fcc0a10,Alyssa Thompson,6,PLAY
+2025_1_5,Ryne,feef7ea8,Laurel Ivory,6,BENCH
+2025_1_5,Ryne,f02cb699,Phoebe McClernon,6,PLAY
+2025_1_5,Ryne,45419c74,Kerry Abello,6,PLAY
+2025_1_5,Ryne,883f60f8,Avery Patterson,6,PLAY
+2025_1_5,Ryne,e8f90dc9,Sophie Schmidt,6,PLAY
+2025_1_5,Ryne,271c5edc,Anna Moorhouse,6,PLAY
+2025_1_5,Ryne,4d28a90a,Sam Coffey,6,PLAY
+2025_1_5,Ryne,,Trinity Byars,6,BENCH
+2025_1_5,Ryne,220b9b36,Ainsley McCammon,6,BENCH
+2025_1_11,Cam,2b0527c9,Arin Wright,6,PLAY
+2025_1_11,Cam,9ced946b,Ashley Sanchez,6,PLAY
+2025_1_11,Cam,ef032510,Delanie Sheehan,6,PLAY
+2025_1_11,Cam,277ae96a,Hal Hershfelt,6,BENCH
+2025_1_11,Cam,43466fe0,Janine Beckie,6,PLAY
+2025_1_11,Cam,46b237d3,Kailen Sheridan,6,PLAY
+2025_1_11,Cam,7f140cb9,Kylie Strom,6,PLAY
+2025_1_11,Cam,78d285e6,Madison Pogarch,6,PLAY
+2025_1_11,Cam,2021c04f,Marisa DiGrande,6,PLAY
+2025_1_11,Cam,a0516248,Mary Vignola,6,PLAY
+2025_1_11,Cam,5f97ae2e,Michelle Cooper,6,BENCH
+2025_1_11,Cam,3ee50ac6,Olivia Moultrie,6,PLAY
+2025_1_11,Cam,4f994efc,Summer Yates,6,PLAY
+2025_1_11,Cam,42ecf0e8,Didi Haracic,6,BENCH
+2025_1_7,Danny,32f48f46,Racheal Kundananji,8,PLAY
+2025_1_7,Danny,01079eae,Felicitas Rauch,8,BENCH
+2025_1_7,Danny,e940a089,Vanessa DiBernardo,8,PLAY
+2025_1_7,Danny,24478b0c,Danielle Colaprico,8,PLAY
+2025_1_7,Danny,9d82fe8e,Delphine Cascarino,8,PLAY
+2025_1_7,Danny,f2284088,Claire Emslie,8,PLAY
+2025_1_7,Danny,36008361,Gisele Thompson,8,PLAY
+2025_1_7,Danny,947d22fb,Abby Smith,8,PLAY
+2025_1_7,Danny,2625e415,Paige Monaghan,8,BENCH
+2025_1_7,Danny,43d5b985,Isabel Rodriguez,8,PLAY
+2025_1_7,Danny,c40fd1ac,Jane Campbell,8,BENCH
+2025_1_7,Danny,add26dda,Savannah Demelo,8,PLAY
+2025_1_7,Danny,fb6605c0,Bea Franklin,8,PLAY
+2025_1_7,Danny,714e5fef,Emily Sams,8,PLAY
+2025_1_9,Chris,7ca7c385,Alana Cook,8,PLAY
+2025_1_9,Chris,8252bc62,Alanna Kennedy,8,PLAY
+2025_1_9,Chris,6946f9d4,Cassie Miller,8,BENCH
+2025_1_9,Chris,aa0f9aa7,Croix Bethune,8,PLAY
+2025_1_9,Chris,8dd703ab,Gabi Portilho,8,PLAY
+2025_1_9,Chris,0ae418c9,Gia Corley,8,PLAY
+2025_1_9,Chris,77361b23,Jaedyn Shaw,8,BENCH
+2025_1_9,Chris,bb5e99fc,Jess Carter,8,PLAY
+2025_1_9,Chris,fa5e9ae1,Katie Lind,8,PLAY
+2025_1_9,Chris,0ce1f38f,Lorena,8,PLAY
+2025_1_9,Chris,a4a65861,Manaka Matsukubo,8,PLAY
+2025_1_9,Chris,bd325738,Maria Sanchez,8,PLAY
+2025_1_9,Chris,787e8bfd,Ryan Williams,8,PLAY
+2025_1_9,Chris,f593cab9,Jun Endo,8,BENCH
+2025_1_6,Mariam,e91c05ee,Ally Sentnor,8,PLAY
+2025_1_6,Mariam,93504985,Ana Tejada,8,PLAY
+2025_1_6,Mariam,d2de2f84,Ashley Hatch,8,PLAY
+2025_1_6,Mariam,d6ed0c7f,Beatriz,8,PLAY
+2025_1_6,Mariam,ed06502e,Casey Krueger,8,BENCH
+2025_1_6,Mariam,493c384e,Casey Murphy,8,PLAY
+2025_1_6,Mariam,5689807c,Claudia Dickey,8,BENCH
+2025_1_6,Mariam,edb4b4b1,Joelle Anderson,8,PLAY
+2025_1_6,Mariam,c5ca9ed9,Jordyn Bugg,8,PLAY
+2025_1_6,Mariam,4059a68f,Makenna Morris,8,PLAY
+2025_1_6,Mariam,9e5caab3,Melanie Barcenas,8,BENCH
+2025_1_6,Mariam,9b763275,Samantha Staab,8,PLAY
+2025_1_6,Mariam,c6122e4b,Sarah Gorden,8,PLAY
+2025_1_6,Mariam,2f3ffc2d,Denise O'Sullivan,8,PLAY
+2025_1_1,Bill,36355319,Amanda McGlynn,8,PLAY
+2025_1_1,Bill,0ba36ee8,Kayla Sharples,8,PLAY
+2025_1_1,Bill,be5200d5,Kennedy Fuller,8,PLAY
+2025_1_1,Bill,aa902703,Lilly Reale,8,PLAY
+2025_1_1,Bill,f8e41f9d,Malia Berkely,8,BENCH
+2025_1_1,Bill,ee5355a7,Mandy Freeman,8,PLAY
+2025_1_1,Bill,3857e361,Marta,8,PLAY
+2025_1_1,Bill,7bb60dd3,Narumi Miura,8,PLAY
+2025_1_1,Bill,d1a10776,Rafaelle,8,BENCH
+2025_1_1,Bill,1233544d,Rosemonde Kouassi,8,PLAY
+2025_1_1,Bill,8546d3ab,Savannah McCaskill,8,PLAY
+2025_1_1,Bill,e9082a8d,Taylor Huff,8,PLAY
+2025_1_1,Bill,8f146dff,Esther Gonz√°lez,8,PLAY
+2025_1_1,Bill,,Mia Justus,8,BENCH
+2025_1_3,Joey,06115ef0,Angelina Anderson,8,PLAY
+2025_1_3,Joey,7824185a,Barbra Banda,8,PLAY
+2025_1_3,Joey,73eb19a8,Bella Bixby,8,BENCH
+2025_1_3,Joey,08acd418,Emily Sonnett,8,PLAY
+2025_1_3,Joey,1cc6b80b,Kaitlyn Torpey,8,BENCH
+2025_1_3,Joey,1cb43c5f,Kenza Dali,8,PLAY
+2025_1_3,Joey,36e74d61,Leicy Santos,8,PLAY
+2025_1_3,Joey,7fa57813,Ludmila,8,PLAY
+2025_1_3,Joey,bb65b66d,Manaka Hayashi,8,BENCH
+2025_1_3,Joey,ac768b90,Mina Tanaka,8,PLAY
+2025_1_3,Joey,197fe553,Perle Morroni,8,PLAY
+2025_1_3,Joey,77ce913d,Gabrille Carle,8,PLAY
+2025_1_3,Joey,bf9f8b7f,Reyna Reyes,8,PLAY
+2025_1_3,Joey,92075fc4,Julia Grosso,8,PLAY
+2025_1_10,Nancy,85cea0cf,Debinha,8,PLAY
+2025_1_10,Nancy,23a1662b,Asisat Oshoala,8,BENCH
+2025_1_10,Nancy,9d2c6180,Taylor Flint,8,PLAY
+2025_1_10,Nancy,c4f44958,Caprice Dydasco,8,PLAY
+2025_1_10,Nancy,dcd6a67e,Rose Lavelle,8,BENCH
+2025_1_10,Nancy,2e87a8a5,Riley Jackson,8,PLAY
+2025_1_10,Nancy,e31c93ca,Trinity Armstrong,8,PLAY
+2025_1_10,Nancy,b07b7c39,Kennedy Wesley,8,PLAY
+2025_1_10,Nancy,b26a8c1f,Nealy Martin,8,PLAY
+2025_1_10,Nancy,08569d75,Lauren Milliet,8,PLAY
+2025_1_10,Nancy,e70a7484,Katie Lund,8,PLAY
+2025_1_10,Nancy,0ac84745,Lynn Biyendolo,8,PLAY
+2025_1_10,Nancy,,Shelby Hogan,8,BENCH
+2025_1_10,Nancy,b86badfa,Temwa Chawinga,8,PLAY
+2025_1_8,Brock Wallace,938dc3a8,Kiki Pickett,8,PLAY
+2025_1_8,Brock Wallace,453fa0c0,Halle Mackiewicz,8,BENCH
+2025_1_8,Brock Wallace,4c1ee572,Alyssa Naeher,8,PLAY
+2025_1_8,Brock Wallace,18dd307e,Riley Tiernan,8,PLAY
+2025_1_8,Brock Wallace,580d2856,Shinomi Koyama,8,PLAY
+2025_1_8,Brock Wallace,8d5a8340,Ana María Guzmán,8,BENCH
+2025_1_8,Brock Wallace,3a794757,Grace Chanda,8,PLAY
+2025_1_8,Brock Wallace,37ed9d8f,Hanna Lundkvist,8,PLAY
+2025_1_8,Brock Wallace,8cfb97f5,Kate Del Fava,8,PLAY
+2025_1_8,Brock Wallace,74911ec6,Trinity Rodman,8,BENCH
+2025_1_8,Brock Wallace,60d80b92,Ji So-yun,8,PLAY
+2025_1_8,Brock Wallace,7ec2ba7c,Emma Sears,8,PLAY
+2025_1_8,Brock Wallace,aa1c2ad1,Hina Sugita,8,PLAY
+2025_1_8,Brock Wallace,45cf25bf,Haley McCutcheon,8,PLAY
+2025_1_4,Jackson,50bf36a3,Alyssa Malonson,8,PLAY
+2025_1_4,Jackson,2a0f0a55,Paige Nielsen,8,PLAY
+2025_1_4,Jackson,0f668725,Jameese Joseph,8,PLAY
+2025_1_4,Jackson,61531e4e,Carson Pickett,8,BENCH
+2025_1_4,Jackson,47b9e2ef,Hannah Bebar,8,BENCH
+2025_1_4,Jackson,22502cce,Yazmeen Ryan,8,PLAY
+2025_1_4,Jackson,3d1f29d9,Jordyn Huitema,8,PLAY
+2025_1_4,Jackson,3213cad3,Jaelin Howell,8,PLAY
+2025_1_4,Jackson,be9f3298,Ann-Katrin Berger,8,PLAY
+2025_1_4,Jackson,2d8ec240,Tara McKeown,8,PLAY
+2025_1_4,Jackson,30f6344f,Mackenzie Arnold,8,BENCH
+2025_1_4,Jackson,8dc6b01e,Maggie Graham,8,PLAY
+2025_1_4,Jackson,7db28545,Claire Hutton,8,PLAY
+2025_1_4,Jackson,5dfeb94f,Savy King,8,PLAY
+2025_1_2,Noelle,23b17daa,Kaleigh Kurtz,8,PLAY
+2025_1_2,Noelle,268a4e22,Ella Stevens,8,PLAY
+2025_1_2,Noelle,020eaa4d,Aubrey Kingsbury,8,PLAY
+2025_1_2,Noelle,82f12690,Claudia Zornoza,8,BENCH
+2025_1_2,Noelle,c94c70bc,Margaret Purce,8,PLAY
+2025_1_2,Noelle,56d5fb23,Ally Watt,8,PLAY
+2025_1_2,Noelle,49d6d4a8,Angelina,8,PLAY
+2025_1_2,Noelle,ecacba26,Esme Morgan,8,PLAY
+2025_1_2,Noelle,90ebe6bf,Sandy MacIver,8,BENCH
+2025_1_2,Noelle,ace997a7,Cori Dyke,8,PLAY
+2025_1_2,Noelle,b4ce93ce,Bárbara Olivieri,8,PLAY
+2025_1_2,Noelle,c942bc07,Natalie Jacobs,8,BENCH
+2025_1_2,Noelle,e4ef9beb,Lo'eau LaBonta,8,PLAY
+2025_1_2,Noelle,a69d6298,Ellis Wheeler,8,PLAY
+2025_1_5,Ryne,4c3147d0,Tess Boade,8,PLAY
+2025_1_5,Ryne,52b58405,Abby Dahlkemper,8,PLAY
+2025_1_5,Ryne,56f16bc7,Cari Roccaro,8,PLAY
+2025_1_5,Ryne,8b5135ec,Madison Curry,8,PLAY
+2025_1_5,Ryne,2fcc0a10,Alyssa Thompson,8,PLAY
+2025_1_5,Ryne,feef7ea8,Laurel Ivory,8,BENCH
+2025_1_5,Ryne,f02cb699,Phoebe McClernon,8,PLAY
+2025_1_5,Ryne,45419c74,Kerry Abello,8,PLAY
+2025_1_5,Ryne,883f60f8,Avery Patterson,8,PLAY
+2025_1_5,Ryne,e8f90dc9,Sophie Schmidt,8,PLAY
+2025_1_5,Ryne,271c5edc,Anna Moorhouse,8,PLAY
+2025_1_5,Ryne,4d28a90a,Sam Coffey,8,PLAY
+2025_1_5,Ryne,,Trinity Byars,8,BENCH
+2025_1_5,Ryne,220b9b36,Ainsley McCammon,8,BENCH
+2025_1_11,Cam,2b0527c9,Arin Wright,8,PLAY
+2025_1_11,Cam,9ced946b,Ashley Sanchez,8,PLAY
+2025_1_11,Cam,ef032510,Delanie Sheehan,8,PLAY
+2025_1_11,Cam,277ae96a,Hal Hershfelt,8,BENCH
+2025_1_11,Cam,43466fe0,Janine Beckie,8,PLAY
+2025_1_11,Cam,46b237d3,Kailen Sheridan,8,PLAY
+2025_1_11,Cam,7f140cb9,Kylie Strom,8,PLAY
+2025_1_11,Cam,78d285e6,Madison Pogarch,8,PLAY
+2025_1_11,Cam,2021c04f,Marisa DiGrande,8,PLAY
+2025_1_11,Cam,a0516248,Mary Vignola,8,PLAY
+2025_1_11,Cam,5f97ae2e,Michelle Cooper,8,BENCH
+2025_1_11,Cam,3ee50ac6,Olivia Moultrie,8,PLAY
+2025_1_11,Cam,4f994efc,Summer Yates,8,PLAY
+2025_1_11,Cam,42ecf0e8,Didi Haracic,8,BENCH
+2025_1_7,Danny,32f48f46,Racheal Kundananji,9,PLAY
+2025_1_7,Danny,01079eae,Felicitas Rauch,9,PLAY
+2025_1_7,Danny,e940a089,Vanessa DiBernardo,9,PLAY
+2025_1_7,Danny,24478b0c,Danielle Colaprico,9,PLAY
+2025_1_7,Danny,9d82fe8e,Delphine Cascarino,9,PLAY
+2025_1_7,Danny,f2284088,Claire Emslie,9,BENCH
+2025_1_7,Danny,36008361,Gisele Thompson,9,PLAY
+2025_1_7,Danny,947d22fb,Abby Smith,9,BENCH
+2025_1_7,Danny,2625e415,Paige Monaghan,9,BENCH
+2025_1_7,Danny,43d5b985,Isabel Rodriguez,9,PLAY
+2025_1_7,Danny,c40fd1ac,Jane Campbell,9,PLAY
+2025_1_7,Danny,add26dda,Savannah Demelo,9,PLAY
+2025_1_7,Danny,fb6605c0,Bea Franklin,9,PLAY
+2025_1_7,Danny,714e5fef,Emily Sams,9,PLAY
+2025_1_9,Chris,7ca7c385,Alana Cook,9,PLAY
+2025_1_9,Chris,8252bc62,Alanna Kennedy,9,PLAY
+2025_1_9,Chris,6946f9d4,Cassie Miller,9,BENCH
+2025_1_9,Chris,aa0f9aa7,Croix Bethune,9,PLAY
+2025_1_9,Chris,8dd703ab,Gabi Portilho,9,PLAY
+2025_1_9,Chris,0ae418c9,Gia Corley,9,PLAY
+2025_1_9,Chris,77361b23,Jaedyn Shaw,9,BENCH
+2025_1_9,Chris,bb5e99fc,Jess Carter,9,PLAY
+2025_1_9,Chris,fa5e9ae1,Katie Lind,9,PLAY
+2025_1_9,Chris,0ce1f38f,Lorena,9,PLAY
+2025_1_9,Chris,a4a65861,Manaka Matsukubo,9,PLAY
+2025_1_9,Chris,bd325738,Maria Sanchez,9,PLAY
+2025_1_9,Chris,787e8bfd,Ryan Williams,9,PLAY
+2025_1_9,Chris,f593cab9,Jun Endo,9,BENCH
+2025_1_6,Mariam,e91c05ee,Ally Sentnor,9,PLAY
+2025_1_6,Mariam,93504985,Ana Tejada,9,PLAY
+2025_1_6,Mariam,d2de2f84,Ashley Hatch,9,PLAY
+2025_1_6,Mariam,d6ed0c7f,Beatriz,9,PLAY
+2025_1_6,Mariam,ed06502e,Casey Krueger,9,BENCH
+2025_1_6,Mariam,493c384e,Casey Murphy,9,BENCH
+2025_1_6,Mariam,5689807c,Claudia Dickey,9,PLAY
+2025_1_6,Mariam,edb4b4b1,Joelle Anderson,9,PLAY
+2025_1_6,Mariam,c5ca9ed9,Jordyn Bugg,9,PLAY
+2025_1_6,Mariam,4059a68f,Makenna Morris,9,PLAY
+2025_1_6,Mariam,9e5caab3,Melanie Barcenas,9,BENCH
+2025_1_6,Mariam,9b763275,Samantha Staab,9,PLAY
+2025_1_6,Mariam,c6122e4b,Sarah Gorden,9,PLAY
+2025_1_6,Mariam,2f3ffc2d,Denise O'Sullivan,9,PLAY
+2025_1_1,Bill,36355319,Amanda McGlynn,9,PLAY
+2025_1_1,Bill,0ba36ee8,Kayla Sharples,9,PLAY
+2025_1_1,Bill,be5200d5,Kennedy Fuller,9,PLAY
+2025_1_1,Bill,aa902703,Lilly Reale,9,PLAY
+2025_1_1,Bill,f8e41f9d,Malia Berkely,9,BENCH
+2025_1_1,Bill,ee5355a7,Mandy Freeman,9,PLAY
+2025_1_1,Bill,3857e361,Marta,9,PLAY
+2025_1_1,Bill,7bb60dd3,Narumi Miura,9,PLAY
+2025_1_1,Bill,d1a10776,Rafaelle,9,BENCH
+2025_1_1,Bill,1233544d,Rosemonde Kouassi,9,PLAY
+2025_1_1,Bill,8546d3ab,Savannah McCaskill,9,PLAY
+2025_1_1,Bill,e9082a8d,Taylor Huff,9,PLAY
+2025_1_1,Bill,8f146dff,Esther Gonz√°lez,9,PLAY
+2025_1_1,Bill,,Mia Justus,9,BENCH
+2025_1_3,Joey,06115ef0,Angelina Anderson,9,PLAY
+2025_1_3,Joey,7824185a,Barbra Banda,9,PLAY
+2025_1_3,Joey,73eb19a8,Bella Bixby,9,BENCH
+2025_1_3,Joey,08acd418,Emily Sonnett,9,PLAY
+2025_1_3,Joey,1cc6b80b,Kaitlyn Torpey,9,BENCH
+2025_1_3,Joey,1cb43c5f,Kenza Dali,9,PLAY
+2025_1_3,Joey,36e74d61,Leicy Santos,9,PLAY
+2025_1_3,Joey,7fa57813,Ludmila,9,PLAY
+2025_1_3,Joey,bb65b66d,Manaka Hayashi,9,BENCH
+2025_1_3,Joey,ac768b90,Mina Tanaka,9,PLAY
+2025_1_3,Joey,197fe553,Perle Morroni,9,PLAY
+2025_1_3,Joey,77ce913d,Gabrille Carle,9,PLAY
+2025_1_3,Joey,bf9f8b7f,Reyna Reyes,9,PLAY
+2025_1_3,Joey,92075fc4,Julia Grosso,9,PLAY
+2025_1_10,Nancy,85cea0cf,Debinha,9,PLAY
+2025_1_10,Nancy,23a1662b,Asisat Oshoala,9,PLAY
+2025_1_10,Nancy,9d2c6180,Taylor Flint,9,PLAY
+2025_1_10,Nancy,c4f44958,Caprice Dydasco,9,PLAY
+2025_1_10,Nancy,dcd6a67e,Rose Lavelle,9,BENCH
+2025_1_10,Nancy,2e87a8a5,Riley Jackson,9,PLAY
+2025_1_10,Nancy,e31c93ca,Trinity Armstrong,9,PLAY
+2025_1_10,Nancy,b07b7c39,Kennedy Wesley,9,PLAY
+2025_1_10,Nancy,b26a8c1f,Nealy Martin,9,PLAY
+2025_1_10,Nancy,08569d75,Lauren Milliet,9,BENCH
+2025_1_10,Nancy,e70a7484,Katie Lund,9,PLAY
+2025_1_10,Nancy,0ac84745,Lynn Biyendolo,9,PLAY
+2025_1_10,Nancy,,Shelby Hogan,9,BENCH
+2025_1_10,Nancy,b86badfa,Temwa Chawinga,9,PLAY
+2025_1_8,Brock Wallace,938dc3a8,Kiki Pickett,9,PLAY
+2025_1_8,Brock Wallace,453fa0c0,Halle Mackiewicz,9,BENCH
+2025_1_8,Brock Wallace,4c1ee572,Alyssa Naeher,9,PLAY
+2025_1_8,Brock Wallace,18dd307e,Riley Tiernan,9,PLAY
+2025_1_8,Brock Wallace,580d2856,Shinomi Koyama,9,PLAY
+2025_1_8,Brock Wallace,8d5a8340,Ana María Guzmán,9,BENCH
+2025_1_8,Brock Wallace,3a794757,Grace Chanda,9,PLAY
+2025_1_8,Brock Wallace,37ed9d8f,Hanna Lundkvist,9,PLAY
+2025_1_8,Brock Wallace,8cfb97f5,Kate Del Fava,9,PLAY
+2025_1_8,Brock Wallace,74911ec6,Trinity Rodman,9,BENCH
+2025_1_8,Brock Wallace,60d80b92,Ji So-yun,9,PLAY
+2025_1_8,Brock Wallace,7ec2ba7c,Emma Sears,9,PLAY
+2025_1_8,Brock Wallace,aa1c2ad1,Hina Sugita,9,PLAY
+2025_1_8,Brock Wallace,45cf25bf,Haley McCutcheon,9,PLAY
+2025_1_4,Jackson,50bf36a3,Alyssa Malonson,9,PLAY
+2025_1_4,Jackson,2a0f0a55,Paige Nielsen,9,PLAY
+2025_1_4,Jackson,0f668725,Jameese Joseph,9,PLAY
+2025_1_4,Jackson,61531e4e,Carson Pickett,9,PLAY
+2025_1_4,Jackson,47b9e2ef,Hannah Bebar,9,BENCH
+2025_1_4,Jackson,22502cce,Yazmeen Ryan,9,PLAY
+2025_1_4,Jackson,3d1f29d9,Jordyn Huitema,9,PLAY
+2025_1_4,Jackson,3213cad3,Jaelin Howell,9,PLAY
+2025_1_4,Jackson,be9f3298,Ann-Katrin Berger,9,PLAY
+2025_1_4,Jackson,2d8ec240,Tara McKeown,9,PLAY
+2025_1_4,Jackson,30f6344f,Mackenzie Arnold,9,BENCH
+2025_1_4,Jackson,8dc6b01e,Maggie Graham,9,PLAY
+2025_1_4,Jackson,7db28545,Claire Hutton,9,PLAY
+2025_1_4,Jackson,5dfeb94f,Savy King,9,BENCH
+2025_1_2,Noelle,23b17daa,Kaleigh Kurtz,9,PLAY
+2025_1_2,Noelle,268a4e22,Ella Stevens,9,PLAY
+2025_1_2,Noelle,020eaa4d,Aubrey Kingsbury,9,PLAY
+2025_1_2,Noelle,82f12690,Claudia Zornoza,9,BENCH
+2025_1_2,Noelle,c94c70bc,Margaret Purce,9,PLAY
+2025_1_2,Noelle,56d5fb23,Ally Watt,9,PLAY
+2025_1_2,Noelle,49d6d4a8,Angelina,9,PLAY
+2025_1_2,Noelle,ecacba26,Esme Morgan,9,PLAY
+2025_1_2,Noelle,90ebe6bf,Sandy MacIver,9,BENCH
+2025_1_2,Noelle,ace997a7,Cori Dyke,9,BENCH
+2025_1_2,Noelle,b4ce93ce,Bárbara Olivieri,9,PLAY
+2025_1_2,Noelle,c942bc07,Natalie Jacobs,9,PLAY
+2025_1_2,Noelle,e4ef9beb,Lo'eau LaBonta,9,PLAY
+2025_1_2,Noelle,a69d6298,Ellis Wheeler,9,PLAY
+2025_1_5,Ryne,4c3147d0,Tess Boade,9,PLAY
+2025_1_5,Ryne,52b58405,Abby Dahlkemper,9,PLAY
+2025_1_5,Ryne,56f16bc7,Cari Roccaro,9,PLAY
+2025_1_5,Ryne,8b5135ec,Madison Curry,9,PLAY
+2025_1_5,Ryne,2fcc0a10,Alyssa Thompson,9,PLAY
+2025_1_5,Ryne,feef7ea8,Laurel Ivory,9,BENCH
+2025_1_5,Ryne,f02cb699,Phoebe McClernon,9,PLAY
+2025_1_5,Ryne,45419c74,Kerry Abello,9,PLAY
+2025_1_5,Ryne,883f60f8,Avery Patterson,9,PLAY
+2025_1_5,Ryne,e8f90dc9,Sophie Schmidt,9,PLAY
+2025_1_5,Ryne,271c5edc,Anna Moorhouse,9,PLAY
+2025_1_5,Ryne,4d28a90a,Sam Coffey,9,PLAY
+2025_1_5,Ryne,,Trinity Byars,9,BENCH
+2025_1_5,Ryne,220b9b36,Ainsley McCammon,9,BENCH
+2025_1_11,Cam,2b0527c9,Arin Wright,9,PLAY
+2025_1_11,Cam,9ced946b,Ashley Sanchez,9,PLAY
+2025_1_11,Cam,ef032510,Delanie Sheehan,9,PLAY
+2025_1_11,Cam,277ae96a,Hal Hershfelt,9,BENCH
+2025_1_11,Cam,43466fe0,Janine Beckie,9,PLAY
+2025_1_11,Cam,46b237d3,Kailen Sheridan,9,PLAY
+2025_1_11,Cam,7f140cb9,Kylie Strom,9,PLAY
+2025_1_11,Cam,78d285e6,Madison Pogarch,9,PLAY
+2025_1_11,Cam,2021c04f,Marisa DiGrande,9,PLAY
+2025_1_11,Cam,a0516248,Mary Vignola,9,PLAY
+2025_1_11,Cam,5f97ae2e,Michelle Cooper,9,BENCH
+2025_1_11,Cam,3ee50ac6,Olivia Moultrie,9,PLAY
+2025_1_11,Cam,4f994efc,Summer Yates,9,PLAY
+2025_1_11,Cam,42ecf0e8,Didi Haracic,9,BENCH
+2025_1_7,Danny,32f48f46,Racheal Kundananji,10,PLAY
+2025_1_7,Danny,01079eae,Felicitas Rauch,10,PLAY
+2025_1_7,Danny,e940a089,Vanessa DiBernardo,10,PLAY
+2025_1_7,Danny,24478b0c,Danielle Colaprico,10,PLAY
+2025_1_7,Danny,9d82fe8e,Delphine Cascarino,10,PLAY
+2025_1_7,Danny,f2284088,Claire Emslie,10,BENCH
+2025_1_7,Danny,36008361,Gisele Thompson,10,PLAY
+2025_1_7,Danny,947d22fb,Abby Smith,10,PLAY
+2025_1_7,Danny,2625e415,Paige Monaghan,10,BENCH
+2025_1_7,Danny,43d5b985,Isabel Rodriguez,10,PLAY
+2025_1_7,Danny,c40fd1ac,Jane Campbell,10,BENCH
+2025_1_7,Danny,add26dda,Savannah Demelo,10,PLAY
+2025_1_7,Danny,fb6605c0,Bea Franklin,10,PLAY
+2025_1_7,Danny,714e5fef,Emily Sams,10,PLAY
+2025_1_9,Chris,388948a7,Hailie Mace,10,PLAY
+2025_1_9,Chris,8252bc62,Alanna Kennedy,10,PLAY
+2025_1_9,Chris,6946f9d4,Cassie Miller,10,BENCH
+2025_1_9,Chris,aa0f9aa7,Croix Bethune,10,PLAY
+2025_1_9,Chris,8dd703ab,Gabi Portilho,10,PLAY
+2025_1_9,Chris,0ae418c9,Gia Corley,10,PLAY
+2025_1_9,Chris,77361b23,Jaedyn Shaw,10,BENCH
+2025_1_9,Chris,bb5e99fc,Jess Carter,10,PLAY
+2025_1_9,Chris,fa5e9ae1,Katie Lind,10,PLAY
+2025_1_9,Chris,0ce1f38f,Lorena,10,PLAY
+2025_1_9,Chris,a4a65861,Manaka Matsukubo,10,PLAY
+2025_1_9,Chris,bd325738,Maria Sanchez,10,PLAY
+2025_1_9,Chris,787e8bfd,Ryan Williams,10,PLAY
+2025_1_9,Chris,f593cab9,Jun Endo,10,BENCH
+2025_1_6,Mariam,e91c05ee,Ally Sentnor,10,PLAY
+2025_1_6,Mariam,93504985,Ana Tejada,10,PLAY
+2025_1_6,Mariam,d2de2f84,Ashley Hatch,10,PLAY
+2025_1_6,Mariam,d6ed0c7f,Beatriz,10,PLAY
+2025_1_6,Mariam,ed06502e,Casey Krueger,10,BENCH
+2025_1_6,Mariam,493c384e,Casey Murphy,10,BENCH
+2025_1_6,Mariam,5689807c,Claudia Dickey,10,PLAY
+2025_1_6,Mariam,edb4b4b1,Joelle Anderson,10,PLAY
+2025_1_6,Mariam,c5ca9ed9,Jordyn Bugg,10,PLAY
+2025_1_6,Mariam,4059a68f,Makenna Morris,10,PLAY
+2025_1_6,Mariam,9e5caab3,Melanie Barcenas,10,BENCH
+2025_1_6,Mariam,9b763275,Samantha Staab,10,PLAY
+2025_1_6,Mariam,c6122e4b,Sarah Gorden,10,PLAY
+2025_1_6,Mariam,2f3ffc2d,Denise O'Sullivan,10,PLAY
+2025_1_1,Bill,36355319,Amanda McGlynn,10,PLAY
+2025_1_1,Bill,0ba36ee8,Kayla Sharples,10,PLAY
+2025_1_1,Bill,be5200d5,Kennedy Fuller,10,PLAY
+2025_1_1,Bill,aa902703,Lilly Reale,10,PLAY
+2025_1_1,Bill,f8e41f9d,Malia Berkely,10,PLAY
+2025_1_1,Bill,ee5355a7,Mandy Freeman,10,BENCH
+2025_1_1,Bill,3857e361,Marta,10,PLAY
+2025_1_1,Bill,7bb60dd3,Narumi Miura,10,PLAY
+2025_1_1,Bill,d1a10776,Rafaelle,10,BENCH
+2025_1_1,Bill,1233544d,Rosemonde Kouassi,10,PLAY
+2025_1_1,Bill,8546d3ab,Savannah McCaskill,10,PLAY
+2025_1_1,Bill,e9082a8d,Taylor Huff,10,PLAY
+2025_1_1,Bill,8f146dff,Esther Gonz√°lez,10,PLAY
+2025_1_1,Bill,,Mia Justus,10,BENCH
+2025_1_3,Joey,06115ef0,Angelina Anderson,10,PLAY
+2025_1_3,Joey,7824185a,Barbra Banda,10,PLAY
+2025_1_3,Joey,73eb19a8,Bella Bixby,10,BENCH
+2025_1_3,Joey,08acd418,Emily Sonnett,10,PLAY
+2025_1_3,Joey,1cc6b80b,Kaitlyn Torpey,10,PLAY
+2025_1_3,Joey,1cb43c5f,Kenza Dali,10,PLAY
+2025_1_3,Joey,36e74d61,Leicy Santos,10,BENCH
+2025_1_3,Joey,7fa57813,Ludmila,10,PLAY
+2025_1_3,Joey,bb65b66d,Manaka Hayashi,10,BENCH
+2025_1_3,Joey,ac768b90,Mina Tanaka,10,PLAY
+2025_1_3,Joey,197fe553,Perle Morroni,10,PLAY
+2025_1_3,Joey,77ce913d,Gabrille Carle,10,PLAY
+2025_1_3,Joey,bf9f8b7f,Reyna Reyes,10,PLAY
+2025_1_3,Joey,92075fc4,Julia Grosso,10,PLAY
+2025_1_10,Nancy,85cea0cf,Debinha,10,PLAY
+2025_1_10,Nancy,23a1662b,Asisat Oshoala,10,BENCH
+2025_1_10,Nancy,9d2c6180,Taylor Flint,10,PLAY
+2025_1_10,Nancy,c4f44958,Caprice Dydasco,10,PLAY
+2025_1_10,Nancy,dcd6a67e,Rose Lavelle,10,BENCH
+2025_1_10,Nancy,2e87a8a5,Riley Jackson,10,PLAY
+2025_1_10,Nancy,e31c93ca,Trinity Armstrong,10,PLAY
+2025_1_10,Nancy,b07b7c39,Kennedy Wesley,10,PLAY
+2025_1_10,Nancy,b26a8c1f,Nealy Martin,10,PLAY
+2025_1_10,Nancy,08569d75,Lauren Milliet,10,PLAY
+2025_1_10,Nancy,9fe4c40f,Jordan Silkowitz,10,PLAY
+2025_1_10,Nancy,0ac84745,Lynn Biyendolo,10,PLAY
+2025_1_10,Nancy,,Shelby Hogan,10,BENCH
+2025_1_10,Nancy,b86badfa,Temwa Chawinga,10,PLAY
+2025_1_8,Brock Wallace,938dc3a8,Kiki Pickett,10,PLAY
+2025_1_8,Brock Wallace,453fa0c0,Halle Mackiewicz,10,BENCH
+2025_1_8,Brock Wallace,4c1ee572,Alyssa Naeher,10,PLAY
+2025_1_8,Brock Wallace,18dd307e,Riley Tiernan,10,PLAY
+2025_1_8,Brock Wallace,580d2856,Shinomi Koyama,10,PLAY
+2025_1_8,Brock Wallace,8d5a8340,Ana María Guzmán,10,BENCH
+2025_1_8,Brock Wallace,3a794757,Grace Chanda,10,PLAY
+2025_1_8,Brock Wallace,37ed9d8f,Hanna Lundkvist,10,PLAY
+2025_1_8,Brock Wallace,8cfb97f5,Kate Del Fava,10,PLAY
+2025_1_8,Brock Wallace,74911ec6,Trinity Rodman,10,BENCH
+2025_1_8,Brock Wallace,60d80b92,Ji So-yun,10,PLAY
+2025_1_8,Brock Wallace,7ec2ba7c,Emma Sears,10,PLAY
+2025_1_8,Brock Wallace,aa1c2ad1,Hina Sugita,10,PLAY
+2025_1_8,Brock Wallace,45cf25bf,Haley McCutcheon,10,PLAY
+2025_1_4,Jackson,50bf36a3,Alyssa Malonson,10,PLAY
+2025_1_4,Jackson,2a0f0a55,Paige Nielsen,10,PLAY
+2025_1_4,Jackson,0f668725,Jameese Joseph,10,PLAY
+2025_1_4,Jackson,61531e4e,Carson Pickett,10,PLAY
+2025_1_4,Jackson,47b9e2ef,Hannah Bebar,10,PLAY
+2025_1_4,Jackson,22502cce,Yazmeen Ryan,10,BENCH
+2025_1_4,Jackson,3d1f29d9,Jordyn Huitema,10,PLAY
+2025_1_4,Jackson,3213cad3,Jaelin Howell,10,PLAY
+2025_1_4,Jackson,be9f3298,Ann-Katrin Berger,10,PLAY
+2025_1_4,Jackson,2d8ec240,Tara McKeown,10,PLAY
+2025_1_4,Jackson,30f6344f,Mackenzie Arnold,10,BENCH
+2025_1_4,Jackson,8dc6b01e,Maggie Graham,10,PLAY
+2025_1_4,Jackson,7db28545,Claire Hutton,10,PLAY
+2025_1_4,Jackson,5dfeb94f,Savy King,10,BENCH
+2025_1_2,Noelle,23b17daa,Kaleigh Kurtz,10,PLAY
+2025_1_2,Noelle,268a4e22,Ella Stevens,10,PLAY
+2025_1_2,Noelle,020eaa4d,Aubrey Kingsbury,10,PLAY
+2025_1_2,Noelle,82f12690,Claudia Zornoza,10,BENCH
+2025_1_2,Noelle,c94c70bc,Margaret Purce,10,PLAY
+2025_1_2,Noelle,56d5fb23,Ally Watt,10,PLAY
+2025_1_2,Noelle,49d6d4a8,Angelina,10,PLAY
+2025_1_2,Noelle,ecacba26,Esme Morgan,10,PLAY
+2025_1_2,Noelle,90ebe6bf,Sandy MacIver,10,BENCH
+2025_1_2,Noelle,ace997a7,Cori Dyke,10,BENCH
+2025_1_2,Noelle,b4ce93ce,Bárbara Olivieri,10,PLAY
+2025_1_2,Noelle,c942bc07,Natalie Jacobs,10,PLAY
+2025_1_2,Noelle,e4ef9beb,Lo'eau LaBonta,10,PLAY
+2025_1_2,Noelle,a69d6298,Ellis Wheeler,10,PLAY
+2025_1_5,Ryne,4c3147d0,Tess Boade,10,PLAY
+2025_1_5,Ryne,52b58405,Abby Dahlkemper,10,PLAY
+2025_1_5,Ryne,56f16bc7,Cari Roccaro,10,PLAY
+2025_1_5,Ryne,8b5135ec,Madison Curry,10,PLAY
+2025_1_5,Ryne,2fcc0a10,Alyssa Thompson,10,PLAY
+2025_1_5,Ryne,feef7ea8,Laurel Ivory,10,BENCH
+2025_1_5,Ryne,f02cb699,Phoebe McClernon,10,PLAY
+2025_1_5,Ryne,45419c74,Kerry Abello,10,PLAY
+2025_1_5,Ryne,883f60f8,Avery Patterson,10,PLAY
+2025_1_5,Ryne,e8f90dc9,Sophie Schmidt,10,PLAY
+2025_1_5,Ryne,271c5edc,Anna Moorhouse,10,PLAY
+2025_1_5,Ryne,4d28a90a,Sam Coffey,10,PLAY
+2025_1_5,Ryne,,Trinity Byars,10,BENCH
+2025_1_5,Ryne,220b9b36,Ainsley McCammon,10,BENCH
+2025_1_11,Cam,2b0527c9,Arin Wright,10,PLAY
+2025_1_11,Cam,9ced946b,Ashley Sanchez,10,PLAY
+2025_1_11,Cam,ef032510,Delanie Sheehan,10,PLAY
+2025_1_11,Cam,277ae96a,Hal Hershfelt,10,PLAY
+2025_1_11,Cam,43466fe0,Janine Beckie,10,PLAY
+2025_1_11,Cam,46b237d3,Kailen Sheridan,10,PLAY
+2025_1_11,Cam,7f140cb9,Kylie Strom,10,PLAY
+2025_1_11,Cam,78d285e6,Madison Pogarch,10,BENCH
+2025_1_11,Cam,2021c04f,Marisa DiGrande,10,PLAY
+2025_1_11,Cam,a0516248,Mary Vignola,10,PLAY
+2025_1_11,Cam,5f97ae2e,Michelle Cooper,10,PLAY
+2025_1_11,Cam,3ee50ac6,Olivia Moultrie,10,PLAY
+2025_1_11,Cam,4f994efc,Summer Yates,10,BENCH
+2025_1_11,Cam,42ecf0e8,Didi Haracic,10,BENCH

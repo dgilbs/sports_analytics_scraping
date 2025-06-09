@@ -6,6 +6,9 @@ import requests
 import numpy as np
 import sqlite3
 import ssl
+import warnings
+from sqlalchemy import create_engine, text
+from psycopg2.extras import execute_values
 from datetime import datetime
 from bs4 import BeautifulSoup
 
@@ -103,22 +106,33 @@ def scrape_box_score(row, info):
             team = tid.split('-')[1]
             temp_df['team_id'] = team
             temp_df['game_id'] = row['game_id']
-            if 'advanced' not in tid:
-                quarter = tid.split('-')[2].upper()
-                temp_df['game_quarter'] = quarter
-                dir_path = basic_dir_path
-            else:
-                dir_path = advanced_dir_path
-            
-            
+            quarter = tid.split('-')[2].upper()
+            temp_df['game_quarter'] = quarter
+            dir_path = basic_dir_path
             file_name = row['game_id'] + '_' + tid.replace('-', '_') + '.pkl'
-            fp = os.path.join(dir_path, file_name)
-            temp_df.to_pickle(fp)
+        elif tid is not None and 'advanced' in tid:
+            temp_df = arr[index]
+            final_dict[tid] = temp_df
+            team = tid.split('-')[0]
+            temp_df['team_id'] = team
+            temp_df['game_id'] = row['game_id']
+            dir_path = advanced_dir_path
+            file_name = row['game_id'] + '_' + tid.replace('-', '_') + '.pkl'
+        else:
+            continue
+
+        
+        fp = os.path.join(dir_path, file_name)
+        temp_df.to_pickle(fp)
 
 
-def scrape_roster(row, info):
-    url = row['home_team_link']
-    team_id = row['home_team_id']
+def scrape_roster(row, info, home=True):
+    if home:
+        url = row['home_team_link']
+        team_id = row['home_team_id']
+    else:
+        url = row['away_team_link']
+        team_id = row['away_team_id']
     league = info['name']
     season = url.split('/')[-1].split('.')[0]
     if 'https://basketball-reference.com' not in url:
@@ -221,21 +235,29 @@ def clean_box_score(file_path, config, info, del_raw=False):
             new_col = col[1].lower()
         elif basic:
             new_col = col[0].lower()
+        elif not basic and col[0] == 'Advanced Box Score Stats': 
+            new_col = col[1].lower()
+        else: 
+            new_col = col[0].lower()
         cols.append(new_col)
     df.columns = cols
     if basic:
         rename_columns = config['basic_box_score_rename_columns']
         link_cols = config['basic_box_score_link_columns']
         non_link_cols = config['basic_box_score_non_link_columns']
+    else:
+        rename_columns = config['advanced_box_score_rename_columns']
+        link_cols = config['advanced_box_score_link_columns']
+        non_link_cols = config['advanced_box_score_non_link_columns']
         
 
     df = df.rename(columns=rename_columns)
+    
     df = df[~df.player.isin(['Totals'])]
     for i in link_cols:
         new_col = i + '_link'
         df[new_col] = df.apply(lambda row: row[i][1], axis=1)
         df[i] = df.apply(lambda row: row[i][0], axis=1)
-
     for j in non_link_cols:
         df[j] = df.apply(lambda row: row[j][0], axis=1)
 
@@ -249,12 +271,16 @@ def clean_box_score(file_path, config, info, del_raw=False):
     df['minutes_played_str'] = '00:' + df.minutes_played
     df['minutes_played_time'] = pd.to_timedelta(df.minutes_played_str)
     df['minutes_played_int'] = df.apply(lambda row: round(row['minutes_played_time'].total_seconds()/60, 4), axis=1)
-    # df['league'] = info['name']
-    # df['player_id'] = df.apply(lambda row: extract_player_id(row['player_link']), axis=1)
+    df['league'] = info['name']
+    df['player_id'] = df.apply(lambda row: extract_player_id(row['player_link']), axis=1)
+    if not basic: 
+        df['id'] = df.apply(lambda row: row['player_id'] + '-' + row['game_id'] + '-' + 'adv', axis=1)
+    else:
+        df['id'] = df.apply(lambda row: row['player_id'] + '-' + row['game_id'] + '-' + row['game_quarter'], axis=1)
     df.to_pickle(new_file_path)
     return df
 
-def upsert_df(df, table_name, db_config):
+def upsert_df_sqlite(df, table_name, db_config):
     info = db_config[table_name]
     cols = info['df_cols']
     idf = df[cols]
@@ -303,8 +329,9 @@ def build_team_schedules(schedule, info, config):
         is_playoffs = row['is_playoffs']
         is_commissioners_cup = row['is_commissioners_cup']
         season = row['season']
-        away_row = [away_row_id, game_date, away_team_id, home_team_id, away_team_pts, home_team_pts, is_playoffs, is_commissioners_cup, season]
-        home_row = [home_row_id, game_date, home_team_id, away_team_id, home_team_pts, away_team_pts, is_playoffs, is_commissioners_cup,season]
+        game_id = row['game_id']
+        away_row = [away_row_id, game_date, away_team_id, home_team_id, away_team_pts, home_team_pts, is_playoffs, is_commissioners_cup, season, 'Away', game_id]
+        home_row = [home_row_id, game_date, home_team_id, away_team_id, home_team_pts, away_team_pts, is_playoffs, is_commissioners_cup,season, 'Home', game_id]
         rows.append(home_row)
         rows.append(away_row)
     final = pd.DataFrame(rows, columns=config['team_schedule_columns'])
@@ -314,3 +341,59 @@ def build_team_schedules(schedule, info, config):
     
     return final
     
+
+def upsert_df(df, table_name, conn_string, unique_columns, db_config, schema='basketball', dedupe=False):
+    """
+    Upserts a pandas DataFrame to a PostgreSQL table.
+    
+    Parameters:
+        df (pd.DataFrame): The DataFrame to upsert.
+        table_name (str): The name of the target table.
+        conn_string (str): PostgreSQL connection string.
+        unique_columns (list): List of column names that uniquely identify a row.
+    """
+    config = db_config[table_name]
+    df_cols = config['df_cols']
+    rename_cols = config['rename_cols']
+    df = df[df_cols]
+    df.columns = rename_cols
+    if 'numeric_cols' in config:
+        num_cols = config['numeric_cols']
+        for col in num_cols:
+            df[col] = pd.to_numeric(df.loc[:, col], errors='coerce')
+            df[col] = df.loc[:, col].fillna(0)
+            #df[col] = df[col].replace({pd.NA: 0, np.nan: 0})
+
+    if dedupe:
+        df = df.drop_duplicates(subset=unique_columns, ignore_index=True)
+    table_id = '.'.join([schema, table_name])
+    df = df.map(lambda x: x.item() if isinstance(x, (pd.Int64Dtype, pd.Float64Dtype, pd.BooleanDtype)) else x)
+    # Create SQLAlchemy engine
+    engine = create_engine(conn_string)
+    with engine.connect() as conn:
+        with conn.begin():
+            # Ensure column names are valid SQL identifiers
+            df.columns = [col.lower() for col in df.columns]
+            
+            # Get column names
+            columns = list(df.columns)
+            
+            # Generate SQL placeholders
+            placeholders = ', '.join(['%s'] * len(columns))
+            columns_str = ', '.join(columns)
+            updates = ', '.join([f"{col} = EXCLUDED.{col}" for col in columns if col not in unique_columns])
+            
+            # Convert DataFrame to list of tuples
+            data = [tuple(row) for row in df.itertuples(index=False, name=None)]
+            
+            # Generate UPSERT query
+            upsert_query = f'''
+                INSERT INTO {table_id} ({columns_str})
+                VALUES {placeholders}
+                ON CONFLICT ({', '.join(unique_columns)})
+                DO UPDATE SET {updates};
+            '''
+            
+            # Use psycopg2 to execute query efficiently
+            with conn.connection.cursor() as cursor:
+                execute_values(cursor, upsert_query.replace(placeholders, '%s'), data)

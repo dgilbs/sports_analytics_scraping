@@ -96,7 +96,7 @@ f_basic_box_score:
         - player_id
         - game_id
         - game_quarter
-        - team
+        - team_id
         - league
         - fg
         - fga
@@ -138,3 +138,42 @@ f_basic_box_score:
         - plus_minus
         - minutes_played
     key: id
+f_advanced_box_score:
+    df_cols:
+        - id
+        - player_id
+        - game_id
+        - team_id
+        - league
+        - true_shooting_pct
+        - effective_field_goal_pct
+        - three_point_attempt_rate
+        - defensive_rebound_pct
+        - offensive_rebound_pct
+        - total_rebound_pct
+        - assist_pct
+        - steal_pct
+        - usage_rate
+        - offensive_rating
+        - defensive_rating
+        - minutes_played_int
+    rename_cols:
+        - id
+        - player_id
+        - game_id
+        - team_id
+        - league
+        - true_shooting_pct
+        - effective_field_goal_pct
+        - three_point_attempt_rate
+        - defensive_rebound_pct
+        - offensive_rebound_pct
+        - total_rebound_pct
+        - assist_pct
+        - steal_pct
+        - usage_rate
+        - offensive_rating
+        - defensive_rating
+        - minutes_played
+    key: id
+    

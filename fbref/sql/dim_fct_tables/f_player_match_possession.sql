@@ -1,4 +1,4 @@
-CREATE TABLE f_player_match_possession(
+CREATE TABLE if not exists soccer.f_player_match_possession(
     id varchar(40) primary key,
     player_id varchar(20),
     team_id varchar(20),
@@ -9,7 +9,7 @@ CREATE TABLE f_player_match_possession(
     touches_def_third int,
     touches_mid_third int,
     touches_att_third int,
-    touches_att_penalty_area,
+    touches_att_penalty_area int,
     touches_live int,
     take_ons_attempted int,
     take_ons_succeeded int,
