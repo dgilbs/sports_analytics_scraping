@@ -12,6 +12,12 @@ dsr.playing_position as roster_position,
 ds.squad,
 dtm.season,
 dc.competition,
+case 
+    when split_part(dpa."position", ',', 1) in ('LB', 'RB') then 'Defender'
+    when split_part(dpa."position", ',', 1) in ('CB') then 'Defender'
+    when split_part(dpa."position", ',', 1) in ('LM', 'CM', 'RM', 'DM', 'AM') then 'Midfielder'
+    when split_part(dpa."position", ',', 1) in ('FW', 'LW', 'RW') then 'Forward'
+end as position_group,
 sum(fpms.minutes) as minutes,
 sum(goals) as goals,
 sum(assists) as assists,
@@ -31,6 +37,14 @@ sum(npxg) as npxg,
 sum(xag) as xag,
 sum(shot_creating_actions) as shot_creating_actions,
 sum(goal_creating_actions) as goal_creating_actions,
+case 
+    when sum(shots) > 0 then sum(shots_on_target::numeric)/sum(shots) 
+    else 0
+end as shot_accuracy_rate,
+case 
+    when sum(npxg) > 0 then sum(goals::numeric)/sum(npxg)
+    else 0
+end as xg_conversion_rate,
 round((sum(goals) * 1.0/sum(fpms.minutes)) * 90.0,3) as goals_per_90,
 round((sum(assists) * 1.0/sum(fpms.minutes)) * 90.0,3) as assists_per_90,
 round((sum(shots) * 1.0/sum(fpms.minutes)) * 90.0,3) as shots_per_90,
@@ -59,4 +73,4 @@ left join soccer.dim_player_appearances dpa
 on dpa.id = fpms.id
 left join soccer.dim_squad_rosters dsr 
 on dsr.player_id = fpms.player_id and fpms.team_id = dsr.squad_id and cast(dsr.season as text) = dtm.season
-group by 1,2,3,4,5
+group by 1,2,3,4,5,6

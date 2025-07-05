@@ -11,6 +11,13 @@ ds.squad,
 dtm.season,
 dc.competition,
 dsr.playing_position as roster_position,
+split_part(dpa."position", ',', 1) as primary_position,
+case 
+    when split_part(dpa."position", ',', 1) in ('LB', 'RB') then 'Defender'
+    when split_part(dpa."position", ',', 1) in ('CB') then 'Defender'
+    when split_part(dpa."position", ',', 1) in ('LM', 'CM', 'RM', 'DM', 'AM') then 'Midfielder'
+    when split_part(dpa."position", ',', 1) in ('FW', 'LW', 'RW') then 'Forward'
+end as position_group,
 sum(fpms.minutes) as minutes,
 sum(passes_completed) as passes_completed,
 sum(passes_attempted) as passes_attempted, 
@@ -19,7 +26,7 @@ sum(total_progressive_pass_distance) as total_progressive_pass_distance,
 sum(short_passes_completed) as short_passes_completed,
 sum(short_passes_attempted) as short_passes_attempted,
 sum(medium_passes_completed) as medium_passes_completed,
-sum(medium_passes_attempted) as medium_passed_attempted,
+sum(medium_passes_attempted) as medium_passes_attempted,
 sum(long_passes_completed) as long_passes_completed,
 sum(long_passes_attempted) as long_passes_attempted,
 sum(assists) as assists,
@@ -46,7 +53,11 @@ round((sum(key_passes) * 1.0/sum(fpms.minutes)) * 90.0,3) as key_passes_per_90,
 round((sum(passes_into_final_third) * 1.0/sum(fpms.minutes)) * 90.0,3) as passes_into_final_third_per_90,
 round((sum(passes_into_penalty_area) * 1.0/sum(fpms.minutes)) * 90.0,3) as passes_into_penalty_area_per_90,
 round((sum(crosses_into_penalty_area) * 1.0/sum(fpms.minutes)) * 90.0,3) as crosses_into_penalty_area_per_90,
-round((sum(progressive_passes) * 1.0/sum(fpms.minutes)) * 90.0,3) as progressive_passes_per_90
+round((sum(progressive_passes) * 1.0/sum(fpms.minutes)) * 90.0,3) as progressive_passes_per_90,
+sum(passes_completed::numeric)/nullif(sum(passes_attempted), 0) as pass_completion_rate,
+sum(short_passes_completed::numeric)/nullif(sum(short_passes_attempted), 0) as short_pass_completion_rate,
+sum(medium_passes_completed::numeric)/nullif(sum(medium_passes_attempted), 0) as medium_pass_completion_rate,
+sum(long_passes_completed::numeric)/nullif(sum(long_passes_attempted), 0) as long_pass_completion_rate
 from soccer.f_player_match_passing fpms
 left join soccer.dim_players dp 
 on dp.id = fpms.player_id
@@ -62,4 +73,4 @@ left join soccer.dim_player_appearances dpa
 on dpa.id = fpms.id
 left join soccer.dim_squad_rosters dsr 
 on dsr.player_id = fpms.player_id and fpms.team_id = dsr.squad_id and cast(dsr.season as text) = dtm.season
-group by 1,2,3,4,5
+group by 1,2,3,4,5,6

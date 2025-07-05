@@ -4,7 +4,6 @@
     )
 }}
 
-
 SELECT
   dp.player,
   ds.squad,
@@ -15,31 +14,22 @@ SELECT
   dsr.playing_position AS roster_position,
   dpa.position AS match_position,
   fpms.minutes,
-  goals,
-  assists,
-  pk_goals,
-  pk_attempts,
-  shots,
-  shots_on_target,
-  yellow_cards,
-  red_cards,
-  touches,
-  tackles,
-  interceptions,
-  blocks,
-  xg,
-  npxg,
-  xag,
-  shot_creating_actions,
-  goal_creating_actions,
-  case 
-    when shots > 0 then shots_on_target/shots::numeric
-    else 0
-  end as shot_accuracy_rate,
-  case 
-    when npxg > 0 then goals::numeric/npxg 
-    else 0
-  end as xg_conversion_rate,
+  fpms.yellow_cards,
+  fpms.red_cards,
+  fpms.second_yellow_cards,
+  fpms.fouls,
+  fpms.fouled,
+  fpms.offsides,
+  fpms.crosses,
+  fpms.pks_won,
+  fpms.ball_recoveries,
+  fpms.aerial_duels_won,
+  fpms.aerial_duels_lost,
+  fpms.own_goals,
+  case
+    when aerial_duels_won + aerial_duels_lost = 0 then 0 
+    else aerial_duels_won::numeric/(aerial_duels_won + aerial_duels_lost)
+  end as aerial_duel_win_rate,
   split_part(dpa.position, ',', 1) AS primary_position,
   case 
     when split_part(dpa."position", ',', 1) in ('LB', 'RB') then 'Defender'
@@ -63,9 +53,8 @@ SELECT
   coalesce(
     split_part(dpa.position, ',', 1) IN ('RW', 'LW', 'WB', 'RB', 'LB'),
     FALSE
-  ) AS is_winger,
-  pk_attempts - pk_goals AS pk_misses
-FROM soccer.f_player_match_summary AS fpms
+  ) AS is_winger
+FROM soccer.f_player_match_misc AS fpms
 LEFT JOIN soccer.dim_players AS dp
   ON fpms.player_id = dp.id
 LEFT JOIN soccer.dim_squads AS ds

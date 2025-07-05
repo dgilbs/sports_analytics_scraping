@@ -11,6 +11,7 @@
 select 
 player,
 team,
+player_id,
 playing_position,
 is_center,
 is_guard,
@@ -37,5 +38,5 @@ sum(points) as points,
 round(sum(minutes_played)::numeric, 4) AS minutes_played
 from {{ ref('player_game_box_scores') }}
 where game_date between '{{ start_date }}' and '{{ end_date }}'
-group by 1,2,3,4,5,6,7,8
+group by 1,2,3,4,5,6,7,8,9
 

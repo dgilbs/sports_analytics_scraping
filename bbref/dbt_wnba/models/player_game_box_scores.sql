@@ -39,6 +39,7 @@ CASE
 	ELSE 'Loss'
 END AS game_result,
 dtr.home_or_away,
+fbbs.player_id,
 sum(fg) AS field_goals,
 sum(fga) AS field_goal_attempts,
 sum(fg_3) AS field_goals_threes,
@@ -55,7 +56,7 @@ sum(tov) AS turnovers,
 sum(pf) AS personal_fouls,
 sum(pts) AS points, 
 sum(plus_minus) AS plus_minus,
-round(sum(minutes_played_int)::numeric, 2) AS minutes_played
+round(sum(minutes_played)::numeric, 2) AS minutes_played
 FROM basketball.f_basic_box_score fbbs
 LEFT JOIN basketball.dim_players dp
 ON dp.id = fbbs.player_id
@@ -67,4 +68,4 @@ LEFT JOIN basketball.dim_teams dto
 ON dto.id = dtr.opponent_id 
 left join basketball.dim_rosters dr 
 on dr.player_id = fbbs.player_id and dr.season = dtr.season and dt.id = dr.team_id
-GROUP BY 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16
+GROUP BY 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17

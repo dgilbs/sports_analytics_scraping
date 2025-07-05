@@ -39,6 +39,7 @@ CASE
 	ELSE 'Loss'
 END AS game_result,
 dtr.home_or_away,
+fabs.player_id,
 true_shooting_pct,
 effective_field_goal_pct,
 three_point_attempt_rate,

@@ -7,6 +7,7 @@
 
 select 
 dp.player,
+fpms.id as appearance_id,
 ds.squad,
 dtm.match_date,
 dsa.squad as opponent,
@@ -15,6 +16,12 @@ dc.competition,
 dsr.playing_position,
 dpa."position" as match_position,
 split_part(dpa."position", ',', 1) as primary_position,
+case 
+    when split_part(dpa."position", ',', 1) in ('LB', 'RB') then 'Defender'
+    when split_part(dpa."position", ',', 1) in ('CB') then 'Defender'
+    when split_part(dpa."position", ',', 1) in ('LM', 'CM', 'RM', 'DM', 'AM') then 'Midfielder'
+    when split_part(dpa."position", ',', 1) in ('FW', 'LW', 'RW') then 'Forward'
+end as position_group,
 CASE
 when split_part(dpa."position", ',', 1) in ('FW', 'RW', 'LW') then true
 else false
@@ -38,14 +45,18 @@ end as is_winger,
 fpms.minutes,
 passes_completed,
 passes_attempted, 
+passes_completed::numeric/nullif(passes_attempted, 0)  pass_completion_rate,
 total_pass_distance,
 total_progressive_pass_distance,
 short_passes_completed,
 short_passes_attempted,
+short_passes_completed/nullif(short_passes_attempted::numeric, 0) as short_pass_completion_rate,
 medium_passes_completed,
 medium_passes_attempted,
+medium_passes_completed/nullif(medium_passes_attempted::numeric, 0) as medium_pass_completion_rate,
 long_passes_completed,
 long_passes_attempted,
+long_passes_completed/nullif(long_passes_attempted::numeric, 0) as long_pass_completion_rate,
 assists,
 xag,
 xa ,

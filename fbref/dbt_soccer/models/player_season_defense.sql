@@ -12,14 +12,28 @@ dtm.season,
 dc.competition,
 dpa.position as playing_position,
 dsr.playing_position as roster_position,
+case 
+    when split_part(dpa."position", ',', 1) in ('LB', 'RB') then 'Defender'
+    when split_part(dpa."position", ',', 1) in ('CB') then 'Defender'
+    when split_part(dpa."position", ',', 1) in ('LM', 'CM', 'RM', 'DM', 'AM') then 'Midfielder'
+    when split_part(dpa."position", ',', 1) in ('FW', 'LW', 'RW') then 'Forward'
+end as position_group,
 sum(fpms.minutes) as minutes,
 sum(tackles_att) as tackles_att,
 sum(tackles_won) as tackles_won,
+case
+    when sum(tackles_att) = 0 then 0
+    else sum(tackles_won)::numeric/sum(tackles_att)
+end as tackle_success_rate,
 sum(tackles_def_third) as tackles_def_third,
 sum(tackles_mid_third) as tackles_mid_third,
 sum(tackles_att_third) as tackles_att_third,
 sum(challenges_won) as challenges_won,
 sum(challenges_att) as challenges_att,
+case
+    when sum(challenges_att) = 0 then 0
+    else sum(challenges_won)::numeric/sum(challenges_att)
+end as challenge_success_rate,
 sum(blocks) as blocks,
 sum(shot_blocks) as shot_blocks,
 sum(pass_blocks) as pass_blocks,
@@ -54,4 +68,4 @@ left join soccer.dim_player_appearances dpa
 on dpa.id = fpms.id
 left join soccer.dim_squad_rosters dsr 
 on dsr.player_id = fpms.player_id and fpms.team_id = dsr.squad_id and cast(dsr.season as text) = dtm.season
-group by 1,2,3,4,5,6
+group by 1,2,3,4,5,6,7

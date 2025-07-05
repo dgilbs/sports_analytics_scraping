@@ -14,6 +14,12 @@ dtm.match_date,
 dc.competition,
 dpa."position" as match_position,
 split_part(dpa."position", ',', 1) as primary_position,
+case 
+    when split_part(dpa."position", ',', 1) in ('LB', 'RB') then 'Defender'
+    when split_part(dpa."position", ',', 1) in ('CB') then 'Defender'
+    when split_part(dpa."position", ',', 1) in ('LM', 'CM', 'RM', 'DM', 'AM') then 'Midfielder'
+    when split_part(dpa."position", ',', 1) in ('FW', 'LW', 'RW') then 'Forward'
+end as position_group,
 CASE
 when split_part(dpa."position", ',', 1) in ('FW', 'RW', 'LW') then true
 else false
@@ -37,11 +43,19 @@ end as is_winger,
 fpms.minutes,
 tackles_att,
 tackles_won,
+case 
+    when tackles_att = 0 then 0
+    else tackles_won::numeric/tackles_att
+end as tackle_success_rate,
 tackles_def_third,
 tackles_mid_third,
 tackles_att_third,
 challenges_won,
 challenges_att,
+case 
+    when challenges_att = 0 then 0
+    else challenges_won::numeric/challenges_att
+end as challenge_success_rate,
 blocks,
 shot_blocks,
 pass_blocks,

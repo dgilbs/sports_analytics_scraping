@@ -1,0 +1,21 @@
+-- 1. Tackle Dominance - Duel winning with volume reward
+-- Formula: (tackles_won / tackles_att) + tackles_won
+-- Data source: defense_defenders.csv
+-- 2. Ball Progression Impact - Advancing play from defense
+-- Formula: progressive_passes + (progressive_carries × 2) + carries_into_final_third
+-- Data sources: passing_defenders.csv + possession_defenders.csv
+-- 3. Possession Security Index - Ball retention under pressure
+-- Formula: (passes_completed / passes_attempted) × (1 - (carries_miscontrolled + carries_dispossessed) / carries)
+-- Data sources: passing_defenders.csv + possession_defenders.csv
+-- 4. Defensive Actions per Minute - Overall defensive workload
+-- Formula: (tackles_won + interceptions + clearances + blocks) / minutes
+-- Data source: defense_defenders.csv
+-- 5. Attacking Third Contribution - Modern defender attacking output
+-- Formula: (touches_att_third / touches) × 100 + key_passes + assists + shots
+-- Data sources: possession_defenders.csv + passing_defenders.csv + summary_defenders.csv
+-- 6. Zone Versatility Score - Defensive coverage across areas
+-- Formula: (tackles_def_third + tackles_mid_third + tackles_att_third) + (touches_def_third + touches_mid_third + touches_att_third) / touches × 10
+-- Data sources: defense_defenders.csv + possession_defenders.csv
+-- What it measures: Active defensive presence across zones + possession distribution
+-- 7. Challenge Success Impact - Physical duel effectiveness with volume
+-- Formula: (challenges_won / challenges_att) + shot_blocks + pass_blocks
