@@ -11,3 +11,5 @@
 *.csv
 *.zip
 *.ipynb
+token.json
+.bashrc
