@@ -13,3 +13,4 @@
 *.ipynb
 token.json
 .bashrc
+backup.sql
