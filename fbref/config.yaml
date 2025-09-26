@@ -27,8 +27,8 @@ possession_agg_cols:
     - carries_into_penalty_area
     - carries_miscontrolled
     - carries_disposessed
-    - passes_recieved
-    - progressive_passes_recieved
+    - passes_received
+    - progressive_passes_received
 passing_agg_cols:
     - passes_completed
     - passes_attempted

@@ -9,7 +9,7 @@ select
 poss.player,
 poss.minutes,
 round(poss.touches_att_penalty_area::numeric/nullif(poss.touches, 0), 4) as penalty_area_touch_pct,
-progressive_passes_recieved,
+progressive_passes_received,
 progressive_carries,
 carries_into_penalty_area,
 round(poss.touches_att_third::numeric/nullif(poss.touches, 0), 4) as attacking_third_touch_pct,

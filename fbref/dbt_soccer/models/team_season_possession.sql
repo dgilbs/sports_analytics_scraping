@@ -28,8 +28,8 @@ sum(ft.carries_into_final_third) as carries_into_final_third,
 sum(ft.carries_into_penalty_area) as carries_into_penalty_area,
 sum(ft.carries_miscontrolled) as carries_miscontrolled,
 sum(ft.carries_dispossessed) as carries_dispossessed,
-sum(ft.passes_recieved) as passes_recieved,
-sum(ft.progressive_passes_recieved) as progressive_passes_recieved
+sum(ft.passes_received) as passes_received,
+sum(ft.progressive_passes_received) as progressive_passes_received
 from soccer.f_player_match_possession ft
 left join soccer.dim_squads ds 
 on ds.id = ft.team_id

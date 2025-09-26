@@ -10,12 +10,14 @@ import json
 import itertools
 import sqlite3
 import psycopg2
+import requests
 from datetime import datetime, date, timedelta
 from sqlalchemy import create_engine, text
 from psycopg2.extras import execute_values
 # from google.oauth2 import service_account
 # from pandas_gbq import to_gbq
 from urllib.request import urlopen
+from io import StringIO
 # from google.cloud import storage, bigquery
 
 
@@ -92,7 +94,11 @@ def scrape_schedule(comp_dict, season):
     url = 'https://fbref.com/en/comps/{}/{}/schedule/{}-{}'.format(comp_id, season, season, comp_tag)
     sched_id = 'sched_{}_{}_1'.format(season, comp_id)
     attrs = {'id': sched_id}
-    arr = pd.read_html(url, extract_links='body', attrs=attrs)
+    headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'}
+
+# Some versions of pandas allow passing headers directly
+    response = requests.get(url, headers=headers)
+    arr = pd.read_html(StringIO(response.text), extract_links='body', attrs=attrs)
     check_cols = ['Referee', 'Venue', 'Match Report']
     for i in arr:
         cols = i.columns
@@ -141,9 +147,14 @@ def clean_schedule(df, config, league_info, season_str):
 
 def scrape_match_reports(row, scraping_config):
     url = 'https://www.fbref.com' + row['match_report_link']
-    arr = pd.read_html(url, extract_links='body')
+    
     folders = scraping_config['match_report_folder']
     cols = scraping_config['match_report_path']
+    headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'}
+
+# Some versions of pandas allow passing headers directly
+    response = requests.get(url, headers=headers)
+    arr = pd.read_html(StringIO(response.text), extract_links='body')
     match_id = row['id']
     for index, i in enumerate(arr):
         fp = cols.get(index)
@@ -499,7 +510,7 @@ def upsert_df(df, table_name, conn_string, unique_columns, db_config, schema='so
         for col in num_cols:
             df.loc[:, col] = pd.to_numeric(df[col], errors='coerce')
             df.loc[:, col] = df[col].fillna(0)
-            #df[col] = df[col].replace({pd.NA: 0, np.nan: 0})
+            # df[col] = df[col].replace({pd.NA: 0, np.nan: 0})
 
     
     if dedupe:

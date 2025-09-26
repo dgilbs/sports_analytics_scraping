@@ -14,7 +14,7 @@ parent_dir = os.path.abspath(os.path.join(current_dir, '../base_code/'))
 sys.path.append(parent_dir)
 import query_db as qdb
 
-conn_string =  "postgresql://danielgilberg:password@localhost:5432/projects"
+conn_string = 'postgresql://neondb_owner:npg_RSU6cfsvr8zy@ep-round-boat-aeeid91z-pooler.c-2.us-east-2.aws.neon.tech/neondb?sslmode=require&channel_binding=require'
 
 
 st = datetime.now()
@@ -63,6 +63,7 @@ for key in league_list:
     time.sleep(10)
 
 full_schedule = pd.concat(schedules, ignore_index=True)
+print(len(full_schedule), cr_config['start_date'])
 if  cr_config['use_start_date']: 
     full_schedule = full_schedule[full_schedule.match_date >= cr_config['start_date']]
 
@@ -70,7 +71,7 @@ if cr_config['use_end_date']:
     full_schedule = full_schedule[full_schedule.match_date <= cr_config['end_date']]
 
     
-conn_string =  "postgresql://danielgilberg:password@localhost:5432/projects"
+#conn_string =  "postgresql://danielgilberg:password@localhost:5432/projects"
 competitions = scs.build_competitions_df(info)
 scs.upsert_df(competitions, 'dim_competitions', conn_string, ['id'], db_config, dedupe=True)
 print('competitions done')
@@ -87,8 +88,8 @@ scs.upsert_df(teams, 'dim_team_matches', conn_string, ['id'], db_config)
 
 
 scs.scrape_from_schedule(full_schedule, scraping_config)
-
 ids = list(full_schedule.id)
+ids = [i for i in ids if i != '6fe8b81d']
 categories = ['summary', 'passing', 'possession', 'defense','shots', 'possession', 'passing_types', 'keeper', 'misc']
 combos = list(itertools.product(ids, categories))
 for j in combos:

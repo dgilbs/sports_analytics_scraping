@@ -14,6 +14,12 @@ dc.competition,
 dsr.playing_position as roster_position,
 dpa."position" as match_position,
 split_part(dpa."position", ',', 1) as primary_position,
+case 
+    when split_part(dpa."position", ',', 1) in ('LB', 'RB') then 'Defender'
+    when split_part(dpa."position", ',', 1) in ('CB') then 'Defender'
+    when split_part(dpa."position", ',', 1) in ('LM', 'CM', 'RM', 'DM', 'AM') then 'Midfielder'
+    when split_part(dpa."position", ',', 1) in ('FW', 'LW', 'RW') then 'Forward'
+end as position_group,
 CASE
 when split_part(dpa."position", ',', 1) in ('FW', 'RW', 'LW') then true
 else false
@@ -83,8 +89,8 @@ carries_into_final_third,
 carries_into_penalty_area,
 carries_miscontrolled,
 carries_dispossessed,
-passes_recieved,
-progressive_passes_recieved,
+passes_received,
+progressive_passes_received,
 passes_live,
 passes_dead_ball,
 passes_crosses,
@@ -116,7 +122,51 @@ pks_won,
 ball_recoveries,
 aerial_duels_won,
 aerial_duels_lost,
-own_goals
+own_goals,
+crosses,
+case
+    when aerial_duels_won + aerial_duels_lost = 0 then 0 
+    else aerial_duels_won::numeric/(aerial_duels_won + aerial_duels_lost)
+end as aerial_duel_win_rate,
+f_pass.passes_completed::numeric/nullif(f_pass.passes_attempted, 0)  pass_completion_rate,
+short_passes_completed/nullif(short_passes_attempted::numeric, 0) as short_pass_completion_rate,
+medium_passes_completed/nullif(medium_passes_attempted::numeric, 0) as medium_pass_completion_rate,
+long_passes_completed/nullif(long_passes_attempted::numeric, 0) as long_pass_completion_rate,
+carries - (carries_dispossessed + carries_miscontrolled) as successful_carries,
+carries_dispossessed + carries_miscontrolled as lost_carries,
+(carries - (carries_dispossessed + carries_miscontrolled))/nullif(carries::numeric, 0) as carry_control_rate,
+  case 
+    when shots > 0 then shots_on_target/shots::numeric
+    else 0
+  end as shot_accuracy_rate,
+  case 
+    when npxg > 0 then goals::numeric/npxg 
+    else 0
+  end as xg_conversion_rate,
+case 
+    when challenges_att = 0 then 0
+    else challenges_won::numeric/challenges_att
+end as challenge_success_rate,
+case 
+    when tackles_att = 0 then 0
+    else tackles_won::numeric/tackles_att
+end as tackle_success_rate,
+case 
+  when take_ons_attempted > 0 then take_ons_succeeded::numeric/take_ons_attempted
+  else 0
+end as take_on_success_rate,
+case 
+  when goals = 1 then 30
+  when goals = 2 then 70
+  when goals >= 3 then 100
+  else 0
+end as goal_volume_bonus,
+case 
+  when fpms.assists = 1 then 35
+  when fpms.assists = 2 then 80
+  when fpms.assists >= 3 then 100
+  else 0
+end as assist_volume_bonus
 from soccer.f_player_match_summary fpms
 left join soccer.dim_players dp 
 on dp.id = fpms.player_id

@@ -196,9 +196,9 @@ match_report_possession_dtypes:
   live_ball_touches: Int64
   minutes: Int64
   miscontrols: Int64
-  passes_recieved: Int64
+  passes_received: Int64
   progressive_carries: Int64
-  progressive_passes_recieved: Int64
+  progressive_passes_received: Int64
   progressivee_carrying_distance: Int64
   tackled_during_take_on: Int64
   tackled_during_take_on_pct: float
@@ -231,8 +231,8 @@ match_report_possession_rename_columns:
   carries_cpa: carries_into_penalty_area
   carries_mis: carries_miscontrolled
   carries_dis: carries_disposessed
-  receiving_rec: passes_recieved
-  receiving_prgr: progressive_passes_recieved
+  receiving_rec: passes_received
+  receiving_prgr: progressive_passes_received
   pos: position
 match_report_shots_dtypes:
   psxg: float
@@ -563,9 +563,9 @@ team_stats_possession_dtypes:
   live_ball_touches: Int64
   minutes_divided_by_90: float
   miscontrols: Int64
-  passes_recieved: Int64
+  passes_received: Int64
   progressive_carries: Int64
-  progressive_passes_recieved: Int64
+  progressive_passes_received: Int64
   take_on_success_pct: float
   take_ons_attempted: Int64
   take_ons_succeeded: Int64
@@ -594,8 +594,8 @@ team_stats_possession_rename_columns:
   mis: miscontrols
   prgc: progressive_carries
   prgdist: total_progressive_distance_carried
-  prgr: progressive_passes_recieved
-  rec: passes_recieved
+  prgr: progressive_passes_received
+  rec: passes_received
   succ: take_ons_succeeded
   succ%: take_on_success_pct
   tkld: times_tackled_during_take_on
@@ -664,7 +664,7 @@ team_stats_standard_dtypes:
   points_per_match: float
   progressive_carries: Int64
   progressive_passes: Int64
-  progressive_passes_recieved: Int64
+  progressive_passes_received: Int64
   red_cards: Int64
   starts: Int64
   wins: Int64
@@ -706,7 +706,7 @@ team_stats_standard_rename_columns:
   pkatt: pk_attempts
   prgc: progressive_carries
   prgp: progressive_passes
-  prgr: progressive_passes_recieved
+  prgr: progressive_passes_received
   pts: points
   pts/mp: points_per_match
   w: wins

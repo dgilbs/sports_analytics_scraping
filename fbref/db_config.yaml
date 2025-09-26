@@ -205,8 +205,8 @@ f_player_match_possession:
         - carries_into_penalty_area
         - carries_miscontrolled
         - carries_disposessed
-        - passes_recieved
-        - progressive_passes_recieved
+        - passes_received
+        - progressive_passes_received
     rename_cols:
         - id
         - player_id
@@ -231,8 +231,8 @@ f_player_match_possession:
         - carries_into_penalty_area
         - carries_miscontrolled
         - carries_dispossessed
-        - passes_recieved
-        - progressive_passes_recieved
+        - passes_received
+        - progressive_passes_received
     numeric_cols:
         - minutes
         - touches
@@ -253,8 +253,8 @@ f_player_match_possession:
         - carries_into_penalty_area
         - carries_miscontrolled
         - carries_dispossessed
-        - passes_recieved
-        - progressive_passes_recieved
+        - passes_received
+        - progressive_passes_received
     key: id
 dim_team_matches:
     df_cols:
