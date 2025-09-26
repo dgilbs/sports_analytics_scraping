@@ -1,0 +1,338 @@
+Defense:
+  Forward:
+    categories:
+      pressing_harassment:
+        weight: 0.70  # Increased from 0.50
+        metrics:
+          tackles_att_third: 0.60    # Increased from 0.50
+          tackles_att: 0.25          # Reduced from 0.30
+          challenges_att: 0.15       # Reduced from 0.20
+      
+      defensive_efficiency:
+        weight: 0.30  # Same
+        metrics:
+          tackle_success_rate: 0.70         # Increased from 0.50
+          challenge_success_rate: 0.30      # Reduced from 0.50
+      
+      # REMOVED disruption and reliability categories - too conservative
+
+  Midfielder:
+    categories:
+      ball_winning:
+        weight: 0.60  # Increased from 0.45
+        metrics:
+          tackles_won: 0.50          # Increased from 0.44
+          interceptions: 0.35        # Increased from 0.33
+          tackles_mid_third: 0.15    # Reduced from 0.23
+      
+      defensive_efficiency:
+        weight: 0.40  # Increased from 0.25
+        metrics:
+          tackle_success_rate: 0.70         # Increased from 0.60
+          challenge_success_rate: 0.30      # Reduced from 0.40
+      
+      # REMOVED active_pressing and support_defending - streamlined
+
+  Defender:
+    categories:
+      core_defending:
+        weight: 0.50  # Increased from 0.40
+        metrics:
+          tackles_won: 0.40          # Increased from 0.37
+          interceptions: 0.40        # Increased from 0.37
+          clearances: 0.20           # Reduced from 0.26
+      
+      defensive_reliability:
+        weight: 0.30  # Same
+        metrics:
+          tackle_success_rate: 0.70         # Increased from 0.50
+          challenge_success_rate: 0.30      # Reduced from 0.33
+          # REMOVED error_rate - too punitive
+      
+      area_control:
+        weight: 0.20  # Same
+        metrics:
+          tackles_def_third: 0.50    
+          shot_blocks: 0.30          # Increased from 0.25
+          pass_blocks: 0.20          # Reduced from 0.25
+
+  Goalkeeper:
+    categories:
+      active_defending:
+        weight: 0.60  # Increased from 0.25
+        metrics:
+          clearances: 0.60          
+          interceptions: 0.40        
+      
+      reliability:
+        weight: 0.40  # Reduced from 0.60
+        metrics:
+          challenge_success_rate: 1.0      # Removed error_rate penalty
+
+Overall:
+  Forward:
+    categories:
+      attacking_output:
+        weight: 0.80  # MASSIVELY INCREASED from 0.50
+        metrics:
+          goals: 0.30                # Increased from 0.16
+          goal_volume_bonus: 0.45    # Increased from 0.36
+          npxg: 0.15                 # Reduced from 0.24
+          shots_on_target: 0.10      # Reduced from 0.14
+          # REMOVED xg_conversion_rate - redundant
+      
+      ball_skills:
+        weight: 0.20  # Increased from 0.15
+        metrics:
+          take_on_success_rate: 0.60        # Increased from 0.53
+          carries_into_penalty_area: 0.40   # Increased from 0.27
+          # REMOVED touches_att_penalty_area - less discriminating
+      
+      # REMOVED chance_creation and work_rate_discipline - simplified focus
+
+  Midfielder:
+    categories:
+      chance_creation:
+        weight: 0.45  # Increased from 0.35
+        metrics:
+          shot_creating_actions: 0.40 # Reduced from 0.43
+          goal_creating_actions: 0.35 # Increased from 0.29
+          assist_volume_bonus: 0.25   # Increased from 0.17
+          # REMOVED assists - covered by volume bonus
+      
+      attacking_threat:
+        weight: 0.30  # Increased from 0.20
+        metrics:
+          goals: 0.35                
+          goal_volume_bonus: 0.45           # Increased from 0.40
+          npxg: 0.20                 # Reduced from 0.30
+      
+      passing_distribution:
+        weight: 0.25  # Same
+        metrics:
+          progressive_passes: 0.50   # Increased from 0.40
+          pass_completion_rate: 0.20 # Reduced from 0.32
+          passes_into_final_third: 0.30 # Increased from 0.16
+          # REMOVED key_passes - covered in chance creation
+      
+      # REMOVED defensive_contribution and work_rate_discipline
+
+  Defender:
+    categories:
+      attacking_contribution:
+        weight: 0.40  # MASSIVELY INCREASED from 0.25
+        metrics:
+          goals: 0.35                # Increased from 0.32
+          goal_volume_bonus: 0.45    # MASSIVELY INCREASED from 0.24
+          assists: 0.20              # Reduced from 0.24
+          # REMOVED assist_volume_bonus and shot_creating_actions
+      
+      defensive_actions:
+        weight: 0.35  # Increased from 0.30
+        metrics:
+          tackles_won: 0.40          # Increased from 0.33
+          interceptions: 0.35        # Increased from 0.27
+          clearances: 0.25           # Increased from 0.23
+          # REMOVED blocks and error_avoidance_score
+      
+      aerial_duels:
+        weight: 0.25  # MASSIVELY INCREASED from 0.15
+        metrics:
+          aerial_duel_success_rate: 0.60    # Reduced from 0.67
+          aerial_duels_won: 0.40     # Increased from 0.33
+      
+      # REMOVED passing_distribution and discipline - too conservative
+
+  Goalkeeper:
+    categories:
+      aerial_command:
+        weight: 0.50  # MASSIVELY INCREASED from 0.25
+        metrics:
+          aerial_duel_success_rate: 0.60
+          aerial_duels_won: 0.40
+      
+      distribution:
+        weight: 0.30  # Increased from 0.20
+        metrics:
+          pass_completion_rate: 0.30        # Reduced from 0.50
+          long_pass_completion_rate: 0.40   # Increased from 0.30
+          progressive_passes: 0.30   # Increased from 0.20
+      
+      activity:
+        weight: 0.20  # MASSIVELY INCREASED from 0.05
+        metrics:
+          touches: 0.40
+          clearances: 0.40
+          ball_recoveries: 0.20
+
+Possession:
+  Forward:
+    categories:
+      attacking_possession:
+        weight: 0.80  # MASSIVELY INCREASED from 0.60
+        metrics:
+          progressive_carries: 0.40  # Increased from 0.30
+          carries_into_penalty_area: 0.35 # Increased from 0.25
+          touches_att_penalty_area: 0.25 # Same
+          # REMOVED progressive_passes_received - less controllable
+
+      link_up_play:
+        weight: 0.20  # Reduced from 0.40
+        metrics:
+          passes_received: 0.60      # Same
+          touches: 0.40              # Same
+
+  Midfielder:
+    categories:
+      progression:
+        weight: 0.70  # MASSIVELY INCREASED from 0.50
+        metrics:
+          progressive_carries: 0.40  # Increased from 0.25
+          carries_into_final_third: 0.35 # Increased from 0.25
+          progressive_passes_received: 0.25 # Same
+          # REMOVED passes_received - redundant
+
+      control_and_distribution:
+        weight: 0.30  # Reduced from 0.50
+        metrics:
+          touches_mid_third: 0.60    # Increased from 0.40
+          touches: 0.40              # Increased from 0.30
+          # REMOVED passes_received - redundant
+
+  Defender:
+    categories:
+      build_from_back:
+        weight: 0.80  # MASSIVELY INCREASED from 0.60
+        metrics:
+          progressive_passes_received: 0.40 # Increased from 0.30
+          passes_received: 0.30      # Increased from 0.25
+          touches_def_third: 0.30    # Increased from 0.25
+          # REMOVED touches - redundant
+
+      secure_possession:
+        weight: 0.20  # Reduced from 0.40
+        metrics:
+          touches_def_pen_area: 0.70 # Increased from 0.50
+          touches: 0.30              # Reduced from 0.50
+
+  Goalkeeper:
+    categories:
+      involvement_in_possession:
+        weight: 1.0
+        metrics:
+          touches: 0.50              # Increased from 0.40
+          passes_received: 0.30      
+          touches_def_pen_area: 0.20 # Reduced from 0.30
+
+Passing:
+  Forward:
+    categories:
+      final_third_passing:
+        weight: 0.80  # MASSIVELY INCREASED from 0.60
+        metrics:
+          key_passes: 0.50           # Increased from 0.45
+          passes_into_penalty_area: 0.35 # Same
+          crosses: 0.15              # Reduced from 0.20
+
+      general_distribution:
+        weight: 0.20  # Reduced from 0.40
+        metrics:
+          progressive_passes: 0.60   # Increased from 0.30
+          pass_completion_rate: 0.20 # Reduced from 0.40
+          passes_completed: 0.20     # Reduced from 0.30
+
+  Midfielder:
+    categories:
+      progression_and_chance_creation:
+        weight: 0.80  # MASSIVELY INCREASED from 0.65
+        metrics:
+          key_passes: 0.35           # Increased from 0.30
+          progressive_passes: 0.35   # Increased from 0.30
+          passes_into_final_third: 0.30 # Increased from 0.25
+          # REMOVED through_balls and passes_into_penalty_area
+
+      technical_execution:
+        weight: 0.20  # Reduced from 0.35
+        metrics:
+          pass_completion_rate: 0.50        # Increased from 0.25
+          passes_completed: 0.30     # Increased from 0.20
+          switches_of_play: 0.20     # Same
+          # REMOVED short_pass_completion_rate and passes_off_ground
+
+  Defender:
+    categories:
+      buildup_and_safety:
+        weight: 0.70  # INCREASED from 0.60
+        metrics:
+          progressive_passes: 0.40   # Increased from 0.20
+          passes_into_final_third: 0.30 # Increased from 0.15
+          pass_completion_rate: 0.20 # Reduced from 0.30
+          passes_completed: 0.10     # Reduced from 0.25
+          # REMOVED short_pass_completion_rate
+
+      long_distribution:
+        weight: 0.30  # Reduced from 0.40
+        metrics:
+          long_pass_completion_rate: 0.60   # Increased from 0.40
+          switches_of_play: 0.40     # Increased from 0.35
+          # REMOVED passes_off_ground
+
+  Goalkeeper:
+    categories:
+      outlet_passing:
+        weight: 1.0
+        metrics:
+          long_pass_completion_rate: 0.50   # Increased from 0.40
+          passes_completed: 0.25     # Reduced from 0.30
+          progressive_passes: 0.25   # Reduced from 0.30
+
+Shooting:
+  Forward:
+    categories:
+      finishing:
+        weight: 0.85  # MASSIVELY INCREASED from 0.65
+        metrics:
+          goals: 0.40                # MASSIVELY INCREASED from 0.30
+          goal_volume_bonus: 0.45    # MASSIVELY INCREASED from 0.30
+          xg_conversion_rate: 0.15   # Reduced from 0.25
+          # REMOVED npxg - redundant with goals
+
+      shooting_accuracy:
+        weight: 0.15  # Reduced from 0.35
+        metrics:
+          shots_on_target: 0.70      # Increased from 0.60
+          shot_creating_actions: 0.30 # Reduced from 0.40
+
+  Midfielder:
+    categories:
+      scoring_threat:
+        weight: 0.75  # MASSIVELY INCREASED from 0.60
+        metrics:
+          goals: 0.40                # MASSIVELY INCREASED from 0.30
+          goal_volume_bonus: 0.45    # MASSIVELY INCREASED from 0.25
+          npxg: 0.15                 # Reduced from 0.25
+          # REMOVED xg_conversion_rate
+
+      shot_contribution:
+        weight: 0.25  # Reduced from 0.40
+        metrics:
+          shots_on_target: 0.60      # Increased from 0.40
+          shot_creating_actions: 0.40 # Increased from 0.35
+          # REMOVED goal_creating_actions
+
+  Defender:
+    categories:
+      occasional_threat:
+        weight: 1.0
+        metrics:
+          goals: 0.50                # MASSIVELY INCREASED from 0.30
+          goal_volume_bonus: 0.30    # NEW - added volume bonus
+          assists: 0.20              # Same
+          # REMOVED shots_on_target, shot_creating_actions, npxg
+
+  Goalkeeper:
+    categories:
+      scoring_impact:
+        weight: 1.0
+        metrics:
+          goals: 1.0  # Rare but worth maximum points

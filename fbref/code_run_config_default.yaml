@@ -1,0 +1,25 @@
+start_date: 2025-09-06
+use_start_date: True
+end_date: 2025-06-07
+use_end_date: False
+data_run:
+  wsl:
+    league_tag: 'WSL'
+    season: 2024-2025
+  nwsl:
+    league_tag: 'NWSL'
+    season: 2025
+  premier_league:
+    league_tag: 'Premier-League'
+    season: 2024-2025
+  bundesliga:
+    league_tag: 'Bundesliga'
+    season: 2024-2025
+  arkema:
+    league_tag: Arkema
+    season: 2024-2025
+filter_leagues: True
+use_leagues:
+    - nwsl
+
+  

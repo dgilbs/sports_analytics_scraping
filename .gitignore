@@ -1,0 +1,13 @@
+**/substack_visualizations/ 
+*.pyc
+**/.ipynb_checkpoints/
+*/raw_data/
+*/data
+**.DS_Store
+*.db
+**/db_data_backup
+**/db_backup
+**/benchmark_data
+*.csv
+*.zip
+*.ipynb

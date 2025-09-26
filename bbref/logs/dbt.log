@@ -1,0 +1,27 @@
+[0m20:32:32.037844 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106f436d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106f43850>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106f519d0>]}
+
+
+============================== 20:32:32.040318 | b113371d-971d-4157-b9c3-6f4b2e68ba5d ==============================
+[0m20:32:32.040318 [info ] [MainThread]: Running with dbt=1.5.11
+[0m20:32:32.040675 [debug] [MainThread]: running dbt with arguments {'cache_selected_only': 'False', 'warn_error': 'None', 'quiet': 'False', 'log_format': 'default', 'log_cache_events': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'debug': 'False', 'use_experimental_parser': 'False', 'printer_width': '80', 'send_anonymous_usage_stats': 'True', 'no_print': 'None', 'profiles_dir': '/Users/danny.gilberg/.dbt', 'partial_parse': 'True', 'version_check': 'True', 'indirect_selection': 'eager', 'use_colors': 'True', 'introspect': 'True', 'static_parser': 'True', 'target_path': 'None', 'log_path': 'logs', 'write_json': 'True', 'fail_fast': 'False'}
+[0m20:32:32.042175 [debug] [MainThread]: Starter project path: /opt/anaconda3/lib/python3.11/site-packages/dbt/include/starter_project
+[0m20:32:34.674924 [info ] [MainThread]: 
+Your new dbt project "dbt_wnba" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m20:32:34.675772 [debug] [MainThread]: Command `dbt init` succeeded at 20:32:34.675607 after 2.69 seconds
+[0m20:32:34.676087 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x103239590>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x103239ad0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x103494590>]}
+[0m20:32:34.676371 [debug] [MainThread]: Flushing usage events
+[0m20:32:34.840244 [debug] [MainThread]: Error sending anonymous usage statistics. Disabling tracking for this execution. If you wish to permanently disable tracking, see: https://docs.getdbt.com/reference/global-configs#send-anonymous-usage-stats.

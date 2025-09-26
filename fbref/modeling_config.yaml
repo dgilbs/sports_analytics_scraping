@@ -1,0 +1,9 @@
+model_cols_passing:
+    - xa
+    - short_passes_attempted
+    - key_passes
+    - total_pass_distance_per_90
+    - short_passes_completed_per_90
+    - xa_per_90
+    - key_passes_per_90
+    - progressive_passes_per_90

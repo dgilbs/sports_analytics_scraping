@@ -1,0 +1,28 @@
+match_report_summary_columns:
+    - player
+    - match_date
+    - age
+    - nation
+    - squad
+    - home_or_away
+    - opponent
+    - competition
+    - match_result
+    - starter
+    - minutes_played
+    - goals
+    - assists
+    - goals_plus_assists
+    - non_pk_goals
+    - pks_made
+    - pk_attempts
+    - pks_missed
+    - playing_position
+    - match_report
+match_report_summary_link_columns:
+    - player
+    - squad
+    - opponent
+    - competition
+    - match_report
+    

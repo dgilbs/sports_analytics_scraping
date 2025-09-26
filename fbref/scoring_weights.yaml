@@ -1,0 +1,169 @@
+Possession:
+    Forward:
+        carries_into_penalty_area: 0.2
+        touches_att_penalty_area: 0.1
+        take_on_success_rate: 0.1
+        take_ons_attempted: 0.15
+        carry_efficiency_index: 0.15
+        progressive_carries: 0.1
+        carries_into_final_third: 0.1
+        touches_att_third: 0.1
+    Midfielder:
+        progressive_carries: 0.2
+        total_progressive_carries_distance: 0.15
+        carries_into_final_third: 0.1
+        touches: 0.15
+        touches_mid_third: 0.1
+        carry_control_rate: 0.15
+        ball_retention_index: 0.05
+        carries_into_penalty_area: 0.05
+        take_on_success_rate: 0.05
+    Defender:
+        carry_control_rate: 0.25
+        ball_retention_index: 0.15
+        progressive_carries: 0.15
+        total_progressive_carries_distance: 0.1
+        carries_into_final_third: 0.1
+        touches_def_third: 0.1
+        touches_def_penalty_area: 0.05
+        touches: 0.1
+    Key Metrics:
+        - carries_into_penalty_area
+        - progressive_carries
+        - touches_att_penalty_area
+        - take_ons_attempted
+        - carries_into_final_third
+        - touches_att_third
+        - total_progressive_carries_distance
+        - touches
+        - carry_control_rate
+        - take_on_success_rate
+        - touches_def_third
+        - touches_def_penalty_area       
+Passing:
+    Forward:
+        xa: 0.15
+        key_passes: 0.2
+        passes_into_penalty_area: 0.05
+        pass_completion_rate: 0.15
+        short_pass_completion_rate: 0.1
+        medium_pass_completion_rate: 0.05
+        progressive_passes: 0.15
+        passes_into_final_third: 0.05
+        passes_completed: 0.1
+    Midfielder:
+        progressive_passes: 0.25
+        total_progressive_pass_distance: 0.1
+        passes_into_final_third: 0.1
+        passes_completed: 0.15
+        passes_attempted: 0.1
+        pass_completion_rate: 0.15
+        medium_pass_completion_rate: 0.05
+        key_passes: 0.05
+        xa: 0.05
+    Defender:
+        pass_completion_rate: 0.25
+        short_pass_completion_rate: 0.1
+        long_pass_completion_rate: 0.1
+        progressive_passes: 0.2
+        total_progressive_pass_distance: 0.1
+        passes_into_final_third: 0.05
+        passes_completed: 0.1
+        passes_attempted: 0.05
+Defense:
+    Forward:
+        tackles_att_third: 0.25
+        tackles_att: 0.15
+        challenges_att: 0.1
+        tackle_success_rate: 0.15
+        challenges_att: 0.10
+        tackle_success_rate: 0.15
+        challenge_success_rate: 0.15
+        pass_blocks: 0.1
+        interceptions: 0.05
+        error_rate: 0.05
+    Midfielder: 
+        tackles_won: 0.2
+        interceptions: 0.15
+        tackles_mid_third: 0.1
+        tackle_success_rate: 0.15
+        challenge_success_rate: 0.1
+        tackles_att: 0.1
+        tackles_att_third: 0.1
+        pass_blocks: 0.05
+        error_rate: 0.05
+    Defender:
+        tackles_won: 0.15
+        interceptions: 0.15
+        clearances: 0.1
+        tackle_success_rate: 0.15
+        challenge_success_rate: 0.1
+        error_rate: 0.05
+        tackles_def_third: 0.1
+        shot_blocks: 0.05
+        pass_blocks: 0.05
+        tackles_att: 0.05
+        tackles_mid_third: 0.05
+Shooting:
+    Forward:
+        goals: 0.25
+        shots: 0.05
+        shots_on_target: 0.2
+        npxg: 0.15
+        shot_creating_actions: 0.08
+        goal_creating_actions: 0.07
+        xg_conversion_rate: 0.1
+        shot_accuracy_rate: 0.1
+    Midfielder:
+        goals: 0.15
+        shots: 0.12
+        npxg: 0.12
+        shot_creating_actions: 0.25
+        goal_creating_actions: 0.2
+        xg_conversion_rate: 0.08
+        shot_accuracy_rate: 0.08
+    Defender:
+        goals: 0.15
+        shot_creating_actions: 0.35
+        goal_creating_actions: 0.25
+        xg_conversion_rate: 0.1
+        shots_on_target: 0.08
+        shot_accuracy_rate: 0.07
+    Key Metrics:
+        - goals
+        - shots
+        - shots_on_target
+        - npxg
+        - shot_creating_actions
+        - goal_creating_actions
+Overall:
+    Forward:
+      # Attacking Output (50% total)
+      goals: 0.08
+      goal_volume_bonus: 0.18  # Increased significantly - key differentiator
+      npxg: 0.12
+      shots_on_target: 0.07
+      xg_conversion_rate: 0.05
+      
+      # Chance Creation (25% total)
+      shot_creating_actions: 0.08
+      assists: 0.05
+      assist_volume_bonus: 0.08  # Increased for multi-assist games
+      key_passes: 0.04
+      
+      # Ball Skills & Possession (15% total)
+      take_on_success_rate: 0.08
+      carries_into_penalty_area: 0.04
+      touches_att_penalty_area: 0.03
+      
+      # Work Rate & Duels (7% total)
+      fouled: 0.04
+      aerial_duel_win_rate: 0.02
+      offside_discipline_index: 0.01
+      
+      # Discipline & Reliability (3% total)
+      foul_discipline_index: 0.02
+      card_discipline_index: 0.01
+
+
+    

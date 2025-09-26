@@ -1,0 +1,4 @@
+models/f_nwsl_fantasy_points.sql
+models/nwsl_fantasy_2024_players.sql
+models/nwsl_fantasy_points_2024.sql
+models/analytics_defenders_comprehensive.sql

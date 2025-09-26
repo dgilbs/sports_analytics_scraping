@@ -1,0 +1,11 @@
+start_date: 2024-09-06
+use_start_date: False
+end_date: 2024-09-01
+use_end_date: False
+data_run:
+  wsl-1:
+    league_tag: 'WSL'
+    season: 2021-2022
+  nwsl-1:
+    league_tag: 'NWSL'
+    season: 2019

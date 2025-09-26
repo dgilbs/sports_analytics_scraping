@@ -2,6 +2,11 @@ bbref/data/
 bbref/raw_data/
 *.ipynb
 credentials.json
-*.csv
-*ipynb
-*.pkl
+**/*..csv
+**/*.ipynb
+**/*..pkl
+**/*.png
+**/.ipynb_checkpoints/
+**/*.pyc
+**/*.pkl
+__pycache__/

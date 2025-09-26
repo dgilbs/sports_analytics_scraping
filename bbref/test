@@ -1,0 +1,287 @@
+game_date,away_team,away_pts,home_team,home_pts,box_score,notes,away_team_link,home_team_link,box_score_link,is_playoffs,is_commissioners_cup,away_team_id,home_team_id,game_id
+2025-05-16,Minnesota Lynx,99,Dallas Wings,84,Box Score,,/wnba/teams/MIN/2025.html,/wnba/teams/DAL/2025.html,/wnba/boxscores/202505160DAL.html,False,False,MIN,DAL,202505160DAL
+2025-05-16,Los Angeles Sparks,84,Golden State Valkyries,67,Box Score,,/wnba/teams/LAS/2025.html,/wnba/teams/GSV/2025.html,/wnba/boxscores/202505160GSV.html,False,False,LAS,GSV,202505160GSV
+2025-05-16,Atlanta Dream,90,Washington Mystics,94,Box Score,,/wnba/teams/ATL/2025.html,/wnba/teams/WAS/2025.html,/wnba/boxscores/202505160WAS.html,False,False,ATL,WAS,202505160WAS
+2025-05-17,Chicago Sky,58,Indiana Fever,93,Box Score,,/wnba/teams/CHI/2025.html,/wnba/teams/IND/2025.html,/wnba/boxscores/202505170IND.html,False,False,CHI,IND,202505170IND
+2025-05-17,Las Vegas Aces,78,New York Liberty,92,Box Score,,/wnba/teams/LVA/2025.html,/wnba/teams/NYL/2025.html,/wnba/boxscores/202505170NYL.html,False,False,LVA,NYL,202505170NYL
+2025-05-17,Seattle Storm,59,Phoenix Mercury,81,Box Score,,/wnba/teams/SEA/2025.html,/wnba/teams/PHO/2025.html,/wnba/boxscores/202505170PHO.html,False,False,SEA,PHO,202505170PHO
+2025-05-18,Washington Mystics,90,Connecticut Sun,85,Box Score,,/wnba/teams/WAS/2025.html,/wnba/teams/CON/2025.html,/wnba/boxscores/202505180CON.html,False,False,WAS,CON,202505180CON
+2025-05-18,Minnesota Lynx,89,Los Angeles Sparks,75,Box Score,,/wnba/teams/MIN/2025.html,/wnba/teams/LAS/2025.html,/wnba/boxscores/202505180LAS.html,False,False,MIN,LAS,202505180LAS
+2025-05-19,Seattle Storm,79,Dallas Wings,71,Box Score,,/wnba/teams/SEA/2025.html,/wnba/teams/DAL/2025.html,/wnba/boxscores/202505190DAL.html,False,False,SEA,DAL,202505190DAL
+2025-05-20,Las Vegas Aces,87,Connecticut Sun,62,Box Score,,/wnba/teams/LVA/2025.html,/wnba/teams/CON/2025.html,/wnba/boxscores/202505200CON.html,False,False,LVA,CON,202505200CON
+2025-05-20,Atlanta Dream,91,Indiana Fever,90,Box Score,,/wnba/teams/ATL/2025.html,/wnba/teams/IND/2025.html,/wnba/boxscores/202505200IND.html,False,False,ATL,IND,202505200IND
+2025-05-21,Washington Mystics,74,Golden State Valkyries,76,Box Score,,/wnba/teams/WAS/2025.html,/wnba/teams/GSV/2025.html,/wnba/boxscores/202505210GSV.html,False,False,WAS,GSV,202505210GSV
+2025-05-21,Dallas Wings,81,Minnesota Lynx,85,Box Score,,/wnba/teams/DAL/2025.html,/wnba/teams/MIN/2025.html,/wnba/boxscores/202505210MIN.html,False,False,DAL,MIN,202505210MIN
+2025-05-21,Los Angeles Sparks,86,Phoenix Mercury,89,Box Score,,/wnba/teams/LAS/2025.html,/wnba/teams/PHO/2025.html,/wnba/boxscores/202505210PHO.html,False,False,LAS,PHO,202505210PHO
+2025-05-22,Indiana Fever,81,Atlanta Dream,76,Box Score,,/wnba/teams/IND/2025.html,/wnba/teams/ATL/2025.html,/wnba/boxscores/202505220ATL.html,False,False,IND,ATL,202505220ATL
+2025-05-22,New York Liberty,99,Chicago Sky,74,Box Score,,/wnba/teams/NYL/2025.html,/wnba/teams/CHI/2025.html,/wnba/boxscores/202505220CHI.html,False,False,NYL,CHI,202505220CHI
+2025-05-23,Golden State Valkyries,82,Los Angeles Sparks,73,Box Score,,/wnba/teams/GSV/2025.html,/wnba/teams/LAS/2025.html,/wnba/boxscores/202505230LAS.html,False,False,GSV,LAS,202505230LAS
+2025-05-23,Washington Mystics,72,Las Vegas Aces,75,Box Score,,/wnba/teams/WAS/2025.html,/wnba/teams/LVA/2025.html,/wnba/boxscores/202505230LVA.html,False,False,WAS,LVA,202505230LVA
+2025-05-23,Connecticut Sun,70,Minnesota Lynx,76,Box Score,,/wnba/teams/CON/2025.html,/wnba/teams/MIN/2025.html,/wnba/boxscores/202505230MIN.html,False,False,CON,MIN,202505230MIN
+2025-05-23,Phoenix Mercury,70,Seattle Storm,77,Box Score,,/wnba/teams/PHO/2025.html,/wnba/teams/SEA/2025.html,/wnba/boxscores/202505230SEA.html,False,False,PHO,SEA,202505230SEA
+2025-05-24,Dallas Wings,75,Atlanta Dream,83,Box Score,,/wnba/teams/DAL/2025.html,/wnba/teams/ATL/2025.html,/wnba/boxscores/202505240ATL.html,False,False,DAL,ATL,202505240ATL
+2025-05-24,New York Liberty,90,Indiana Fever,88,Box Score,,/wnba/teams/NYL/2025.html,/wnba/teams/IND/2025.html,/wnba/boxscores/202505240IND.html,False,False,NYL,IND,202505240IND
+2025-05-25,Connecticut Sun,55,Atlanta Dream,79,Box Score,,/wnba/teams/CON/2025.html,/wnba/teams/ATL/2025.html,/wnba/boxscores/202505250ATL.html,False,False,CON,ATL,202505250ATL
+2025-05-25,Chicago Sky,78,Los Angeles Sparks,91,Box Score,,/wnba/teams/CHI/2025.html,/wnba/teams/LAS/2025.html,/wnba/boxscores/202505250LAS.html,False,False,CHI,LAS,202505250LAS
+2025-05-25,Washington Mystics,62,Phoenix Mercury,68,Box Score,,/wnba/teams/WAS/2025.html,/wnba/teams/PHO/2025.html,/wnba/boxscores/202505250PHO.html,False,False,WAS,PHO,202505250PHO
+2025-05-25,Las Vegas Aces,82,Seattle Storm,102,Box Score,,/wnba/teams/LVA/2025.html,/wnba/teams/SEA/2025.html,/wnba/boxscores/202505250SEA.html,False,False,LVA,SEA,202505250SEA
+2025-05-27,Dallas Wings,,Connecticut Sun,,,,/wnba/teams/DAL/2025.html,/wnba/teams/CON/2025.html,/wnba/boxscores/202505270CON.html,False,False,DAL,CON,202505270CON
+2025-05-27,Atlanta Dream,,Los Angeles Sparks,,,,/wnba/teams/ATL/2025.html,/wnba/teams/LAS/2025.html,/wnba/boxscores/202505270LAS.html,False,False,ATL,LAS,202505270LAS
+2025-05-27,Seattle Storm,,Minnesota Lynx,,,,/wnba/teams/SEA/2025.html,/wnba/teams/MIN/2025.html,/wnba/boxscores/202505270MIN.html,False,False,SEA,MIN,202505270MIN
+2025-05-27,Golden State Valkyries,,New York Liberty,,,,/wnba/teams/GSV/2025.html,/wnba/teams/NYL/2025.html,/wnba/boxscores/202505270NYL.html,False,False,GSV,NYL,202505270NYL
+2025-05-27,Chicago Sky,,Phoenix Mercury,,,,/wnba/teams/CHI/2025.html,/wnba/teams/PHO/2025.html,/wnba/boxscores/202505270PHO.html,False,False,CHI,PHO,202505270PHO
+2025-05-28,Indiana Fever,,Washington Mystics,,,,/wnba/teams/IND/2025.html,/wnba/teams/WAS/2025.html,/wnba/boxscores/202505280WAS.html,False,False,IND,WAS,202505280WAS
+2025-05-29,Dallas Wings,,Chicago Sky,,,,/wnba/teams/DAL/2025.html,/wnba/teams/CHI/2025.html,/wnba/boxscores/202505290CHI.html,False,False,DAL,CHI,202505290CHI
+2025-05-29,Golden State Valkyries,,New York Liberty,,,,/wnba/teams/GSV/2025.html,/wnba/teams/NYL/2025.html,/wnba/boxscores/202505290NYL.html,False,False,GSV,NYL,202505290NYL
+2025-05-30,Connecticut Sun,,Indiana Fever,,,,/wnba/teams/CON/2025.html,/wnba/teams/IND/2025.html,/wnba/boxscores/202505300IND.html,False,False,CON,IND,202505300IND
+2025-05-30,Los Angeles Sparks,,Las Vegas Aces,,,,/wnba/teams/LAS/2025.html,/wnba/teams/LVA/2025.html,/wnba/boxscores/202505300LVA.html,False,False,LAS,LVA,202505300LVA
+2025-05-30,Minnesota Lynx,,Phoenix Mercury,,,,/wnba/teams/MIN/2025.html,/wnba/teams/PHO/2025.html,/wnba/boxscores/202505300PHO.html,False,False,MIN,PHO,202505300PHO
+2025-05-30,Atlanta Dream,,Seattle Storm,,,,/wnba/teams/ATL/2025.html,/wnba/teams/SEA/2025.html,/wnba/boxscores/202505300SEA.html,False,False,ATL,SEA,202505300SEA
+2025-05-30,New York Liberty,,Washington Mystics,,,,/wnba/teams/NYL/2025.html,/wnba/teams/WAS/2025.html,/wnba/boxscores/202505300WAS.html,False,False,NYL,WAS,202505300WAS
+2025-05-31,Chicago Sky,,Dallas Wings,,,,/wnba/teams/CHI/2025.html,/wnba/teams/DAL/2025.html,/wnba/boxscores/202505310DAL.html,False,False,CHI,DAL,202505310DAL
+2025-06-01,Minnesota Lynx,,Golden State Valkyries,,,Commissioner's Cup Game,/wnba/teams/MIN/2025.html,/wnba/teams/GSV/2025.html,/wnba/boxscores/202506010GSV.html,False,True,MIN,GSV,202506010GSV
+2025-06-01,Phoenix Mercury,,Los Angeles Sparks,,,Commissioner's Cup Game,/wnba/teams/PHO/2025.html,/wnba/teams/LAS/2025.html,/wnba/boxscores/202506010LAS.html,False,True,PHO,LAS,202506010LAS
+2025-06-01,Connecticut Sun,,New York Liberty,,,Commissioner's Cup Game,/wnba/teams/CON/2025.html,/wnba/teams/NYL/2025.html,/wnba/boxscores/202506010NYL.html,False,True,CON,NYL,202506010NYL
+2025-06-01,Las Vegas Aces,,Seattle Storm,,,Commissioner's Cup Game,/wnba/teams/LVA/2025.html,/wnba/teams/SEA/2025.html,/wnba/boxscores/202506010SEA.html,False,True,LVA,SEA,202506010SEA
+2025-06-03,Washington Mystics,,Indiana Fever,,,Commissioner's Cup Game,/wnba/teams/WAS/2025.html,/wnba/teams/IND/2025.html,/wnba/boxscores/202506030IND.html,False,True,WAS,IND,202506030IND
+2025-06-03,Phoenix Mercury,,Minnesota Lynx,,,Commissioner's Cup Game,/wnba/teams/PHO/2025.html,/wnba/teams/MIN/2025.html,/wnba/boxscores/202506030MIN.html,False,True,PHO,MIN,202506030MIN
+2025-06-03,Dallas Wings,,Seattle Storm,,,Commissioner's Cup Game,/wnba/teams/DAL/2025.html,/wnba/teams/SEA/2025.html,/wnba/boxscores/202506030SEA.html,False,True,DAL,SEA,202506030SEA
+2025-06-05,Golden State Valkyries,,Phoenix Mercury,,,Commissioner's Cup Game,/wnba/teams/GSV/2025.html,/wnba/teams/PHO/2025.html,/wnba/boxscores/202506050PHO.html,False,True,GSV,PHO,202506050PHO
+2025-06-05,New York Liberty,,Washington Mystics,,,Commissioner's Cup Game,/wnba/teams/NYL/2025.html,/wnba/teams/WAS/2025.html,/wnba/boxscores/202506050WAS.html,False,True,NYL,WAS,202506050WAS
+2025-06-06,Atlanta Dream,,Connecticut Sun,,,Commissioner's Cup Game,/wnba/teams/ATL/2025.html,/wnba/teams/CON/2025.html,/wnba/boxscores/202506060CON.html,False,True,ATL,CON,202506060CON
+2025-06-06,Los Angeles Sparks,,Dallas Wings,,,Commissioner's Cup Game,/wnba/teams/LAS/2025.html,/wnba/teams/DAL/2025.html,/wnba/boxscores/202506060DAL.html,False,True,LAS,DAL,202506060DAL
+2025-06-07,Indiana Fever,,Chicago Sky,,,Commissioner's Cup Game,/wnba/teams/IND/2025.html,/wnba/teams/CHI/2025.html,/wnba/boxscores/202506070CHI.html,False,True,IND,CHI,202506070CHI
+2025-06-07,Las Vegas Aces,,Golden State Valkyries,,,Commissioner's Cup Game,/wnba/teams/LVA/2025.html,/wnba/teams/GSV/2025.html,/wnba/boxscores/202506070GSV.html,False,True,LVA,GSV,202506070GSV
+2025-06-07,Seattle Storm,,Phoenix Mercury,,,Commissioner's Cup Game,/wnba/teams/SEA/2025.html,/wnba/teams/PHO/2025.html,/wnba/boxscores/202506070PHO.html,False,True,SEA,PHO,202506070PHO
+2025-06-08,Minnesota Lynx,,Dallas Wings,,,Commissioner's Cup Game,/wnba/teams/MIN/2025.html,/wnba/teams/DAL/2025.html,/wnba/boxscores/202506080DAL.html,False,True,MIN,DAL,202506080DAL
+2025-06-08,Connecticut Sun,,Washington Mystics,,,Commissioner's Cup Game,/wnba/teams/CON/2025.html,/wnba/teams/WAS/2025.html,/wnba/boxscores/202506080WAS.html,False,True,CON,WAS,202506080WAS
+2025-06-09,Golden State Valkyries,,Los Angeles Sparks,,,Commissioner's Cup Game,/wnba/teams/GSV/2025.html,/wnba/teams/LAS/2025.html,/wnba/boxscores/202506090LAS.html,False,True,GSV,LAS,202506090LAS
+2025-06-10,Indiana Fever,,Atlanta Dream,,,Commissioner's Cup Game,/wnba/teams/IND/2025.html,/wnba/teams/ATL/2025.html,/wnba/boxscores/202506100ATL.html,False,True,IND,ATL,202506100ATL
+2025-06-10,Chicago Sky,,New York Liberty,,,Commissioner's Cup Game,/wnba/teams/CHI/2025.html,/wnba/teams/NYL/2025.html,/wnba/boxscores/202506100NYL.html,False,True,CHI,NYL,202506100NYL
+2025-06-11,Los Angeles Sparks,,Las Vegas Aces,,,Commissioner's Cup Game,/wnba/teams/LAS/2025.html,/wnba/teams/LVA/2025.html,/wnba/boxscores/202506110LVA.html,False,True,LAS,LVA,202506110LVA
+2025-06-11,Dallas Wings,,Phoenix Mercury,,,Commissioner's Cup Game,/wnba/teams/DAL/2025.html,/wnba/teams/PHO/2025.html,/wnba/boxscores/202506110PHO.html,False,True,DAL,PHO,202506110PHO
+2025-06-11,Minnesota Lynx,,Seattle Storm,,,Commissioner's Cup Game,/wnba/teams/MIN/2025.html,/wnba/teams/SEA/2025.html,/wnba/boxscores/202506110SEA.html,False,True,MIN,SEA,202506110SEA
+2025-06-13,Chicago Sky,,Atlanta Dream,,,Commissioner's Cup Game,/wnba/teams/CHI/2025.html,/wnba/teams/ATL/2025.html,/wnba/boxscores/202506130ATL.html,False,True,CHI,ATL,202506130ATL
+2025-06-13,Dallas Wings,,Las Vegas Aces,,,Commissioner's Cup Game,/wnba/teams/DAL/2025.html,/wnba/teams/LVA/2025.html,/wnba/boxscores/202506130LVA.html,False,True,DAL,LVA,202506130LVA
+2025-06-14,Seattle Storm,,Golden State Valkyries,,,Commissioner's Cup Game,/wnba/teams/SEA/2025.html,/wnba/teams/GSV/2025.html,/wnba/boxscores/202506140GSV.html,False,True,SEA,GSV,202506140GSV
+2025-06-14,New York Liberty,,Indiana Fever,,,Commissioner's Cup Game,/wnba/teams/NYL/2025.html,/wnba/teams/IND/2025.html,/wnba/boxscores/202506140IND.html,False,True,NYL,IND,202506140IND
+2025-06-14,Los Angeles Sparks,,Minnesota Lynx,,,Commissioner's Cup Game,/wnba/teams/LAS/2025.html,/wnba/teams/MIN/2025.html,/wnba/boxscores/202506140MIN.html,False,True,LAS,MIN,202506140MIN
+2025-06-15,Chicago Sky,,Connecticut Sun,,,Commissioner's Cup Game,/wnba/teams/CHI/2025.html,/wnba/teams/CON/2025.html,/wnba/boxscores/202506150CON.html,False,True,CHI,CON,202506150CON
+2025-06-15,Phoenix Mercury,,Las Vegas Aces,,,Commissioner's Cup Game,/wnba/teams/PHO/2025.html,/wnba/teams/LVA/2025.html,/wnba/boxscores/202506150LVA.html,False,True,PHO,LVA,202506150LVA
+2025-06-15,Atlanta Dream,,Washington Mystics,,,Commissioner's Cup Game,/wnba/teams/ATL/2025.html,/wnba/teams/WAS/2025.html,/wnba/boxscores/202506150WAS.html,False,True,ATL,WAS,202506150WAS
+2025-06-17,Washington Mystics,,Chicago Sky,,,Commissioner's Cup Game,/wnba/teams/WAS/2025.html,/wnba/teams/CHI/2025.html,/wnba/boxscores/202506170CHI.html,False,True,WAS,CHI,202506170CHI
+2025-06-17,Golden State Valkyries,,Dallas Wings,,,Commissioner's Cup Game,/wnba/teams/GSV/2025.html,/wnba/teams/DAL/2025.html,/wnba/boxscores/202506170DAL.html,False,True,GSV,DAL,202506170DAL
+2025-06-17,Connecticut Sun,,Indiana Fever,,,Commissioner's Cup Game,/wnba/teams/CON/2025.html,/wnba/teams/IND/2025.html,/wnba/boxscores/202506170IND.html,False,True,CON,IND,202506170IND
+2025-06-17,Seattle Storm,,Los Angeles Sparks,,,Commissioner's Cup Game,/wnba/teams/SEA/2025.html,/wnba/teams/LAS/2025.html,/wnba/boxscores/202506170LAS.html,False,True,SEA,LAS,202506170LAS
+2025-06-17,Las Vegas Aces,,Minnesota Lynx,,,Commissioner's Cup Game,/wnba/teams/LVA/2025.html,/wnba/teams/MIN/2025.html,/wnba/boxscores/202506170MIN.html,False,True,LVA,MIN,202506170MIN
+2025-06-17,Atlanta Dream,,New York Liberty,,,Commissioner's Cup Game,/wnba/teams/ATL/2025.html,/wnba/teams/NYL/2025.html,/wnba/boxscores/202506170NYL.html,False,True,ATL,NYL,202506170NYL
+2025-06-18,Phoenix Mercury,,Connecticut Sun,,,,/wnba/teams/PHO/2025.html,/wnba/teams/CON/2025.html,/wnba/boxscores/202506180CON.html,False,False,PHO,CON,202506180CON
+2025-06-19,Indiana Fever,,Golden State Valkyries,,,,/wnba/teams/IND/2025.html,/wnba/teams/GSV/2025.html,/wnba/boxscores/202506190GSV.html,False,False,IND,GSV,202506190GSV
+2025-06-19,Phoenix Mercury,,New York Liberty,,,,/wnba/teams/PHO/2025.html,/wnba/teams/NYL/2025.html,/wnba/boxscores/202506190NYL.html,False,False,PHO,NYL,202506190NYL
+2025-06-20,Washington Mystics,,Atlanta Dream,,,,/wnba/teams/WAS/2025.html,/wnba/teams/ATL/2025.html,/wnba/boxscores/202506200ATL.html,False,False,WAS,ATL,202506200ATL
+2025-06-20,Dallas Wings,,Connecticut Sun,,,,/wnba/teams/DAL/2025.html,/wnba/teams/CON/2025.html,/wnba/boxscores/202506200CON.html,False,False,DAL,CON,202506200CON
+2025-06-20,Seattle Storm,,Las Vegas Aces,,,,/wnba/teams/SEA/2025.html,/wnba/teams/LVA/2025.html,/wnba/boxscores/202506200LVA.html,False,False,SEA,LVA,202506200LVA
+2025-06-21,Phoenix Mercury,,Chicago Sky,,,,/wnba/teams/PHO/2025.html,/wnba/teams/CHI/2025.html,/wnba/boxscores/202506210CHI.html,False,False,PHO,CHI,202506210CHI
+2025-06-21,Los Angeles Sparks,,Minnesota Lynx,,,,/wnba/teams/LAS/2025.html,/wnba/teams/MIN/2025.html,/wnba/boxscores/202506210MIN.html,False,False,LAS,MIN,202506210MIN
+2025-06-22,Chicago Sky,,Atlanta Dream,,,,/wnba/teams/CHI/2025.html,/wnba/teams/ATL/2025.html,/wnba/boxscores/202506220ATL.html,False,False,CHI,ATL,202506220ATL
+2025-06-22,Connecticut Sun,,Golden State Valkyries,,,,/wnba/teams/CON/2025.html,/wnba/teams/GSV/2025.html,/wnba/boxscores/202506220GSV.html,False,False,CON,GSV,202506220GSV
+2025-06-22,Indiana Fever,,Las Vegas Aces,,,,/wnba/teams/IND/2025.html,/wnba/teams/LVA/2025.html,/wnba/boxscores/202506220LVA.html,False,False,IND,LVA,202506220LVA
+2025-06-22,New York Liberty,,Seattle Storm,,,,/wnba/teams/NYL/2025.html,/wnba/teams/SEA/2025.html,/wnba/boxscores/202506220SEA.html,False,False,NYL,SEA,202506220SEA
+2025-06-22,Dallas Wings,,Washington Mystics,,,,/wnba/teams/DAL/2025.html,/wnba/teams/WAS/2025.html,/wnba/boxscores/202506220WAS.html,False,False,DAL,WAS,202506220WAS
+2025-06-24,Los Angeles Sparks,,Chicago Sky,,,,/wnba/teams/LAS/2025.html,/wnba/teams/CHI/2025.html,/wnba/boxscores/202506240CHI.html,False,False,LAS,CHI,202506240CHI
+2025-06-24,Atlanta Dream,,Dallas Wings,,,,/wnba/teams/ATL/2025.html,/wnba/teams/DAL/2025.html,/wnba/boxscores/202506240DAL.html,False,False,ATL,DAL,202506240DAL
+2025-06-24,Indiana Fever,,Seattle Storm,,,,/wnba/teams/IND/2025.html,/wnba/teams/SEA/2025.html,/wnba/boxscores/202506240SEA.html,False,False,IND,SEA,202506240SEA
+2025-06-24,Minnesota Lynx,,Washington Mystics,,,,/wnba/teams/MIN/2025.html,/wnba/teams/WAS/2025.html,/wnba/boxscores/202506240WAS.html,False,False,MIN,WAS,202506240WAS
+2025-06-25,New York Liberty,,Golden State Valkyries,,,,/wnba/teams/NYL/2025.html,/wnba/teams/GSV/2025.html,/wnba/boxscores/202506250GSV.html,False,False,NYL,GSV,202506250GSV
+2025-06-25,Connecticut Sun,,Las Vegas Aces,,,,/wnba/teams/CON/2025.html,/wnba/teams/LVA/2025.html,/wnba/boxscores/202506250LVA.html,False,False,CON,LVA,202506250LVA
+2025-06-26,Los Angeles Sparks,,Indiana Fever,,,,/wnba/teams/LAS/2025.html,/wnba/teams/IND/2025.html,/wnba/boxscores/202506260IND.html,False,False,LAS,IND,202506260IND
+2025-06-26,Washington Mystics,,Las Vegas Aces,,,,/wnba/teams/WAS/2025.html,/wnba/teams/LVA/2025.html,/wnba/boxscores/202506260LVA.html,False,False,WAS,LVA,202506260LVA
+2025-06-27,Minnesota Lynx,,Atlanta Dream,,,,/wnba/teams/MIN/2025.html,/wnba/teams/ATL/2025.html,/wnba/boxscores/202506270ATL.html,False,False,MIN,ATL,202506270ATL
+2025-06-27,Indiana Fever,,Dallas Wings,,,,/wnba/teams/IND/2025.html,/wnba/teams/DAL/2025.html,/wnba/boxscores/202506270DAL.html,False,False,IND,DAL,202506270DAL
+2025-06-27,Chicago Sky,,Golden State Valkyries,,,,/wnba/teams/CHI/2025.html,/wnba/teams/GSV/2025.html,/wnba/boxscores/202506270GSV.html,False,False,CHI,GSV,202506270GSV
+2025-06-27,New York Liberty,,Phoenix Mercury,,,,/wnba/teams/NYL/2025.html,/wnba/teams/PHO/2025.html,/wnba/boxscores/202506270PHO.html,False,False,NYL,PHO,202506270PHO
+2025-06-27,Connecticut Sun,,Seattle Storm,,,,/wnba/teams/CON/2025.html,/wnba/teams/SEA/2025.html,/wnba/boxscores/202506270SEA.html,False,False,CON,SEA,202506270SEA
+2025-06-28,Washington Mystics,,Dallas Wings,,,,/wnba/teams/WAS/2025.html,/wnba/teams/DAL/2025.html,/wnba/boxscores/202506280DAL.html,False,False,WAS,DAL,202506280DAL
+2025-06-29,New York Liberty,,Atlanta Dream,,,,/wnba/teams/NYL/2025.html,/wnba/teams/ATL/2025.html,/wnba/boxscores/202506290ATL.html,False,False,NYL,ATL,202506290ATL
+2025-06-29,Seattle Storm,,Golden State Valkyries,,,,/wnba/teams/SEA/2025.html,/wnba/teams/GSV/2025.html,/wnba/boxscores/202506290GSV.html,False,False,SEA,GSV,202506290GSV
+2025-06-29,Chicago Sky,,Los Angeles Sparks,,,,/wnba/teams/CHI/2025.html,/wnba/teams/LAS/2025.html,/wnba/boxscores/202506290LAS.html,False,False,CHI,LAS,202506290LAS
+2025-06-29,Connecticut Sun,,Minnesota Lynx,,,,/wnba/teams/CON/2025.html,/wnba/teams/MIN/2025.html,/wnba/boxscores/202506290MIN.html,False,False,CON,MIN,202506290MIN
+2025-06-29,Las Vegas Aces,,Phoenix Mercury,,,,/wnba/teams/LVA/2025.html,/wnba/teams/PHO/2025.html,/wnba/boxscores/202506290PHO.html,False,False,LVA,PHO,202506290PHO
+2025-07-03,Seattle Storm,,Atlanta Dream,,,,/wnba/teams/SEA/2025.html,/wnba/teams/ATL/2025.html,/wnba/boxscores/202507030ATL.html,False,False,SEA,ATL,202507030ATL
+2025-07-03,Phoenix Mercury,,Dallas Wings,,,,/wnba/teams/PHO/2025.html,/wnba/teams/DAL/2025.html,/wnba/boxscores/202507030DAL.html,False,False,PHO,DAL,202507030DAL
+2025-07-03,Las Vegas Aces,,Indiana Fever,,,,/wnba/teams/LVA/2025.html,/wnba/teams/IND/2025.html,/wnba/boxscores/202507030IND.html,False,False,LVA,IND,202507030IND
+2025-07-03,Washington Mystics,,Minnesota Lynx,,,,/wnba/teams/WAS/2025.html,/wnba/teams/MIN/2025.html,/wnba/boxscores/202507030MIN.html,False,False,WAS,MIN,202507030MIN
+2025-07-03,Los Angeles Sparks,,New York Liberty,,,,/wnba/teams/LAS/2025.html,/wnba/teams/NYL/2025.html,/wnba/boxscores/202507030NYL.html,False,False,LAS,NYL,202507030NYL
+2025-07-05,Los Angeles Sparks,,Indiana Fever,,,,/wnba/teams/LAS/2025.html,/wnba/teams/IND/2025.html,/wnba/boxscores/202507050IND.html,False,False,LAS,IND,202507050IND
+2025-07-05,Golden State Valkyries,,Minnesota Lynx,,,,/wnba/teams/GSV/2025.html,/wnba/teams/MIN/2025.html,/wnba/boxscores/202507050MIN.html,False,False,GSV,MIN,202507050MIN
+2025-07-06,Las Vegas Aces,,Connecticut Sun,,,,/wnba/teams/LVA/2025.html,/wnba/teams/CON/2025.html,/wnba/boxscores/202507060CON.html,False,False,LVA,CON,202507060CON
+2025-07-06,Chicago Sky,,Minnesota Lynx,,,,/wnba/teams/CHI/2025.html,/wnba/teams/MIN/2025.html,/wnba/boxscores/202507060MIN.html,False,False,CHI,MIN,202507060MIN
+2025-07-06,Seattle Storm,,New York Liberty,,,,/wnba/teams/SEA/2025.html,/wnba/teams/NYL/2025.html,/wnba/boxscores/202507060NYL.html,False,False,SEA,NYL,202507060NYL
+2025-07-07,Golden State Valkyries,,Atlanta Dream,,,,/wnba/teams/GSV/2025.html,/wnba/teams/ATL/2025.html,/wnba/boxscores/202507070ATL.html,False,False,GSV,ATL,202507070ATL
+2025-07-07,Dallas Wings,,Phoenix Mercury,,,,/wnba/teams/DAL/2025.html,/wnba/teams/PHO/2025.html,/wnba/boxscores/202507070PHO.html,False,False,DAL,PHO,202507070PHO
+2025-07-08,Las Vegas Aces,,New York Liberty,,,,/wnba/teams/LVA/2025.html,/wnba/teams/NYL/2025.html,/wnba/boxscores/202507080NYL.html,False,False,LVA,NYL,202507080NYL
+2025-07-08,Chicago Sky,,Washington Mystics,,,,/wnba/teams/CHI/2025.html,/wnba/teams/WAS/2025.html,/wnba/boxscores/202507080WAS.html,False,False,CHI,WAS,202507080WAS
+2025-07-09,Dallas Wings,,Chicago Sky,,,,/wnba/teams/DAL/2025.html,/wnba/teams/CHI/2025.html,/wnba/boxscores/202507090CHI.html,False,False,DAL,CHI,202507090CHI
+2025-07-09,Seattle Storm,,Connecticut Sun,,,,/wnba/teams/SEA/2025.html,/wnba/teams/CON/2025.html,/wnba/boxscores/202507090CON.html,False,False,SEA,CON,202507090CON
+2025-07-09,Golden State Valkyries,,Indiana Fever,,,,/wnba/teams/GSV/2025.html,/wnba/teams/IND/2025.html,/wnba/boxscores/202507090IND.html,False,False,GSV,IND,202507090IND
+2025-07-09,Minnesota Lynx,,Phoenix Mercury,,,,/wnba/teams/MIN/2025.html,/wnba/teams/PHO/2025.html,/wnba/boxscores/202507090PHO.html,False,False,MIN,PHO,202507090PHO
+2025-07-10,Minnesota Lynx,,Los Angeles Sparks,,,,/wnba/teams/MIN/2025.html,/wnba/teams/LAS/2025.html,/wnba/boxscores/202507100LAS.html,False,False,MIN,LAS,202507100LAS
+2025-07-10,Las Vegas Aces,,Washington Mystics,,,,/wnba/teams/LVA/2025.html,/wnba/teams/WAS/2025.html,/wnba/boxscores/202507100WAS.html,False,False,LVA,WAS,202507100WAS
+2025-07-11,Atlanta Dream,,Indiana Fever,,,,/wnba/teams/ATL/2025.html,/wnba/teams/IND/2025.html,/wnba/boxscores/202507110IND.html,False,False,ATL,IND,202507110IND
+2025-07-11,Connecticut Sun,,Seattle Storm,,,,/wnba/teams/CON/2025.html,/wnba/teams/SEA/2025.html,/wnba/boxscores/202507110SEA.html,False,False,CON,SEA,202507110SEA
+2025-07-12,Minnesota Lynx,,Chicago Sky,,,,/wnba/teams/MIN/2025.html,/wnba/teams/CHI/2025.html,/wnba/boxscores/202507120CHI.html,False,False,MIN,CHI,202507120CHI
+2025-07-12,Golden State Valkyries,,Las Vegas Aces,,,,/wnba/teams/GSV/2025.html,/wnba/teams/LVA/2025.html,/wnba/boxscores/202507120LVA.html,False,False,GSV,LVA,202507120LVA
+2025-07-13,Dallas Wings,,Indiana Fever,,,,/wnba/teams/DAL/2025.html,/wnba/teams/IND/2025.html,/wnba/boxscores/202507130IND.html,False,False,DAL,IND,202507130IND
+2025-07-13,Connecticut Sun,,Los Angeles Sparks,,,,/wnba/teams/CON/2025.html,/wnba/teams/LAS/2025.html,/wnba/boxscores/202507130LAS.html,False,False,CON,LAS,202507130LAS
+2025-07-13,Atlanta Dream,,New York Liberty,,,,/wnba/teams/ATL/2025.html,/wnba/teams/NYL/2025.html,/wnba/boxscores/202507130NYL.html,False,False,ATL,NYL,202507130NYL
+2025-07-13,Washington Mystics,,Seattle Storm,,,,/wnba/teams/WAS/2025.html,/wnba/teams/SEA/2025.html,/wnba/boxscores/202507130SEA.html,False,False,WAS,SEA,202507130SEA
+2025-07-14,Minnesota Lynx,,Chicago Sky,,,,/wnba/teams/MIN/2025.html,/wnba/teams/CHI/2025.html,/wnba/boxscores/202507140CHI.html,False,False,MIN,CHI,202507140CHI
+2025-07-14,Phoenix Mercury,,Golden State Valkyries,,,,/wnba/teams/PHO/2025.html,/wnba/teams/GSV/2025.html,/wnba/boxscores/202507140GSV.html,False,False,PHO,GSV,202507140GSV
+2025-07-15,Indiana Fever,,Connecticut Sun,,,,/wnba/teams/IND/2025.html,/wnba/teams/CON/2025.html,/wnba/boxscores/202507150CON.html,False,False,IND,CON,202507150CON
+2025-07-15,Washington Mystics,,Los Angeles Sparks,,,,/wnba/teams/WAS/2025.html,/wnba/teams/LAS/2025.html,/wnba/boxscores/202507150LAS.html,False,False,WAS,LAS,202507150LAS
+2025-07-16,Atlanta Dream,,Chicago Sky,,,,/wnba/teams/ATL/2025.html,/wnba/teams/CHI/2025.html,/wnba/boxscores/202507160CHI.html,False,False,ATL,CHI,202507160CHI
+2025-07-16,Las Vegas Aces,,Dallas Wings,,,,/wnba/teams/LVA/2025.html,/wnba/teams/DAL/2025.html,/wnba/boxscores/202507160DAL.html,False,False,LVA,DAL,202507160DAL
+2025-07-16,Phoenix Mercury,,Minnesota Lynx,,,,/wnba/teams/PHO/2025.html,/wnba/teams/MIN/2025.html,/wnba/boxscores/202507160MIN.html,False,False,PHO,MIN,202507160MIN
+2025-07-16,Indiana Fever,,New York Liberty,,,,/wnba/teams/IND/2025.html,/wnba/teams/NYL/2025.html,/wnba/boxscores/202507160NYL.html,False,False,IND,NYL,202507160NYL
+2025-07-16,Golden State Valkyries,,Seattle Storm,,,,/wnba/teams/GSV/2025.html,/wnba/teams/SEA/2025.html,/wnba/boxscores/202507160SEA.html,False,False,GSV,SEA,202507160SEA
+2025-07-22,Atlanta Dream,,Las Vegas Aces,,,,/wnba/teams/ATL/2025.html,/wnba/teams/LVA/2025.html,/wnba/boxscores/202507220LVA.html,False,False,ATL,LVA,202507220LVA
+2025-07-22,Chicago Sky,,Minnesota Lynx,,,,/wnba/teams/CHI/2025.html,/wnba/teams/MIN/2025.html,/wnba/boxscores/202507220MIN.html,False,False,CHI,MIN,202507220MIN
+2025-07-22,Indiana Fever,,New York Liberty,,,,/wnba/teams/IND/2025.html,/wnba/teams/NYL/2025.html,/wnba/boxscores/202507220NYL.html,False,False,IND,NYL,202507220NYL
+2025-07-22,Dallas Wings,,Seattle Storm,,,,/wnba/teams/DAL/2025.html,/wnba/teams/SEA/2025.html,/wnba/boxscores/202507220SEA.html,False,False,DAL,SEA,202507220SEA
+2025-07-22,Los Angeles Sparks,,Washington Mystics,,,,/wnba/teams/LAS/2025.html,/wnba/teams/WAS/2025.html,/wnba/boxscores/202507220WAS.html,False,False,LAS,WAS,202507220WAS
+2025-07-23,Atlanta Dream,,Phoenix Mercury,,,,/wnba/teams/ATL/2025.html,/wnba/teams/PHO/2025.html,/wnba/boxscores/202507230PHO.html,False,False,ATL,PHO,202507230PHO
+2025-07-24,Seattle Storm,,Chicago Sky,,,,/wnba/teams/SEA/2025.html,/wnba/teams/CHI/2025.html,/wnba/boxscores/202507240CHI.html,False,False,SEA,CHI,202507240CHI
+2025-07-24,Los Angeles Sparks,,Connecticut Sun,,,,/wnba/teams/LAS/2025.html,/wnba/teams/CON/2025.html,/wnba/boxscores/202507240CON.html,False,False,LAS,CON,202507240CON
+2025-07-24,Las Vegas Aces,,Indiana Fever,,,,/wnba/teams/LVA/2025.html,/wnba/teams/IND/2025.html,/wnba/boxscores/202507240IND.html,False,False,LVA,IND,202507240IND
+2025-07-25,Dallas Wings,,Golden State Valkyries,,,,/wnba/teams/DAL/2025.html,/wnba/teams/GSV/2025.html,/wnba/boxscores/202507250GSV.html,False,False,DAL,GSV,202507250GSV
+2025-07-25,Las Vegas Aces,,Minnesota Lynx,,,,/wnba/teams/LVA/2025.html,/wnba/teams/MIN/2025.html,/wnba/boxscores/202507250MIN.html,False,False,LVA,MIN,202507250MIN
+2025-07-25,Phoenix Mercury,,New York Liberty,,,,/wnba/teams/PHO/2025.html,/wnba/teams/NYL/2025.html,/wnba/boxscores/202507250NYL.html,False,False,PHO,NYL,202507250NYL
+2025-07-26,Los Angeles Sparks,,New York Liberty,,,,/wnba/teams/LAS/2025.html,/wnba/teams/NYL/2025.html,/wnba/boxscores/202507260NYL.html,False,False,LAS,NYL,202507260NYL
+2025-07-26,Seattle Storm,,Washington Mystics,,,,/wnba/teams/SEA/2025.html,/wnba/teams/WAS/2025.html,/wnba/boxscores/202507260WAS.html,False,False,SEA,WAS,202507260WAS
+2025-07-27,Indiana Fever,,Chicago Sky,,,,/wnba/teams/IND/2025.html,/wnba/teams/CHI/2025.html,/wnba/boxscores/202507270CHI.html,False,False,IND,CHI,202507270CHI
+2025-07-27,Golden State Valkyries,,Connecticut Sun,,,,/wnba/teams/GSV/2025.html,/wnba/teams/CON/2025.html,/wnba/boxscores/202507270CON.html,False,False,GSV,CON,202507270CON
+2025-07-27,Las Vegas Aces,,Dallas Wings,,,,/wnba/teams/LVA/2025.html,/wnba/teams/DAL/2025.html,/wnba/boxscores/202507270DAL.html,False,False,LVA,DAL,202507270DAL
+2025-07-27,Atlanta Dream,,Minnesota Lynx,,,,/wnba/teams/ATL/2025.html,/wnba/teams/MIN/2025.html,/wnba/boxscores/202507270MIN.html,False,False,ATL,MIN,202507270MIN
+2025-07-27,Phoenix Mercury,,Washington Mystics,,,,/wnba/teams/PHO/2025.html,/wnba/teams/WAS/2025.html,/wnba/boxscores/202507270WAS.html,False,False,PHO,WAS,202507270WAS
+2025-07-28,Seattle Storm,,Connecticut Sun,,,,/wnba/teams/SEA/2025.html,/wnba/teams/CON/2025.html,/wnba/boxscores/202507280CON.html,False,False,SEA,CON,202507280CON
+2025-07-28,New York Liberty,,Dallas Wings,,,,/wnba/teams/NYL/2025.html,/wnba/teams/DAL/2025.html,/wnba/boxscores/202507280DAL.html,False,False,NYL,DAL,202507280DAL
+2025-07-29,Golden State Valkyries,,Atlanta Dream,,,,/wnba/teams/GSV/2025.html,/wnba/teams/ATL/2025.html,/wnba/boxscores/202507290ATL.html,False,False,GSV,ATL,202507290ATL
+2025-07-29,Las Vegas Aces,,Los Angeles Sparks,,,,/wnba/teams/LVA/2025.html,/wnba/teams/LAS/2025.html,/wnba/boxscores/202507290LAS.html,False,False,LVA,LAS,202507290LAS
+2025-07-29,Chicago Sky,,Washington Mystics,,,,/wnba/teams/CHI/2025.html,/wnba/teams/WAS/2025.html,/wnba/boxscores/202507290WAS.html,False,False,CHI,WAS,202507290WAS
+2025-07-30,Atlanta Dream,,Dallas Wings,,,,/wnba/teams/ATL/2025.html,/wnba/teams/DAL/2025.html,/wnba/boxscores/202507300DAL.html,False,False,ATL,DAL,202507300DAL
+2025-07-30,Phoenix Mercury,,Indiana Fever,,,,/wnba/teams/PHO/2025.html,/wnba/teams/IND/2025.html,/wnba/boxscores/202507300IND.html,False,False,PHO,IND,202507300IND
+2025-07-30,New York Liberty,,Minnesota Lynx,,,,/wnba/teams/NYL/2025.html,/wnba/teams/MIN/2025.html,/wnba/boxscores/202507300MIN.html,False,False,NYL,MIN,202507300MIN
+2025-07-31,Golden State Valkyries,,Washington Mystics,,,,/wnba/teams/GSV/2025.html,/wnba/teams/WAS/2025.html,/wnba/boxscores/202507310WAS.html,False,False,GSV,WAS,202507310WAS
+2025-08-01,Phoenix Mercury,,Atlanta Dream,,,,/wnba/teams/PHO/2025.html,/wnba/teams/ATL/2025.html,/wnba/boxscores/202508010ATL.html,False,False,PHO,ATL,202508010ATL
+2025-08-01,Golden State Valkyries,,Chicago Sky,,,,/wnba/teams/GSV/2025.html,/wnba/teams/CHI/2025.html,/wnba/boxscores/202508010CHI.html,False,False,GSV,CHI,202508010CHI
+2025-08-01,New York Liberty,,Connecticut Sun,,,,/wnba/teams/NYL/2025.html,/wnba/teams/CON/2025.html,/wnba/boxscores/202508010CON.html,False,False,NYL,CON,202508010CON
+2025-08-01,Indiana Fever,,Dallas Wings,,,,/wnba/teams/IND/2025.html,/wnba/teams/DAL/2025.html,/wnba/boxscores/202508010DAL.html,False,False,IND,DAL,202508010DAL
+2025-08-01,Los Angeles Sparks,,Seattle Storm,,,,/wnba/teams/LAS/2025.html,/wnba/teams/SEA/2025.html,/wnba/boxscores/202508010SEA.html,False,False,LAS,SEA,202508010SEA
+2025-08-02,Minnesota Lynx,,Las Vegas Aces,,,,/wnba/teams/MIN/2025.html,/wnba/teams/LVA/2025.html,/wnba/boxscores/202508020LVA.html,False,False,MIN,LVA,202508020LVA
+2025-08-03,Washington Mystics,,Atlanta Dream,,,,/wnba/teams/WAS/2025.html,/wnba/teams/ATL/2025.html,/wnba/boxscores/202508030ATL.html,False,False,WAS,ATL,202508030ATL
+2025-08-03,Phoenix Mercury,,Chicago Sky,,,,/wnba/teams/PHO/2025.html,/wnba/teams/CHI/2025.html,/wnba/boxscores/202508030CHI.html,False,False,PHO,CHI,202508030CHI
+2025-08-03,New York Liberty,,Connecticut Sun,,,,/wnba/teams/NYL/2025.html,/wnba/teams/CON/2025.html,/wnba/boxscores/202508030CON.html,False,False,NYL,CON,202508030CON
+2025-08-03,Golden State Valkyries,,Las Vegas Aces,,,,/wnba/teams/GSV/2025.html,/wnba/teams/LVA/2025.html,/wnba/boxscores/202508030LVA.html,False,False,GSV,LVA,202508030LVA
+2025-08-03,Indiana Fever,,Seattle Storm,,,,/wnba/teams/IND/2025.html,/wnba/teams/SEA/2025.html,/wnba/boxscores/202508030SEA.html,False,False,IND,SEA,202508030SEA
+2025-08-05,Washington Mystics,,Chicago Sky,,,,/wnba/teams/WAS/2025.html,/wnba/teams/CHI/2025.html,/wnba/boxscores/202508050CHI.html,False,False,WAS,CHI,202508050CHI
+2025-08-05,Indiana Fever,,Los Angeles Sparks,,,,/wnba/teams/IND/2025.html,/wnba/teams/LAS/2025.html,/wnba/boxscores/202508050LAS.html,False,False,IND,LAS,202508050LAS
+2025-08-05,Dallas Wings,,New York Liberty,,,,/wnba/teams/DAL/2025.html,/wnba/teams/NYL/2025.html,/wnba/boxscores/202508050NYL.html,False,False,DAL,NYL,202508050NYL
+2025-08-05,Connecticut Sun,,Phoenix Mercury,,,,/wnba/teams/CON/2025.html,/wnba/teams/PHO/2025.html,/wnba/boxscores/202508050PHO.html,False,False,CON,PHO,202508050PHO
+2025-08-05,Minnesota Lynx,,Seattle Storm,,,,/wnba/teams/MIN/2025.html,/wnba/teams/SEA/2025.html,/wnba/boxscores/202508050SEA.html,False,False,MIN,SEA,202508050SEA
+2025-08-06,Las Vegas Aces,,Golden State Valkyries,,,,/wnba/teams/LVA/2025.html,/wnba/teams/GSV/2025.html,/wnba/boxscores/202508060GSV.html,False,False,LVA,GSV,202508060GSV
+2025-08-07,Atlanta Dream,,Chicago Sky,,,,/wnba/teams/ATL/2025.html,/wnba/teams/CHI/2025.html,/wnba/boxscores/202508070CHI.html,False,False,ATL,CHI,202508070CHI
+2025-08-07,Connecticut Sun,,Los Angeles Sparks,,,,/wnba/teams/CON/2025.html,/wnba/teams/LAS/2025.html,/wnba/boxscores/202508070LAS.html,False,False,CON,LAS,202508070LAS
+2025-08-07,Indiana Fever,,Phoenix Mercury,,,,/wnba/teams/IND/2025.html,/wnba/teams/PHO/2025.html,/wnba/boxscores/202508070PHO.html,False,False,IND,PHO,202508070PHO
+2025-08-08,New York Liberty,,Dallas Wings,,,,/wnba/teams/NYL/2025.html,/wnba/teams/DAL/2025.html,/wnba/boxscores/202508080DAL.html,False,False,NYL,DAL,202508080DAL
+2025-08-08,Seattle Storm,,Las Vegas Aces,,,,/wnba/teams/SEA/2025.html,/wnba/teams/LVA/2025.html,/wnba/boxscores/202508080LVA.html,False,False,SEA,LVA,202508080LVA
+2025-08-08,Washington Mystics,,Minnesota Lynx,,,,/wnba/teams/WAS/2025.html,/wnba/teams/MIN/2025.html,/wnba/boxscores/202508080MIN.html,False,False,WAS,MIN,202508080MIN
+2025-08-09,Los Angeles Sparks,,Golden State Valkyries,,,,/wnba/teams/LAS/2025.html,/wnba/teams/GSV/2025.html,/wnba/boxscores/202508090GSV.html,False,False,LAS,GSV,202508090GSV
+2025-08-09,Chicago Sky,,Indiana Fever,,,,/wnba/teams/CHI/2025.html,/wnba/teams/IND/2025.html,/wnba/boxscores/202508090IND.html,False,False,CHI,IND,202508090IND
+2025-08-10,Washington Mystics,,Dallas Wings,,,,/wnba/teams/WAS/2025.html,/wnba/teams/DAL/2025.html,/wnba/boxscores/202508100DAL.html,False,False,WAS,DAL,202508100DAL
+2025-08-10,Seattle Storm,,Los Angeles Sparks,,,,/wnba/teams/SEA/2025.html,/wnba/teams/LAS/2025.html,/wnba/boxscores/202508100LAS.html,False,False,SEA,LAS,202508100LAS
+2025-08-10,Connecticut Sun,,Las Vegas Aces,,,,/wnba/teams/CON/2025.html,/wnba/teams/LVA/2025.html,/wnba/boxscores/202508100LVA.html,False,False,CON,LVA,202508100LVA
+2025-08-10,Minnesota Lynx,,New York Liberty,,,,/wnba/teams/MIN/2025.html,/wnba/teams/NYL/2025.html,/wnba/boxscores/202508100NYL.html,False,False,MIN,NYL,202508100NYL
+2025-08-10,Atlanta Dream,,Phoenix Mercury,,,,/wnba/teams/ATL/2025.html,/wnba/teams/PHO/2025.html,/wnba/boxscores/202508100PHO.html,False,False,ATL,PHO,202508100PHO
+2025-08-11,Connecticut Sun,,Golden State Valkyries,,,,/wnba/teams/CON/2025.html,/wnba/teams/GSV/2025.html,/wnba/boxscores/202508110GSV.html,False,False,CON,GSV,202508110GSV
+2025-08-12,Dallas Wings,,Indiana Fever,,,,/wnba/teams/DAL/2025.html,/wnba/teams/IND/2025.html,/wnba/boxscores/202508120IND.html,False,False,DAL,IND,202508120IND
+2025-08-12,New York Liberty,,Los Angeles Sparks,,,,/wnba/teams/NYL/2025.html,/wnba/teams/LAS/2025.html,/wnba/boxscores/202508120LAS.html,False,False,NYL,LAS,202508120LAS
+2025-08-13,Chicago Sky,,Connecticut Sun,,,,/wnba/teams/CHI/2025.html,/wnba/teams/CON/2025.html,/wnba/boxscores/202508130CON.html,False,False,CHI,CON,202508130CON
+2025-08-13,New York Liberty,,Las Vegas Aces,,,,/wnba/teams/NYL/2025.html,/wnba/teams/LVA/2025.html,/wnba/boxscores/202508130LVA.html,False,False,NYL,LVA,202508130LVA
+2025-08-13,Atlanta Dream,,Seattle Storm,,,,/wnba/teams/ATL/2025.html,/wnba/teams/SEA/2025.html,/wnba/boxscores/202508130SEA.html,False,False,ATL,SEA,202508130SEA
+2025-08-13,Golden State Valkyries,,Washington Mystics,,,,/wnba/teams/GSV/2025.html,/wnba/teams/WAS/2025.html,/wnba/boxscores/202508130WAS.html,False,False,GSV,WAS,202508130WAS
+2025-08-15,Seattle Storm,,Atlanta Dream,,,,/wnba/teams/SEA/2025.html,/wnba/teams/ATL/2025.html,/wnba/boxscores/202508150ATL.html,False,False,SEA,ATL,202508150ATL
+2025-08-15,Golden State Valkyries,,Chicago Sky,,,,/wnba/teams/GSV/2025.html,/wnba/teams/CHI/2025.html,/wnba/boxscores/202508150CHI.html,False,False,GSV,CHI,202508150CHI
+2025-08-15,Los Angeles Sparks,,Dallas Wings,,,,/wnba/teams/LAS/2025.html,/wnba/teams/DAL/2025.html,/wnba/boxscores/202508150DAL.html,False,False,LAS,DAL,202508150DAL
+2025-08-15,Washington Mystics,,Indiana Fever,,,,/wnba/teams/WAS/2025.html,/wnba/teams/IND/2025.html,/wnba/boxscores/202508150IND.html,False,False,WAS,IND,202508150IND
+2025-08-15,Las Vegas Aces,,Phoenix Mercury,,,,/wnba/teams/LVA/2025.html,/wnba/teams/PHO/2025.html,/wnba/boxscores/202508150PHO.html,False,False,LVA,PHO,202508150PHO
+2025-08-16,New York Liberty,,Minnesota Lynx,,,,/wnba/teams/NYL/2025.html,/wnba/teams/MIN/2025.html,/wnba/boxscores/202508160MIN.html,False,False,NYL,MIN,202508160MIN
+2025-08-17,Indiana Fever,,Connecticut Sun,,,,/wnba/teams/IND/2025.html,/wnba/teams/CON/2025.html,/wnba/boxscores/202508170CON.html,False,False,IND,CON,202508170CON
+2025-08-17,Atlanta Dream,,Golden State Valkyries,,,,/wnba/teams/ATL/2025.html,/wnba/teams/GSV/2025.html,/wnba/boxscores/202508170GSV.html,False,False,ATL,GSV,202508170GSV
+2025-08-17,Dallas Wings,,Las Vegas Aces,,,,/wnba/teams/DAL/2025.html,/wnba/teams/LVA/2025.html,/wnba/boxscores/202508170LVA.html,False,False,DAL,LVA,202508170LVA
+2025-08-17,Phoenix Mercury,,Seattle Storm,,,,/wnba/teams/PHO/2025.html,/wnba/teams/SEA/2025.html,/wnba/boxscores/202508170SEA.html,False,False,PHO,SEA,202508170SEA
+2025-08-17,Los Angeles Sparks,,Washington Mystics,,,,/wnba/teams/LAS/2025.html,/wnba/teams/WAS/2025.html,/wnba/boxscores/202508170WAS.html,False,False,LAS,WAS,202508170WAS
+2025-08-19,Seattle Storm,,Chicago Sky,,,,/wnba/teams/SEA/2025.html,/wnba/teams/CHI/2025.html,/wnba/boxscores/202508190CHI.html,False,False,SEA,CHI,202508190CHI
+2025-08-19,Phoenix Mercury,,Golden State Valkyries,,,,/wnba/teams/PHO/2025.html,/wnba/teams/GSV/2025.html,/wnba/boxscores/202508190GSV.html,False,False,PHO,GSV,202508190GSV
+2025-08-19,Atlanta Dream,,Las Vegas Aces,,,,/wnba/teams/ATL/2025.html,/wnba/teams/LVA/2025.html,/wnba/boxscores/202508190LVA.html,False,False,ATL,LVA,202508190LVA
+2025-08-19,Minnesota Lynx,,New York Liberty,,,,/wnba/teams/MIN/2025.html,/wnba/teams/NYL/2025.html,/wnba/boxscores/202508190NYL.html,False,False,MIN,NYL,202508190NYL
+2025-08-19,Connecticut Sun,,Washington Mystics,,,,/wnba/teams/CON/2025.html,/wnba/teams/WAS/2025.html,/wnba/boxscores/202508190WAS.html,False,False,CON,WAS,202508190WAS
+2025-08-20,Dallas Wings,,Los Angeles Sparks,,,,/wnba/teams/DAL/2025.html,/wnba/teams/LAS/2025.html,/wnba/boxscores/202508200LAS.html,False,False,DAL,LAS,202508200LAS
+2025-08-21,Minnesota Lynx,,Atlanta Dream,,,,/wnba/teams/MIN/2025.html,/wnba/teams/ATL/2025.html,/wnba/boxscores/202508210ATL.html,False,False,MIN,ATL,202508210ATL
+2025-08-21,Washington Mystics,,Connecticut Sun,,,,/wnba/teams/WAS/2025.html,/wnba/teams/CON/2025.html,/wnba/boxscores/202508210CON.html,False,False,WAS,CON,202508210CON
+2025-08-21,Phoenix Mercury,,Las Vegas Aces,,,,/wnba/teams/PHO/2025.html,/wnba/teams/LVA/2025.html,/wnba/boxscores/202508210LVA.html,False,False,PHO,LVA,202508210LVA
+2025-08-21,Chicago Sky,,New York Liberty,,,,/wnba/teams/CHI/2025.html,/wnba/teams/NYL/2025.html,/wnba/boxscores/202508210NYL.html,False,False,CHI,NYL,202508210NYL
+2025-08-22,Seattle Storm,,Dallas Wings,,,,/wnba/teams/SEA/2025.html,/wnba/teams/DAL/2025.html,/wnba/boxscores/202508220DAL.html,False,False,SEA,DAL,202508220DAL
+2025-08-22,Minnesota Lynx,,Indiana Fever,,,,/wnba/teams/MIN/2025.html,/wnba/teams/IND/2025.html,/wnba/boxscores/202508220IND.html,False,False,MIN,IND,202508220IND
+2025-08-22,Golden State Valkyries,,Phoenix Mercury,,,,/wnba/teams/GSV/2025.html,/wnba/teams/PHO/2025.html,/wnba/boxscores/202508220PHO.html,False,False,GSV,PHO,202508220PHO
+2025-08-23,New York Liberty,,Atlanta Dream,,,,/wnba/teams/NYL/2025.html,/wnba/teams/ATL/2025.html,/wnba/boxscores/202508230ATL.html,False,False,NYL,ATL,202508230ATL
+2025-08-23,Connecticut Sun,,Chicago Sky,,,,/wnba/teams/CON/2025.html,/wnba/teams/CHI/2025.html,/wnba/boxscores/202508230CHI.html,False,False,CON,CHI,202508230CHI
+2025-08-23,Las Vegas Aces,,Washington Mystics,,,,/wnba/teams/LVA/2025.html,/wnba/teams/WAS/2025.html,/wnba/boxscores/202508230WAS.html,False,False,LVA,WAS,202508230WAS
+2025-08-24,Golden State Valkyries,,Dallas Wings,,,,/wnba/teams/GSV/2025.html,/wnba/teams/DAL/2025.html,/wnba/boxscores/202508240DAL.html,False,False,GSV,DAL,202508240DAL
+2025-08-24,Indiana Fever,,Minnesota Lynx,,,,/wnba/teams/IND/2025.html,/wnba/teams/MIN/2025.html,/wnba/boxscores/202508240MIN.html,False,False,IND,MIN,202508240MIN
+2025-08-24,Seattle Storm,,Washington Mystics,,,,/wnba/teams/SEA/2025.html,/wnba/teams/WAS/2025.html,/wnba/boxscores/202508240WAS.html,False,False,SEA,WAS,202508240WAS
+2025-08-25,Las Vegas Aces,,Chicago Sky,,,,/wnba/teams/LVA/2025.html,/wnba/teams/CHI/2025.html,/wnba/boxscores/202508250CHI.html,False,False,LVA,CHI,202508250CHI
+2025-08-25,Connecticut Sun,,New York Liberty,,,,/wnba/teams/CON/2025.html,/wnba/teams/NYL/2025.html,/wnba/boxscores/202508250NYL.html,False,False,CON,NYL,202508250NYL
+2025-08-26,Seattle Storm,,Indiana Fever,,,,/wnba/teams/SEA/2025.html,/wnba/teams/IND/2025.html,/wnba/boxscores/202508260IND.html,False,False,SEA,IND,202508260IND
+2025-08-26,Phoenix Mercury,,Los Angeles Sparks,,,,/wnba/teams/PHO/2025.html,/wnba/teams/LAS/2025.html,/wnba/boxscores/202508260LAS.html,False,False,PHO,LAS,202508260LAS
+2025-08-27,Las Vegas Aces,,Atlanta Dream,,,,/wnba/teams/LVA/2025.html,/wnba/teams/ATL/2025.html,/wnba/boxscores/202508270ATL.html,False,False,LVA,ATL,202508270ATL
+2025-08-27,Connecticut Sun,,Dallas Wings,,,,/wnba/teams/CON/2025.html,/wnba/teams/DAL/2025.html,/wnba/boxscores/202508270DAL.html,False,False,CON,DAL,202508270DAL
+2025-08-28,Seattle Storm,,Minnesota Lynx,,,,/wnba/teams/SEA/2025.html,/wnba/teams/MIN/2025.html,/wnba/boxscores/202508280MIN.html,False,False,SEA,MIN,202508280MIN
+2025-08-28,Washington Mystics,,New York Liberty,,,,/wnba/teams/WAS/2025.html,/wnba/teams/NYL/2025.html,/wnba/boxscores/202508280NYL.html,False,False,WAS,NYL,202508280NYL
+2025-08-28,Chicago Sky,,Phoenix Mercury,,,,/wnba/teams/CHI/2025.html,/wnba/teams/PHO/2025.html,/wnba/boxscores/202508280PHO.html,False,False,CHI,PHO,202508280PHO
+2025-08-29,Dallas Wings,,Atlanta Dream,,,,/wnba/teams/DAL/2025.html,/wnba/teams/ATL/2025.html,/wnba/boxscores/202508290ATL.html,False,False,DAL,ATL,202508290ATL
+2025-08-29,Indiana Fever,,Los Angeles Sparks,,,,/wnba/teams/IND/2025.html,/wnba/teams/LAS/2025.html,/wnba/boxscores/202508290LAS.html,False,False,IND,LAS,202508290LAS
+2025-08-30,Minnesota Lynx,,Connecticut Sun,,,,/wnba/teams/MIN/2025.html,/wnba/teams/CON/2025.html,/wnba/boxscores/202508300CON.html,False,False,MIN,CON,202508300CON
+2025-08-30,Washington Mystics,,Golden State Valkyries,,,,/wnba/teams/WAS/2025.html,/wnba/teams/GSV/2025.html,/wnba/boxscores/202508300GSV.html,False,False,WAS,GSV,202508300GSV
+2025-08-30,New York Liberty,,Phoenix Mercury,,,,/wnba/teams/NYL/2025.html,/wnba/teams/PHO/2025.html,/wnba/boxscores/202508300PHO.html,False,False,NYL,PHO,202508300PHO
+2025-08-30,Chicago Sky,,Seattle Storm,,,,/wnba/teams/CHI/2025.html,/wnba/teams/SEA/2025.html,/wnba/boxscores/202508300SEA.html,False,False,CHI,SEA,202508300SEA
+2025-08-31,Indiana Fever,,Golden State Valkyries,,,,/wnba/teams/IND/2025.html,/wnba/teams/GSV/2025.html,/wnba/boxscores/202508310GSV.html,False,False,IND,GSV,202508310GSV
+2025-08-31,Washington Mystics,,Los Angeles Sparks,,,,/wnba/teams/WAS/2025.html,/wnba/teams/LAS/2025.html,/wnba/boxscores/202508310LAS.html,False,False,WAS,LAS,202508310LAS
+2025-09-01,Atlanta Dream,,Connecticut Sun,,,,/wnba/teams/ATL/2025.html,/wnba/teams/CON/2025.html,/wnba/boxscores/202509010CON.html,False,False,ATL,CON,202509010CON
+2025-09-01,Dallas Wings,,Minnesota Lynx,,,,/wnba/teams/DAL/2025.html,/wnba/teams/MIN/2025.html,/wnba/boxscores/202509010MIN.html,False,False,DAL,MIN,202509010MIN
+2025-09-01,Los Angeles Sparks,,Seattle Storm,,,,/wnba/teams/LAS/2025.html,/wnba/teams/SEA/2025.html,/wnba/boxscores/202509010SEA.html,False,False,LAS,SEA,202509010SEA
+2025-09-02,New York Liberty,,Golden State Valkyries,,,,/wnba/teams/NYL/2025.html,/wnba/teams/GSV/2025.html,/wnba/boxscores/202509020GSV.html,False,False,NYL,GSV,202509020GSV
+2025-09-02,Indiana Fever,,Phoenix Mercury,,,,/wnba/teams/IND/2025.html,/wnba/teams/PHO/2025.html,/wnba/boxscores/202509020PHO.html,False,False,IND,PHO,202509020PHO
+2025-09-03,Los Angeles Sparks,,Atlanta Dream,,,,/wnba/teams/LAS/2025.html,/wnba/teams/ATL/2025.html,/wnba/boxscores/202509030ATL.html,False,False,LAS,ATL,202509030ATL
+2025-09-03,Connecticut Sun,,Chicago Sky,,,,/wnba/teams/CON/2025.html,/wnba/teams/CHI/2025.html,/wnba/boxscores/202509030CHI.html,False,False,CON,CHI,202509030CHI
+2025-09-04,Dallas Wings,,Golden State Valkyries,,,,/wnba/teams/DAL/2025.html,/wnba/teams/GSV/2025.html,/wnba/boxscores/202509040GSV.html,False,False,DAL,GSV,202509040GSV
+2025-09-04,Minnesota Lynx,,Las Vegas Aces,,,,/wnba/teams/MIN/2025.html,/wnba/teams/LVA/2025.html,/wnba/boxscores/202509040LVA.html,False,False,MIN,LVA,202509040LVA
+2025-09-04,Phoenix Mercury,,Washington Mystics,,,,/wnba/teams/PHO/2025.html,/wnba/teams/WAS/2025.html,/wnba/boxscores/202509040WAS.html,False,False,PHO,WAS,202509040WAS
+2025-09-05,Los Angeles Sparks,,Atlanta Dream,,,,/wnba/teams/LAS/2025.html,/wnba/teams/ATL/2025.html,/wnba/boxscores/202509050ATL.html,False,False,LAS,ATL,202509050ATL
+2025-09-05,Chicago Sky,,Indiana Fever,,,,/wnba/teams/CHI/2025.html,/wnba/teams/IND/2025.html,/wnba/boxscores/202509050IND.html,False,False,CHI,IND,202509050IND
+2025-09-05,New York Liberty,,Seattle Storm,,,,/wnba/teams/NYL/2025.html,/wnba/teams/SEA/2025.html,/wnba/boxscores/202509050SEA.html,False,False,NYL,SEA,202509050SEA
+2025-09-06,Phoenix Mercury,,Connecticut Sun,,,,/wnba/teams/PHO/2025.html,/wnba/teams/CON/2025.html,/wnba/boxscores/202509060CON.html,False,False,PHO,CON,202509060CON
+2025-09-06,Minnesota Lynx,,Golden State Valkyries,,,,/wnba/teams/MIN/2025.html,/wnba/teams/GSV/2025.html,/wnba/boxscores/202509060GSV.html,False,False,MIN,GSV,202509060GSV
+2025-09-07,Dallas Wings,,Los Angeles Sparks,,,,/wnba/teams/DAL/2025.html,/wnba/teams/LAS/2025.html,/wnba/boxscores/202509070LAS.html,False,False,DAL,LAS,202509070LAS
+2025-09-07,Chicago Sky,,Las Vegas Aces,,,,/wnba/teams/CHI/2025.html,/wnba/teams/LVA/2025.html,/wnba/boxscores/202509070LVA.html,False,False,CHI,LVA,202509070LVA
+2025-09-07,Indiana Fever,,Washington Mystics,,,,/wnba/teams/IND/2025.html,/wnba/teams/WAS/2025.html,/wnba/boxscores/202509070WAS.html,False,False,IND,WAS,202509070WAS
+2025-09-08,Connecticut Sun,,Atlanta Dream,,,,/wnba/teams/CON/2025.html,/wnba/teams/ATL/2025.html,/wnba/boxscores/202509080ATL.html,False,False,CON,ATL,202509080ATL
+2025-09-09,Minnesota Lynx,,Indiana Fever,,,,/wnba/teams/MIN/2025.html,/wnba/teams/IND/2025.html,/wnba/boxscores/202509090IND.html,False,False,MIN,IND,202509090IND
+2025-09-09,Chicago Sky,,Las Vegas Aces,,,,/wnba/teams/CHI/2025.html,/wnba/teams/LVA/2025.html,/wnba/boxscores/202509090LVA.html,False,False,CHI,LVA,202509090LVA
+2025-09-09,Washington Mystics,,New York Liberty,,,,/wnba/teams/WAS/2025.html,/wnba/teams/NYL/2025.html,/wnba/boxscores/202509090NYL.html,False,False,WAS,NYL,202509090NYL
+2025-09-09,Los Angeles Sparks,,Phoenix Mercury,,,,/wnba/teams/LAS/2025.html,/wnba/teams/PHO/2025.html,/wnba/boxscores/202509090PHO.html,False,False,LAS,PHO,202509090PHO
+2025-09-09,Golden State Valkyries,,Seattle Storm,,,,/wnba/teams/GSV/2025.html,/wnba/teams/SEA/2025.html,/wnba/boxscores/202509090SEA.html,False,False,GSV,SEA,202509090SEA
+2025-09-10,Atlanta Dream,,Connecticut Sun,,,,/wnba/teams/ATL/2025.html,/wnba/teams/CON/2025.html,/wnba/boxscores/202509100CON.html,False,False,ATL,CON,202509100CON
+2025-09-11,New York Liberty,,Chicago Sky,,,,/wnba/teams/NYL/2025.html,/wnba/teams/CHI/2025.html,/wnba/boxscores/202509110CHI.html,False,False,NYL,CHI,202509110CHI
+2025-09-11,Phoenix Mercury,,Dallas Wings,,,,/wnba/teams/PHO/2025.html,/wnba/teams/DAL/2025.html,/wnba/boxscores/202509110DAL.html,False,False,PHO,DAL,202509110DAL
+2025-09-11,Las Vegas Aces,,Los Angeles Sparks,,,,/wnba/teams/LVA/2025.html,/wnba/teams/LAS/2025.html,/wnba/boxscores/202509110LAS.html,False,False,LVA,LAS,202509110LAS
+2025-09-11,Golden State Valkyries,,Minnesota Lynx,,,,/wnba/teams/GSV/2025.html,/wnba/teams/MIN/2025.html,/wnba/boxscores/202509110MIN.html,False,False,GSV,MIN,202509110MIN

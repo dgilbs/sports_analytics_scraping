@@ -1,0 +1,10 @@
+id,player_id,game_id,team_id,league,true_shooting_pct,effective_field_goal_pct,three_point_attempt_rate,defensive_rebound_pct,offensive_rebound_pct,total_rebound_pct,assist_pct,steal_pct,usage_rate,offensive_rating,defensive_rating
+collina01w-202505230MIN-adv,collina01w,202505230MIN,MIN,WNBA,0.65,.595,0.19,23.0,10.8,16.3,23.5,4.0,31.9,126,83
+carlebr01w-202505230MIN-adv,carlebr01w,202505230MIN,MIN,WNBA,0.273,.273,1.0,7.1,0.0,3.2,15.1,2.9,18.9,49,96
+willico01w-202505230MIN-adv,willico01w,202505230MIN,MIN,WNBA,0.0,.000,0.364,14.4,7.9,10.8,18.4,5.9,23.8,23,86
+samueka01w-202505230MIN-adv,samueka01w,202505230MIN,MIN,WNBA,0.931,.750,1.0,11.1,4.5,7.5,22.9,2.3,13.2,113,96
+smithal01w-202505230MIN-adv,smithal01w,202505230MIN,MIN,WNBA,0.347,.500,0.0,0.0,0.0,0.0,24.6,14.0,11.7,66,65
+hiedena01w-202505230MIN-adv,hiedena01w,202505230MIN,MIN,WNBA,0.709,.750,0.333,12.7,0.0,5.7,13.8,0.0,11.6,142,101
+shepaje01w-202505230MIN-adv,shepaje01w,202505230MIN,MIN,WNBA,0.666,.625,0.0,19.7,8.1,13.3,36.9,0.0,20.5,121,96
+milledi03w-202505230MIN-adv,milledi03w,202505230MIN,MIN,WNBA,0.333,.333,0.333,0.0,0.0,0.0,31.3,0.0,19.8,83,106
+pilial01w-202505230MIN-adv,pilial01w,202505230MIN,MIN,WNBA,1.136,,,63.6,0.0,28.6,0.0,0.0,19.8,250,81
