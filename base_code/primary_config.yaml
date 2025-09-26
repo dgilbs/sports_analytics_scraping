@@ -1,0 +1,1 @@
+conn_string: "postgresql://danielgilberg:password@localhost:5432/projects"

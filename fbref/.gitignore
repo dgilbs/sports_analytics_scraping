@@ -1,5 +1,5 @@
-data/
-raw_data/
+bbref/data/
+bbref/raw_data/
 *.ipynb
 credentials.json
 *.csv
