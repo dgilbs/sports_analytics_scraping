@@ -1,0 +1,8 @@
+basic_stats_filter: 
+    - player
+    - minutes_played
+    - points
+    - assists
+    - total_rebounds
+    - steals
+    - blocks

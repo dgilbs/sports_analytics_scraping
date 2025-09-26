@@ -3,3 +3,5 @@ raw_data/
 *.ipynb
 credentials.json
 *.csv
+*ipynb
+*.pkl
