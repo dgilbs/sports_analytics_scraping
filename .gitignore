@@ -14,3 +14,5 @@
 token.json
 .bashrc
 backup.sql
+**/*.ipynb
+college_bbref/Scraping Notebook.ipynb
