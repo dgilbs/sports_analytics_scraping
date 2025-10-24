@@ -148,8 +148,8 @@ if len(errors) > 0:
 else: 
     print('no errors found')
 
-qdb.backup_all_soccer_tables(conn_string)
-print('backup complete')
+# qdb.backup_all_soccer_tables(conn_string)
+# print('backup complete')
 
 
 

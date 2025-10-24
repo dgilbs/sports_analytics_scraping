@@ -16,3 +16,4 @@ token.json
 backup.sql
 **/*.ipynb
 college_bbref/Scraping Notebook.ipynb
+dbt_env/

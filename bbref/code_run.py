@@ -90,7 +90,7 @@ t2 = datetime.now()
 
 print(t2-t1)
 
-qdb.backup_all_basketball_tables(conn_string)
-print('backup complete')
+# qdb.backup_all_basketball_tables(conn_string)
+# print('backup complete')
 
 
