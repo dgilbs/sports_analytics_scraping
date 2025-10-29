@@ -1,3 +1,41 @@
 season_summary:
-  link_columns:
-    - conference
+    link_columns:
+        - conference
+season_conference_standings:
+    link_columns:
+        - school
+    column_names:
+        - rank
+        - school
+        - conference_wins
+        - conference_losses
+        - conference_win_pct
+        - wins
+        - losses
+        - win_pct
+        - points_per_game
+        - opponent_points_per_game
+        - srs
+        - sos
+        - notes
+team_schedule:
+    link_columns:
+        - game_date
+        - opponent
+    column_names: 
+        - game_number
+        - game_date
+        - game_time
+        - game_type
+        - home_or_away
+        - opponent
+        - opponent_conference
+        - srs
+        - game_result
+        - points
+        - opponent_points
+        - overtime
+        - wins
+        - losses
+        - streak
+        - venue

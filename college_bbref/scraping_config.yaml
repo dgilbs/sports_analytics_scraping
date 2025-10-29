@@ -1,2 +1,8 @@
 season_summary:
     0: raw_data/season_summary_by_conference
+season_conference_summary:
+    0: raw_data/season_conference_standings
+    2: raw_data/season_conference_stats
+team_schedule:
+    1: raw_data/team_schedules
+    
