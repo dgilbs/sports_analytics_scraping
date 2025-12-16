@@ -91,7 +91,8 @@ def scrape_schedule(comp_dict, season):
     comp_tag = comp_dict['league_table_tag']
     league = comp_dict['name']
     folder = comp_dict['folder']
-    url = 'https://fbref.com/en/comps/{}/{}/schedule/{}-{}'.format(comp_id, season, season, comp_tag)
+    url = 'https://fbref.com/en/comps/{}/{}/schedule/{}-Scores-And-Fixtures'.format(comp_id, season, season)
+    print(url)
     sched_id = 'sched_{}_{}_1'.format(season, comp_id)
     attrs = {'id': sched_id}
     headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'}
@@ -408,7 +409,9 @@ def scrape_standings(info, season):
     league_tag = info['league_table_tag']
     folder = info['folder']
     url = 'https://fbref.com/en/comps/{}/{}/{}-{}'.format(league_id, season, season, league_tag)
-    df = pd.read_html(url, extract_links='body')[0]
+    headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'}
+    response = requests.get(url, headers=headers)
+    df = pd.read_html(StringIO(response.text), extract_links='body')[0]
     df.columns = [i.lower() for i in df.columns]
     raw_data_folder = 'raw_data/standings/{}'.format(folder)
     fp = '{}_{}_standings.pkl'.format(season, league_name)
@@ -447,7 +450,9 @@ def scrape_rosters_from_standings_row(row, config, info):
     table_id = 'stats_standard_{}'.format(league_id)
     url = 'https://fbref.com' + squad_link
     attrs = {'id': table_id}
-    df = pd.read_html(url, extract_links='body', attrs=attrs)[0]
+    headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'}
+    response = requests.get(url, headers=headers)
+    df = pd.read_html(StringIO(response.text), extract_links='body', attrs=attrs)[0]
     raw_data_folder = 'raw_data/rosters/{}'.format(folder)
     if not os.path.exists(raw_data_folder):
         os.makedirs(raw_data_folder)

@@ -23,6 +23,7 @@ team_schedule:
         - game_date
         - opponent
     column_names: 
+        - school
         - game_number
         - game_date
         - game_time
