@@ -1,0 +1,849 @@
+advanced_match_report_categories:
+- summary
+- passing
+- passing_types
+- possession
+- defense
+- misc
+- keeper
+advanced_team_stat_categories:
+- standard
+- shooting
+- passing
+- passing_types
+- defense
+- possession
+- gca
+basic_match_report_categories:
+- summary
+basic_team_stat_categories:
+- standard
+- shooting
+- misc
+match_report_defense_dtypes:
+  blocks: Int64
+  challenges_lost: Int64
+  clearances: Int64
+  dribble_tackle_pct: float
+  dribblers_tackled: Int64
+  dribbles_challenged: Int64
+  errors_leading_to_shots: Int64
+  interceptions: Int64
+  passes_blocked: Int64
+  shots_blocked: Int64
+  tackles: Int64
+  tackles_and_interceptions: Int64
+  tackles_attacking_third: Int64
+  tackles_defensive_third: Int64
+  tackles_mid_third: Int64
+  tackles_won: Int64
+  minutes: Int64
+match_report_defense_rename_columns:
+  tackles_tkl: tackles_att
+  tackles_tklw: tackles_won
+  tackles_def_3rd: tackles_def_third
+  tackles_mid_3rd: tackles_mid_third
+  tackles_att_3rd: tackles_att_third
+  challenges_tkl: challenges_won
+  blocks_blocks: blocks
+  blocks_sh: shot_blocks
+  blocks_pass: pass_blocks
+  'int': interceptions
+  clr: clearances
+  err: errors_lead_to_shot
+  '#': shirtnumber
+  pos: position
+  'tkl+int': tackles_plus_interceptions
+  min: minutes
+match_report_link_columns:
+- player
+- sca_1_player
+- sca_2_player
+- squad
+match_report_misc_dtypes:
+  aerial_duals_lost: Int64
+  aerial_duals_pct: float
+  aerial_duals_won: Int64
+  ball_recoveries: Int64
+  crosses: Int64
+  fouled: Int64
+  fouls: Int64
+  interceptions: Int64
+  minutes: Int64
+  offsides: Int64
+  own_goals: Int64
+  penalties_conceded: Int64
+  penalties_won: Int64
+  red_cards: Int64
+  second_yellow_cards: Int64
+  tackles_won: Int64
+  yellow_cards: Int64
+match_report_misc_rename_columns:
+  '#': shirtnumber
+  2crdy: second_yellow_cards
+  performance_crdr: red_cards
+  performance_crdy: yellow_cards
+  crs: crosses
+  performance_fld: fouled
+  fls: fouls
+  int: interceptions
+  lost: aerial_duals_lost
+  min: minutes
+  performance_off: offsides
+  performance_og: own_goals
+  pkcon: penalties_conceded
+  pkwon: penalties_won
+  pos: position
+  recov: ball_recoveries
+  performance_tklw: tackles_won
+  won: aerial_duals_won
+  won%: aerial_duals_pct
+  performance_2crdy: second_yellow_cards
+  performance_fls: fouls
+  performance_crs: crosses
+  performance_int: interceptions
+  performance_recov: ball_recoveries
+  performance_pkwon: pks_won
+  performance_pkcon: pks_converted
+  pos: position
+match_report_passing_dtypes:
+  assists: Int64
+  crosses_into_penalty_area: Int64
+  free_kick_passes: Int64
+  key_passes: Int64
+  long_pass_completion_pct: float
+  long_passes_attempted: Int64
+  long_passes_completed: Int64
+  medium_pass_completion_pct: float
+  medium_passes_attempted: Int64
+  medium_passes_completed: Int64
+  minutes: Int64
+  pass_completion_pct: float
+  pass_progressive_distance: float
+  pass_total_distance: Int64
+  passes_attempted: Int64
+  passes_completed: Int64
+  passes_into_final_third: Int64
+  passes_into_penalty_area: Int64
+  ppa: Int64
+  progressive_passes: Int64
+  short_pass_completion_pct: float
+  short_passes_attempted: Int64
+  short_passes_completed: Int64
+  xa: float
+  xag: float
+match_report_passing_rename_columns:
+  total_cmp: passes_completed
+  total_att: passes_attempted
+  total_totdist: total_pass_distance
+  total_prgdist: total_progressive_pass_distance
+  short_cmp: short_passes_completed
+  short_att: short_passes_attempted
+  medium_cmp: medium_passes_completed
+  medium_att: medium_passes_attempted
+  long_cmp: long_passes_completed
+  long_att: long_passes_attempted
+  ast: assists
+  kp: key_passes
+  '1/3': passes_into_final_third
+  ppa: passes_into_penalty_area
+  crspa: crosses_into_penalty_area
+  prgp: progressive_passes
+  pos: position
+  '#': shirtnumber
+match_report_passing_types_dtypes:
+  att: Int64
+  corner_kick_inswingers: Int64
+  corner_kick_outswingers: Int64
+  corner_kicks_straight: Int64
+  corner_kicks_taken: Int64
+  crosses: Int64
+  dead_ball_passes: Int64
+  fk: Int64
+  live_ball_passes: Int64
+  minutes: Int64
+  passes_attempted: Int64
+  passes_blocked: Int64
+  passes_completed: Int64
+  passes_offside: Int64
+  switches: Int64
+  through_balls: Int64
+  throw_ins_taken: Int64
+  minutes: Int64
+match_report_passing_types_rename_columns:
+  att: passes_attempted
+  pass_types_live: passes_live
+  pass_types_dead: passes_dead_ball
+  pass_types_fk: passes_free_kick
+  pass_types_tb: passes_through_balls
+  pass_types_sw: passes_switches
+  pass_types_ti: passes_throw_ins
+  pass_types_ck: passes_corner_kicks
+  corner_kicks_in: corner_kicks_inswinging
+  corner_kicks_out: corner_kicks_outswinging
+  corner_kicks_str: corner_kicks_straight
+  outcomes_cmp: passes_completed
+  outcomes_off: passes_offside
+  outcomes_blocks: passes_blocked
+  "#": shirtnumber
+  pos: position
+  min: minutes
+match_report_possession_dtypes:
+  carries: Int64
+  carries_into_final_third: Int64
+  carries_into_penalty_area: Int64
+  dispossessed: Int64
+  live_ball_touches: Int64
+  minutes: Int64
+  miscontrols: Int64
+  passes_received: Int64
+  progressive_carries: Int64
+  progressive_passes_received: Int64
+  progressivee_carrying_distance: Int64
+  tackled_during_take_on: Int64
+  tackled_during_take_on_pct: float
+  take_on_pct: float
+  take_ons_attempted: Int64
+  take_ons_succeeded: Int64
+  total_distance_carried: Int64
+  touches: Int64
+  touches_attacking_penalty_area: Int64
+  touches_attacking_third: Int64
+  touches_defensive_penalty_area: Int64
+  touches_defensive_third: Int64
+  touches_middle_third: Int64
+match_report_possession_rename_columns:
+  '#': shirtnumber
+  touches_touches: touches
+  touches_def_pen: touches_def_penalty_area
+  touches_def_3rd: touches_def_third
+  touches_mid_3rd: touches_mid_third
+  touches_att_3rd: touches_att_third
+  touches_att_pen: touches_att_penalty_area
+  take-ons_tkld: take_ons_tackled
+  take-ons_att: take_ons_attempted
+  take-ons_succ: take_ons_succeeded
+  carries_carries: carries
+  carries_prgc: progressive_carries
+  carries_totdist: total_carries_distance
+  carries_prgdist: total_progressive_carries_distance
+  carries_1/3: carries_into_final_third
+  carries_cpa: carries_into_penalty_area
+  carries_mis: carries_miscontrolled
+  carries_dis: carries_disposessed
+  receiving_rec: passes_received
+  receiving_prgr: progressive_passes_received
+  pos: position
+match_report_shots_dtypes:
+  psxg: float
+  xg: float
+match_report_shot_rename_columns:
+  event: sca_event_one
+  event.1: sca_event_two
+  player.1: sca_player_one
+  player.2: sca_player_two
+match_report_summary_dtypes:
+  assists: Int64
+  blocks: Int64
+  carries: Int64
+  goal_creating_actions: Int64
+  goals: Int64
+  interceptions: Int64
+  minutes: Int64
+  npxg: float
+  pass_completion_pct: float
+  passes_attempted: Int64
+  passes_completed: Int64
+  pk_attempts: Int64
+  pk_goals: Int64
+  progressive_carries: Int64
+  progressive_passes: Int64
+  red_cards: Int64
+  shirtnumber: Int64
+  shot_creating_actions: Int64
+  shots: Int64
+  shots_on_target: Int64
+  tackles: Int64
+  take_ons_attempted: Int64
+  take_ons_succeeded: Int64
+  touches: Int64
+  xag: float
+  xg: float
+  yellow_cards: Int64
+matchlog_link_columns:
+- comp
+- opponent
+- match_report
+schedule_link_columns:
+- home_team
+- away_team
+- match_report
+schedule_rename_columns:
+  away: away_team
+  date: match_date
+  day: day_of_week
+  home: home_team
+  xg: home_xg
+  xg.1: away_xg
+  round: comp_round
+season_standings_dtypes:
+  draws: Int64
+  goals_against: Int64
+  goals_diff: Int64
+  goals_for: Int64
+  losses: Int64
+  matches_played: Int64
+  points: Int64
+  points_per_match: float
+  wins: Int64
+  xg_against: float
+  xg_diff: float
+  xg_diff_per_match: float
+  xg_for: float
+season_standings_link_cols:
+- squad
+season_standings_rename_columns:
+  d: draws
+  ga: goals_against
+  gd: goals_diff
+  gf: goals_for
+  l: losses
+  pts: points
+  pts/mp: points_per_match
+  w: wins
+  xg: xg_for
+  xga: xg_against
+  xgd: xg_diff
+  xgd/90: xg_diff_per_match
+team_season_by_stats_link_cols:
+- player
+- matches
+team_stats_defense_dtypes:
+  challenge_win_pct: float
+  challenges_attempts: Int64
+  challenges_lost: Int64
+  challenges_won: Int64
+  clearances: Int64
+  errors_led_to_shots: Int64
+  interceptions: Int64
+  minutes_divided_by_90: float
+  passes_blocked: Int64
+  shots_blocked: Int64
+  tackles: Int64
+  tackles_attacking_third: Int64
+  tackles_defensive_third: Int64
+  tackles_middle_third: Int64
+  tackles_plus_interceptions: Int64
+  tackles_won: Int64
+  total_blocks: Int64
+team_stats_defense_rename_columns:
+  90s: minutes_divided_by_90
+  att: challenges_attempts
+  att 3rd: tackles_attacking_third
+  blocks: total_blocks
+  clr: clearances
+  def 3rd: tackles_defensive_third
+  err: errors_led_to_shots
+  int: interceptions
+  lost: challenges_lost
+  mid 3rd: tackles_middle_third
+  pass: passes_blocked
+  sh: shots_blocked
+  tkl: tackles
+  tkl%: challenge_win_pct
+  tkl+int: tackles_plus_interceptions
+  tkl.1: challenges_won
+  tklw: tackles_won
+team_stats_gca_dtypes:
+  gca_dead_pass: Int64
+  gca_defense: Int64
+  gca_fouled: Int64
+  gca_live_pass: Int64
+  gca_shot: Int64
+  gca_take_on: Int64
+  goal_creating_action: Int64
+  goal_creating_actions_per_90: float
+  minutes_divided_by_90: float
+  sca_dead_pass: Int64
+  sca_defense: Int64
+  sca_fouled: Int64
+  sca_live_pass: Int64
+  sca_shot: Int64
+  sca_take_on: Int64
+  shot_creating_actions: Int64
+  shot_creating_actions_per_90: float
+team_stats_gca_rename_columns:
+  90s: minutes_divided_by_90
+  def: sca_defense
+  def.1: gca_defense
+  fld: sca_fouled
+  fld.1: gca_fouled
+  gca: goal_creating_action
+  gca90: goal_creating_actions_per_90
+  passdead: sca_dead_pass
+  passdead.1: gca_dead_pass
+  passlive: sca_live_pass
+  passlive.1: gca_live_pass
+  sca: shot_creating_actions
+  sca90: shot_creating_actions_per_90
+  sh: sca_shot
+  sh.1: gca_shot
+  to: sca_take_on
+  to.1: gca_take_on
+team_stats_misc_dtypes:
+  aerial_duals_lost: Int64
+  aerial_duals_pct: float
+  aerial_duals_won: Int64
+  ball_recoveries: Int64
+  crosses: Int64
+  fouled: Int64
+  fouls: Int64
+  interceptions: Int64
+  minutes: Int64
+  minutes_divided_by_90: float
+  offsides: Int64
+  own_goals: Int64
+  penalties_conceded: Int64
+  penalties_won: Int64
+  red_cards: Int64
+  second_yellow_cards: Int64
+  tackles_won: Int64
+  yellow_cards: Int64
+team_stats_misc_rename_columns:
+  '#': shirtnumber
+  2crdy: second_yellow_cards
+  90s: minutes_divided_by_90
+  crdr: red_cards
+  crdy: yellow_cards
+  crs: crosses
+  fld: fouled
+  fls: fouls
+  int: interceptions
+  lost: aerial_duals_lost
+  min: minutes
+  'off': offsides
+  og: own_goals
+  pkcon: penalties_conceded
+  pkwon: penalties_won
+  pos: position
+  recov: ball_recoveries
+  tklw: tackles_won
+  won: aerial_duals_won
+  won%: aerial_duals_pct
+team_stats_passing_dtypes:
+  assists: Int64
+  assists_minus_xag: float
+  crosses_into_penalty_area: Int64
+  key_passes: float
+  long_pass_completion_pct: float
+  long_passes_attempted: Int64
+  long_passes_completed: Int64
+  medium_pass_completion_pct: float
+  medium_passes_attempted: Int64
+  medium_passes_completed: Int64
+  pass_completion_pct: float
+  passes_attempted: Int64
+  passes_completed: Int64
+  passes_into_final_third: Int64
+  passes_into_penalty_area: Int64
+  progressive_passes: Int64
+  short_pass_completion_pct: float
+  short_passes_attempted: Int64
+  short_passes_completed: Int64
+  total_pass_distance: Int64
+  total_progressive_pass_distance: Int64
+  xa: float
+  xag: float
+team_stats_passing_rename_columns:
+  1/3: passes_into_final_third
+  a-xag: assists_minus_xag
+  ast: assists
+  att: passes_attempted
+  att.1: short_passes_attempted
+  att.2: medium_passes_attempted
+  att.3: long_passes_attempted
+  cmp: passes_completed
+  cmp%: pass_completion_pct
+  cmp%.1: short_pass_completion_pct
+  cmp%.2: medium_pass_completion_pct
+  cmp%.3: long_pass_completion_pct
+  cmp.1: short_passes_completed
+  cmp.2: medium_passes_completed
+  cmp.3: long_passes_completed
+  crspa: crosses_into_penalty_area
+  kp: key_passes
+  ppa: passes_into_penalty_area
+  prgdist: total_progressive_pass_distance
+  prgp: progressive_passes
+  totdist: total_pass_distance
+team_stats_passing_types_dtypes:
+  corner_kick_inswingers: Int64
+  corner_kick_outswingers: Int64
+  corner_kicks_straight: Int64
+  corner_kicks_taken: Int64
+  crosses: Int64
+  dead_ball_passes: Int64
+  free_kick_passes: Int64
+  live_passes: Int64
+  minutes_divided_by_90: float
+  offside_passes: Int64
+  passes_attempted: Int64
+  passes_blocked: Int64
+  passes_completed: Int64
+  switches: Int64
+  through_balls: Int64
+  throw_ins_taken: Int64
+team_stats_passing_types_rename_columns:
+  90s: minutes_divided_by_90
+  att: passes_attempted
+  blocks: passes_blocked
+  ck: corner_kicks_taken
+  cmp: passes_completed
+  crs: crosses
+  dead: dead_ball_passes
+  fk: free_kick_passes
+  in: corner_kick_inswingers
+  live: live_passes
+  'off': offside_passes
+  out: corner_kick_outswingers
+  str: corner_kicks_straight
+  sw: switches
+  tb: through_balls
+  ti: throw_ins_taken
+team_stats_playing_time_dtypes:
+  complete_matches_played: Int64
+  goals_allowed_on_pitch: Int64
+  goals_scored_on_pitch: Int64
+  matches_played: Int64
+  matches_subbed_in: Int64
+  minutes_divided_by_90: float
+  minutes_per_match_played: Int64
+  minutes_per_start: Int64
+  minutes_per_substitution: Int64
+  on-plus_minus_net_per_90: float
+  pct_of_team_minutes_played: float
+  plus_minus: Int64
+  plus_minus_net_per_90: float
+  plus_minus_per_90: float
+  starts: Int64
+  team_points_per_match: float
+  team_xg_on_pitch: float
+  team_xga_on_pitch: float
+  unused_sub_matches: Int64
+  xg_plus_minus: float
+  xg_plus_minus_net_per_90: float
+  xg_plus_minus_per_90: float
+team_stats_playing_time_rename_columns:
+  +/-: plus_minus
+  +/-90: plus_minus_per_90
+  90s: minutes_divided_by_90
+  compl: complete_matches_played
+  min%: pct_of_team_minutes_played
+  mn/mp: minutes_per_match_played
+  mn/start: minutes_per_start
+  mn/sub: minutes_per_substitution
+  mp: matches_played
+  on-off: plus_minus_net_per_90
+  on-off.1: xg_plus_minus_net_per_90
+  ong: goals_scored_on_pitch
+  onga: goals_allowed_on_pitch
+  onxg: team_xg_on_pitch
+  onxga: team_xga_on_pitch
+  pos: position
+  ppm: team_points_per_match
+  subs: matches_subbed_in
+  unsub: unused_sub_matches
+  xg+/-: xg_plus_minus
+  xg+/-90: xg_plus_minus_per_90
+team_stats_possession_dtypes:
+  carries: Int64
+  carries_into_final_third: Int64
+  carries_into_penalty_area: Int64
+  dispossessed: Int64
+  live_ball_touches: Int64
+  minutes_divided_by_90: float
+  miscontrols: Int64
+  passes_received: Int64
+  progressive_carries: Int64
+  progressive_passes_received: Int64
+  take_on_success_pct: float
+  take_ons_attempted: Int64
+  take_ons_succeeded: Int64
+  times_tackled_during_take_on: Int64
+  times_tackled_during_take_on_pct: float
+  total_distance_carried: Int64
+  total_progressive_distance_carried: Int64
+  touches: Int64
+  touches_attacking_penalty_area: Int64
+  touches_attacking_third: Int64
+  touches_defensive_penalty_box: Int64
+  touches_defensive_third: Int64
+  touches_middle_third: Int64
+team_stats_possession_rename_columns:
+  1/3: carries_into_final_third
+  90s: minutes_divided_by_90
+  att: take_ons_attempted
+  att 3rd: touches_attacking_third
+  att pen: touches_attacking_penalty_area
+  cpa: carries_into_penalty_area
+  def 3rd: touches_defensive_third
+  def pen: touches_defensive_penalty_box
+  dis: dispossessed
+  live: live_ball_touches
+  mid 3rd: touches_middle_third
+  mis: miscontrols
+  prgc: progressive_carries
+  prgdist: total_progressive_distance_carried
+  prgr: progressive_passes_received
+  rec: passes_received
+  succ: take_ons_succeeded
+  succ%: take_on_success_pct
+  tkld: times_tackled_during_take_on
+  tkld%: times_tackled_during_take_on_pct
+  totdist: total_distance_carried
+team_stats_shooting_dtypes:
+  average_shot_distance: float
+  free_kick_shots: Int64
+  goals: Int64
+  goals_minus_xg: float
+  goals_per_shot: float
+  goals_per_shot_on_target: float
+  minutes_divided_by_90: float
+  non_pk_goals_minus_npxg: float
+  npxg: float
+  npxg_per_shot: float
+  pk_attempts: Int64
+  pk_goals: Int64
+  shot_on_target_pct: float
+  shots: Int64
+  shots_on_target: Int64
+  shots_on_target_per_90: float
+  shots_per_90: float
+  xg: float
+team_stats_shooting_rename_columns:
+  90s: minutes_divided_by_90
+  dist: average_shot_distance
+  fk: free_kick_shots
+  g-xg: goals_minus_xg
+  g/sh: goals_per_shot
+  g/sot: goals_per_shot_on_target
+  gls: goals
+  np:g-xg: non_pk_goals_minus_npxg
+  npxg/sh: npxg_per_shot
+  pk: pk_goals
+  pkatt: pk_attempts
+  pos: position
+  sh: shots
+  sh/90: shots_per_90
+  sot: shots_on_target
+  sot%: shot_on_target_pct
+  sot/90: shots_on_target_per_90
+team_stats_standard_dtypes:
+  assists: Int64
+  assists_per_90: float
+  draws: Int64
+  goal_diff: Int64
+  goals: Int64
+  goals_against: Int64
+  goals_assist_per_90: float
+  goals_assists: Int64
+  goals_for: Int64
+  goals_per_90: float
+  losses: Int64
+  matches_played: Int64
+  minutes_per_90: float
+  non_pk_goals: Int64
+  non_pk_goals_assists_per_90: float
+  non_pk_goals_per_90: float
+  npxg: float
+  npxg_xag: float
+  npxg_xag_per_90: float
+  pk_attempts: Int64
+  pk_goals: Int64
+  points: Int64
+  points_per_match: float
+  progressive_carries: Int64
+  progressive_passes: Int64
+  progressive_passes_received: Int64
+  red_cards: Int64
+  starts: Int64
+  wins: Int64
+  xag: float
+  xag_per_90: float
+  xg_against: float
+  xg_diff: float
+  xg_diff_per_match: float
+  xg_for: float
+  xg_per_90: float
+  xg_xag_per_90: float
+  yellow_cards: Int64
+team_stats_standard_rename_columns:
+  90s: minutes_per_90
+  ag+: goals_assists
+  ast: assists
+  ast.1: assists_per_90
+  attendance: avg_attendance
+  crdr: red_cards
+  crdy: yellow_cards
+  d: draws
+  g+a: goals_assists
+  g+a-pk: non_pk_goals_assists_per_90
+  g+a.1: goals_assist_per_90
+  g-pk: non_pk_goals
+  g-pk.1: non_pk_goals_per_90
+  ga: goals_against
+  gd: goal_diff
+  gf: goals_for
+  gls: goals
+  gls.1: goals_per_90
+  l: losses
+  min: minutes
+  mp: matches_played
+  npxg+xag: npxg_xag
+  npxg+xag.1: npxg_xag_per_90
+  npxg.1: npxg_per_90
+  pk: pk_goals
+  pkatt: pk_attempts
+  prgc: progressive_carries
+  prgp: progressive_passes
+  prgr: progressive_passes_received
+  pts: points
+  pts/mp: points_per_match
+  w: wins
+  xag.1: xag_per_90
+  xg: xg_for
+  xg+xag: xg_xag_per_90
+  xg.1: xg_per_90
+  xga: xg_against
+  xgd: xg_diff
+  xgd/90: xg_diff_per_match
+match_report_keeper_rename_columns:
+  min: minutes
+  shot_stopping_sota: shots_on_target_against
+  shot_stopping_ga: goals_allowed
+  shot_stopping_saves: saves
+  shot_stopping_save%: save_pct
+  shot_stopping_psxg: psxg
+  launched_cmp: passes_launched_completed
+  launched_att: passes_launched_attempted
+  launched_cmp%: launched_pass_completion_pct
+  passes_att: passes_attempted
+  passes_thr: throws_attempted
+  passes_launch%: pct_of_passes_launched
+  passes_avglen: average_pass_length
+  goal_kicks_att: goal_kicks_attempted
+  goal_kicks_launch%: pct_goal_kicks_launched
+  goal_kicks_avglen: avg_goal_kick_length
+  crosses_opp: crosses_faced
+  crosses_stp: crosses_stopped
+  stp%: crosses_stopped_pct
+  'sweeper_#opa': defensive_actions_outside_pen_area
+  sweeper_avgdist: avg_distance_of_defensive_actions
+match_report_keeper_dtypes:
+  saves: Int64
+  save_pct: float
+  psxg: float
+  passes_launched_completed: Int64
+  passes_launched_attempted: Int64
+  passes_launched_pct: float
+  passes_attempted: Int64
+  throws_attempted: Int64
+  pct_of_passes_launched: float
+  average_pass_length: float
+  goal_kicks_attempted: Int64
+  pct_goal_kicks_launched: float
+  avg_goal_kick_length: float
+  crosses_faced: Int64
+  crosses_stopped: Int64
+  crosses_stopped_pct: float
+  defensive_actions_outside_pen_area: Int64
+  avg_distance_of_defensive_actions: float
+  goals_allowed: Int64
+  minutes: Int64
+match_report_upsert_config:
+  schema: nwsfl
+  table: player_match_{}_stats
+fact_table_upsert_config:
+  players:
+    table_schema: nwsfl
+    table_name: players
+    match_report_columns:
+      - player_id
+      - player
+  squads:
+    table_schema: nwsfl
+    table_name: squads
+    match_report_columns:
+      - squad_id
+      - squad
+      - gender
+  match_report_ids:
+    table_schema: nwsfl
+    table_name: match_report_ids
+    match_report_columns:
+      - id
+      - player_id
+      - squad_id
+      - match_id
+      - opponent_id
+      - shirtnumber
+      - age
+      - position
+match_report_summary_rename_columns:
+  '#': shirtnumber
+  pos: position
+  min: minutes
+  performance_gls: goals
+  performance_ast: assists
+  performance_pk: pk_goals
+  performance_pkatt: pk_attempts
+  performance_sh: shots
+  performance_sot: shots_on_target
+  performance_crdy: yellow_cards
+  performance_crdr: red_cards
+  performance_fouls: fouls
+  performance_fld: fouled
+  performance_off: offsides
+  performance_tklw: tackles_won
+  performance_int: interceptions
+  performance_og: own_goals
+  performance_pkwon: pks_won
+  performance_pkcon: pks_converted
+  performance_touches: touches
+  performance_tkl: tackles
+  performance_blocks: blocks
+  expected_xg: xg
+  expected_npxg: npxg
+  expected_xag: xag
+  sca_sca: shot_creating_actions
+  sca_gca: goal_creating_actions
+  passes_cmp: passes_completed
+  passes_att: passes_attempted
+  passes_cmp%: pass_completion_pct
+  passes_prgp: progressive_passes
+  carries_carries: carries
+  carries_prgc: progressive_carries
+  take-ons_att: take_ons_attempted
+  take-ons_succ: take_ons_succeeded
+shot_creation_rename_columns:
+  player: shot_player
+  player_link: shot_player_link
+  'body part': body_part
+team_schedule_rename_columns:
+  date: match_date
+  time: match_time
+  comp: competition
+  gf: goals_for
+  ga: goals_against
+  xg: xg_for
+  xga: xg_against
+  poss: possession
+  result: match_result
+  venue: home_or_away
+roster_use_cols:
+    - player
+    - nation
+    - age
+    - pos
+roster_link_cols:
+    - player
