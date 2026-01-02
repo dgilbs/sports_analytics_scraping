@@ -1,0 +1,25 @@
+credentials:
+  usernames:
+    alice:
+      email: alice@example.com
+      name: Alice Smith
+      password: $2b$12$REPLACE_WITH_GENERATED_HASH
+    bob:
+      email: bob@example.com
+      name: Bob Jones
+      password: $2b$12$REPLACE_WITH_GENERATED_HASH
+    charlie:
+      email: charlie@example.com
+      name: Charlie Davis
+      password: $2b$12$REPLACE_WITH_GENERATED_HASH
+
+cookie:
+  expiry_days: 30
+  key: REPLACE_WITH_SECURE_RANDOM_KEY
+  name: nwsl_fantasy_cookie
+
+
+
+
+
+

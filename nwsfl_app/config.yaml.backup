@@ -1,0 +1,20 @@
+credentials:
+  usernames:
+    alice:
+      email: alice@example.com
+      name: Alice Smith
+      password: $2b$12$uFdu01qr2g1pSll32fp06.XnFbxB01rO.IVUZ5e3Unw7rsxM0w1WG
+    bob:
+      email: bob@example.com
+      name: Bob Jones
+      password: $2b$12$UnTpwaEWxRXlUsJYNKvBFebmLrLIjyyP6xwpnBaftrwOBigLSYK1y
+    charlie:
+      email: charlie@example.com
+      name: Charlie Davis
+      password: $2b$12$eaNR6N.expnCSoEOd56iSuaLnGZjxYmNDyoHH5WESM.hzlUxY22aS
+    # Add remaining 7 users
+
+cookie:
+  expiry_days: 30
+  key: Sft2B8HIzO-nNb12LSTxbgDxhCJxJOfJeVIW5VdFySM
+  name: nwsl_fantasy_cookie
