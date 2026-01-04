@@ -1,13 +1,17 @@
 import streamlit as st
-import streamlit_authenticator as stauth
 import psycopg2
 import pandas as pd
 import os
 from dotenv import load_dotenv
 import yaml
 from yaml.loader import SafeLoader
+import bcrypt
 
-load_dotenv()
+# Load .env file if it exists, but don't fail if it doesn't
+try:
+    load_dotenv()
+except:
+    pass
 
 # Page config
 st.set_page_config(page_title="NWSFL", page_icon="⚽", layout="wide")
@@ -17,88 +21,106 @@ if os.path.exists('config.yaml'):
     with open('config.yaml') as file:
         config = yaml.load(file, Loader=SafeLoader)
 else:
-    # For Streamlit Cloud - use secrets (convert to mutable dict)
-    try:
-        usernames = {}
-        for username, user_data in st.secrets['credentials']['usernames'].items():
-            usernames[username] = dict(user_data)
+    st.error("config.yaml not found")
+    st.stop()
+
+# Custom authentication function
+def verify_password(password: str, stored_password: str) -> bool:
+    """Verify a plain text password"""
+    # Simple string comparison - passwords are stored as plain text in config
+    return password == stored_password
+
+# Initialize session state for auth
+if 'authentication_status' not in st.session_state:
+    st.session_state.authentication_status = None
+    st.session_state.username = None
+    st.session_state.name = None
+
+# Login UI
+if st.session_state.authentication_status is None or st.session_state.authentication_status == False:
+    st.title("⚽ NWSL Fantasy League Login")
+    
+    col1, col2, col3 = st.columns([1, 2, 1])
+    
+    with col2:
+        username = st.text_input("Username")
+        password = st.text_input("Password", type="password")
         
-        config = {
-            'credentials': {
-                'usernames': usernames
-            },
-            'cookie': {
-                'name': st.secrets['cookie']['name'],
-                'key': st.secrets['cookie']['key'],
-                'expiry_days': st.secrets['cookie']['expiry_days']
-            }
-        }
-    except KeyError as e:
-        st.error(f"Missing configuration key: {e}")
-        st.stop()
-
-authenticator = stauth.Authenticate(
-    config['credentials'],
-    config['cookie']['name'],
-    config['cookie']['key'],
-    config['cookie']['expiry_days']
-)
-
-# Database connection
-def get_database_url():
-    """Get the database URL from secrets or environment."""
-    # Try secrets first
-    if "DATABASE_URL" in st.secrets:
-        return st.secrets["DATABASE_URL"]
-    # Try database section in secrets
-    if "database" in st.secrets and "url" in st.secrets["database"]:
-        return st.secrets["database"]["url"]
-    # Fall back to environment variable
-    return os.getenv('DATABASE_URL')
-
-@st.cache_resource
-def init_connection():
-    """Initialize database connection."""
-    database_url = get_database_url()
-    if not database_url:
-        st.error("DATABASE_URL not found in secrets or environment variables")
-        st.stop()
-    return psycopg2.connect(database_url)
-
-def get_conn():
-    """Get database connection, reconnecting if necessary."""
-    conn = init_connection()
-    # Test if connection is alive by trying to get a cursor
-    try:
-        with conn.cursor() as cur:
-            cur.execute("SELECT 1")
-        return conn
-    except (psycopg2.InterfaceError, psycopg2.OperationalError):
-        # Connection is dead, clear cache and reconnect
-        init_connection.clear()
-        conn = init_connection()
-        return conn
-
-# Login
-authenticator.login(location='main')
-
-# Access authentication state from session state
-name = st.session_state.get("name")
-authentication_status = st.session_state.get("authentication_status")
-username = st.session_state.get("username")
-
-if authentication_status == False:
-    st.error('Username/password is incorrect')
-elif authentication_status == None:
-    st.warning('Please enter your username and password')
-elif authentication_status:
+        if st.button("Login", type="primary", use_container_width=True):
+            # Check if user exists
+            if username in config['credentials']['usernames']:
+                user_data = config['credentials']['usernames'][username]
+                stored_hash = user_data.get('password', '')
+                
+                # Verify password
+                if verify_password(password, stored_hash):
+                    st.session_state.authentication_status = True
+                    st.session_state.username = username
+                    st.session_state.name = user_data.get('name', username)
+                    st.success("✅ Login successful!")
+                    st.rerun()
+                else:
+                    st.error("❌ Username/password is incorrect")
+            else:
+                st.error("❌ Username/password is incorrect")
+else:
     # User is logged in
-    st.session_state.user = username
+    st.session_state.user = st.session_state.username
+    name = st.session_state.name
+    username = st.session_state.username
+    
+    # Database connection
+    def get_database_url():
+        """Get the database URL from environment or secrets."""
+        # Try environment variable first
+        env_url = os.getenv('DATABASE_URL')
+        if env_url:
+            return env_url
+        
+        # Try secrets
+        try:
+            if "DATABASE_URL" in st.secrets:
+                return st.secrets["DATABASE_URL"]
+            if "database" in st.secrets and "url" in st.secrets["database"]:
+                return st.secrets["database"]["url"]
+        except:
+            pass
+        
+        # Fallback (for development only)
+        return "postgresql://neondb_owner:npg_RSU6cfsvr8zy@ep-round-boat-aeeid91z-pooler.c-2.us-east-2.aws.neon.tech/neondb?sslmode=require&channel_binding=require"
+
+    @st.cache_resource
+    def init_connection():
+        """Initialize database connection."""
+        database_url = get_database_url()
+        if not database_url:
+            st.error("DATABASE_URL not found in secrets or environment variables")
+            st.stop()
+        return psycopg2.connect(database_url)
+
+    def get_conn():
+        """Get database connection, reconnecting if necessary."""
+        conn = init_connection()
+        # Test if connection is alive by trying to get a cursor
+        try:
+            with conn.cursor() as cur:
+                cur.execute("SELECT 1")
+            return conn
+        except (psycopg2.InterfaceError, psycopg2.OperationalError):
+            # Connection is dead, clear cache and reconnect
+            init_connection.clear()
+            conn = init_connection()
+            return conn
     
     # Sidebar
     st.sidebar.title("⚽ NWSL Fantasy League")
     st.sidebar.write(f"**Logged in as:** {name}")
-    authenticator.logout(location='sidebar')
+    
+    if st.sidebar.button("🚪 Logout", type="secondary"):
+        st.session_state.authentication_status = None
+        st.session_state.username = None
+        st.session_state.name = None
+        st.rerun()
     
     # Get user's leagues
     leagues_query = """

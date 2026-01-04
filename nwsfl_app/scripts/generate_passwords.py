@@ -14,19 +14,25 @@ def main():
     
     # Edit this list with your friends' desired passwords
     users = [
-        ("alice", "password123"),
-        ("bob", "password456"),
-        ("charlie", "password789"),
-        # Add all 10 users here
+        ("bill", "bill2025!"),
+        ("noelle", "noelle2025!"),
+        ("joey", "joey2025!"),
+        ("jackson", "jackson2025!"),
+        ("ryne", "ryne2025!"),
+        ("mariam", "mariam2025!"),
+        ("danny", "danny2025!"),
+        ("brock", "brock2025!"),
+        ("chris", "chris2025!"),
+        ("nancy", "nancy2025!"),
+        ("cameron", "cameron2025!"),
     ]
-    
-    passwords = [pwd for _, pwd in users]
-    hashed_passwords = stauth.Hasher(passwords).generate()
     
     print("Copy these into your config.yaml file:")
     print()
     
-    for (username, _), hashed in zip(users, hashed_passwords):
+    hasher = stauth.Hasher()
+    for username, password in users:
+        hashed = hasher.hash(password)
         print(f"{username}:")
         print(f"  password: {hashed}")
         print()
