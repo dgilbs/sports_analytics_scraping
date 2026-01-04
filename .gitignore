@@ -17,3 +17,13 @@ backup.sql
 **/*.ipynb
 college_bbref/Scraping Notebook.ipynb
 dbt_env/
+
+# Secrets and credentials - NEVER commit these!
+.streamlit/secrets.toml
+.streamlit/*.toml
+**/.dbt/profiles.yml
+~/.dbt/profiles.yml
+.env
+.env.local
+.env.*.local
+

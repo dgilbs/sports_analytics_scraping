@@ -27,85 +27,17 @@ INSERT INTO nwsfl.teams (league_id, user_id, team_name) VALUES
     (2, 'bob', 'Bob''s Pride');
 
 -- ============================================
--- PLAYERS
+-- ROSTERS - Pulled from season_fantasy_rosters
 -- ============================================
-INSERT INTO nwsfl.players (player_name, position, team, active) VALUES
-    -- Forwards
-    ('Sophia Smith', 'FWD', 'Portland Thorns', true),
-    ('Trinity Rodman', 'FWD', 'Washington Spirit', true),
-    ('Mallory Swanson', 'FWD', 'Chicago Red Stars', true),
-    ('Alex Morgan', 'FWD', 'San Diego Wave', true),
-    ('Megan Rapinoe', 'FWD', 'OL Reign', true),
-    ('Lynn Williams', 'FWD', 'NJ/NY Gotham FC', true),
-    
-    -- Midfielders
-    ('Rose Lavelle', 'MID', 'OL Reign', true),
-    ('Lindsey Horan', 'MID', 'Lyon', true),
-    ('Sam Coffey', 'MID', 'Portland Thorns', true),
-    ('Ashley Sanchez', 'MID', 'Washington Spirit', true),
-    ('Andi Sullivan', 'MID', 'Washington Spirit', true),
-    ('Croix Bethune', 'MID', 'Washington Spirit', true),
-    
-    -- Defenders
-    ('Naomi Girma', 'DEF', 'San Diego Wave', true),
-    ('Emily Fox', 'DEF', 'Arsenal', true),
-    ('Becky Sauerbrunn', 'DEF', 'Portland Thorns', true),
-    ('Tierna Davidson', 'DEF', 'NJ/NY Gotham FC', true),
-    ('Emily Sonnett', 'DEF', 'OL Reign', true),
-    ('Abby Dahlkemper', 'DEF', 'San Diego Wave', true),
-    
-    -- Goalkeepers
-    ('Alyssa Naeher', 'GK', 'Chicago Red Stars', true),
-    ('Aubrey Kingsbury', 'GK', 'Washington Spirit', true),
-    ('Adrianna Franch', 'GK', 'Kansas City Current', true),
-    ('Casey Murphy', 'GK', 'NC Courage', true);
+-- Note: The nwsfl.rosters table is synced from the season_fantasy_rosters table in Neon
+-- This automatically populates team rosters for each NWSFL team
+-- No need for manual inserts - the data comes from the fantasy platform
 
--- ============================================
--- ROSTERS
--- ============================================
--- Alice's team in Friends League
-INSERT INTO nwsfl.rosters (team_id, player_id) VALUES
-    (1, 1),   -- Sophia Smith
-    (1, 2),   -- Trinity Rodman
-    (1, 7),   -- Rose Lavelle
-    (1, 9),   -- Sam Coffey
-    (1, 13),  -- Naomi Girma
-    (1, 15),  -- Becky Sauerbrunn
-    (1, 19);  -- Alyssa Naeher
-
--- Bob's team in Friends League
-INSERT INTO nwsfl.rosters (team_id, player_id) VALUES
-    (2, 3),   -- Mallory Swanson
-    (2, 4),   -- Alex Morgan
-    (2, 8),   -- Lindsey Horan
-    (2, 10),  -- Ashley Sanchez
-    (2, 14),  -- Emily Fox
-    (2, 16),  -- Tierna Davidson
-    (2, 20);  -- Aubrey Kingsbury
-
--- Charlie's team in Friends League
-INSERT INTO nwsfl.rosters (team_id, player_id) VALUES
-    (3, 5),   -- Megan Rapinoe
-    (3, 6),   -- Lynn Williams
-    (3, 11),  -- Andi Sullivan
-    (3, 12),  -- Croix Bethune
-    (3, 17),  -- Emily Sonnett
-    (3, 18),  -- Abby Dahlkemper
-    (3, 21);  -- Adrianna Franch
-
--- Alice's team in Elite League
-INSERT INTO nwsfl.rosters (team_id, player_id) VALUES
-    (4, 1),   -- Sophia Smith
-    (4, 7),   -- Rose Lavelle
-    (4, 13),  -- Naomi Girma
-    (4, 19);  -- Alyssa Naeher
-
--- Bob's team in Elite League
-INSERT INTO nwsfl.rosters (team_id, player_id) VALUES
-    (5, 2),   -- Trinity Rodman
-    (5, 8),   -- Lindsey Horan
-    (5, 14),  -- Emily Fox
-    (5, 20);  -- Aubrey Kingsbury
+-- If you need to manually populate from season_fantasy_rosters, use:
+-- INSERT INTO nwsfl.rosters (team_id, player_id)
+-- SELECT nwsfl_team_id, player_id FROM season_fantasy_rosters
+-- WHERE season = '2025'
+-- ON CONFLICT (team_id, player_id) DO NOTHING;
 
 -- ============================================
 -- LINEUPS (Matchweek 1)

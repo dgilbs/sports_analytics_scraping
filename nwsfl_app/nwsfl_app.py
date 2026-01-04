@@ -18,19 +18,24 @@ if os.path.exists('config.yaml'):
         config = yaml.load(file, Loader=SafeLoader)
 else:
     # For Streamlit Cloud - use secrets (convert to mutable dict)
-    config = {
-        'credentials': {
-            'usernames': {
-                username: dict(user_data)
-                for username, user_data in st.secrets['credentials']['usernames'].items()
+    try:
+        usernames = {}
+        for username, user_data in st.secrets['credentials']['usernames'].items():
+            usernames[username] = dict(user_data)
+        
+        config = {
+            'credentials': {
+                'usernames': usernames
+            },
+            'cookie': {
+                'name': st.secrets['cookie']['name'],
+                'key': st.secrets['cookie']['key'],
+                'expiry_days': st.secrets['cookie']['expiry_days']
             }
-        },
-        'cookie': {
-            'name': st.secrets['cookie']['name'],
-            'key': st.secrets['cookie']['key'],
-            'expiry_days': st.secrets['cookie']['expiry_days']
         }
-    }
+    except KeyError as e:
+        st.error(f"Missing configuration key: {e}")
+        st.stop()
 
 authenticator = stauth.Authenticate(
     config['credentials'],
@@ -42,7 +47,14 @@ authenticator = stauth.Authenticate(
 # Database connection
 def get_database_url():
     """Get the database URL from secrets or environment."""
-    return st.secrets.get("DATABASE_URL") if "DATABASE_URL" in st.secrets else os.getenv('DATABASE_URL')
+    # Try secrets first
+    if "DATABASE_URL" in st.secrets:
+        return st.secrets["DATABASE_URL"]
+    # Try database section in secrets
+    if "database" in st.secrets and "url" in st.secrets["database"]:
+        return st.secrets["database"]["url"]
+    # Fall back to environment variable
+    return os.getenv('DATABASE_URL')
 
 @st.cache_resource
 def init_connection():
@@ -114,7 +126,7 @@ elif authentication_status:
     current_league_id, current_team_id = league_options[selected_league]
     
     # Navigation
-    page = st.sidebar.radio("Menu", ["Standings", "My Roster", "Set Lineup", "Weekly Scores"])
+    page = st.sidebar.radio("Menu", ["Standings", "My Roster", "Player Market", "Set Lineup", "Weekly Scores"])
     
     # PAGE: Standings
     if page == "Standings":
@@ -153,16 +165,11 @@ elif authentication_status:
         
         query = """
             SELECT 
-                p.player_name,
-                p.position,
-                p.team as nwsl_team,
-                COALESCE(SUM(ps.points), 0) as total_points
-            FROM nwsfl.rosters r
-            JOIN nwsfl.players p ON r.player_id = p.player_id
-            LEFT JOIN nwsfl.player_scores ps ON p.player_id = ps.player_id
-            WHERE r.team_id = %s
-            GROUP BY p.player_id, p.player_name, p.position, p.team
-            ORDER BY p.position, total_points DESC
+                player,
+                fantasy_position as position
+            FROM season_fantasy_rosters
+            WHERE nwsfl_team_id = %s
+            ORDER BY fantasy_position, player
         """
         df = pd.read_sql(query, get_conn(), params=(current_team_id,))
         
@@ -170,6 +177,91 @@ elif authentication_status:
             st.info("No players on your roster yet!")
         else:
             st.dataframe(df, use_container_width=True, hide_index=True)
+    
+    # PAGE: Player Market
+    elif page == "Player Market":
+        st.title("📊 Player Market")
+        st.write("View all available players and their current ownership status")
+        
+        # Get all players with their ownership status for this league
+        # Using nwsfl_fantasy_players_2025 joined with season_fantasy_rosters to show ownership
+        query = """
+            SELECT DISTINCT
+                nfp.player_id,
+                nfp.player,
+                nfp.fantasy_position,
+                nfp.squad as nwsl_team,
+                COALESCE(ft.team_name, 'Free Agent') as fantasy_team,
+                CASE 
+                    WHEN sfr.player_id IS NOT NULL THEN 'Owned'
+                    ELSE 'Free Agent'
+                END as status
+            FROM soccer.nwsfl_fantasy_players_2025 nfp
+            LEFT JOIN season_fantasy_rosters sfr ON nfp.player_id = sfr.player_id
+            LEFT JOIN fantasy_teams ft ON sfr.nwsfl_team_id = ft.id AND ft.league_id = %s
+            ORDER BY nfp.fantasy_position, nfp.player
+        """
+        df = pd.read_sql(query, get_conn(), params=(current_league_id,))
+        
+        if df.empty:
+            st.info("No players available")
+        else:
+            # Add filtering options
+            col1, col2, col3 = st.columns(3)
+            
+            with col1:
+                position_filter = st.multiselect(
+                    "Filter by Position",
+                    options=sorted([p for p in df['fantasy_position'].unique() if p is not None]),
+                    default=sorted([p for p in df['fantasy_position'].unique() if p is not None])
+                )
+            
+            with col2:
+                status_filter = st.multiselect(
+                    "Filter by Status",
+                    options=['Owned', 'Free Agent'],
+                    default=['Owned', 'Free Agent']
+                )
+            
+            with col3:
+                nwsl_team_filter = st.multiselect(
+                    "Filter by NWSL Team",
+                    options=sorted(df['nwsl_team'].unique()),
+                    default=sorted(df['nwsl_team'].unique())
+                )
+            
+            # Apply filters
+            filtered_df = df[
+                (df['fantasy_position'].isin(position_filter)) &
+                (df['status'].isin(status_filter)) &
+                (df['nwsl_team'].isin(nwsl_team_filter))
+            ]
+            
+            # Display stats
+            col1, col2, col3, col4 = st.columns(4)
+            col1.metric("Total Players", len(df))
+            col2.metric("Owned", len(df[df['status'] == 'Owned']))
+            col3.metric("Free Agents", len(df[df['status'] == 'Free Agent']))
+            col4.metric("Showing", len(filtered_df))
+            
+            st.divider()
+            
+            # Display dataframe with styling
+            def highlight_ownership(row):
+                if row['Status'] == 'Owned':
+                    return ['background-color: #e8f5e9'] * len(row)  # Light green for owned
+                else:
+                    return ['background-color: #fff3e0'] * len(row)  # Light orange for free agents
+            
+            # Select columns to display
+            display_df = filtered_df[['player', 'fantasy_position', 'nwsl_team', 'fantasy_team', 'status']].copy()
+            display_df.columns = ['Player Name', 'Position', 'NWSL Team', 'Fantasy Team', 'Status']
+            
+            st.dataframe(
+                display_df.style.apply(highlight_ownership, axis=1),
+                use_container_width=True,
+                hide_index=True
+            )
     
     # PAGE: Set Lineup
     elif page == "Set Lineup":
