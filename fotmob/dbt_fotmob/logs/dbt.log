@@ -1,0 +1,769 @@
+[0m19:00:19.662700 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x117b7c1d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x117be5810>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x117be6a90>]}
+
+
+============================== 19:00:19.666010 | ff67ae3e-cd18-4367-9985-715bdeed16f2 ==============================
+[0m19:00:19.666010 [info ] [MainThread]: Running with dbt=1.10.13
+[0m19:00:19.666384 [debug] [MainThread]: running dbt with arguments {'invocation_command': 'dbt run', 'quiet': 'False', 'version_check': 'True', 'empty': 'False', 'printer_width': '80', 'log_path': '/Users/dgilberg/Documents/sports_analytics_scraping/fotmob/dbt_fotmob/logs', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'debug': 'False', 'profiles_dir': '/Users/dgilberg/.dbt', 'log_format': 'default', 'target_path': 'None', 'partial_parse': 'True', 'send_anonymous_usage_stats': 'True', 'cache_selected_only': 'False', 'use_experimental_parser': 'False', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'fail_fast': 'False', 'introspect': 'True', 'warn_error': 'None', 'static_parser': 'True', 'no_print': 'None', 'use_colors': 'True'}
+[0m19:00:19.670072 [error] [MainThread]: Encountered an error:
+Parsing Error
+  Env var required but not provided: 'NEON_HOST'
+[0m19:00:19.681524 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": false, "command_wall_clock_time": 0.07028575, "process_in_blocks": "0", "process_kernel_time": 0.223206, "process_mem_max_rss": "127549440", "process_out_blocks": "0", "process_user_time": 1.146879}
+[0m19:00:19.681858 [debug] [MainThread]: Command `dbt run` failed at 19:00:19.681802 after 0.07 seconds
+[0m19:00:19.682048 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x105433e50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x117b7c3d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10537da10>]}
+[0m19:00:19.682220 [debug] [MainThread]: Flushing usage events
+[0m19:00:19.943400 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m19:00:29.213110 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1081801d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1081d0490>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1081d39d0>]}
+
+
+============================== 19:00:29.216416 | bd1da839-be04-443f-bc1d-01cf92aa03dc ==============================
+[0m19:00:29.216416 [info ] [MainThread]: Running with dbt=1.10.13
+[0m19:00:29.216750 [debug] [MainThread]: running dbt with arguments {'target_path': 'None', 'version_check': 'True', 'log_path': '/Users/dgilberg/Documents/sports_analytics_scraping/fotmob/dbt_fotmob/logs', 'send_anonymous_usage_stats': 'True', 'log_format': 'default', 'write_json': 'True', 'debug': 'False', 'fail_fast': 'False', 'introspect': 'True', 'profiles_dir': '/Users/dgilberg/.dbt', 'empty': 'False', 'use_colors': 'True', 'printer_width': '80', 'use_experimental_parser': 'False', 'log_cache_events': 'False', 'static_parser': 'True', 'quiet': 'False', 'indirect_selection': 'eager', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'cache_selected_only': 'False', 'invocation_command': 'dbt run', 'no_print': 'None', 'warn_error': 'None', 'partial_parse': 'True'}
+[0m19:00:29.345255 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'bd1da839-be04-443f-bc1d-01cf92aa03dc', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10889f690>]}
+[0m19:00:29.370303 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'bd1da839-be04-443f-bc1d-01cf92aa03dc', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x103c90250>]}
+[0m19:00:29.371217 [info ] [MainThread]: Registered adapter: postgres=1.9.1
+[0m19:00:29.432365 [debug] [MainThread]: checksum: 9f0c81e2574b4ff463f3d16d080df83c6982fc0372c9feeacae0504ac9ea3ffe, vars: {}, profile: , target: , version: 1.10.13
+[0m19:00:29.433055 [info ] [MainThread]: Unable to do partial parsing because saved manifest not found. Starting full parse.
+[0m19:00:29.433308 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': 'bd1da839-be04-443f-bc1d-01cf92aa03dc', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1081d2b10>]}
+[0m19:00:29.973077 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'bd1da839-be04-443f-bc1d-01cf92aa03dc', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10943c4d0>]}
+[0m19:00:30.012100 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/dgilberg/Documents/sports_analytics_scraping/fotmob/dbt_fotmob/target/manifest.json
+[0m19:00:30.013623 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/dgilberg/Documents/sports_analytics_scraping/fotmob/dbt_fotmob/target/semantic_manifest.json
+[0m19:00:30.028074 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'bd1da839-be04-443f-bc1d-01cf92aa03dc', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10a190150>]}
+[0m19:00:30.028378 [info ] [MainThread]: Found 4 models, 10 data tests, 5 sources, 448 macros
+[0m19:00:30.028598 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'bd1da839-be04-443f-bc1d-01cf92aa03dc', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1094541d0>]}
+[0m19:00:30.029463 [info ] [MainThread]: 
+[0m19:00:30.029613 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m19:00:30.029726 [info ] [MainThread]: 
+[0m19:00:30.030093 [debug] [MainThread]: Acquiring new postgres connection 'master'
+[0m19:00:30.031896 [debug] [ThreadPool]: Acquiring new postgres connection 'list_neondb'
+[0m19:00:30.090482 [debug] [ThreadPool]: Using postgres connection "list_neondb"
+[0m19:00:30.090814 [debug] [ThreadPool]: On list_neondb: /* {"app": "dbt", "dbt_version": "1.10.13", "profile_name": "dbt_fotmob", "target_name": "dev", "connection_name": "list_neondb"} */
+
+    select distinct nspname from pg_namespace
+  
+[0m19:00:30.090986 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m19:00:31.074922 [debug] [ThreadPool]: SQL status: SELECT 11 in 0.984 seconds
+[0m19:00:31.075697 [debug] [ThreadPool]: On list_neondb: Close
+[0m19:00:31.076622 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_neondb, now list_neondb_fotmob)
+[0m19:00:31.079162 [debug] [ThreadPool]: Using postgres connection "list_neondb_fotmob"
+[0m19:00:31.079374 [debug] [ThreadPool]: On list_neondb_fotmob: BEGIN
+[0m19:00:31.079508 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m19:00:31.421964 [debug] [ThreadPool]: SQL status: BEGIN in 0.342 seconds
+[0m19:00:31.422238 [debug] [ThreadPool]: Using postgres connection "list_neondb_fotmob"
+[0m19:00:31.422402 [debug] [ThreadPool]: On list_neondb_fotmob: /* {"app": "dbt", "dbt_version": "1.10.13", "profile_name": "dbt_fotmob", "target_name": "dev", "connection_name": "list_neondb_fotmob"} */
+select
+      'neondb' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'fotmob'
+    union all
+    select
+      'neondb' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'fotmob'
+    union all
+    select
+      'neondb' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'fotmob'
+  
+[0m19:00:31.489857 [debug] [ThreadPool]: SQL status: SELECT 5 in 0.067 seconds
+[0m19:00:31.490580 [debug] [ThreadPool]: On list_neondb_fotmob: ROLLBACK
+[0m19:00:31.526663 [debug] [ThreadPool]: On list_neondb_fotmob: Close
+[0m19:00:31.531313 [debug] [MainThread]: Using postgres connection "master"
+[0m19:00:31.531541 [debug] [MainThread]: On master: BEGIN
+[0m19:00:31.531680 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m19:00:31.830084 [debug] [MainThread]: SQL status: BEGIN in 0.298 seconds
+[0m19:00:31.830344 [debug] [MainThread]: Using postgres connection "master"
+[0m19:00:31.830535 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.10.13", "profile_name": "dbt_fotmob", "target_name": "dev", "connection_name": "master"} */
+select distinct
+        dependent_namespace.nspname as dependent_schema,
+        dependent_class.relname as dependent_name,
+        referenced_namespace.nspname as referenced_schema,
+        referenced_class.relname as referenced_name
+
+    -- Query for views: views are entries in pg_class with an entry in pg_rewrite, but we avoid
+    -- a seq scan on pg_rewrite by leveraging the fact there is an "internal" row in pg_depend for
+    -- the view...
+    from pg_class as dependent_class
+    join pg_namespace as dependent_namespace on dependent_namespace.oid = dependent_class.relnamespace
+    join pg_depend as dependent_depend on dependent_depend.refobjid = dependent_class.oid
+        and dependent_depend.classid = 'pg_rewrite'::regclass
+        and dependent_depend.refclassid = 'pg_class'::regclass
+        and dependent_depend.deptype = 'i'
+
+    -- ... and via pg_depend (that has a row per column, hence the need for "distinct" above, and
+    -- making sure to exclude the internal row to avoid a view appearing to depend on itself)...
+    join pg_depend as joining_depend on joining_depend.objid = dependent_depend.objid
+        and joining_depend.classid = 'pg_rewrite'::regclass
+        and joining_depend.refclassid = 'pg_class'::regclass
+        and joining_depend.refobjid != dependent_depend.refobjid
+
+    -- ... we can find the tables they query from in pg_class, but excluding system tables. Note we
+    -- don't need need to exclude _dependent_ system tables, because they only query from other
+    -- system tables, and so are automatically excluded by excluding _referenced_ system tables
+    join pg_class as referenced_class on referenced_class.oid = joining_depend.refobjid
+    join pg_namespace as referenced_namespace on referenced_namespace.oid = referenced_class.relnamespace
+        and referenced_namespace.nspname != 'information_schema'
+        and referenced_namespace.nspname not like 'pg\_%'
+
+    order by
+        dependent_schema, dependent_name, referenced_schema, referenced_name;
+[0m19:00:31.932134 [debug] [MainThread]: SQL status: SELECT 212 in 0.101 seconds
+[0m19:00:31.934607 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'bd1da839-be04-443f-bc1d-01cf92aa03dc', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10a1e4050>]}
+[0m19:00:31.934903 [debug] [MainThread]: On master: ROLLBACK
+[0m19:00:31.984302 [debug] [MainThread]: Using postgres connection "master"
+[0m19:00:31.984579 [debug] [MainThread]: On master: BEGIN
+[0m19:00:32.057153 [debug] [MainThread]: SQL status: BEGIN in 0.072 seconds
+[0m19:00:32.057441 [debug] [MainThread]: On master: COMMIT
+[0m19:00:32.057605 [debug] [MainThread]: Using postgres connection "master"
+[0m19:00:32.057736 [debug] [MainThread]: On master: COMMIT
+[0m19:00:32.095315 [debug] [MainThread]: SQL status: COMMIT in 0.037 seconds
+[0m19:00:32.095596 [debug] [MainThread]: On master: Close
+[0m19:00:32.097249 [debug] [Thread-1 (]: Began running node model.dbt_fotmob.player_match_stats
+[0m19:00:32.097574 [info ] [Thread-1 (]: 1 of 4 START sql view model fotmob.player_match_stats .......................... [RUN]
+[0m19:00:32.097838 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_neondb_fotmob, now model.dbt_fotmob.player_match_stats)
+[0m19:00:32.098015 [debug] [Thread-1 (]: Began compiling node model.dbt_fotmob.player_match_stats
+[0m19:00:32.101926 [debug] [Thread-1 (]: Writing injected SQL for node "model.dbt_fotmob.player_match_stats"
+[0m19:00:32.102638 [debug] [Thread-1 (]: Began executing node model.dbt_fotmob.player_match_stats
+[0m19:00:32.116029 [debug] [Thread-1 (]: Writing runtime sql for node "model.dbt_fotmob.player_match_stats"
+[0m19:00:32.116726 [debug] [Thread-1 (]: Using postgres connection "model.dbt_fotmob.player_match_stats"
+[0m19:00:32.116950 [debug] [Thread-1 (]: On model.dbt_fotmob.player_match_stats: BEGIN
+[0m19:00:32.117105 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m19:00:32.440578 [debug] [Thread-1 (]: SQL status: BEGIN in 0.323 seconds
+[0m19:00:32.441086 [debug] [Thread-1 (]: Using postgres connection "model.dbt_fotmob.player_match_stats"
+[0m19:00:32.441347 [debug] [Thread-1 (]: On model.dbt_fotmob.player_match_stats: /* {"app": "dbt", "dbt_version": "1.10.13", "profile_name": "dbt_fotmob", "target_name": "dev", "node_id": "model.dbt_fotmob.player_match_stats"} */
+
+  create view "neondb"."fotmob"."player_match_stats__dbt_tmp"
+    
+    
+  as (
+    with stats as (
+    select * from "neondb"."fotmob"."fact_player_stats"
+),
+lineups as (
+    select * from "neondb"."fotmob"."fact_lineups"
+),
+players as (
+    select * from "neondb"."fotmob"."dim_players"
+),
+matches as (
+    select * from "neondb"."fotmob"."dim_matches"
+),
+teams as (
+    select * from "neondb"."fotmob"."dim_teams"
+)
+select
+    s.match_id,
+    s.player_id,
+    p.player_name,
+    m.utc_time::date         as match_date,
+    m.season,
+    l.team_id,
+    t.team_name,
+    l.side,                  -- 'home' | 'away'
+    l.bucket,                -- 'starters' | 'bench'
+    l.formation,
+    l.position_id,
+    l.usual_position_id,
+    l.shirt_number,
+    case
+        when l.position_id = 11                    then 'Goalkeeper'
+        when l.position_id between 30 and 39       then 'Defender'
+        when l.position_id between 70 and 79       then 'Midfielder'
+        when l.position_id between 100 and 109     then 'Forward'
+        else 'Unknown'
+    end as position_group,
+    -- performance
+    s.fotmob_rating,
+    s.minutes_played,
+    s.goals,
+    s.assists,
+    s.xg,
+    s.xa,
+    s.xg_plus_xa,
+    s.shots_on_target,
+    s.touches,
+    s.touches_in_opposition_box,
+    s.chances_created,
+    s.offsides,
+    s.dispossessed,
+    -- passing
+    s.passes_into_final_third,
+    s.accurate_passes_succeeded,
+    s.accurate_passes_attempted,
+    s.accurate_passes_pct,
+    s.accurate_crosses_succeeded,
+    s.accurate_crosses_attempted,
+    s.accurate_crosses_pct,
+    s.accurate_long_balls_succeeded,
+    s.accurate_long_balls_attempted,
+    s.accurate_long_balls_pct,
+    -- dribbles
+    s.successful_dribbles_succeeded,
+    s.successful_dribbles_attempted,
+    s.successful_dribbles_pct,
+    -- defense
+    s.tackles,
+    s.interceptions,
+    s.blocks,
+    s.clearances,
+    s.headed_clearance,
+    s.recoveries,
+    s.dribbled_past,
+    s.defensive_contributions,
+    -- duels
+    s.duels_won,
+    s.duels_lost,
+    s.ground_duels_won_succeeded,
+    s.ground_duels_won_attempted,
+    s.ground_duels_won_pct,
+    s.aerial_duels_won_succeeded,
+    s.aerial_duels_won_attempted,
+    s.aerial_duels_won_pct,
+    -- discipline
+    s.fouls_committed,
+    s.was_fouled,
+    -- goalkeeper
+    s.saves,
+    s.goals_conceded,
+    s.xgot,
+    s.xgot_faced,
+    s.goals_prevented,
+    s.acted_as_sweeper,
+    s.high_claim
+from stats s
+left join lineups l  on s.match_id = l.match_id and s.player_id = l.player_id
+left join players p  on s.player_id = p.player_id
+left join matches m  on s.match_id  = m.match_id
+left join teams   t  on l.team_id   = t.team_id
+  );
+[0m19:00:32.541314 [debug] [Thread-1 (]: SQL status: CREATE VIEW in 0.100 seconds
+[0m19:00:32.544372 [debug] [Thread-1 (]: Using postgres connection "model.dbt_fotmob.player_match_stats"
+[0m19:00:32.544568 [debug] [Thread-1 (]: On model.dbt_fotmob.player_match_stats: /* {"app": "dbt", "dbt_version": "1.10.13", "profile_name": "dbt_fotmob", "target_name": "dev", "node_id": "model.dbt_fotmob.player_match_stats"} */
+alter table "neondb"."fotmob"."player_match_stats__dbt_tmp" rename to "player_match_stats"
+[0m19:00:32.576803 [debug] [Thread-1 (]: SQL status: ALTER TABLE in 0.032 seconds
+[0m19:00:32.583048 [debug] [Thread-1 (]: On model.dbt_fotmob.player_match_stats: COMMIT
+[0m19:00:32.583317 [debug] [Thread-1 (]: Using postgres connection "model.dbt_fotmob.player_match_stats"
+[0m19:00:32.583477 [debug] [Thread-1 (]: On model.dbt_fotmob.player_match_stats: COMMIT
+[0m19:00:32.617864 [debug] [Thread-1 (]: SQL status: COMMIT in 0.034 seconds
+[0m19:00:32.620887 [debug] [Thread-1 (]: Applying DROP to: "neondb"."fotmob"."player_match_stats__dbt_backup"
+[0m19:00:32.622685 [debug] [Thread-1 (]: Using postgres connection "model.dbt_fotmob.player_match_stats"
+[0m19:00:32.622849 [debug] [Thread-1 (]: On model.dbt_fotmob.player_match_stats: /* {"app": "dbt", "dbt_version": "1.10.13", "profile_name": "dbt_fotmob", "target_name": "dev", "node_id": "model.dbt_fotmob.player_match_stats"} */
+drop view if exists "neondb"."fotmob"."player_match_stats__dbt_backup" cascade
+[0m19:00:32.659875 [debug] [Thread-1 (]: SQL status: DROP VIEW in 0.037 seconds
+[0m19:00:32.661323 [debug] [Thread-1 (]: On model.dbt_fotmob.player_match_stats: Close
+[0m19:00:32.663312 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'bd1da839-be04-443f-bc1d-01cf92aa03dc', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10a4ad2d0>]}
+[0m19:00:32.663702 [info ] [Thread-1 (]: 1 of 4 OK created sql view model fotmob.player_match_stats ..................... [[32mCREATE VIEW[0m in 0.56s]
+[0m19:00:32.664044 [debug] [Thread-1 (]: Finished running node model.dbt_fotmob.player_match_stats
+[0m19:00:32.664474 [debug] [Thread-3 (]: Began running node model.dbt_fotmob.player_season_stats
+[0m19:00:32.664666 [debug] [Thread-4 (]: Began running node model.dbt_fotmob.team_match_stats
+[0m19:00:32.664955 [info ] [Thread-3 (]: 2 of 4 START sql view model fotmob.player_season_stats ......................... [RUN]
+[0m19:00:32.665209 [info ] [Thread-4 (]: 3 of 4 START sql view model fotmob.team_match_stats ............................ [RUN]
+[0m19:00:32.665482 [debug] [Thread-3 (]: Acquiring new postgres connection 'model.dbt_fotmob.player_season_stats'
+[0m19:00:32.665723 [debug] [Thread-4 (]: Acquiring new postgres connection 'model.dbt_fotmob.team_match_stats'
+[0m19:00:32.665922 [debug] [Thread-3 (]: Began compiling node model.dbt_fotmob.player_season_stats
+[0m19:00:32.666098 [debug] [Thread-4 (]: Began compiling node model.dbt_fotmob.team_match_stats
+[0m19:00:32.669276 [debug] [Thread-3 (]: Writing injected SQL for node "model.dbt_fotmob.player_season_stats"
+[0m19:00:32.671093 [debug] [Thread-4 (]: Writing injected SQL for node "model.dbt_fotmob.team_match_stats"
+[0m19:00:32.671646 [debug] [Thread-4 (]: Began executing node model.dbt_fotmob.team_match_stats
+[0m19:00:32.671864 [debug] [Thread-3 (]: Began executing node model.dbt_fotmob.player_season_stats
+[0m19:00:32.674151 [debug] [Thread-4 (]: Writing runtime sql for node "model.dbt_fotmob.team_match_stats"
+[0m19:00:32.675469 [debug] [Thread-3 (]: Writing runtime sql for node "model.dbt_fotmob.player_season_stats"
+[0m19:00:32.675962 [debug] [Thread-4 (]: Using postgres connection "model.dbt_fotmob.team_match_stats"
+[0m19:00:32.676178 [debug] [Thread-3 (]: Using postgres connection "model.dbt_fotmob.player_season_stats"
+[0m19:00:32.676389 [debug] [Thread-4 (]: On model.dbt_fotmob.team_match_stats: BEGIN
+[0m19:00:32.676613 [debug] [Thread-3 (]: On model.dbt_fotmob.player_season_stats: BEGIN
+[0m19:00:32.676818 [debug] [Thread-4 (]: Opening a new connection, currently in state init
+[0m19:00:32.676992 [debug] [Thread-3 (]: Opening a new connection, currently in state init
+[0m19:00:32.974073 [debug] [Thread-4 (]: SQL status: BEGIN in 0.297 seconds
+[0m19:00:32.974425 [debug] [Thread-4 (]: Using postgres connection "model.dbt_fotmob.team_match_stats"
+[0m19:00:32.974708 [debug] [Thread-4 (]: On model.dbt_fotmob.team_match_stats: /* {"app": "dbt", "dbt_version": "1.10.13", "profile_name": "dbt_fotmob", "target_name": "dev", "node_id": "model.dbt_fotmob.team_match_stats"} */
+
+  create view "neondb"."fotmob"."team_match_stats__dbt_tmp"
+    
+    
+  as (
+    with base as (
+    select * from "neondb"."fotmob"."player_match_stats"
+    where team_id is not null
+),
+matches as (
+    select * from "neondb"."fotmob"."dim_matches"
+),
+teams as (
+    select * from "neondb"."fotmob"."dim_teams"
+)
+select
+    b.match_id,
+    b.match_date,
+    b.season,
+    b.team_id,
+    b.team_name,
+    b.side,
+    b.formation,
+    -- opponent
+    case when b.side = 'home' then m.away_team_id else m.home_team_id end as opponent_id,
+    case when b.side = 'home' then ot.team_name   else ht.team_name   end as opponent_name,
+    -- squad
+    count(distinct case when b.bucket = 'starters' then b.player_id end) as starters_used,
+    count(distinct b.player_id)             as players_used,
+    -- scoring
+    sum(b.goals)                            as goals,
+    sum(b.xg)                               as xg,
+    sum(b.shots_on_target)                  as shots_on_target,
+    sum(b.chances_created)                  as chances_created,
+    -- possession / passing
+    sum(b.touches)                          as touches,
+    sum(b.touches_in_opposition_box)        as touches_in_opposition_box,
+    sum(b.passes_into_final_third)          as passes_into_final_third,
+    sum(b.accurate_passes_succeeded)        as accurate_passes,
+    sum(b.accurate_passes_attempted)        as accurate_passes_attempted,
+    
+    case
+        when sum(b.accurate_passes_attempted) = 0 or sum(b.accurate_passes_attempted) is null
+        then null
+        else round(
+            cast(sum(b.accurate_passes_succeeded) as decimal) / cast(sum(b.accurate_passes_attempted) as decimal),
+            4
+        )
+    end
+ as accurate_passes_pct,
+    sum(b.accurate_long_balls_succeeded)    as accurate_long_balls,
+    sum(b.accurate_long_balls_attempted)    as accurate_long_balls_attempted,
+    -- defense
+    sum(b.tackles)                          as tackles,
+    sum(b.interceptions)                    as interceptions,
+    sum(b.blocks)                           as blocks,
+    sum(b.clearances)                       as clearances,
+    sum(b.recoveries)                       as recoveries,
+    sum(b.defensive_contributions)          as defensive_contributions,
+    -- duels
+    sum(b.duels_won)                        as duels_won,
+    sum(b.duels_lost)                       as duels_lost,
+    
+    case
+        when sum(b.duels_won) + sum(b.duels_lost) = 0 or sum(b.duels_won) + sum(b.duels_lost) is null
+        then null
+        else round(
+            cast(sum(b.duels_won) as decimal) / cast(sum(b.duels_won) + sum(b.duels_lost) as decimal),
+            4
+        )
+    end
+ as duels_won_pct,
+    -- discipline
+    sum(b.fouls_committed)                  as fouls_committed,
+    sum(b.was_fouled)                       as was_fouled,
+    -- rating
+    round(avg(b.fotmob_rating)::numeric, 2) as avg_player_rating
+from base b
+left join matches m  on b.match_id       = m.match_id
+left join teams   ht on m.home_team_id   = ht.team_id
+left join teams   ot on m.away_team_id   = ot.team_id
+group by 1, 2, 3, 4, 5, 6, 7, 8, 9
+  );
+[0m19:00:33.015822 [debug] [Thread-3 (]: SQL status: BEGIN in 0.339 seconds
+[0m19:00:33.016108 [debug] [Thread-3 (]: Using postgres connection "model.dbt_fotmob.player_season_stats"
+[0m19:00:33.016445 [debug] [Thread-3 (]: On model.dbt_fotmob.player_season_stats: /* {"app": "dbt", "dbt_version": "1.10.13", "profile_name": "dbt_fotmob", "target_name": "dev", "node_id": "model.dbt_fotmob.player_season_stats"} */
+
+  create view "neondb"."fotmob"."player_season_stats__dbt_tmp"
+    
+    
+  as (
+    with base as (
+    select * from "neondb"."fotmob"."player_match_stats"
+    where minutes_played > 0
+)
+select
+    player_id,
+    player_name,
+    season,
+    team_id,
+    team_name,
+    position_group,
+    count(distinct match_id)        as matches_played,
+    sum(minutes_played)             as minutes_played,
+    -- scoring
+    sum(goals)                      as goals,
+    sum(assists)                    as assists,
+    sum(xg)                         as xg,
+    sum(xa)                         as xa,
+    sum(xg_plus_xa)                 as xg_plus_xa,
+    sum(shots_on_target)            as shots_on_target,
+    -- attacking
+    sum(touches)                    as touches,
+    sum(touches_in_opposition_box)  as touches_in_opposition_box,
+    sum(chances_created)            as chances_created,
+    sum(passes_into_final_third)    as passes_into_final_third,
+    -- passing
+    sum(accurate_passes_succeeded)  as accurate_passes,
+    sum(accurate_passes_attempted)  as accurate_passes_attempted,
+    
+    case
+        when sum(accurate_passes_attempted) = 0 or sum(accurate_passes_attempted) is null
+        then null
+        else round(
+            cast(sum(accurate_passes_succeeded) as decimal) / cast(sum(accurate_passes_attempted) as decimal),
+            4
+        )
+    end
+ as accurate_passes_pct,
+    sum(accurate_crosses_succeeded) as accurate_crosses,
+    sum(accurate_crosses_attempted) as accurate_crosses_attempted,
+    
+    case
+        when sum(accurate_crosses_attempted) = 0 or sum(accurate_crosses_attempted) is null
+        then null
+        else round(
+            cast(sum(accurate_crosses_succeeded) as decimal) / cast(sum(accurate_crosses_attempted) as decimal),
+            4
+        )
+    end
+ as accurate_crosses_pct,
+    sum(accurate_long_balls_succeeded) as accurate_long_balls,
+    sum(accurate_long_balls_attempted) as accurate_long_balls_attempted,
+    
+    case
+        when sum(accurate_long_balls_attempted) = 0 or sum(accurate_long_balls_attempted) is null
+        then null
+        else round(
+            cast(sum(accurate_long_balls_succeeded) as decimal) / cast(sum(accurate_long_balls_attempted) as decimal),
+            4
+        )
+    end
+ as accurate_long_balls_pct,
+    -- dribbles
+    sum(successful_dribbles_succeeded) as successful_dribbles,
+    sum(successful_dribbles_attempted) as successful_dribbles_attempted,
+    
+    case
+        when sum(successful_dribbles_attempted) = 0 or sum(successful_dribbles_attempted) is null
+        then null
+        else round(
+            cast(sum(successful_dribbles_succeeded) as decimal) / cast(sum(successful_dribbles_attempted) as decimal),
+            4
+        )
+    end
+ as successful_dribbles_pct,
+    -- defense
+    sum(tackles)                    as tackles,
+    sum(interceptions)              as interceptions,
+    sum(blocks)                     as blocks,
+    sum(clearances)                 as clearances,
+    sum(recoveries)                 as recoveries,
+    sum(dribbled_past)              as dribbled_past,
+    sum(defensive_contributions)    as defensive_contributions,
+    -- duels
+    sum(duels_won)                  as duels_won,
+    sum(duels_lost)                 as duels_lost,
+    
+    case
+        when sum(duels_won) + sum(duels_lost) = 0 or sum(duels_won) + sum(duels_lost) is null
+        then null
+        else round(
+            cast(sum(duels_won) as decimal) / cast(sum(duels_won) + sum(duels_lost) as decimal),
+            4
+        )
+    end
+ as duels_won_pct,
+    sum(ground_duels_won_succeeded) as ground_duels_won,
+    sum(ground_duels_won_attempted) as ground_duels_attempted,
+    
+    case
+        when sum(ground_duels_won_attempted) = 0 or sum(ground_duels_won_attempted) is null
+        then null
+        else round(
+            cast(sum(ground_duels_won_succeeded) as decimal) / cast(sum(ground_duels_won_attempted) as decimal),
+            4
+        )
+    end
+ as ground_duels_pct,
+    sum(aerial_duels_won_succeeded) as aerial_duels_won,
+    sum(aerial_duels_won_attempted) as aerial_duels_attempted,
+    
+    case
+        when sum(aerial_duels_won_attempted) = 0 or sum(aerial_duels_won_attempted) is null
+        then null
+        else round(
+            cast(sum(aerial_duels_won_succeeded) as decimal) / cast(sum(aerial_duels_won_attempted) as decimal),
+            4
+        )
+    end
+ as aerial_duels_pct,
+    -- discipline
+    sum(fouls_committed)            as fouls_committed,
+    sum(was_fouled)                 as was_fouled,
+    -- goalkeeper
+    sum(saves)                      as saves,
+    sum(goals_conceded)             as goals_conceded,
+    sum(xgot_faced)                 as xgot_faced,
+    sum(goals_prevented)            as goals_prevented,
+    -- per-90 metrics
+    
+    case
+        when sum(minutes_played) = 0 or sum(minutes_played) is null
+        then null
+        else round(
+            cast(sum(goals)         * 90.0 as decimal) / cast(sum(minutes_played) as decimal),
+            4
+        )
+    end
+ as goals_per_90,
+    
+    case
+        when sum(minutes_played) = 0 or sum(minutes_played) is null
+        then null
+        else round(
+            cast(sum(assists)       * 90.0 as decimal) / cast(sum(minutes_played) as decimal),
+            4
+        )
+    end
+ as assists_per_90,
+    
+    case
+        when sum(minutes_played) = 0 or sum(minutes_played) is null
+        then null
+        else round(
+            cast(sum(xg)            * 90.0 as decimal) / cast(sum(minutes_played) as decimal),
+            4
+        )
+    end
+ as xg_per_90,
+    
+    case
+        when sum(minutes_played) = 0 or sum(minutes_played) is null
+        then null
+        else round(
+            cast(sum(xa)            * 90.0 as decimal) / cast(sum(minutes_played) as decimal),
+            4
+        )
+    end
+ as xa_per_90,
+    
+    case
+        when sum(minutes_played) = 0 or sum(minutes_played) is null
+        then null
+        else round(
+            cast(sum(xg_plus_xa)    * 90.0 as decimal) / cast(sum(minutes_played) as decimal),
+            4
+        )
+    end
+ as xg_plus_xa_per_90,
+    
+    case
+        when sum(minutes_played) = 0 or sum(minutes_played) is null
+        then null
+        else round(
+            cast(sum(chances_created) * 90.0 as decimal) / cast(sum(minutes_played) as decimal),
+            4
+        )
+    end
+ as chances_created_per_90,
+    
+    case
+        when sum(minutes_played) = 0 or sum(minutes_played) is null
+        then null
+        else round(
+            cast(sum(tackles)       * 90.0 as decimal) / cast(sum(minutes_played) as decimal),
+            4
+        )
+    end
+ as tackles_per_90,
+    
+    case
+        when sum(minutes_played) = 0 or sum(minutes_played) is null
+        then null
+        else round(
+            cast(sum(interceptions) * 90.0 as decimal) / cast(sum(minutes_played) as decimal),
+            4
+        )
+    end
+ as interceptions_per_90,
+    
+    case
+        when sum(minutes_played) = 0 or sum(minutes_played) is null
+        then null
+        else round(
+            cast(sum(recoveries)    * 90.0 as decimal) / cast(sum(minutes_played) as decimal),
+            4
+        )
+    end
+ as recoveries_per_90
+from base
+group by 1, 2, 3, 4, 5, 6
+  );
+[0m19:00:33.035419 [debug] [Thread-4 (]: SQL status: CREATE VIEW in 0.060 seconds
+[0m19:00:33.037186 [debug] [Thread-4 (]: Using postgres connection "model.dbt_fotmob.team_match_stats"
+[0m19:00:33.037416 [debug] [Thread-4 (]: On model.dbt_fotmob.team_match_stats: /* {"app": "dbt", "dbt_version": "1.10.13", "profile_name": "dbt_fotmob", "target_name": "dev", "node_id": "model.dbt_fotmob.team_match_stats"} */
+alter table "neondb"."fotmob"."team_match_stats__dbt_tmp" rename to "team_match_stats"
+[0m19:00:33.065009 [debug] [Thread-3 (]: SQL status: CREATE VIEW in 0.048 seconds
+[0m19:00:33.066855 [debug] [Thread-3 (]: Using postgres connection "model.dbt_fotmob.player_season_stats"
+[0m19:00:33.067121 [debug] [Thread-3 (]: On model.dbt_fotmob.player_season_stats: /* {"app": "dbt", "dbt_version": "1.10.13", "profile_name": "dbt_fotmob", "target_name": "dev", "node_id": "model.dbt_fotmob.player_season_stats"} */
+alter table "neondb"."fotmob"."player_season_stats__dbt_tmp" rename to "player_season_stats"
+[0m19:00:33.091120 [debug] [Thread-4 (]: SQL status: ALTER TABLE in 0.053 seconds
+[0m19:00:33.092173 [debug] [Thread-4 (]: On model.dbt_fotmob.team_match_stats: COMMIT
+[0m19:00:33.092453 [debug] [Thread-4 (]: Using postgres connection "model.dbt_fotmob.team_match_stats"
+[0m19:00:33.092711 [debug] [Thread-4 (]: On model.dbt_fotmob.team_match_stats: COMMIT
+[0m19:00:33.102121 [debug] [Thread-3 (]: SQL status: ALTER TABLE in 0.035 seconds
+[0m19:00:33.102908 [debug] [Thread-3 (]: On model.dbt_fotmob.player_season_stats: COMMIT
+[0m19:00:33.103210 [debug] [Thread-3 (]: Using postgres connection "model.dbt_fotmob.player_season_stats"
+[0m19:00:33.103379 [debug] [Thread-3 (]: On model.dbt_fotmob.player_season_stats: COMMIT
+[0m19:00:33.130753 [debug] [Thread-4 (]: SQL status: COMMIT in 0.038 seconds
+[0m19:00:33.132813 [debug] [Thread-4 (]: Applying DROP to: "neondb"."fotmob"."team_match_stats__dbt_backup"
+[0m19:00:33.133182 [debug] [Thread-4 (]: Using postgres connection "model.dbt_fotmob.team_match_stats"
+[0m19:00:33.133375 [debug] [Thread-4 (]: On model.dbt_fotmob.team_match_stats: /* {"app": "dbt", "dbt_version": "1.10.13", "profile_name": "dbt_fotmob", "target_name": "dev", "node_id": "model.dbt_fotmob.team_match_stats"} */
+drop view if exists "neondb"."fotmob"."team_match_stats__dbt_backup" cascade
+[0m19:00:33.142211 [debug] [Thread-3 (]: SQL status: COMMIT in 0.039 seconds
+[0m19:00:33.143497 [debug] [Thread-3 (]: Applying DROP to: "neondb"."fotmob"."player_season_stats__dbt_backup"
+[0m19:00:33.143819 [debug] [Thread-3 (]: Using postgres connection "model.dbt_fotmob.player_season_stats"
+[0m19:00:33.144077 [debug] [Thread-3 (]: On model.dbt_fotmob.player_season_stats: /* {"app": "dbt", "dbt_version": "1.10.13", "profile_name": "dbt_fotmob", "target_name": "dev", "node_id": "model.dbt_fotmob.player_season_stats"} */
+drop view if exists "neondb"."fotmob"."player_season_stats__dbt_backup" cascade
+[0m19:00:33.166797 [debug] [Thread-4 (]: SQL status: DROP VIEW in 0.033 seconds
+[0m19:00:33.167683 [debug] [Thread-4 (]: On model.dbt_fotmob.team_match_stats: Close
+[0m19:00:33.168242 [debug] [Thread-4 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'bd1da839-be04-443f-bc1d-01cf92aa03dc', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10a61bd50>]}
+[0m19:00:33.168600 [info ] [Thread-4 (]: 3 of 4 OK created sql view model fotmob.team_match_stats ....................... [[32mCREATE VIEW[0m in 0.50s]
+[0m19:00:33.168895 [debug] [Thread-4 (]: Finished running node model.dbt_fotmob.team_match_stats
+[0m19:00:33.169227 [debug] [Thread-1 (]: Began running node model.dbt_fotmob.team_season_stats
+[0m19:00:33.169523 [info ] [Thread-1 (]: 4 of 4 START sql view model fotmob.team_season_stats ........................... [RUN]
+[0m19:00:33.169781 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.dbt_fotmob.player_match_stats, now model.dbt_fotmob.team_season_stats)
+[0m19:00:33.170005 [debug] [Thread-1 (]: Began compiling node model.dbt_fotmob.team_season_stats
+[0m19:00:33.171858 [debug] [Thread-1 (]: Writing injected SQL for node "model.dbt_fotmob.team_season_stats"
+[0m19:00:33.172586 [debug] [Thread-1 (]: Began executing node model.dbt_fotmob.team_season_stats
+[0m19:00:33.174281 [debug] [Thread-1 (]: Writing runtime sql for node "model.dbt_fotmob.team_season_stats"
+[0m19:00:33.174725 [debug] [Thread-1 (]: Using postgres connection "model.dbt_fotmob.team_season_stats"
+[0m19:00:33.174901 [debug] [Thread-1 (]: On model.dbt_fotmob.team_season_stats: BEGIN
+[0m19:00:33.175142 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m19:00:33.178190 [debug] [Thread-3 (]: SQL status: DROP VIEW in 0.034 seconds
+[0m19:00:33.178930 [debug] [Thread-3 (]: On model.dbt_fotmob.player_season_stats: Close
+[0m19:00:33.179398 [debug] [Thread-3 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'bd1da839-be04-443f-bc1d-01cf92aa03dc', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10a4f6210>]}
+[0m19:00:33.179659 [info ] [Thread-3 (]: 2 of 4 OK created sql view model fotmob.player_season_stats .................... [[32mCREATE VIEW[0m in 0.51s]
+[0m19:00:33.179906 [debug] [Thread-3 (]: Finished running node model.dbt_fotmob.player_season_stats
+[0m19:00:33.462427 [debug] [Thread-1 (]: SQL status: BEGIN in 0.287 seconds
+[0m19:00:33.462817 [debug] [Thread-1 (]: Using postgres connection "model.dbt_fotmob.team_season_stats"
+[0m19:00:33.463030 [debug] [Thread-1 (]: On model.dbt_fotmob.team_season_stats: /* {"app": "dbt", "dbt_version": "1.10.13", "profile_name": "dbt_fotmob", "target_name": "dev", "node_id": "model.dbt_fotmob.team_season_stats"} */
+
+  create view "neondb"."fotmob"."team_season_stats__dbt_tmp"
+    
+    
+  as (
+    with base as (
+    select * from "neondb"."fotmob"."team_match_stats"
+)
+select
+    team_id,
+    team_name,
+    season,
+    count(distinct match_id)                        as matches_played,
+    sum(goals)                                      as goals,
+    sum(xg)                                         as xg,
+    
+    case
+        when count(distinct match_id) = 0 or count(distinct match_id) is null
+        then null
+        else round(
+            cast(sum(xg) as decimal) / cast(count(distinct match_id) as decimal),
+            3
+        )
+    end
+ as xg_per_match,
+    sum(shots_on_target)                            as shots_on_target,
+    sum(chances_created)                            as chances_created,
+    -- passing
+    sum(accurate_passes)                            as accurate_passes,
+    sum(accurate_passes_attempted)                  as accurate_passes_attempted,
+    
+    case
+        when sum(accurate_passes_attempted) = 0 or sum(accurate_passes_attempted) is null
+        then null
+        else round(
+            cast(sum(accurate_passes) as decimal) / cast(sum(accurate_passes_attempted) as decimal),
+            4
+        )
+    end
+ as accurate_passes_pct,
+    sum(accurate_long_balls)                        as accurate_long_balls,
+    sum(accurate_long_balls_attempted)              as accurate_long_balls_attempted,
+    -- possession
+    sum(touches)                                    as touches,
+    sum(touches_in_opposition_box)                  as touches_in_opposition_box,
+    sum(passes_into_final_third)                    as passes_into_final_third,
+    -- defense
+    sum(tackles)                                    as tackles,
+    sum(interceptions)                              as interceptions,
+    sum(blocks)                                     as blocks,
+    sum(clearances)                                 as clearances,
+    sum(recoveries)                                 as recoveries,
+    sum(defensive_contributions)                    as defensive_contributions,
+    -- duels
+    sum(duels_won)                                  as duels_won,
+    sum(duels_lost)                                 as duels_lost,
+    
+    case
+        when sum(duels_won) + sum(duels_lost) = 0 or sum(duels_won) + sum(duels_lost) is null
+        then null
+        else round(
+            cast(sum(duels_won) as decimal) / cast(sum(duels_won) + sum(duels_lost) as decimal),
+            4
+        )
+    end
+ as duels_won_pct,
+    -- discipline
+    sum(fouls_committed)                            as fouls_committed,
+    sum(was_fouled)                                 as was_fouled,
+    round(avg(avg_player_rating)::numeric, 2)       as avg_player_rating
+from base
+group by 1, 2, 3
+  );
+[0m19:00:33.501686 [debug] [Thread-1 (]: SQL status: CREATE VIEW in 0.038 seconds
+[0m19:00:33.503757 [debug] [Thread-1 (]: Using postgres connection "model.dbt_fotmob.team_season_stats"
+[0m19:00:33.504120 [debug] [Thread-1 (]: On model.dbt_fotmob.team_season_stats: /* {"app": "dbt", "dbt_version": "1.10.13", "profile_name": "dbt_fotmob", "target_name": "dev", "node_id": "model.dbt_fotmob.team_season_stats"} */
+alter table "neondb"."fotmob"."team_season_stats__dbt_tmp" rename to "team_season_stats"
+[0m19:00:33.538028 [debug] [Thread-1 (]: SQL status: ALTER TABLE in 0.034 seconds
+[0m19:00:33.538721 [debug] [Thread-1 (]: On model.dbt_fotmob.team_season_stats: COMMIT
+[0m19:00:33.538908 [debug] [Thread-1 (]: Using postgres connection "model.dbt_fotmob.team_season_stats"
+[0m19:00:33.539066 [debug] [Thread-1 (]: On model.dbt_fotmob.team_season_stats: COMMIT
+[0m19:00:33.587211 [debug] [Thread-1 (]: SQL status: COMMIT in 0.048 seconds
+[0m19:00:33.588495 [debug] [Thread-1 (]: Applying DROP to: "neondb"."fotmob"."team_season_stats__dbt_backup"
+[0m19:00:33.588783 [debug] [Thread-1 (]: Using postgres connection "model.dbt_fotmob.team_season_stats"
+[0m19:00:33.588950 [debug] [Thread-1 (]: On model.dbt_fotmob.team_season_stats: /* {"app": "dbt", "dbt_version": "1.10.13", "profile_name": "dbt_fotmob", "target_name": "dev", "node_id": "model.dbt_fotmob.team_season_stats"} */
+drop view if exists "neondb"."fotmob"."team_season_stats__dbt_backup" cascade
+[0m19:00:33.633899 [debug] [Thread-1 (]: SQL status: DROP VIEW in 0.045 seconds
+[0m19:00:33.634732 [debug] [Thread-1 (]: On model.dbt_fotmob.team_season_stats: Close
+[0m19:00:33.635368 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'bd1da839-be04-443f-bc1d-01cf92aa03dc', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10a4def50>]}
+[0m19:00:33.635733 [info ] [Thread-1 (]: 4 of 4 OK created sql view model fotmob.team_season_stats ...................... [[32mCREATE VIEW[0m in 0.47s]
+[0m19:00:33.636061 [debug] [Thread-1 (]: Finished running node model.dbt_fotmob.team_season_stats
+[0m19:00:33.636785 [debug] [MainThread]: Using postgres connection "master"
+[0m19:00:33.637018 [debug] [MainThread]: On master: BEGIN
+[0m19:00:33.637203 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m19:00:33.946034 [debug] [MainThread]: SQL status: BEGIN in 0.309 seconds
+[0m19:00:33.946357 [debug] [MainThread]: On master: COMMIT
+[0m19:00:33.946574 [debug] [MainThread]: Using postgres connection "master"
+[0m19:00:33.946785 [debug] [MainThread]: On master: COMMIT
+[0m19:00:33.981037 [debug] [MainThread]: SQL status: COMMIT in 0.034 seconds
+[0m19:00:33.981339 [debug] [MainThread]: On master: Close
+[0m19:00:33.981809 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m19:00:33.981948 [debug] [MainThread]: Connection 'model.dbt_fotmob.team_season_stats' was properly closed.
+[0m19:00:33.982091 [debug] [MainThread]: Connection 'model.dbt_fotmob.player_season_stats' was properly closed.
+[0m19:00:33.982188 [debug] [MainThread]: Connection 'model.dbt_fotmob.team_match_stats' was properly closed.
+[0m19:00:33.982356 [info ] [MainThread]: 
+[0m19:00:33.982495 [info ] [MainThread]: Finished running 4 view models in 0 hours 0 minutes and 3.95 seconds (3.95s).
+[0m19:00:33.982925 [debug] [MainThread]: Command end result
+[0m19:00:33.994592 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/dgilberg/Documents/sports_analytics_scraping/fotmob/dbt_fotmob/target/manifest.json
+[0m19:00:33.995844 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/dgilberg/Documents/sports_analytics_scraping/fotmob/dbt_fotmob/target/semantic_manifest.json
+[0m19:00:33.998901 [debug] [MainThread]: Wrote artifact RunExecutionResult to /Users/dgilberg/Documents/sports_analytics_scraping/fotmob/dbt_fotmob/target/run_results.json
+[0m19:00:33.999077 [info ] [MainThread]: 
+[0m19:00:33.999270 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m19:00:33.999416 [info ] [MainThread]: 
+[0m19:00:33.999572 [info ] [MainThread]: Done. PASS=4 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=4
+[0m19:00:34.001137 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 4.8335795, "process_in_blocks": "0", "process_kernel_time": 0.301365, "process_mem_max_rss": "163823616", "process_out_blocks": "0", "process_user_time": 1.918543}
+[0m19:00:34.001396 [debug] [MainThread]: Command `dbt run` succeeded at 19:00:34.001357 after 4.83 seconds
+[0m19:00:34.001570 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1081f2110>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x100c2ff10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x100b79150>]}
+[0m19:00:34.001731 [debug] [MainThread]: Flushing usage events
+[0m19:00:34.161753 [debug] [MainThread]: An error was encountered while trying to flush usage events

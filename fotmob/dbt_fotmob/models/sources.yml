@@ -1,0 +1,32 @@
+version: 2
+
+sources:
+  - name: fotmob
+    schema: fotmob
+    description: "Raw FotMob NWSL data loaded by load_to_db.py"
+    tables:
+      - name: dim_teams
+        description: "NWSL team reference"
+        columns:
+          - name: team_id
+            tests: [unique, not_null]
+      - name: dim_players
+        description: "Player reference"
+        columns:
+          - name: player_id
+            tests: [unique, not_null]
+      - name: dim_matches
+        description: "Match schedule and metadata"
+        columns:
+          - name: match_id
+            tests: [unique, not_null]
+      - name: fact_lineups
+        description: "Per-player per-match lineup, formation, and position data"
+        columns:
+          - name: id
+            tests: [unique, not_null]
+      - name: fact_player_stats
+        description: "Per-player per-match performance statistics"
+        columns:
+          - name: id
+            tests: [unique, not_null]

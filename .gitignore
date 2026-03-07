@@ -11,12 +11,17 @@
 *.csv
 *.zip
 *.ipynb
+!fotmob/scraping_code.ipynb
+*.png
+*.json
 token.json
 .bashrc
 backup.sql
 **/*.ipynb
 college_bbref/Scraping Notebook.ipynb
 dbt_env/
+fotmob/venv/
+fotmob/pw_fotmob_profile/
 
 # Secrets and credentials - NEVER commit these!
 .streamlit/secrets.toml
