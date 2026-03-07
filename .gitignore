@@ -9,6 +9,7 @@
 **/db_backup
 **/benchmark_data
 *.csv
+!**/seeds/*.csv
 *.zip
 *.ipynb
 !fotmob/scraping_code.ipynb
