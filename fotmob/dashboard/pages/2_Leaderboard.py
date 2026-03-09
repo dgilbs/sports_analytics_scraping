@@ -13,7 +13,7 @@ from datetime import date
 import pandas as pd
 import streamlit as st
 
-from db import load_leaderboard, load_teams
+from db import load_leaderboard, load_teams, load_opponents
 from utils import setup_page, get_season
 
 setup_page("Leaderboard · NWSL Fantasy")
@@ -39,6 +39,14 @@ with st.sidebar:
         placeholder="All teams",
     )
 
+    all_opponents = load_opponents(season)
+    opponent_filter = st.multiselect(
+        "Opponent",
+        all_opponents,
+        default=[],
+        placeholder="All opponents",
+    )
+
     side_filter = st.radio(
         "Home / Away",
         ["All", "Home", "Away"],
@@ -58,6 +66,7 @@ df = load_leaderboard(
     season=season,
     positions=tuple(pos_filter) if pos_filter else None,
     teams=tuple(team_filter) if team_filter else None,
+    opponents=tuple(opponent_filter) if opponent_filter else None,
     side=side_filter.lower() if side_filter != "All" else None,
     start_date=start_str,
     end_date=end_str,

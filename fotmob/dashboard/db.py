@@ -52,6 +52,26 @@ def _q(sql: str, params=None) -> pd.DataFrame:
 # ── Leaderboard ──────────────────────────────────────────────────────────────
 
 @st.cache_data(ttl=300)
+def load_opponents(season: str | None = None) -> list[str]:
+    """Sorted list of opponent names for the filter widget."""
+    if season:
+        df = _q(f"""
+            SELECT DISTINCT opponent_name
+            FROM {_SCHEMA}.fantasy_match_points
+            WHERE draft_position IS NOT NULL AND opponent_name IS NOT NULL AND season = %s
+            ORDER BY opponent_name
+        """, (season,))
+    else:
+        df = _q(f"""
+            SELECT DISTINCT opponent_name
+            FROM {_SCHEMA}.fantasy_match_points
+            WHERE draft_position IS NOT NULL AND opponent_name IS NOT NULL
+            ORDER BY opponent_name
+        """)
+    return df["opponent_name"].tolist()
+
+
+@st.cache_data(ttl=300)
 def load_teams(season: str | None = None) -> list[str]:
     """Sorted list of team names for the filter widget."""
     if season:
@@ -76,6 +96,7 @@ def load_leaderboard(
     season: str | None = None,
     positions: tuple | None = None,
     teams: tuple | None = None,
+    opponents: tuple | None = None,
     side: str | None = None,
     start_date=None,
     end_date=None,
@@ -105,6 +126,10 @@ def load_leaderboard(
         ph = ",".join(["%s"] * len(teams))
         clauses.append(f"fmp.team_name IN ({ph})")
         params.extend(teams)
+    if opponents:
+        ph = ",".join(["%s"] * len(opponents))
+        clauses.append(f"fmp.opponent_name IN ({ph})")
+        params.extend(opponents)
     if side:
         clauses.append(
             "CASE WHEN fmp.team_id = dm.home_team_id THEN 'home' ELSE 'away' END = %s"
