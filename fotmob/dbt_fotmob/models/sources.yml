@@ -1,6 +1,14 @@
 version: 2
 
 sources:
+  - name: fbref
+    schema: fbref
+    description: "FBRef data scraped by fbref/scraping_script.py"
+    tables:
+      - name: f_player_match_misc
+      - name: f_player_match_summary
+      - name: dim_matches
+
   - name: fotmob
     schema: fotmob
     description: "Raw FotMob NWSL data loaded by load_to_db.py"

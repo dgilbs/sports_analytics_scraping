@@ -247,6 +247,7 @@ def load_matches(conn):
         df[["home_team_id", "home_team"]].rename(columns={"home_team_id": "team_id", "home_team": "team_name"}),
         df[["away_team_id", "away_team"]].rename(columns={"away_team_id": "team_id", "away_team": "team_name"}),
     ]).drop_duplicates("team_id").reset_index(drop=True)
+    teams["team_name"] = teams["team_name"].str.replace(r"\s*\(W\)\s*$", "", regex=True).str.strip()
 
     with conn.cursor() as cur:
         execute_values(cur, """
