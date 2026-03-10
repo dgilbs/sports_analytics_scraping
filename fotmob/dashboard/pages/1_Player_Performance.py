@@ -48,6 +48,13 @@ with st.sidebar:
         placeholder="Search by name...",
     )
 
+    st.subheader("Date Range")
+    start_date = st.date_input("Start Date", value=None)
+    end_date   = st.date_input("End Date",   value=None)
+
+start_str = start_date.isoformat() if start_date is not None else None
+end_str   = end_date.isoformat()   if end_date   is not None else None
+
 # ── Empty state ───────────────────────────────────────────────────────────────
 if not player_name:
     st.title("Player Performance")
@@ -55,7 +62,7 @@ if not player_name:
     st.stop()
 
 # ── Load data ─────────────────────────────────────────────────────────────────
-match_hist = load_player_match_history(player_name, season)
+match_hist = load_player_match_history(player_name, season, start_str, end_str)
 season_totals = load_player_season_totals(player_name, season)
 consistency = load_player_consistency(player_name, season)
 pos_stats = load_player_position_stats(player_name, season)

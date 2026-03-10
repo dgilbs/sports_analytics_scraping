@@ -217,18 +217,29 @@ def load_player_list(season: str | None = None, team: str | None = None) -> pd.D
 
 
 @st.cache_data(ttl=300)
-def load_player_match_history(player_name: str, season: str | None = None) -> pd.DataFrame:
+def load_player_match_history(
+    player_name: str,
+    season: str | None = None,
+    start_date: str | None = None,
+    end_date: str | None = None,
+) -> pd.DataFrame:
+    clauses = ["player_name = %s"]
+    params = [player_name]
     if season:
-        return _q(f"""
-            SELECT * FROM {_SCHEMA}.draft_points_per_match
-            WHERE player_name = %s AND season = %s
-            ORDER BY match_number
-        """, (player_name, season))
+        clauses.append("season = %s")
+        params.append(season)
+    if start_date:
+        clauses.append("match_date >= %s::date")
+        params.append(start_date)
+    if end_date:
+        clauses.append("match_date <= %s::date")
+        params.append(end_date)
+    where = "WHERE " + " AND ".join(clauses)
     return _q(f"""
         SELECT * FROM {_SCHEMA}.draft_points_per_match
-        WHERE player_name = %s
+        {where}
         ORDER BY season, match_number
-    """, (player_name,))
+    """, tuple(params))
 
 
 @st.cache_data(ttl=300)
