@@ -36,20 +36,16 @@ with st.sidebar:
 
     all_teams = load_teams(season)
     selected_team = st.selectbox(
-        "Team", all_teams, index=None, placeholder="Select a team..."
+        "Filter by team (optional)", all_teams, index=None, placeholder="All teams..."
     )
 
-    if selected_team:
-        team_players = load_player_list(season=season, team=selected_team)
-        player_options = sorted(team_players["player_name"].tolist())
-    else:
-        player_options = []
+    all_players = load_player_list(season=season, team=selected_team)
+    player_options = sorted(all_players["player_name"].tolist())
 
     player_name = st.selectbox(
         "Player", player_options,
         index=None,
-        placeholder="Select a player..." if selected_team else "Select a team first...",
-        disabled=not selected_team,
+        placeholder="Search by name...",
     )
 
 # ── Empty state ───────────────────────────────────────────────────────────────

@@ -10,7 +10,7 @@ setup_page("NWSL Fantasy Dashboard")
 
 st.title("NWSL Fantasy In-Season Dashboard")
 st.markdown("""
-Use **Player Deep Dive** in the sidebar to explore match timelines, scoring bands,
+Use **Player Performance** in the sidebar to explore match timelines, scoring bands,
 and context splits for any player.
 
 ---
