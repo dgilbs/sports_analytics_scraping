@@ -141,6 +141,10 @@ with col_left:
         margin=dict(t=10, b=10),
     )
     st.plotly_chart(fig_tl, use_container_width=True)
+    st.caption(
+        "Bar color indicates points scored: "
+        "🟢 **10+ pts** · 🔵 **5–9 pts** · ⬜ **0–4 pts** · 🔴 **negative**"
+    )
 
 # Chart 2: Season Points Breakdown
 with col_right:
