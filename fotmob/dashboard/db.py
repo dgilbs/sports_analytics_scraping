@@ -198,19 +198,22 @@ def load_seasons() -> pd.DataFrame:
 # ── Player queries ────────────────────────────────────────────────────────────
 
 @st.cache_data(ttl=300)
-def load_player_list(season: str | None = None) -> pd.DataFrame:
+def load_player_list(season: str | None = None, team: str | None = None) -> pd.DataFrame:
+    clauses = ["draft_position IS NOT NULL", "team_name IS NOT NULL"]
+    params = []
     if season:
-        return _q(f"""
-            SELECT DISTINCT player_name, draft_position
-            FROM {_SCHEMA}.draft_rankings
-            WHERE season = %s
-            ORDER BY draft_position, player_name
-        """, (season,))
+        clauses.append("season = %s")
+        params.append(season)
+    if team:
+        clauses.append("team_name = %s")
+        params.append(team)
+    where = "WHERE " + " AND ".join(clauses)
     return _q(f"""
         SELECT DISTINCT player_name, draft_position
-        FROM {_SCHEMA}.draft_rankings
-        ORDER BY draft_position, player_name
-    """)
+        FROM {_SCHEMA}.fantasy_match_points
+        {where}
+        ORDER BY player_name
+    """, tuple(params) if params else None)
 
 
 @st.cache_data(ttl=300)

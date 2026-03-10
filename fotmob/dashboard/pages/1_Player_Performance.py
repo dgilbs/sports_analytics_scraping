@@ -26,23 +26,37 @@ from utils import setup_page, get_season
 
 setup_page("Player Performance · NWSL Fantasy")
 
-# ── Sidebar: position → player ────────────────────────────────────────────────
+# ── Sidebar: season → team → player ──────────────────────────────────────────
 season = get_season()
-players_df = load_player_list(season)
+
+from db import load_teams
 
 with st.sidebar:
-    st.subheader("Select Player")
-    positions = ["GK", "DF", "MF", "FW"]
-    pos_filter = st.selectbox("Fantasy Position", positions)
+    st.subheader("Find a Player")
 
-    pos_players = sorted(
-        players_df.loc[players_df["draft_position"] == pos_filter, "player_name"].tolist()
+    all_teams = load_teams(season)
+    selected_team = st.selectbox(
+        "Team", all_teams, index=None, placeholder="Select a team..."
     )
-    if not pos_players:
-        st.warning("No players found for this position.")
-        st.stop()
 
-    player_name = st.selectbox("Player", pos_players)
+    if selected_team:
+        team_players = load_player_list(season=season, team=selected_team)
+        player_options = sorted(team_players["player_name"].tolist())
+    else:
+        player_options = []
+
+    player_name = st.selectbox(
+        "Player", player_options,
+        index=None,
+        placeholder="Select a player..." if selected_team else "Select a team first...",
+        disabled=not selected_team,
+    )
+
+# ── Empty state ───────────────────────────────────────────────────────────────
+if not player_name:
+    st.title("Player Performance")
+    st.info("Use the sidebar to select a team and player.")
+    st.stop()
 
 # ── Load data ─────────────────────────────────────────────────────────────────
 match_hist = load_player_match_history(player_name, season)
@@ -63,7 +77,21 @@ s = season_totals.iloc[0] if not season_totals.empty else None
 
 # ── Row 1: KPI Metrics ────────────────────────────────────────────────────────
 st.title(f"{player_name}")
-st.caption(f"{pos_filter} · {match_hist['team_name'].iloc[-1] if not match_hist.empty else ''}")
+_pos = match_hist["draft_position"].iloc[0] if "draft_position" in match_hist.columns else ""
+_team = match_hist["team_name"].iloc[-1] if not match_hist.empty else ""
+st.caption(f"{_pos} · {_team}")
+
+# ── Most recent match ─────────────────────────────────────────────────────────
+last = match_hist.iloc[-1]
+_last_pts = last["total_points"]
+_last_date = pd.Timestamp(last["match_date"]).strftime("%b %d, %Y")
+_last_opp  = last["opponent_name"]
+_pts_color = "green" if _last_pts >= 10 else ("orange" if _last_pts >= 5 else ("red" if _last_pts < 0 else "gray"))
+st.markdown(
+    f"**Last match:** {_last_date} vs {_last_opp} — "
+    f"<span style='color:{_pts_color}; font-weight:bold'>{_last_pts} pts</span>",
+    unsafe_allow_html=True,
+)
 
 m1, m2, m3, m4 = st.columns(4)
 
@@ -160,10 +188,10 @@ with col_right:
         st.info("Season totals not available.")
     else:
         # Divisors to convert pts → raw count, keyed by pts column
-        goal_div  = {"GK": 10, "DF": 6, "MF": 5, "FW": 4}.get(pos_filter, 4)
-        cs_div    = {"GK": 5,  "DF": 4, "MF": 2, "FW": 1}.get(pos_filter, 1)
-        tckl_div  = {"FW": 1,  "MF": 0.5, "DF": 0.5, "GK": 0}.get(pos_filter, 0.5)
-        gc_div    = {"GK": 1,  "DF": 0.5}.get(pos_filter, 1)
+        goal_div  = {"GK": 10, "DF": 6, "MF": 5, "FW": 4}.get(_pos, 4)
+        cs_div    = {"GK": 5,  "DF": 4, "MF": 2, "FW": 1}.get(_pos, 1)
+        tckl_div  = {"FW": 1,  "MF": 0.5, "DF": 0.5, "GK": 0}.get(_pos, 0.5)
+        gc_div    = {"GK": 1,  "DF": 0.5}.get(_pos, 1)
 
         # (pts_col, bar_color, divisor, display_label)
         pos_components = [
