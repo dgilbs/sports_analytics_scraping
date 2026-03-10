@@ -78,9 +78,15 @@ match_hist["match_date"] = pd.to_datetime(match_hist["match_date"])
 c = consistency.iloc[0] if not consistency.empty else None
 s = season_totals.iloc[0] if not season_totals.empty else None
 
+# Position-specific divisors (used in breakdown chart and match log)
+_pos = match_hist["draft_position"].iloc[0] if "draft_position" in match_hist.columns else ""
+goal_div  = {"GK": 10, "DF": 6, "MF": 5, "FW": 4}.get(_pos, 4)
+cs_div    = {"GK": 5,  "DF": 4, "MF": 2, "FW": 1}.get(_pos, 1)
+tckl_div  = {"FW": 1,  "MF": 0.5, "DF": 0.5, "GK": 0}.get(_pos, 0.5)
+gc_div    = {"GK": 1,  "DF": 0.5}.get(_pos, 1)
+
 # ── Row 1: KPI Metrics ────────────────────────────────────────────────────────
 st.title(f"{player_name}")
-_pos = match_hist["draft_position"].iloc[0] if "draft_position" in match_hist.columns else ""
 _team = match_hist["team_name"].iloc[-1] if not match_hist.empty else ""
 st.caption(f"{_pos} · {_team}")
 
@@ -190,12 +196,6 @@ with col_right:
     if s is None:
         st.info("Season totals not available.")
     else:
-        # Divisors to convert pts → raw count, keyed by pts column
-        goal_div  = {"GK": 10, "DF": 6, "MF": 5, "FW": 4}.get(_pos, 4)
-        cs_div    = {"GK": 5,  "DF": 4, "MF": 2, "FW": 1}.get(_pos, 1)
-        tckl_div  = {"FW": 1,  "MF": 0.5, "DF": 0.5, "GK": 0}.get(_pos, 0.5)
-        gc_div    = {"GK": 1,  "DF": 0.5}.get(_pos, 1)
-
         # (pts_col, bar_color, divisor, display_label)
         pos_components = [
             ("pts_appearance",        "#3498DB", 1,        "Appearances"),
@@ -380,23 +380,47 @@ with st.expander("Full Match Log", expanded=False):
     log_df = match_hist[[
         "match_number", "match_date", "team_name", "opponent_name", "minutes_played",
         "total_points", "rolling_5_avg", "cumulative_avg",
+        "pts_appearance", "pts_60_minutes",
         "pts_goals", "pts_assists", "pts_clean_sheet", "pts_saves",
+        "pts_tackles", "pts_interceptions", "pts_blocks", "pts_successful_takeons",
+        "pts_touches", "pts_pass_completion",
+        "pts_penalty_save", "pts_penalty_converted",
         "pts_yellow_cards", "pts_red_card",
+        "pts_goals_conceded", "pts_penalty_missed", "pts_own_goal",
     ]].copy()
 
-    # Convert pts columns → raw counts using position-specific divisors
-    log_df["pts_goals"]        = (log_df["pts_goals"] / goal_div).round().astype("Int64")
-    log_df["pts_assists"]      = (log_df["pts_assists"] / 2).round().astype("Int64")
-    log_df["pts_clean_sheet"]  = log_df["pts_clean_sheet"].apply(
+    # Convert pts → raw counts
+    log_df["pts_appearance"]        = (log_df["pts_appearance"] / 1).round().astype("Int64")
+    log_df["pts_60_minutes"]        = (log_df["pts_60_minutes"] / 2).round().astype("Int64")
+    log_df["pts_goals"]             = (log_df["pts_goals"] / goal_div).round().astype("Int64")
+    log_df["pts_assists"]           = (log_df["pts_assists"] / 2).round().astype("Int64")
+    log_df["pts_clean_sheet"]       = log_df["pts_clean_sheet"].apply(
         lambda v: 1 if v and v > 0 else 0).astype("Int64")
-    log_df["pts_saves"]        = (log_df["pts_saves"] / 0.5).round().astype("Int64")
-    log_df["pts_yellow_cards"] = (log_df["pts_yellow_cards"] / -2).round().astype("Int64")
-    log_df["pts_red_card"]     = (log_df["pts_red_card"] / -6).round().astype("Int64")
+    log_df["pts_saves"]             = (log_df["pts_saves"] / 0.5).round().astype("Int64")
+    log_df["pts_tackles"]           = (log_df["pts_tackles"] / tckl_div).round().astype("Int64") \
+                                      if tckl_div > 0 else 0
+    log_df["pts_interceptions"]     = (log_df["pts_interceptions"] / 0.5).round().astype("Int64")
+    log_df["pts_blocks"]            = (log_df["pts_blocks"] / 0.5).round().astype("Int64")
+    log_df["pts_successful_takeons"]= (log_df["pts_successful_takeons"] / 0.5).round().astype("Int64")
+    log_df["pts_touches"]           = (log_df["pts_touches"] / 2).round().astype("Int64")
+    log_df["pts_pass_completion"]   = (log_df["pts_pass_completion"] / 2).round().astype("Int64")
+    log_df["pts_penalty_save"]      = (log_df["pts_penalty_save"] / 5).round().astype("Int64")
+    log_df["pts_penalty_converted"] = (log_df["pts_penalty_converted"] / 2).round().astype("Int64")
+    log_df["pts_yellow_cards"]      = (log_df["pts_yellow_cards"] / -2).round().astype("Int64")
+    log_df["pts_red_card"]          = (log_df["pts_red_card"] / -6).round().astype("Int64")
+    log_df["pts_goals_conceded"]    = (log_df["pts_goals_conceded"] / -gc_div).round().astype("Int64")
+    log_df["pts_penalty_missed"]    = (log_df["pts_penalty_missed"] / -3).round().astype("Int64")
+    log_df["pts_own_goal"]          = (log_df["pts_own_goal"] / -3).round().astype("Int64")
 
     log_df["match_date"] = log_df["match_date"].dt.strftime("%Y-%m-%d")
     log_df.columns = [
-        "#", "Date", "Team", "Opponent", "Min",
-        "Pts", "Roll 5", "Avg",
-        "Goals", "Assists", "CS", "Saves", "Yellows", "Reds",
+        "#", "Date", "Team", "Opponent", "Min", "Pts", "Roll 5", "Avg",
+        "App", "60+",
+        "Goals", "Assists", "CS", "Saves",
+        "Tackles", "Ints", "Blocks", "Take-ons",
+        "Touch+", "Pass+",
+        "Pen Save", "Pen Won",
+        "Yellows", "Reds",
+        "GC", "Pen Miss", "OG",
     ]
     st.dataframe(log_df, use_container_width=True)

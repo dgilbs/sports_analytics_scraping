@@ -13,13 +13,26 @@ with base as (
         opponent_name,
         minutes_played,
         total_points,
-        -- component highlights for context
+        -- all point components
+        pts_appearance,
+        pts_60_minutes,
         pts_goals,
         pts_assists,
         pts_clean_sheet,
         pts_saves,
+        pts_tackles,
+        pts_interceptions,
+        pts_blocks,
+        pts_successful_takeons,
+        pts_touches,
+        pts_pass_completion,
+        pts_penalty_save,
+        pts_penalty_converted,
         pts_yellow_cards,
-        pts_red_card
+        pts_red_card,
+        pts_goals_conceded,
+        pts_penalty_missed,
+        pts_own_goal
     from {{ ref('fantasy_match_points') }}
     where draft_position is not null
       and minutes_played > 0
@@ -60,13 +73,26 @@ select
         rows between unbounded preceding and current row
     )::numeric, 2)                                          as cumulative_avg,
 
-    -- point components (for drill-down)
+    -- all point components
+    r.pts_appearance,
+    r.pts_60_minutes,
     r.pts_goals,
     r.pts_assists,
     r.pts_clean_sheet,
     r.pts_saves,
+    r.pts_tackles,
+    r.pts_interceptions,
+    r.pts_blocks,
+    r.pts_successful_takeons,
+    r.pts_touches,
+    r.pts_pass_completion,
+    r.pts_penalty_save,
+    r.pts_penalty_converted,
     r.pts_yellow_cards,
-    r.pts_red_card
+    r.pts_red_card,
+    r.pts_goals_conceded,
+    r.pts_penalty_missed,
+    r.pts_own_goal
 
 from ranked r
 order by r.season, r.draft_position, r.player_name, r.match_number

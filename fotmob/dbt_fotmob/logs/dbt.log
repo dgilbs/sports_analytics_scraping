@@ -24864,3 +24864,285 @@ drop view if exists "neondb"."fotmob"."team_season_stats__dbt_backup" cascade
 [0m17:12:15.044301 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1131cda30>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x115452190>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11347e0a0>]}
 [0m17:12:15.044600 [debug] [MainThread]: Flushing usage events
 [0m17:12:15.491227 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m10:39:03.343227 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x109b4ab20>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10b6dfe50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10b6df3d0>]}
+
+
+============================== 10:39:03.346982 | 3b6bbe34-2091-4ecc-9016-043e50d94dad ==============================
+[0m10:39:03.346982 [info ] [MainThread]: Running with dbt=1.10.11
+[0m10:39:03.347366 [debug] [MainThread]: running dbt with arguments {'warn_error': 'None', 'write_json': 'True', 'no_print': 'None', 'use_experimental_parser': 'False', 'log_format': 'default', 'cache_selected_only': 'False', 'debug': 'False', 'empty': 'False', 'fail_fast': 'False', 'log_path': '/Users/dgilberg/Documents/sports_analytics_scraping/fotmob/dbt_fotmob/logs', 'partial_parse': 'True', 'version_check': 'True', 'profiles_dir': '/Users/dgilberg/.dbt', 'send_anonymous_usage_stats': 'True', 'invocation_command': 'dbt run --select draft_points_per_match', 'log_cache_events': 'False', 'introspect': 'True', 'indirect_selection': 'eager', 'target_path': 'None', 'static_parser': 'True', 'quiet': 'False', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'use_colors': 'True', 'printer_width': '80'}
+[0m10:39:03.509776 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '3b6bbe34-2091-4ecc-9016-043e50d94dad', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106e91b80>]}
+[0m10:39:03.545294 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '3b6bbe34-2091-4ecc-9016-043e50d94dad', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10a64e040>]}
+[0m10:39:03.546071 [info ] [MainThread]: Registered adapter: postgres=1.9.1
+[0m10:39:03.605989 [debug] [MainThread]: checksum: 5335e1629744fab92fa7809c625edbb36f0d7063a879d6215c971798f27e66f9, vars: {}, profile: , target: , version: 1.10.11
+[0m10:39:03.740927 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 2 files added, 1 files changed.
+[0m10:39:03.741318 [debug] [MainThread]: Partial parsing: added file: dbt_fotmob://seeds/nwsfl_roster_matched.csv
+[0m10:39:03.741522 [debug] [MainThread]: Partial parsing: added file: dbt_fotmob://seeds/nwsfl_rosters_2026.csv
+[0m10:39:03.741734 [debug] [MainThread]: Partial parsing: updated file: dbt_fotmob://models/draft_points_per_match.sql
+[0m10:39:03.978366 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '3b6bbe34-2091-4ecc-9016-043e50d94dad', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10cc6f130>]}
+[0m10:39:04.035165 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/dgilberg/Documents/sports_analytics_scraping/fotmob/dbt_fotmob/target/manifest.json
+[0m10:39:04.036600 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/dgilberg/Documents/sports_analytics_scraping/fotmob/dbt_fotmob/target/semantic_manifest.json
+[0m10:39:04.050340 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '3b6bbe34-2091-4ecc-9016-043e50d94dad', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10cc5a8e0>]}
+[0m10:39:04.050637 [info ] [MainThread]: Found 10 models, 6 seeds, 10 data tests, 8 sources, 435 macros
+[0m10:39:04.050813 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '3b6bbe34-2091-4ecc-9016-043e50d94dad', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10c752d00>]}
+[0m10:39:04.051380 [info ] [MainThread]: 
+[0m10:39:04.051545 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m10:39:04.051682 [info ] [MainThread]: 
+[0m10:39:04.051942 [debug] [MainThread]: Acquiring new postgres connection 'master'
+[0m10:39:04.052366 [debug] [ThreadPool]: Acquiring new postgres connection 'list_neondb'
+[0m10:39:04.108795 [debug] [ThreadPool]: Using postgres connection "list_neondb"
+[0m10:39:04.109079 [debug] [ThreadPool]: On list_neondb: /* {"app": "dbt", "dbt_version": "1.10.11", "profile_name": "dbt_fotmob", "target_name": "dev", "connection_name": "list_neondb"} */
+
+    select distinct nspname from pg_namespace
+  
+[0m10:39:04.109240 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m10:39:04.353142 [debug] [ThreadPool]: SQL status: SELECT 11 in 0.244 seconds
+[0m10:39:04.354490 [debug] [ThreadPool]: On list_neondb: Close
+[0m10:39:04.360753 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_neondb, now list_neondb_fotmob)
+[0m10:39:04.365784 [debug] [ThreadPool]: Using postgres connection "list_neondb_fotmob"
+[0m10:39:04.366118 [debug] [ThreadPool]: On list_neondb_fotmob: BEGIN
+[0m10:39:04.366369 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m10:39:04.570181 [debug] [ThreadPool]: SQL status: BEGIN in 0.204 seconds
+[0m10:39:04.570584 [debug] [ThreadPool]: Using postgres connection "list_neondb_fotmob"
+[0m10:39:04.570855 [debug] [ThreadPool]: On list_neondb_fotmob: /* {"app": "dbt", "dbt_version": "1.10.11", "profile_name": "dbt_fotmob", "target_name": "dev", "connection_name": "list_neondb_fotmob"} */
+select
+      'neondb' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'fotmob'
+    union all
+    select
+      'neondb' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'fotmob'
+    union all
+    select
+      'neondb' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'fotmob'
+  
+[0m10:39:04.667536 [debug] [ThreadPool]: SQL status: SELECT 19 in 0.096 seconds
+[0m10:39:04.669149 [debug] [ThreadPool]: On list_neondb_fotmob: ROLLBACK
+[0m10:39:04.690881 [debug] [ThreadPool]: On list_neondb_fotmob: Close
+[0m10:39:04.698827 [debug] [MainThread]: Using postgres connection "master"
+[0m10:39:04.699205 [debug] [MainThread]: On master: BEGIN
+[0m10:39:04.699492 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m10:39:04.888041 [debug] [MainThread]: SQL status: BEGIN in 0.188 seconds
+[0m10:39:04.888436 [debug] [MainThread]: Using postgres connection "master"
+[0m10:39:04.888751 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.10.11", "profile_name": "dbt_fotmob", "target_name": "dev", "connection_name": "master"} */
+select distinct
+        dependent_namespace.nspname as dependent_schema,
+        dependent_class.relname as dependent_name,
+        referenced_namespace.nspname as referenced_schema,
+        referenced_class.relname as referenced_name
+
+    -- Query for views: views are entries in pg_class with an entry in pg_rewrite, but we avoid
+    -- a seq scan on pg_rewrite by leveraging the fact there is an "internal" row in pg_depend for
+    -- the view...
+    from pg_class as dependent_class
+    join pg_namespace as dependent_namespace on dependent_namespace.oid = dependent_class.relnamespace
+    join pg_depend as dependent_depend on dependent_depend.refobjid = dependent_class.oid
+        and dependent_depend.classid = 'pg_rewrite'::regclass
+        and dependent_depend.refclassid = 'pg_class'::regclass
+        and dependent_depend.deptype = 'i'
+
+    -- ... and via pg_depend (that has a row per column, hence the need for "distinct" above, and
+    -- making sure to exclude the internal row to avoid a view appearing to depend on itself)...
+    join pg_depend as joining_depend on joining_depend.objid = dependent_depend.objid
+        and joining_depend.classid = 'pg_rewrite'::regclass
+        and joining_depend.refclassid = 'pg_class'::regclass
+        and joining_depend.refobjid != dependent_depend.refobjid
+
+    -- ... we can find the tables they query from in pg_class, but excluding system tables. Note we
+    -- don't need need to exclude _dependent_ system tables, because they only query from other
+    -- system tables, and so are automatically excluded by excluding _referenced_ system tables
+    join pg_class as referenced_class on referenced_class.oid = joining_depend.refobjid
+    join pg_namespace as referenced_namespace on referenced_namespace.oid = referenced_class.relnamespace
+        and referenced_namespace.nspname != 'information_schema'
+        and referenced_namespace.nspname not like 'pg\_%'
+
+    order by
+        dependent_schema, dependent_name, referenced_schema, referenced_name;
+[0m10:39:04.956799 [debug] [MainThread]: SQL status: SELECT 239 in 0.068 seconds
+[0m10:39:04.966298 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '3b6bbe34-2091-4ecc-9016-043e50d94dad', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10cc275b0>]}
+[0m10:39:04.966941 [debug] [MainThread]: On master: ROLLBACK
+[0m10:39:04.989555 [debug] [MainThread]: Using postgres connection "master"
+[0m10:39:04.990127 [debug] [MainThread]: On master: BEGIN
+[0m10:39:05.035626 [debug] [MainThread]: SQL status: BEGIN in 0.045 seconds
+[0m10:39:05.036356 [debug] [MainThread]: On master: COMMIT
+[0m10:39:05.036738 [debug] [MainThread]: Using postgres connection "master"
+[0m10:39:05.037076 [debug] [MainThread]: On master: COMMIT
+[0m10:39:05.059433 [debug] [MainThread]: SQL status: COMMIT in 0.022 seconds
+[0m10:39:05.060255 [debug] [MainThread]: On master: Close
+[0m10:39:05.064456 [debug] [Thread-1  ]: Began running node model.dbt_fotmob.draft_points_per_match
+[0m10:39:05.065039 [info ] [Thread-1  ]: 1 of 1 START sql view model fotmob.draft_points_per_match ...................... [RUN]
+[0m10:39:05.065683 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly list_neondb_fotmob, now model.dbt_fotmob.draft_points_per_match)
+[0m10:39:05.066039 [debug] [Thread-1  ]: Began compiling node model.dbt_fotmob.draft_points_per_match
+[0m10:39:05.073237 [debug] [Thread-1  ]: Writing injected SQL for node "model.dbt_fotmob.draft_points_per_match"
+[0m10:39:05.074616 [debug] [Thread-1  ]: Began executing node model.dbt_fotmob.draft_points_per_match
+[0m10:39:05.098047 [debug] [Thread-1  ]: Writing runtime sql for node "model.dbt_fotmob.draft_points_per_match"
+[0m10:39:05.098776 [debug] [Thread-1  ]: Using postgres connection "model.dbt_fotmob.draft_points_per_match"
+[0m10:39:05.099025 [debug] [Thread-1  ]: On model.dbt_fotmob.draft_points_per_match: BEGIN
+[0m10:39:05.099237 [debug] [Thread-1  ]: Opening a new connection, currently in state closed
+[0m10:39:05.275133 [debug] [Thread-1  ]: SQL status: BEGIN in 0.176 seconds
+[0m10:39:05.275813 [debug] [Thread-1  ]: Using postgres connection "model.dbt_fotmob.draft_points_per_match"
+[0m10:39:05.276355 [debug] [Thread-1  ]: On model.dbt_fotmob.draft_points_per_match: /* {"app": "dbt", "dbt_version": "1.10.11", "profile_name": "dbt_fotmob", "target_name": "dev", "node_id": "model.dbt_fotmob.draft_points_per_match"} */
+
+  create view "neondb"."fotmob"."draft_points_per_match__dbt_tmp"
+    
+    
+  as (
+    -- Per-match fantasy points with rolling averages and cumulative trends.
+-- One row per player per match per season. Useful for charting scoring patterns
+-- and identifying players who are heating up or cooling down.
+with base as (
+    select
+        player_id,
+        player_name,
+        draft_position,
+        match_id,
+        match_date,
+        season,
+        team_name,
+        opponent_name,
+        minutes_played,
+        total_points,
+        -- all point components
+        pts_appearance,
+        pts_60_minutes,
+        pts_goals,
+        pts_assists,
+        pts_clean_sheet,
+        pts_saves,
+        pts_tackles,
+        pts_interceptions,
+        pts_blocks,
+        pts_successful_takeons,
+        pts_touches,
+        pts_pass_completion,
+        pts_penalty_save,
+        pts_penalty_converted,
+        pts_yellow_cards,
+        pts_red_card,
+        pts_goals_conceded,
+        pts_penalty_missed,
+        pts_own_goal
+    from "neondb"."fotmob"."fantasy_match_points"
+    where draft_position is not null
+      and minutes_played > 0
+),
+
+ranked as (
+    select
+        *,
+        row_number() over (
+            partition by player_id, season
+            order by match_date
+        ) as match_number
+    from base
+)
+
+select
+    r.season,
+    r.draft_position,
+    r.player_name,
+    r.match_number,
+    r.match_date,
+    r.team_name,
+    r.opponent_name,
+    r.minutes_played,
+    r.total_points,
+
+    -- rolling 5-match average within season (current match included)
+    round(avg(r.total_points) over (
+        partition by r.player_id, r.season
+        order by r.match_date
+        rows between 4 preceding and current row
+    )::numeric, 2)                                          as rolling_5_avg,
+
+    -- cumulative season average to date
+    round(avg(r.total_points) over (
+        partition by r.player_id, r.season
+        order by r.match_date
+        rows between unbounded preceding and current row
+    )::numeric, 2)                                          as cumulative_avg,
+
+    -- all point components
+    r.pts_appearance,
+    r.pts_60_minutes,
+    r.pts_goals,
+    r.pts_assists,
+    r.pts_clean_sheet,
+    r.pts_saves,
+    r.pts_tackles,
+    r.pts_interceptions,
+    r.pts_blocks,
+    r.pts_successful_takeons,
+    r.pts_touches,
+    r.pts_pass_completion,
+    r.pts_penalty_save,
+    r.pts_penalty_converted,
+    r.pts_yellow_cards,
+    r.pts_red_card,
+    r.pts_goals_conceded,
+    r.pts_penalty_missed,
+    r.pts_own_goal
+
+from ranked r
+order by r.season, r.draft_position, r.player_name, r.match_number
+  );
+[0m10:39:05.343445 [debug] [Thread-1  ]: SQL status: CREATE VIEW in 0.066 seconds
+[0m10:39:05.352106 [debug] [Thread-1  ]: Using postgres connection "model.dbt_fotmob.draft_points_per_match"
+[0m10:39:05.352643 [debug] [Thread-1  ]: On model.dbt_fotmob.draft_points_per_match: /* {"app": "dbt", "dbt_version": "1.10.11", "profile_name": "dbt_fotmob", "target_name": "dev", "node_id": "model.dbt_fotmob.draft_points_per_match"} */
+alter table "neondb"."fotmob"."draft_points_per_match" rename to "draft_points_per_match__dbt_backup"
+[0m10:39:05.373738 [debug] [Thread-1  ]: SQL status: ALTER TABLE in 0.021 seconds
+[0m10:39:05.377394 [debug] [Thread-1  ]: Using postgres connection "model.dbt_fotmob.draft_points_per_match"
+[0m10:39:05.377822 [debug] [Thread-1  ]: On model.dbt_fotmob.draft_points_per_match: /* {"app": "dbt", "dbt_version": "1.10.11", "profile_name": "dbt_fotmob", "target_name": "dev", "node_id": "model.dbt_fotmob.draft_points_per_match"} */
+alter table "neondb"."fotmob"."draft_points_per_match__dbt_tmp" rename to "draft_points_per_match"
+[0m10:39:05.397772 [debug] [Thread-1  ]: SQL status: ALTER TABLE in 0.020 seconds
+[0m10:39:05.414030 [debug] [Thread-1  ]: On model.dbt_fotmob.draft_points_per_match: COMMIT
+[0m10:39:05.417500 [debug] [Thread-1  ]: Using postgres connection "model.dbt_fotmob.draft_points_per_match"
+[0m10:39:05.417822 [debug] [Thread-1  ]: On model.dbt_fotmob.draft_points_per_match: COMMIT
+[0m10:39:05.438994 [debug] [Thread-1  ]: SQL status: COMMIT in 0.021 seconds
+[0m10:39:05.444234 [debug] [Thread-1  ]: Applying DROP to: "neondb"."fotmob"."draft_points_per_match__dbt_backup"
+[0m10:39:05.447391 [debug] [Thread-1  ]: Using postgres connection "model.dbt_fotmob.draft_points_per_match"
+[0m10:39:05.447715 [debug] [Thread-1  ]: On model.dbt_fotmob.draft_points_per_match: /* {"app": "dbt", "dbt_version": "1.10.11", "profile_name": "dbt_fotmob", "target_name": "dev", "node_id": "model.dbt_fotmob.draft_points_per_match"} */
+drop view if exists "neondb"."fotmob"."draft_points_per_match__dbt_backup" cascade
+[0m10:39:05.473919 [debug] [Thread-1  ]: SQL status: DROP VIEW in 0.026 seconds
+[0m10:39:05.476297 [debug] [Thread-1  ]: On model.dbt_fotmob.draft_points_per_match: Close
+[0m10:39:05.478593 [debug] [Thread-1  ]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '3b6bbe34-2091-4ecc-9016-043e50d94dad', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10d301400>]}
+[0m10:39:05.479200 [info ] [Thread-1  ]: 1 of 1 OK created sql view model fotmob.draft_points_per_match ................. [[32mCREATE VIEW[0m in 0.41s]
+[0m10:39:05.479665 [debug] [Thread-1  ]: Finished running node model.dbt_fotmob.draft_points_per_match
+[0m10:39:05.480658 [debug] [MainThread]: Using postgres connection "master"
+[0m10:39:05.481001 [debug] [MainThread]: On master: BEGIN
+[0m10:39:05.481275 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m10:39:05.672792 [debug] [MainThread]: SQL status: BEGIN in 0.191 seconds
+[0m10:39:05.673568 [debug] [MainThread]: On master: COMMIT
+[0m10:39:05.674019 [debug] [MainThread]: Using postgres connection "master"
+[0m10:39:05.674391 [debug] [MainThread]: On master: COMMIT
+[0m10:39:05.694911 [debug] [MainThread]: SQL status: COMMIT in 0.020 seconds
+[0m10:39:05.695597 [debug] [MainThread]: On master: Close
+[0m10:39:05.696700 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m10:39:05.697105 [debug] [MainThread]: Connection 'model.dbt_fotmob.draft_points_per_match' was properly closed.
+[0m10:39:05.697525 [info ] [MainThread]: 
+[0m10:39:05.697907 [info ] [MainThread]: Finished running 1 view model in 0 hours 0 minutes and 1.65 seconds (1.65s).
+[0m10:39:05.698614 [debug] [MainThread]: Command end result
+[0m10:39:05.723224 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/dgilberg/Documents/sports_analytics_scraping/fotmob/dbt_fotmob/target/manifest.json
+[0m10:39:05.725070 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/dgilberg/Documents/sports_analytics_scraping/fotmob/dbt_fotmob/target/semantic_manifest.json
+[0m10:39:05.730235 [debug] [MainThread]: Wrote artifact RunExecutionResult to /Users/dgilberg/Documents/sports_analytics_scraping/fotmob/dbt_fotmob/target/run_results.json
+[0m10:39:05.730563 [info ] [MainThread]: 
+[0m10:39:05.730852 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m10:39:05.731073 [info ] [MainThread]: 
+[0m10:39:05.731305 [info ] [MainThread]: Done. PASS=1 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=1
+[0m10:39:05.737740 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 2.5395417, "process_in_blocks": "0", "process_kernel_time": 0.291913, "process_mem_max_rss": "146538496", "process_out_blocks": "0", "process_user_time": 1.444128}
+[0m10:39:05.738209 [debug] [MainThread]: Command `dbt run` succeeded at 10:39:05.738140 after 2.54 seconds
+[0m10:39:05.738502 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x109b4ab20>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10b67ffd0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10cc5a520>]}
+[0m10:39:05.738784 [debug] [MainThread]: Flushing usage events
+[0m10:39:05.884472 [debug] [MainThread]: An error was encountered while trying to flush usage events
