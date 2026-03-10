@@ -110,6 +110,10 @@ with col_left:
         for row in match_hist.itertuples()
     ]
 
+    toggle_col1, toggle_col2 = st.columns(2)
+    show_rolling = toggle_col1.checkbox("Show Rolling 5 Avg", value=True)
+    show_season  = toggle_col2.checkbox("Show Season Avg",    value=True)
+
     fig_tl = go.Figure()
     fig_tl.add_trace(go.Bar(
         x=match_hist["match_date"],
@@ -119,20 +123,22 @@ with col_left:
         hovertext=hover_text,
         hoverinfo="text",
     ))
-    fig_tl.add_trace(go.Scatter(
-        x=match_hist["match_date"],
-        y=match_hist["rolling_5_avg"],
-        mode="lines",
-        name="Rolling 5 Avg",
-        line=dict(color="orange", width=2),
-    ))
-    fig_tl.add_trace(go.Scatter(
-        x=match_hist["match_date"],
-        y=match_hist["cumulative_avg"],
-        mode="lines",
-        name="Season Avg",
-        line=dict(color="gray", width=1.5, dash="dash"),
-    ))
+    if show_rolling:
+        fig_tl.add_trace(go.Scatter(
+            x=match_hist["match_date"],
+            y=match_hist["rolling_5_avg"],
+            mode="lines",
+            name="Rolling 5 Avg",
+            line=dict(color="orange", width=2),
+        ))
+    if show_season:
+        fig_tl.add_trace(go.Scatter(
+            x=match_hist["match_date"],
+            y=match_hist["cumulative_avg"],
+            mode="lines",
+            name="Season Avg",
+            line=dict(color="gray", width=1.5, dash="dash"),
+        ))
     fig_tl.update_layout(
         xaxis_title="Date",
         yaxis_title="Points",

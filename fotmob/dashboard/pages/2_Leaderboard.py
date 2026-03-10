@@ -53,6 +53,8 @@ with st.sidebar:
         horizontal=True,
     )
 
+    limit = st.number_input("Show top N players", min_value=1, value=None, placeholder="All")
+
     st.subheader("Date Range")
     start_date = st.date_input("Start Date", value=None)
     end_date   = st.date_input("End Date",   value=date(2025, 11, 3))
@@ -79,6 +81,9 @@ if df.empty:
     st.stop()
 
 # ── Rank column ───────────────────────────────────────────────────────────────
+if limit:
+    df = df.head(int(limit))
+
 df.insert(0, "rank", range(1, len(df) + 1))
 
 # ── Styling ───────────────────────────────────────────────────────────────────
