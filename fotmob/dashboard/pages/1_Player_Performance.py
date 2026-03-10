@@ -301,7 +301,50 @@ with col_b:
             "A large gap between Win and Loss suggests the player's output is closely tied to team performance."
         )
 
-# ── Row 4: Full Match Log ─────────────────────────────────────────────────────
+# ── Row 4: Performance by Opponent ───────────────────────────────────────────
+with st.expander("Performance by Opponent", expanded=False):
+    opp_df = (
+        match_hist.groupby("opponent_name")
+        .agg(
+            matches=("total_points", "count"),
+            total_pts=("total_points", "sum"),
+            avg_pts=("total_points", "mean"),
+        )
+        .round({"total_pts": 1, "avg_pts": 2})
+        .sort_values("avg_pts", ascending=False)
+        .reset_index()
+    )
+    opp_df.rename(columns={"opponent_name": "Opponent", "matches": "GP",
+                            "total_pts": "Total Pts", "avg_pts": "Avg Pts"}, inplace=True)
+
+    fig_opp = go.Figure(go.Bar(
+        x=opp_df["Avg Pts"],
+        y=opp_df["Opponent"],
+        orientation="h",
+        marker_color="#2E86C1",
+        text=opp_df["Avg Pts"].apply(lambda v: f"{v:.2f}"),
+        textposition="outside",
+        customdata=opp_df[["GP", "Total Pts"]].values,
+        hovertemplate="%{y}<br>Avg: %{x:.2f} pts<br>%{customdata[0]} games · %{customdata[1]:.1f} total<extra></extra>",
+    ))
+    if avg_pts is not None:
+        fig_opp.add_vline(
+            x=avg_pts,
+            line_dash="dash",
+            line_color="gray",
+            annotation_text=f"Season avg: {avg_pts:.2f}",
+            annotation_position="top right",
+        )
+    fig_opp.update_layout(
+        xaxis_title="Avg Points",
+        height=max(300, len(opp_df) * 28 + 60),
+        margin=dict(t=20, b=40, l=140),
+        yaxis=dict(autorange="reversed"),
+    )
+    st.plotly_chart(fig_opp, use_container_width=True)
+    st.dataframe(opp_df, use_container_width=True, hide_index=True)
+
+# ── Row 5: Full Match Log ─────────────────────────────────────────────────────
 with st.expander("Full Match Log", expanded=False):
     log_df = match_hist[[
         "match_number", "match_date", "team_name", "opponent_name", "minutes_played",
