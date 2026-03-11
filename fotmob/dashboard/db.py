@@ -271,6 +271,24 @@ def load_player_consistency(player_name: str, season: str | None = None) -> pd.D
 
 
 @st.cache_data(ttl=300)
+def load_player_goals_xg(player_name: str, season: str | None = None) -> pd.DataFrame:
+    """Season goals and xG totals for the Goals vs xG chart."""
+    clauses = ["player_name = %s", "minutes_played > 0"]
+    params = [player_name]
+    if season:
+        clauses.append("season = %s")
+        params.append(season)
+    where = "WHERE " + " AND ".join(clauses)
+    return _q(f"""
+        SELECT
+            COALESCE(SUM(goals), 0)                      AS total_goals,
+            ROUND(COALESCE(SUM(xg), 0)::numeric, 2)      AS total_xg
+        FROM {_SCHEMA}.player_match_stats
+        {where}
+    """, tuple(params))
+
+
+@st.cache_data(ttl=300)
 def load_player_position_stats(player_name: str, season: str | None = None) -> pd.DataFrame:
     if season:
         return _q(f"""

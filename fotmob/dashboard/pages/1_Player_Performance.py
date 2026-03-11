@@ -21,6 +21,7 @@ from db import (
     load_player_season_totals,
     load_player_consistency,
     load_player_position_stats,
+    load_player_goals_xg,
 )
 from utils import setup_page, get_season
 
@@ -66,6 +67,7 @@ match_hist = load_player_match_history(player_name, season, start_str, end_str)
 season_totals = load_player_season_totals(player_name, season)
 consistency = load_player_consistency(player_name, season)
 pos_stats = load_player_position_stats(player_name, season)
+goals_xg = load_player_goals_xg(player_name, season)
 
 if match_hist.empty:
     st.title(f"{player_name}")
@@ -254,8 +256,8 @@ with col_right:
         )
         st.plotly_chart(fig_bd, use_container_width=True)
 
-# ── Row 3: Scoring Bands (50%) | Points by Result (50%) ─────────────────────
-col_a, col_b = st.columns(2)
+# ── Row 3: Scoring Bands | Points by Result | Goals vs xG ────────────────────
+col_a, col_b, col_c = st.columns(3)
 
 # Chart 3: Scoring Bands
 with col_a:
@@ -331,6 +333,41 @@ with col_b:
             "Average fantasy points by team match result. "
             "A large gap between Win and Loss suggests the player's output is closely tied to team performance."
         )
+
+# Chart 5: Goals vs xG
+with col_c:
+    st.subheader("Goals vs xG")
+
+    if goals_xg.empty:
+        st.info("No xG data available.")
+    else:
+        gxg = goals_xg.iloc[0]
+        total_goals = int(gxg["total_goals"])
+        total_xg    = float(gxg["total_xg"])
+
+        fig_xg = go.Figure(go.Bar(
+            x=["Goals", "xG"],
+            y=[total_goals, total_xg],
+            marker_color=["#27AE60", "#85C1E9"],
+            text=[str(total_goals), f"{total_xg:.2f}"],
+            textposition="outside",
+            hovertemplate="%{x}: %{y}<extra></extra>",
+        ))
+        fig_xg.update_layout(
+            yaxis_title="Count",
+            height=280,
+            margin=dict(t=10, b=10),
+            showlegend=False,
+        )
+        st.plotly_chart(fig_xg, use_container_width=True)
+
+        diff = total_goals - total_xg
+        if abs(diff) < 0.05:
+            st.caption("On track with expected goals.")
+        elif diff > 0:
+            st.caption(f"+{diff:.2f} goals over xG — finishing above expectation.")
+        else:
+            st.caption(f"{diff:.2f} goals vs xG — underperforming expectation.")
 
 # ── Row 4: Performance by Opponent ───────────────────────────────────────────
 with st.expander("Performance by Opponent", expanded=False):
