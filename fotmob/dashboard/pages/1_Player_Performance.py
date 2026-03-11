@@ -22,6 +22,7 @@ from db import (
     load_player_consistency,
     load_player_position_stats,
     load_player_goals_xg,
+    load_player_rank,
 )
 from utils import setup_page, get_season
 
@@ -68,6 +69,7 @@ season_totals = load_player_season_totals(player_name, season)
 consistency = load_player_consistency(player_name, season)
 pos_stats = load_player_position_stats(player_name, season)
 goals_xg = load_player_goals_xg(player_name, season)
+player_rank = load_player_rank(player_name, season)
 
 if match_hist.empty:
     st.title(f"{player_name}")
@@ -104,12 +106,16 @@ st.markdown(
     unsafe_allow_html=True,
 )
 
-m1, m2, m3, m4 = st.columns(4)
+m1, m2, m3, m4, m5 = st.columns(5)
 
 season_total = float(s["total_points"]) if s is not None else None
 avg_pts = float(c["avg_pts"]) if c is not None else None
 avg_last5 = float(c["avg_pts_last5"]) if c is not None and c["avg_pts_last5"] is not None else None
 form_trend = float(c["form_trend"]) if c is not None and c["form_trend"] is not None else None
+
+_rank_row = player_rank.iloc[0] if not player_rank.empty else None
+_pos_rank  = int(_rank_row["position_rank"])      if _rank_row is not None else None
+_pos_total = int(_rank_row["total_at_position"])  if _rank_row is not None else None
 
 with m1:
     st.metric("Season Total", f"{season_total:.1f}" if season_total is not None else "—")
@@ -121,6 +127,9 @@ with m3:
 with m4:
     trend_label = "Improving" if (form_trend or 0) > 0 else ("Declining" if (form_trend or 0) < 0 else "Flat")
     st.metric("Form Trend", trend_label, delta=delta_str)
+with m5:
+    rank_val = f"#{_pos_rank} of {_pos_total} {_pos}s" if _pos_rank is not None else "—"
+    st.metric(f"{_team}", rank_val)
 
 st.divider()
 

@@ -271,6 +271,25 @@ def load_player_consistency(player_name: str, season: str | None = None) -> pd.D
 
 
 @st.cache_data(ttl=300)
+def load_player_rank(player_name: str, season: str | None = None) -> pd.DataFrame:
+    """Position rank and total players at that position from draft_rankings."""
+    clauses = ["player_name = %s"]
+    params = [player_name]
+    if season:
+        clauses.append("season = %s")
+        params.append(season)
+    where = "WHERE " + " AND ".join(clauses)
+    return _q(f"""
+        SELECT
+            position_rank,
+            COUNT(*) OVER (PARTITION BY draft_position, season) AS total_at_position
+        FROM {_SCHEMA}.draft_rankings
+        {where}
+        LIMIT 1
+    """, tuple(params))
+
+
+@st.cache_data(ttl=300)
 def load_player_goals_xg(player_name: str, season: str | None = None) -> pd.DataFrame:
     """Season goals and xG totals for the Goals vs xG chart."""
     clauses = ["player_name = %s", "minutes_played > 0"]
