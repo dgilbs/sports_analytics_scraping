@@ -272,21 +272,51 @@ def load_player_consistency(player_name: str, season: str | None = None) -> pd.D
 
 @st.cache_data(ttl=300)
 def load_player_rank(player_name: str, season: str | None = None) -> pd.DataFrame:
-    """Position rank and total players at that position from draft_rankings."""
-    clauses = ["player_name = %s"]
-    params = [player_name]
+    """League rank within position and rank on team among all positions."""
+    season_clause = "AND season = %s" if season else ""
+    params_full   = (season, player_name, season) if season else (player_name,)
+    params_team   = (season,) if season else ()
+    # Build params tuple for the full query
     if season:
-        clauses.append("season = %s")
-        params.append(season)
-    where = "WHERE " + " AND ".join(clauses)
+        params = (season, player_name, season, season)
+    else:
+        params = (player_name,)
     return _q(f"""
+        WITH pos_counts AS (
+            SELECT draft_position, season, COUNT(*) AS total_at_position
+            FROM {_SCHEMA}.draft_rankings
+            WHERE 1=1 {season_clause}
+            GROUP BY draft_position, season
+        ),
+        player_league AS (
+            SELECT r.player_name, r.draft_position, r.season,
+                   r.position_rank, pc.total_at_position
+            FROM {_SCHEMA}.draft_rankings r
+            JOIN pos_counts pc
+                ON r.draft_position = pc.draft_position AND r.season = pc.season
+            WHERE r.player_name = %s {season_clause}
+        ),
+        team_pts AS (
+            SELECT
+                player_name, team_name, season, total_points,
+                RANK() OVER (
+                    PARTITION BY team_name, season ORDER BY total_points DESC
+                ) AS rank_on_team,
+                COUNT(*) OVER (PARTITION BY team_name, season) AS total_on_team
+            FROM {_SCHEMA}.fantasy_season_points
+            WHERE draft_position IS NOT NULL {season_clause}
+        )
         SELECT
-            position_rank,
-            COUNT(*) OVER (PARTITION BY draft_position, season) AS total_at_position
-        FROM {_SCHEMA}.draft_rankings
-        {where}
+            pl.position_rank,
+            pl.total_at_position,
+            tp.rank_on_team,
+            tp.total_on_team,
+            tp.team_name
+        FROM player_league pl
+        JOIN team_pts tp
+            ON pl.player_name = tp.player_name AND pl.season = tp.season
         LIMIT 1
-    """, tuple(params))
+    """, params)
 
 
 @st.cache_data(ttl=300)
