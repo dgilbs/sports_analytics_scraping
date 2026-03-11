@@ -239,9 +239,22 @@ def create_tables(conn):
 
 
 def load_matches(conn):
-    """Load dim_teams and dim_matches from data/matches/2025.csv."""
-    path = os.path.join(DATA_DIR, "matches", "2025.csv")
-    df = pd.read_csv(path)
+    """Load dim_teams and dim_matches from all CSVs in data/matches/.
+    Season is inferred from the filename stem (e.g. 2025.csv → '2025').
+    """
+    csv_files = sorted(glob.glob(os.path.join(DATA_DIR, "matches", "*.csv")))
+    if not csv_files:
+        print("  No match CSV files found.")
+        return
+
+    all_dfs = []
+    for path in csv_files:
+        season = os.path.splitext(os.path.basename(path))[0]
+        df = pd.read_csv(path)
+        df["season"] = season
+        all_dfs.append(df)
+
+    df = pd.concat(all_dfs, ignore_index=True)
 
     teams = pd.concat([
         df[["home_team_id", "home_team"]].rename(columns={"home_team_id": "team_id", "home_team": "team_name"}),
@@ -256,9 +269,10 @@ def load_matches(conn):
             ON CONFLICT (team_id) DO UPDATE SET team_name = EXCLUDED.team_name
         """, list(teams.itertuples(index=False, name=None)))
 
-    df["season"] = "2025"
-    df["utc_time"] = pd.to_datetime(df["utc_time"], utc=True)
+    df["utc_time"] = pd.to_datetime(df["utc_time"], utc=True, errors="coerce")
     df = df.rename(columns={"pageUrl": "page_url"})
+    if "page_url" not in df.columns:
+        df["page_url"] = None
 
     with conn.cursor() as cur:
         execute_values(cur, """
@@ -273,16 +287,31 @@ def load_matches(conn):
         """, to_rows(df, ["match_id", "home_team_id", "away_team_id", "utc_time", "season", "page_url"]))
 
     conn.commit()
-    print(f"  Matches: {len(teams)} teams, {len(df)} matches")
+    print(f"  Matches: {len(teams)} teams, {len(df)} matches across {len(csv_files)} season file(s)")
 
 
 def load_lineups(conn):
     """Load dim_players (partial) and fact_lineups from data/lineups/*.pkl."""
-    dfs, n_files = read_csvs(os.path.join(DATA_DIR, "lineups", "*.pkl"))
-    if not dfs:
+    files = sorted(glob.glob(os.path.join(DATA_DIR, "lineups", "*.pkl")))
+    if not files:
         print("  No lineup files found.")
         return
 
+    dfs = []
+    for f in files:
+        try:
+            dfs.append(pd.read_pickle(f))
+        except Exception:
+            try:
+                dfs.append(pd.read_csv(f))
+            except Exception as e:
+                print(f"  Warning: skipping {os.path.basename(f)}: {e}")
+
+    if not dfs:
+        print("  No lineup files could be read.")
+        return
+
+    n_files = len(files)
     df = pd.concat(dfs, ignore_index=True)
 
     # Upsert players discovered in lineups
@@ -293,6 +322,15 @@ def load_lineups(conn):
             VALUES %s
             ON CONFLICT (player_id) DO UPDATE SET player_name = EXCLUDED.player_name
         """, list(players.itertuples(index=False, name=None)))
+
+    # Drop rows for match IDs not yet in dim_matches (avoids FK violation)
+    with conn.cursor() as cur:
+        cur.execute("SELECT match_id FROM fotmob.dim_matches")
+        known_ids = {row[0] for row in cur.fetchall()}
+    unknown = set(df["match_id"].dropna().astype(int)) - known_ids
+    if unknown:
+        print(f"  Skipping {len(unknown)} match IDs not in dim_matches (e.g. {sorted(unknown)[:3]})")
+        df = df[df["match_id"].astype(int).isin(known_ids)]
 
     for col in ["shirt_number", "position_id", "usual_position_id"]:
         df[col] = pd.to_numeric(df[col], errors="coerce").astype("Int64")
@@ -346,6 +384,15 @@ def load_player_stats(conn):
             VALUES %s
             ON CONFLICT (player_id) DO UPDATE SET player_name = EXCLUDED.player_name
         """, list(players.itertuples(index=False, name=None)))
+
+    # Drop rows for match IDs not yet in dim_matches (avoids FK violation)
+    with conn.cursor() as cur:
+        cur.execute("SELECT match_id FROM fotmob.dim_matches")
+        known_ids = {row[0] for row in cur.fetchall()}
+    unknown = set(df["match_id"].dropna().astype(int)) - known_ids
+    if unknown:
+        print(f"  Skipping {len(unknown)} match IDs not in dim_matches (e.g. {sorted(unknown)[:3]})")
+        df = df[df["match_id"].astype(int).isin(known_ids)]
 
     # Coerce all numeric stat columns; fraction strings ("2/3 (67%)") become NaN
     for col in STATS_NUMERIC_COLS:

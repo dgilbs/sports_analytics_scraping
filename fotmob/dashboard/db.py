@@ -274,9 +274,7 @@ def load_player_consistency(player_name: str, season: str | None = None) -> pd.D
 def load_player_rank(player_name: str, season: str | None = None) -> pd.DataFrame:
     """League rank within position and rank on team among all positions."""
     season_clause = "AND season = %s" if season else ""
-    params_full   = (season, player_name, season) if season else (player_name,)
-    params_team   = (season,) if season else ()
-    # Build params tuple for the full query
+    # param slots: pos_counts(1) + player_league name(1) + player_league season(1) + team_totals(1)
     if season:
         params = (season, player_name, season, season)
     else:
@@ -296,6 +294,13 @@ def load_player_rank(player_name: str, season: str | None = None) -> pd.DataFram
                 ON r.draft_position = pc.draft_position AND r.season = pc.season
             WHERE r.player_name = %s {season_clause}
         ),
+        team_totals AS (
+            SELECT player_name, team_name, season,
+                   SUM(total_points) AS total_points
+            FROM {_SCHEMA}.fantasy_match_points
+            WHERE draft_position IS NOT NULL {season_clause}
+            GROUP BY player_name, team_name, season
+        ),
         team_pts AS (
             SELECT
                 player_name, team_name, season, total_points,
@@ -303,18 +308,23 @@ def load_player_rank(player_name: str, season: str | None = None) -> pd.DataFram
                     PARTITION BY team_name, season ORDER BY total_points DESC
                 ) AS rank_on_team,
                 COUNT(*) OVER (PARTITION BY team_name, season) AS total_on_team
-            FROM {_SCHEMA}.fantasy_season_points
-            WHERE draft_position IS NOT NULL {season_clause}
+            FROM team_totals
+        ),
+        best_team AS (
+            SELECT DISTINCT ON (player_name, season)
+                player_name, team_name, season, rank_on_team, total_on_team
+            FROM team_pts
+            ORDER BY player_name, season, total_points DESC
         )
         SELECT
             pl.position_rank,
             pl.total_at_position,
-            tp.rank_on_team,
-            tp.total_on_team,
-            tp.team_name
+            bt.rank_on_team,
+            bt.total_on_team,
+            bt.team_name
         FROM player_league pl
-        JOIN team_pts tp
-            ON pl.player_name = tp.player_name AND pl.season = tp.season
+        JOIN best_team bt
+            ON pl.player_name = bt.player_name AND pl.season = bt.season
         LIMIT 1
     """, params)
 

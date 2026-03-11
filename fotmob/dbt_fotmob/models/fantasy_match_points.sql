@@ -2,13 +2,26 @@ with players as (
     select * from {{ ref('player_match_stats') }}
 ),
 
--- Map draft positions to player_ids via the mapping seed
+-- Map draft positions to player_ids, preferring 2025 season when player
+-- appears in both seasons (e.g. same player changed position year-over-year)
 player_positions as (
-    select
-        m.player_id,
-        d."Position" as position
-    from {{ ref('player_id_mapping') }} m
-    inner join {{ ref('draft_list') }} d on m.seed_name = d.name
+    with combined as (
+        select m.player_id, d."Position" as position, 1 as priority
+        from {{ ref('player_id_mapping') }} m
+        inner join {{ ref('draft_list') }} d on m.seed_name = d.name
+        union all
+        select m.player_id, d.draft_position as position, 2 as priority
+        from {{ ref('player_id_mapping_2024') }} m
+        inner join {{ ref('draft_list_2024') }} d on m.seed_name = d.player
+    ),
+    ranked as (
+        select *,
+               row_number() over (partition by player_id order by priority) as rn
+        from combined
+    )
+    select player_id, position
+    from ranked
+    where rn = 1
 ),
 
 -- FBRef misc + summary stats (cards, own goals, penalties) joined via crossref
