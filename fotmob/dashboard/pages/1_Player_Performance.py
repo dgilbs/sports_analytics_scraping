@@ -22,7 +22,6 @@ from db import (
     load_player_consistency,
     load_player_position_stats,
     load_player_goals_xg,
-    load_player_rank,
 )
 from utils import setup_page, get_season
 
@@ -69,7 +68,6 @@ season_totals = load_player_season_totals(player_name, season)
 consistency = load_player_consistency(player_name, season)
 pos_stats = load_player_position_stats(player_name, season)
 goals_xg = load_player_goals_xg(player_name, season)
-player_rank = load_player_rank(player_name, season)
 
 if match_hist.empty:
     st.title(f"{player_name}")
