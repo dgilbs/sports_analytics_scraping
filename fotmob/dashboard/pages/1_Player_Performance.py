@@ -104,18 +104,12 @@ st.markdown(
     unsafe_allow_html=True,
 )
 
-m1, m2, m3, m4, m5, m6 = st.columns(6)
+m1, m2, m3, m4 = st.columns(4)
 
 season_total = float(s["total_points"]) if s is not None else None
 avg_pts = float(c["avg_pts"]) if c is not None else None
 avg_last5 = float(c["avg_pts_last5"]) if c is not None and c["avg_pts_last5"] is not None else None
 form_trend = float(c["form_trend"]) if c is not None and c["form_trend"] is not None else None
-
-_rank_row   = player_rank.iloc[0] if not player_rank.empty else None
-_pos_rank   = int(_rank_row["position_rank"])     if _rank_row is not None else None
-_pos_total  = int(_rank_row["total_at_position"]) if _rank_row is not None else None
-_team_rank  = int(_rank_row["rank_on_team"])      if _rank_row is not None else None
-_team_total = int(_rank_row["total_on_team"])     if _rank_row is not None else None
 
 with m1:
     st.metric("Season Total", f"{season_total:.1f}" if season_total is not None else "—")
@@ -127,12 +121,6 @@ with m3:
 with m4:
     trend_label = "Improving" if (form_trend or 0) > 0 else ("Declining" if (form_trend or 0) < 0 else "Flat")
     st.metric("Form Trend", trend_label, delta=delta_str)
-with m5:
-    league_rank_val = f"#{_pos_rank} of {_pos_total}" if _pos_rank is not None else "—"
-    st.metric(f"League Rank ({_pos})", league_rank_val)
-with m6:
-    team_rank_val = f"#{_team_rank} of {_team_total}" if _team_rank is not None else "—"
-    st.metric(f"Team Rank ({_team})", team_rank_val)
 
 st.divider()
 
