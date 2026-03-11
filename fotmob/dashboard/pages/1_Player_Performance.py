@@ -43,10 +43,20 @@ with st.sidebar:
     all_players = load_player_list(season=season, team=selected_team)
     player_options = sorted(all_players["player_name"].tolist())
 
+    # Preserve selected player across season changes: if the previously chosen
+    # player isn't in the new season's list, keep them in the options so the
+    # selectbox doesn't reset to None.
+    _prev = st.session_state.get("pp_player")
+    if _prev and _prev not in player_options:
+        player_options = sorted(set(player_options) | {_prev})
+
+    _idx = player_options.index(_prev) if _prev in player_options else None
+
     player_name = st.selectbox(
         "Player", player_options,
-        index=None,
+        index=_idx,
         placeholder="Search by name...",
+        key="pp_player",
     )
 
     st.subheader("Date Range")
