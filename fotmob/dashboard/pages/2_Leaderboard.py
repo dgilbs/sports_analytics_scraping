@@ -104,17 +104,31 @@ styled = (
     df.style
     .applymap(_color_trend, subset=["form_trend"])
     .format({
-        "total_pts":       "{:.1f}",
-        "avg_pts":         "{:.2f}",
-        "avg_pts_last5":   "{:.2f}",
-        "form_trend":      "{:+.2f}",
-        "season_high":     "{:.1f}",
-        "season_low":      "{:.1f}",
-        "consistency_pct": "{:.0f}%",
+        "total_pts":          "{:.1f}",
+        "avg_pts":            "{:.2f}",
+        "avg_pts_last5":      "{:.2f}",
+        "form_trend":         "{:+.2f}",
+        "season_high":        "{:.1f}",
+        "season_low":         "{:.1f}",
+        "games_over_2pts":    "{:.0f}",
+        "total_goals":        "{:.0f}",
+        "total_assists":      "{:.0f}",
+        "total_tackles_won":  "{:.0f}",
+        "games_passing_bonus":"{:.0f}",
+        "games_touch_bonus":  "{:.0f}",
     }, na_rep="—")
 )
 
-st.dataframe(styled, use_container_width=True, height=700)
+st.dataframe(
+    styled,
+    use_container_width=True,
+    height=700,
+    column_config={
+        "rank":        st.column_config.Column(pinned=True),
+        "position":    st.column_config.Column(pinned=True),
+        "player_name": st.column_config.Column(pinned=True),
+    },
+)
 
 with st.expander("Metric Definitions"):
     st.markdown("""
@@ -131,5 +145,10 @@ with st.expander("Metric Definitions"):
 | **Form Trend** | Avg pts last 5 minus season avg — positive means improving, negative means declining |
 | **Season High** | Highest single-match points total |
 | **Season Low** | Lowest single-match points total |
-| **Consistency %** | Percentage of matches where the player scored more than 0 fantasy points |
+| **Games >2 Pts** | Number of matches where the player scored more than 2 fantasy points |
+| **Goals** | Total goals scored |
+| **Assists** | Total assists |
+| **Tackles Won** | Total tackles won |
+| **Passing Bonus** | Number of games where 85%+ pass completion (min 20 att) bonus was earned |
+| **Touch Bonus** | Number of games where 60+ touches bonus was earned |
     """)

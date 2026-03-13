@@ -203,6 +203,11 @@ select
     case when draft_position = 'GK'
          then pk_saves * 5 else 0 end                                            as pts_penalty_save,
 
+    -- ── RAW STATS (for aggregation upstream) ─────────────────────────────────
+    coalesce(goals, 0)                                                           as goals,
+    coalesce(assists, 0)                                                         as assists,
+    coalesce(tackles, 0)                                                         as tackles_won,
+
     -- ── TOTAL ────────────────────────────────────────────────────────────────
     round(cast(
         case when coalesce(minutes_played, 0) > 0  then 1  else 0 end

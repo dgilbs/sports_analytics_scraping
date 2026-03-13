@@ -149,7 +149,12 @@ def load_leaderboard(
                 fmp.draft_position,
                 fmp.team_name,
                 fmp.match_date,
-                fmp.total_points
+                fmp.total_points,
+                fmp.goals,
+                fmp.assists,
+                fmp.tackles_won,
+                fmp.pts_pass_completion,
+                fmp.pts_touches
             FROM {_SCHEMA}.fantasy_match_points fmp
             {side_join}
             {where}
@@ -176,8 +181,12 @@ def load_leaderboard(
             )::numeric, 2)                                                     AS form_trend,
             MAX(total_points)                                                   AS season_high,
             MIN(total_points)                                                   AS season_low,
-            ROUND(100.0 * SUM(CASE WHEN total_points > 0 THEN 1 ELSE 0 END)
-                / COUNT(*), 1)                                                 AS consistency_pct
+            SUM(CASE WHEN total_points > 2 THEN 1 ELSE 0 END)                  AS games_over_2pts,
+            SUM(goals)                                                          AS total_goals,
+            SUM(assists)                                                        AS total_assists,
+            SUM(tackles_won)                                                    AS total_tackles_won,
+            SUM(CASE WHEN pts_pass_completion > 0 THEN 1 ELSE 0 END)           AS games_passing_bonus,
+            SUM(CASE WHEN pts_touches > 0 THEN 1 ELSE 0 END)                   AS games_touch_bonus
         FROM ranked
         GROUP BY 1, 2
         ORDER BY total_pts DESC NULLS LAST

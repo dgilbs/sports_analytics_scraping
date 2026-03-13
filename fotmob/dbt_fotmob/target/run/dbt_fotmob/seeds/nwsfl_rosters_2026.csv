@@ -1,9 +1,7 @@
 
     
     
-    
-    create table "neondb"."fotmob"."nwsfl_rosters_2026" ("Manager" text,"Player" text)
-  ;
+    truncate table "neondb"."fotmob"."nwsfl_rosters_2026";
     -- dbt seed --
     
           insert into "neondb"."fotmob"."nwsfl_rosters_2026" ("Manager", "Player") values

@@ -1,9 +1,7 @@
 
     
     
-    
-    create table "neondb"."fotmob"."player_id_mapping_2024" ("seed_name" text,"player_id" integer,"db_name" text,"score" float8,"needs_review" boolean)
-  ;
+    truncate table "neondb"."fotmob"."player_id_mapping_2024";
     -- dbt seed --
     
           insert into "neondb"."fotmob"."player_id_mapping_2024" ("seed_name", "player_id", "db_name", "score", "needs_review") values

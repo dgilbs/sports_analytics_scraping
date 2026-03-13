@@ -1,9 +1,7 @@
 
     
     
-    
-    create table "neondb"."fotmob"."draft_list_2024" ("player" text,"nwsl_team" text,"draft_position" text)
-  ;
+    truncate table "neondb"."fotmob"."draft_list_2024";
     -- dbt seed --
     
           insert into "neondb"."fotmob"."draft_list_2024" ("player", "nwsl_team", "draft_position") values

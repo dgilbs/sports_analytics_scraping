@@ -1,9 +1,7 @@
 
     
     
-    
-    create table "neondb"."fotmob"."nwsfl_roster_matched" ("manager" text,"player" text,"player_id" integer,"db_name" text,"match_score" float8,"team" text)
-  ;
+    truncate table "neondb"."fotmob"."nwsfl_roster_matched";
     -- dbt seed --
     
           insert into "neondb"."fotmob"."nwsfl_roster_matched" ("manager", "player", "player_id", "db_name", "match_score", "team") values
