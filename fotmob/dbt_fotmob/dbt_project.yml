@@ -15,6 +15,19 @@ clean-targets:
   - "target"
   - "dbt_packages"
 
+seeds:
+  dbt_fotmob:
+    fantasy_weekly_benches_2026:
+      +column_types:
+        week: integer
+        manager: varchar
+        benched_player: varchar
+    fantasy_weeks_2026:
+      +column_types:
+        week: integer
+        week_start: date
+        week_end: date
+
 models:
   dbt_fotmob:
     +materialized: view

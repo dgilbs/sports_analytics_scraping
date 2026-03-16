@@ -1,0 +1,12 @@
+
+    
+    
+    truncate table "neondb"."fotmob"."fantasy_weekly_benches_2026";
+    -- dbt seed --
+    
+          insert into "neondb"."fotmob"."fantasy_weekly_benches_2026" ("week", "manager", "benched_player") values
+          (%s,%s,%s),(%s,%s,%s),(%s,%s,%s),(%s,%s,%s),(%s,%s,%s),(%s,%s,%s),(%s,%s,%s),(%s,%s,%s),(%s,%s,%s),(%s,%s,%s),(%s,%s,%s),(%s,%s,%s)
+      
+
+;
+  
