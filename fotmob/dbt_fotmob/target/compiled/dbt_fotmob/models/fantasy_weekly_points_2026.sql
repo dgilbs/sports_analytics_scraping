@@ -1,11 +1,23 @@
-with roster as (
-    -- Manager → player_id mapping from the 2026 matched roster seed
+with roster_history as (
+    -- Point-in-time roster: use snapshot for ownership history.
+    -- For original draft picks (present in nwsfl_rosters_2026), backdate valid_from
+    -- to season start so late-resolved IDs don't miss early weeks.
+    -- For mid-season additions (trades/pickups), use the actual snapshot date.
     select
-        manager,
-        player                      as roster_name,
-        nullif(player_id::text, '')::bigint as player_id
-    from "neondb"."fotmob"."nwsfl_roster_matched"
-    where nullif(player_id::text, '') is not null
+        s.manager,
+        s.player                                as roster_name,
+        s.db_name                               as db_name,
+        nullif(s.player_id::text, '')::bigint   as player_id,
+        case
+            when d."Player" is not null then '2026-03-12'::date
+            else min(s.dbt_valid_from::date) over (partition by s.manager, s.player)
+        end                                     as valid_from,
+        s.dbt_valid_to::date                    as valid_to
+    from "neondb"."fotmob"."fantasy_roster_2026_snapshot" s
+    left join "neondb"."fotmob"."nwsfl_rosters_2026" d
+        on s.manager = d."Manager"
+        and s.player = d."Player"
+    where nullif(s.player_id::text, '') is not null
 ),
 
 bench_decisions as (
@@ -16,20 +28,23 @@ bench_decisions as (
     from "neondb"."fotmob"."fantasy_weekly_benches_2026"
 ),
 
+fantasy_weeks as (
+    select * from "neondb"."fotmob"."fantasy_weeks_2026"
+),
+
 benched_player_ids as (
-    -- Resolve benched player names to player_ids via roster
+    -- Resolve benched player names to player_ids using the roster active at the start of that week
     select
         b.week,
         b.manager,
         r.player_id as benched_player_id
     from bench_decisions b
-    join roster r
+    join fantasy_weeks fw on b.week = fw.week::integer
+    join roster_history r
         on b.manager = r.manager
-        and b.benched_player = r.roster_name
-),
-
-fantasy_weeks as (
-    select * from "neondb"."fotmob"."fantasy_weeks_2026"
+        and (b.benched_player = r.roster_name or b.benched_player = r.db_name)
+        and fw.week_start >= r.valid_from
+        and (r.valid_to is null or fw.week_start < r.valid_to)
 ),
 
 match_points as (
@@ -59,8 +74,10 @@ roster_match_points as (
             else false
         end as is_benched
     from match_points mp
-    join roster r
+    join roster_history r
         on mp.player_id = r.player_id
+        and mp.match_date::date >= r.valid_from
+        and (r.valid_to is null or mp.match_date::date < r.valid_to)
     left join benched_player_ids b
         on mp.fantasy_week = b.week
         and r.manager = b.manager

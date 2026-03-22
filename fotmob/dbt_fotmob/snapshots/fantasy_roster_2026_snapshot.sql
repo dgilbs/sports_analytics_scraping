@@ -6,6 +6,7 @@
         unique_key='player',
         strategy='check',
         check_cols=['manager', 'player_id'],
+        invalidate_hard_deletes=true,
     )
 }}
 

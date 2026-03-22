@@ -23,7 +23,7 @@ from db import (
     load_player_position_stats,
     load_player_goals_xg,
 )
-from utils import setup_page, get_season
+from utils import setup_page, get_season, get_cutoff_date
 
 setup_page("Player Performance · NWSL Fantasy")
 
@@ -61,7 +61,7 @@ with st.sidebar:
 
     st.subheader("Date Range")
     start_date = st.date_input("Start Date", value=None)
-    end_date   = st.date_input("End Date",   value=None)
+    end_date   = st.date_input("End Date",   value=get_cutoff_date())
 
 start_str = start_date.isoformat() if start_date is not None else None
 end_str   = end_date.isoformat()   if end_date   is not None else None

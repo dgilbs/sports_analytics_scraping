@@ -14,7 +14,7 @@ import pandas as pd
 import streamlit as st
 
 from db import load_leaderboard, load_teams, load_opponents
-from utils import setup_page, get_season
+from utils import setup_page, get_season, get_cutoff_date
 
 setup_page("Leaderboard · NWSL Fantasy")
 
@@ -57,7 +57,7 @@ with st.sidebar:
 
     st.subheader("Date Range")
     start_date = st.date_input("Start Date", value=None)
-    end_date   = st.date_input("End Date",   value=date(2025, 11, 3))
+    end_date   = st.date_input("End Date",   value=get_cutoff_date())
 
 # Convert to ISO strings so cache hashing is reliable
 start_str = start_date.isoformat() if start_date is not None else None
