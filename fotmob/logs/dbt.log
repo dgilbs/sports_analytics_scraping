@@ -46,3 +46,19 @@ Runtime Error
 [0m12:08:32.750801 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x105e8d910>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10728d3a0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10741b7f0>]}
 [0m12:08:32.750958 [debug] [MainThread]: Flushing usage events
 [0m12:09:02.761502 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m21:40:56.406683 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10cf6f9d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10cfc7890>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10cfcd3d0>]}
+
+
+============================== 21:40:56.409824 | 63e7bc2e-8db7-4159-974c-99840d830e81 ==============================
+[0m21:40:56.409824 [info ] [MainThread]: Running with dbt=1.10.13
+[0m21:40:56.410129 [debug] [MainThread]: running dbt with arguments {'invocation_command': 'dbt seed', 'debug': 'False', 'no_print': 'None', 'version_check': 'True', 'warn_error': 'None', 'write_json': 'True', 'fail_fast': 'False', 'empty': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'log_format': 'default', 'log_cache_events': 'False', 'use_experimental_parser': 'False', 'partial_parse': 'True', 'indirect_selection': 'eager', 'log_path': 'logs', 'cache_selected_only': 'False', 'target_path': 'None', 'use_colors': 'True', 'static_parser': 'True', 'quiet': 'False', 'introspect': 'True', 'printer_width': '80', 'profiles_dir': '/Users/dgilberg/.dbt', 'send_anonymous_usage_stats': 'True'}
+[0m21:40:56.410408 [error] [MainThread]: Encountered an error:
+Runtime Error
+  No dbt_project.yml found at expected path /Users/dgilberg/Documents/sports_analytics_scraping/fotmob/dbt_project.yml
+  Verify that each entry within packages.yml (and their transitive dependencies) contains a file named dbt_project.yml
+  
+[0m21:40:56.411823 [debug] [MainThread]: Resource report: {"command_name": "seed", "command_success": false, "command_wall_clock_time": 0.0527745, "process_in_blocks": "0", "process_kernel_time": 0.145575, "process_mem_max_rss": "127303680", "process_out_blocks": "0", "process_user_time": 0.94657}
+[0m21:40:56.412135 [debug] [MainThread]: Command `dbt seed` failed at 21:40:56.412075 after 0.05 seconds
+[0m21:40:56.412299 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x102483fd0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10cc0a9d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10cf63390>]}
+[0m21:40:56.412459 [debug] [MainThread]: Flushing usage events
+[0m21:40:56.720406 [debug] [MainThread]: An error was encountered while trying to flush usage events

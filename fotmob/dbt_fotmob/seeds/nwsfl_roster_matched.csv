@@ -2,7 +2,7 @@ manager,player,player_id,db_name,match_score,team
 Bill,Amanda Gutierres,1345776,Amanda,100.0,Boston Legacy FC
 Bill,Claire Hutton,1618202,Claire Hutton,100.0,Bay FC
 Bill,Claudia Dickey,1359805,Claudia Dickey,100.0,Seattle Reign FC
-Bill,Didi Haracic,1081903,DiDi Haracic,100.0,San Diego Wave FC
+Bill,Didi Haracic,1081903,Dijana Haracic,100.0,San Diego Wave FC
 Bill,Izzy Rodriguez,1360354,Izzy Rodriguez,100.0,Kansas City Current
 Bill,Kerry Abello,1359801,Kerry Abello,100.0,Orlando Pride
 Bill,Malia Berkely,1294816,Malia Berkely,100.0,Houston Dash
@@ -65,7 +65,7 @@ Danny,Kiana Palacios,934143,Kiana Palacios,100.0,Utah Royals
 Danny,Lizbeth Ovalle,1269082,Lizbeth Ovalle,100.0,Orlando Pride
 Danny,Lo'eau LaBonta,860076,Lo'eau LaBonta,100.0,Kansas City Current
 Danny,Lorena,1366882,Lorena Leite,100.0,Kansas City Current
-Danny,Maitane López Millán,1044175,Maitane López,100.0,Chicago Stars
+Danny,Maitane López Millán,1044175,Maitane Lopez,100.0,Chicago Stars
 Danny,Manaka Matsukubo,1532180,Manaka Matsukubo,100.0,North Carolina Courage
 Danny,Marisa Jordan,1360027,Marisa Jordan,100.0,North Carolina Courage
 Danny,Reilyn Turner,1623838,Reilyn Turner,100.0,Portland Thorns
@@ -79,7 +79,7 @@ Jackson,Kailen Sheridan,1055859,Kailen Sheridan,100.0,North Carolina Courage
 Jackson,Kenza Dali,294925,Kenza Dali,100.0,San Diego Wave FC
 Jackson,MA Vignola,1360382,Mary Alice Vignola,100.0,Portland Thorns
 Jackson,Mackenzie Arnold,645998,Mackenzie Arnold,100.0,Portland Thorns
-Jackson,Nuria Rábano,1209554,Nuria Rábano,100.0,Utah Royals
+Jackson,Michelle Cooper,1451722,Michelle Cooper,100.0,Kansas City Current
 Jackson,Sally Menti,1759742,Sally Menti,100.0,Seattle Reign FC
 Jackson,Taylor Huff,1727394,Taylor Huff,100.0,Bay FC
 Jackson,Trinity Rodman,1246577,Trinity Rodman,100.0,Washington Spirit
@@ -98,7 +98,7 @@ Joey,Natalie Jacobs,1170697,Natalie Jacobs,100.0,North Carolina Courage
 Joey,Sandy MacIver,1130945,Sandy MacIver,100.0,Washington Spirit
 Joey,Tierna Davidson,953349,Tierna Davidson,100.0,Gotham FC
 Mariam,Abby Smith,1081909,Abby Smith,100.0,Denver Summit FC
-Mariam,Ally Brazier,1135809,Ally Brazier,100.0,Denver Summit FC
+Mariam,Ally Brazier,1135809,Ally Watt,100.0,Denver Summit FC
 Mariam,Ally Lemos,1618241,Ally Lemos,100.0,Orlando Pride
 Mariam,Ashley Sanchez,1170693,Ashley Sanchez,100.0,North Carolina Courage
 Mariam,Debinha,351266,Debinha,100.0,Kansas City Current
@@ -139,9 +139,9 @@ Noelle,Sarah Gorden,1081810,Sarah Gorden,100.0,Angel City FC
 Noelle,Savannah McCaskill,938858,Savannah McCaskill,100.0,Gotham FC
 Noelle,Taylor Flint,1171147,Taylor Flint,100.0,Racing Louisville
 Noelle,Temwa Chawinga,1618199,Temwa Chawinga,100.0,Kansas City Current
-Ryne,Aldana Colmetti,1044333,Aldana Colmetti,100.0,
 Ryne,Ally Schlegel,1455367,Allyson Schlegel,89.7,Chicago Stars
 Ryne,Ann-Katrin Berger,294602,Ann-Katrin Berger,100.0,Gotham FC
+Ryne,Brooklyn Courtnall,1727443,Brooklyn Courtnall,100.0,Bay FC
 Ryne,Danielle Colaprico,638007,Danielle Colaprico,100.0,Houston Dash
 Ryne,Jaelin Howell,1359791,Jaelin Howell,100.0,Gotham FC
 Ryne,Jordyn Bugg,1675025,Jordyn Bugg,100.0,Seattle Reign FC

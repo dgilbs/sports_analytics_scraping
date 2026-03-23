@@ -137,7 +137,7 @@ st.divider()
 # ── Row 2: Timeline (60%) | Points Breakdown (40%) ───────────────────────────
 col_left, col_right = st.columns([6, 4])
 
-# Chart 1: Match Timeline
+# Chart 1: Match Timeline (aggregated by fantasy week)
 with col_left:
     st.subheader("Match Timeline")
 
@@ -151,55 +151,71 @@ with col_left:
         else:
             return "#E74C3C"
 
-    bar_colors = [_bar_color(p) for p in match_hist["total_points"]]
-    hover_text = [
-        f"GW{row.match_number} vs {row.opponent_name}<br>"
-        f"Date: {pd.Timestamp(row.match_date).strftime('%b %d')}<br>"
-        f"Points: {row.total_points}"
-        for row in match_hist.itertuples()
-    ]
+    # Aggregate per fantasy week (player may have multiple matches in a week)
+    if "fantasy_week" in match_hist.columns and match_hist["fantasy_week"].notna().any():
+        weekly = (
+            match_hist[match_hist["fantasy_week"].notna()]
+            .groupby("fantasy_week", sort=True)
+            .agg(
+                total_points=("total_points", "sum"),
+                opponents=("opponent_name", lambda x: ", ".join(x.dropna().unique())),
+            )
+            .reset_index()
+        )
+        weekly["fantasy_week"] = weekly["fantasy_week"].astype(int)
+        weekly["label"] = "Week " + weekly["fantasy_week"].astype(str)
+        weekly["rolling_avg"] = weekly["total_points"].rolling(3, min_periods=1).mean().round(2)
+        weekly["season_avg"]  = weekly["total_points"].expanding().mean().round(2)
 
-    toggle_col1, toggle_col2 = st.columns(2)
-    show_rolling = toggle_col1.checkbox("Show Rolling 5 Avg", value=True)
-    show_season  = toggle_col2.checkbox("Show Season Avg",    value=True)
+        bar_colors = [_bar_color(p) for p in weekly["total_points"]]
+        hover_text = [
+            f"Week {row.fantasy_week} vs {row.opponents}<br>Points: {row.total_points}"
+            for row in weekly.itertuples()
+        ]
 
-    fig_tl = go.Figure()
-    fig_tl.add_trace(go.Bar(
-        x=match_hist["match_date"],
-        y=match_hist["total_points"],
-        marker_color=bar_colors,
-        name="Points",
-        hovertext=hover_text,
-        hoverinfo="text",
-    ))
-    if show_rolling:
-        fig_tl.add_trace(go.Scatter(
-            x=match_hist["match_date"],
-            y=match_hist["rolling_5_avg"],
-            mode="lines",
-            name="Rolling 5 Avg",
-            line=dict(color="orange", width=2),
+        toggle_col1, toggle_col2 = st.columns(2)
+        show_rolling = toggle_col1.checkbox("Show Rolling 3-Week Avg", value=True)
+        show_season  = toggle_col2.checkbox("Show Season Avg",          value=True)
+
+        fig_tl = go.Figure()
+        fig_tl.add_trace(go.Bar(
+            x=weekly["label"],
+            y=weekly["total_points"],
+            marker_color=bar_colors,
+            name="Points",
+            hovertext=hover_text,
+            hoverinfo="text",
         ))
-    if show_season:
-        fig_tl.add_trace(go.Scatter(
-            x=match_hist["match_date"],
-            y=match_hist["cumulative_avg"],
-            mode="lines",
-            name="Season Avg",
-            line=dict(color="gray", width=1.5, dash="dash"),
-        ))
-    fig_tl.update_layout(
-        xaxis_title="Date",
-        yaxis_title="Points",
-        height=320,
-        legend=dict(orientation="h", y=-0.25),
-        margin=dict(t=10, b=10),
-    )
-    st.plotly_chart(fig_tl, use_container_width=True)
-    st.caption(
-        "Bar color indicates points scored: "
-        "🟢 **10+ pts** · 🔵 **5–9 pts** · ⬜ **0–4 pts** · 🔴 **negative**"
-    )
+        if show_rolling:
+            fig_tl.add_trace(go.Scatter(
+                x=weekly["label"],
+                y=weekly["rolling_avg"],
+                mode="lines",
+                name="Rolling 3-Week Avg",
+                line=dict(color="orange", width=2),
+            ))
+        if show_season:
+            fig_tl.add_trace(go.Scatter(
+                x=weekly["label"],
+                y=weekly["season_avg"],
+                mode="lines",
+                name="Season Avg",
+                line=dict(color="gray", width=1.5, dash="dash"),
+            ))
+        fig_tl.update_layout(
+            xaxis_title="Fantasy Week",
+            yaxis_title="Points",
+            height=320,
+            legend=dict(orientation="h", y=-0.25),
+            margin=dict(t=10, b=10),
+        )
+        st.plotly_chart(fig_tl, use_container_width=True)
+        st.caption(
+            "Points per fantasy week (sum if multiple matches). "
+            "Bar color: 🟢 **10+ pts** · 🔵 **5–9 pts** · ⬜ **0–4 pts** · 🔴 **negative**"
+        )
+    else:
+        st.info("Fantasy week data not available for this season.")
 
 # Chart 2: Season Points Breakdown
 with col_right:

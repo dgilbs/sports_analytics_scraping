@@ -24,32 +24,24 @@ player_positions as (
     where rn = 1
 ),
 
--- FBRef misc + summary stats (cards, own goals, penalties) joined via crossref
-fbref_misc as (
+-- Card data from seed file
+player_cards as (
     select
-        xref.fotmob_player_id                               as player_id,
-        dm.match_date::date,
-        coalesce(misc.yellow_cards, 0)                      as yellow_cards,
-        coalesce(misc.red_cards, 0)
-            + coalesce(misc.second_yellow_cards, 0)         as red_cards,
-        coalesce(misc.own_goals, 0)                         as own_goals,
-        coalesce(misc.pks_won, 0)                           as pks_won,
-        coalesce(s.pk_goals, 0)                             as pk_goals,
-        greatest(coalesce(s.pk_attempts, 0)
-            - coalesce(s.pk_goals, 0), 0)                   as pks_missed
-    from fbref.f_player_match_misc misc
-    join {{ ref('fbref_fotmob_crossref') }} xref
-        on misc.player_id = xref.fbref_player_id
-    join fbref.dim_matches dm
-        on misc.match_id = dm.id
-    left join fbref.f_player_match_summary s
-        on misc.player_id = s.player_id
-        and misc.match_id = s.match_id
+        player_id::bigint                                   as player_id,
+        match_id::bigint                                    as match_id,
+        coalesce(yellow_cards, 0)                           as yellow_cards,
+        coalesce(red_cards, 0)                              as red_cards
+    from {{ ref('player_cards_2026') }}
 ),
 
 -- Penalty saves seed
 penalty_saves as (
     select * from {{ ref('penalty_saves') }}
+),
+
+-- Fantasy week lookup
+fantasy_weeks as (
+    select * from {{ ref('fantasy_weeks_2026') }}
 ),
 
 -- Opponent per team per match
@@ -80,32 +72,33 @@ team_scored as (
     group by 1, 2
 ),
 
--- Goals conceded per team = goals scored by the opponent in the same match
+-- Goals conceded per team = sum of GK goals_conceded stat (more reliable than
+-- summing opponent goals, handles own goals and tracking gaps correctly)
 team_conceded as (
     select
-        ts.match_id,
-        ts.team_id,
-        coalesce(opp.goals_scored, 0) as goals_conceded
-    from team_scored ts
-    left join {{ source('fotmob', 'dim_matches') }} m on ts.match_id = m.match_id
-    left join team_scored opp
-        on ts.match_id = opp.match_id
-        and opp.team_id != ts.team_id
+        match_id,
+        team_id,
+        sum(coalesce(goals_conceded, 0)) as goals_conceded
+    from players
+    where goals_conceded is not null
+      and team_id is not null
+    group by 1, 2
 ),
 
 base as (
     select
         p.*,
+        fw.week                                             as fantasy_week,
         pp.position                                         as draft_position,
         coalesce(tc.goals_conceded, 0)                      as team_goals_conceded,
         coalesce(ts.goals_scored, 0)                        as team_goals_scored,
         case when coalesce(tc.goals_conceded, 0) = 0
              then true else false end                       as clean_sheet,
-        coalesce(fb.yellow_cards, 0)                        as yellow_cards,
-        coalesce(fb.red_cards, 0)                           as red_cards,
-        coalesce(fb.own_goals, 0)                           as own_goals,
-        coalesce(fb.pks_won, 0)                             as pks_won,
-        coalesce(fb.pks_missed, 0)                          as pks_missed,
+        coalesce(pc.yellow_cards, 0)                        as yellow_cards,
+        coalesce(pc.red_cards, 0)                           as red_cards,
+        0                                                   as own_goals,
+        0                                                   as pks_won,
+        0                                                   as pks_missed,
         coalesce(ps.pk_saves, 0)                            as pk_saves,
         o.opponent_name
     from players p
@@ -116,15 +109,17 @@ base as (
     left join team_scored ts
         on p.match_id = ts.match_id
         and p.team_id = ts.team_id
-    left join fbref_misc fb
-        on p.player_id = fb.player_id
-        and p.match_date = fb.match_date
+    left join player_cards pc
+        on p.player_id = pc.player_id
+        and p.match_id = pc.match_id
     left join penalty_saves ps
         on p.player_id = ps.player_id
         and p.match_id = ps.match_id
     left join opponents o
         on p.match_id = o.match_id
         and p.team_id = o.team_id
+    left join fantasy_weeks fw
+        on p.match_date between fw.week_start::date and fw.week_end::date
 )
 
 select
@@ -132,6 +127,7 @@ select
     player_id,
     player_name,
     match_date,
+    fantasy_week,
     season,
     team_id,
     team_name,
@@ -193,7 +189,7 @@ select
     -- Goals Conceded (DF=-0.5 each, GK=-1 each)
     case draft_position
         when 'DF' then team_goals_conceded * -0.5
-        when 'GK' then coalesce(goals_conceded, 0) * -1.0
+        when 'GK' then team_goals_conceded * -1.0
         else 0
     end                                                                          as pts_goals_conceded,
 
@@ -244,7 +240,7 @@ select
             else 0 end
         + case draft_position
             when 'DF' then team_goals_conceded * -0.5
-            when 'GK' then coalesce(goals_conceded, 0) * -1.0
+            when 'GK' then team_goals_conceded * -1.0
             else 0 end
         + case when draft_position = 'GK' then coalesce(saves, 0) * 0.5 else 0 end
         + case when draft_position = 'GK' then pk_saves * 5 else 0 end
