@@ -24,6 +24,11 @@ dbt_env/
 fotmob/venv/
 fotmob/pw_fotmob_profile/
 
+# dbt build artifacts
+**/target/
+**/dbt.log
+**/logs/dbt.log
+
 # Secrets and credentials - NEVER commit these!
 .envrc
 .streamlit/secrets.toml
