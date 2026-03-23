@@ -21,7 +21,7 @@ from db import (
     load_player_match_history,
     load_player_consistency,
 )
-from utils import setup_page, get_season
+from utils import setup_page, get_season, get_cutoff_date
 
 setup_page("Player Comparison · NWSL Fantasy")
 
@@ -51,7 +51,7 @@ with st.sidebar:
 
     st.subheader("Date Range")
     start_date = st.date_input("Start Date", value=None, key="cmp_start")
-    end_date   = st.date_input("End Date",   value=None, key="cmp_end")
+    end_date   = st.date_input("End Date",   value=get_cutoff_date(), key="cmp_end")
 
 start_str = start_date.isoformat() if start_date else None
 end_str   = end_date.isoformat()   if end_date   else None

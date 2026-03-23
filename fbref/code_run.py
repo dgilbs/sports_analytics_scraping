@@ -90,7 +90,7 @@ scs.upsert_df(teams, 'dim_team_matches', conn_string, ['id'], db_config)
 scs.scrape_from_schedule(full_schedule, scraping_config)
 ids = list(full_schedule.id)
 ids = [i for i in ids if i != '6fe8b81d']
-categories = ['summary', 'passing', 'possession', 'defense','shots', 'possession', 'passing_types', 'keeper', 'misc']
+categories = ['summary']
 combos = list(itertools.product(ids, categories))
 for j in combos:
     print(j)

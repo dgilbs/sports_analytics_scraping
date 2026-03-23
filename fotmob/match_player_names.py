@@ -21,7 +21,7 @@ import psycopg2
 from rapidfuzz import process, fuzz
 
 SEED_PATH    = os.path.join(os.path.dirname(os.path.abspath(__file__)),
-                            "dbt_fotmob", "seeds", "2026 NWSFL Draft.csv")
+                            "dbt_fotmob", "seeds", "draft_list.csv")
 OUTPUT_PATH  = os.path.join(os.path.dirname(os.path.abspath(__file__)),
                             "dbt_fotmob", "seeds", "player_id_mapping.csv")
 

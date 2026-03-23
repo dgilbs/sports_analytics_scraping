@@ -1,0 +1,12 @@
+
+    
+    
+    truncate table "neondb"."fotmob"."fantasy_weeks_2026";
+    -- dbt seed --
+    
+          insert into "neondb"."fotmob"."fantasy_weeks_2026" ("week", "week_start", "week_end") values
+          (%s,%s,%s),(%s,%s,%s)
+      
+
+;
+  
