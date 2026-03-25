@@ -56,9 +56,9 @@ with st.sidebar:
     all_managers = load_managers()
     manager_filter = st.selectbox(
         "Fantasy Manager",
-        options=[None] + all_managers,
+        options=[None, "__FREE_AGENT__"] + all_managers,
         index=0,
-        format_func=lambda x: "All managers" if x is None else x,
+        format_func=lambda x: "All managers" if x is None else ("Free agents" if x == "__FREE_AGENT__" else x),
     )
 
     limit = st.number_input("Show top N players", min_value=1, value=None, placeholder="All")

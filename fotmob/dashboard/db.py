@@ -149,7 +149,9 @@ def load_leaderboard(
         )
         params.append(side)
 
-    if manager:
+    if manager == "__FREE_AGENT__":
+        clauses.append("nr.manager IS NULL")
+    elif manager:
         clauses.append("nr.manager = %s")
         params.append(manager)
 
