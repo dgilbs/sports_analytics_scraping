@@ -39,6 +39,26 @@ penalty_saves as (
     select * from {{ ref('penalty_saves') }}
 ),
 
+-- PK attempts seed
+pk_attempts as (
+    select
+        player_id::bigint                                   as player_id,
+        match_id::bigint                                    as match_id,
+        count(*) filter (where succeeded::boolean)          as pks_made,
+        count(*) filter (where not succeeded::boolean)      as pks_missed
+    from {{ ref('pk_attempts') }}
+    group by 1, 2
+),
+
+-- Own goals seed
+own_goals as (
+    select
+        player_id::bigint      as player_id,
+        match_id::bigint       as match_id,
+        coalesce(own_goals, 0) as own_goals
+    from {{ ref('player_own_goals_2026') }}
+),
+
 -- Fantasy week lookup
 fantasy_weeks as (
     select * from {{ ref('fantasy_weeks_2026') }}
@@ -72,17 +92,25 @@ team_scored as (
     group by 1, 2
 ),
 
--- Goals conceded per team = sum of GK goals_conceded stat (more reliable than
--- summing opponent goals, handles own goals and tracking gaps correctly)
+-- Goals conceded per team = opponent's goals scored, derived from dim_matches
 team_conceded as (
     select
-        match_id,
-        team_id,
-        sum(coalesce(goals_conceded, 0)) as goals_conceded
-    from players
-    where goals_conceded is not null
-      and team_id is not null
-    group by 1, 2
+        m.match_id,
+        m.home_team_id                          as team_id,
+        coalesce(ts.goals_scored, 0)            as goals_conceded
+    from {{ source('fotmob', 'dim_matches') }} m
+    left join team_scored ts
+        on ts.match_id = m.match_id
+        and ts.team_id = m.away_team_id
+    union all
+    select
+        m.match_id,
+        m.away_team_id                          as team_id,
+        coalesce(ts.goals_scored, 0)            as goals_conceded
+    from {{ source('fotmob', 'dim_matches') }} m
+    left join team_scored ts
+        on ts.match_id = m.match_id
+        and ts.team_id = m.home_team_id
 ),
 
 base as (
@@ -96,9 +124,9 @@ base as (
              then true else false end                       as clean_sheet,
         coalesce(pc.yellow_cards, 0)                        as yellow_cards,
         coalesce(pc.red_cards, 0)                           as red_cards,
-        0                                                   as own_goals,
-        0                                                   as pks_won,
-        0                                                   as pks_missed,
+        coalesce(og.own_goals, 0)                           as own_goals,
+        coalesce(pka.pks_made, 0)                           as pks_won,
+        coalesce(pka.pks_missed, 0)                         as pks_missed,
         coalesce(ps.pk_saves, 0)                            as pk_saves,
         o.opponent_name
     from players p
@@ -115,6 +143,12 @@ base as (
     left join penalty_saves ps
         on p.player_id = ps.player_id
         and p.match_id = ps.match_id
+    left join own_goals og
+        on p.player_id = og.player_id
+        and p.match_id = og.match_id
+    left join pk_attempts pka
+        on p.player_id = pka.player_id
+        and p.match_id = pka.match_id
     left join opponents o
         on p.match_id = o.match_id
         and p.team_id = o.team_id

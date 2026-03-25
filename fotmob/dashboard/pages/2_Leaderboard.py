@@ -13,7 +13,7 @@ from datetime import date
 import pandas as pd
 import streamlit as st
 
-from db import load_leaderboard, load_teams, load_opponents
+from db import load_leaderboard, load_teams, load_opponents, load_managers
 from utils import setup_page, get_season, get_cutoff_date
 
 setup_page("Leaderboard · NWSL Fantasy")
@@ -53,15 +53,21 @@ with st.sidebar:
         horizontal=True,
     )
 
+    all_managers = load_managers()
+    manager_filter = st.selectbox(
+        "Fantasy Manager",
+        options=[None] + all_managers,
+        index=0,
+        format_func=lambda x: "All managers" if x is None else x,
+    )
+
     limit = st.number_input("Show top N players", min_value=1, value=None, placeholder="All")
 
-    st.subheader("Date Range")
-    start_date = st.date_input("Start Date", value=None)
-    end_date   = st.date_input("End Date",   value=get_cutoff_date())
+end_date = get_cutoff_date(season)
 
 # Convert to ISO strings so cache hashing is reliable
-start_str = start_date.isoformat() if start_date is not None else None
-end_str   = end_date.isoformat()   if end_date   is not None else None
+start_str = None
+end_str   = end_date.isoformat()
 
 # ── Load data ─────────────────────────────────────────────────────────────────
 df = load_leaderboard(
@@ -72,6 +78,7 @@ df = load_leaderboard(
     side=side_filter.lower() if side_filter != "All" else None,
     start_date=start_str,
     end_date=end_str,
+    manager=manager_filter,
 )
 
 st.title("Player Leaderboard")

@@ -2,7 +2,14 @@
 from datetime import date
 import streamlit as st
 
-_DEFAULT_CUTOFF = date(2026, 3, 13)
+# ── Backend cutoff configuration ─────────────────────────────────────────────
+# Update these dates to control how far forward data is shown in the dashboard.
+# No UI filter is exposed to users — change these values to update the cutoff.
+SEASON_CUTOFFS: dict[str, date] = {
+    "2026": date(2026, 3, 23),
+}
+_DEFAULT_CUTOFF: date = date(2026, 3, 23)
+# ─────────────────────────────────────────────────────────────────────────────
 
 
 def setup_page(title: str = "NWSL Fantasy Dashboard") -> None:
@@ -20,9 +27,11 @@ def get_season() -> str | None:
     return st.session_state.get("selected_season")
 
 
-def get_cutoff_date() -> date | None:
-    """Return the global data cutoff date from session state."""
-    return st.session_state.get("cutoff_date", _DEFAULT_CUTOFF)
+def get_cutoff_date(season: str | None = None) -> date:
+    """Return the backend cutoff date for the given season."""
+    if season and season in SEASON_CUTOFFS:
+        return SEASON_CUTOFFS[season]
+    return _DEFAULT_CUTOFF
 
 
 def _global_sidebar() -> None:
@@ -40,9 +49,6 @@ def _global_sidebar() -> None:
         else:
             st.session_state["selected_season"] = None
             st.caption("No season data yet.")
-
-        st.divider()
-        st.date_input("Data cutoff", value=_DEFAULT_CUTOFF, key="cutoff_date")
 
         st.divider()
         if st.button("Refresh All Data", use_container_width=True):

@@ -49,12 +49,10 @@ with st.sidebar:
         if p:
             selected.append(p)
 
-    st.subheader("Date Range")
-    start_date = st.date_input("Start Date", value=None, key="cmp_start")
-    end_date   = st.date_input("End Date",   value=get_cutoff_date(), key="cmp_end")
+end_date = get_cutoff_date(season)
 
-start_str = start_date.isoformat() if start_date else None
-end_str   = end_date.isoformat()   if end_date   else None
+start_str = None
+end_str   = end_date.isoformat()
 
 # ── Page header ───────────────────────────────────────────────────────────────
 st.title("Player Comparison")

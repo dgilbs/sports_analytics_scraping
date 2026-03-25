@@ -2,7 +2,9 @@ with stats as (
     select * from {{ source('fotmob', 'fact_player_stats') }}
 ),
 lineups as (
-    select * from {{ source('fotmob', 'fact_lineups') }}
+    select distinct on (match_id, player_id) *
+    from {{ source('fotmob', 'fact_lineups') }}
+    order by match_id, player_id
 ),
 players as (
     select * from {{ source('fotmob', 'dim_players') }}

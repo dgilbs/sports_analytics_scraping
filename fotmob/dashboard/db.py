@@ -72,6 +72,18 @@ def load_opponents(season: str | None = None) -> list[str]:
 
 
 @st.cache_data(ttl=300)
+def load_managers() -> list[str]:
+    """Sorted list of fantasy managers."""
+    df = _q(f"""
+        SELECT DISTINCT manager
+        FROM {_SCHEMA}.nwsfl_roster_matched
+        WHERE manager IS NOT NULL
+        ORDER BY manager
+    """)
+    return df["manager"].tolist()
+
+
+@st.cache_data(ttl=300)
 def load_teams(season: str | None = None) -> list[str]:
     """Sorted list of team names for the filter widget."""
     if season:
@@ -100,6 +112,7 @@ def load_leaderboard(
     side: str | None = None,
     start_date=None,
     end_date=None,
+    manager: str | None = None,
 ) -> pd.DataFrame:
     """Players ranked by total points, aggregated from fantasy_match_points
     so all three filters (position, team, home/away) work correctly."""
@@ -136,6 +149,10 @@ def load_leaderboard(
         )
         params.append(side)
 
+    if manager:
+        clauses.append("nr.manager = %s")
+        params.append(manager)
+
     side_join = (
         f"LEFT JOIN {_SCHEMA}.dim_matches dm ON fmp.match_id = dm.match_id"
         if side else ""
@@ -145,6 +162,7 @@ def load_leaderboard(
     return _q(f"""
         WITH base AS (
             SELECT
+                fmp.player_id,
                 fmp.player_name,
                 fmp.draft_position,
                 fmp.team_name,
@@ -154,8 +172,11 @@ def load_leaderboard(
                 fmp.assists,
                 fmp.tackles_won,
                 fmp.pts_pass_completion,
-                fmp.pts_touches
+                fmp.pts_touches,
+                nr.manager
             FROM {_SCHEMA}.fantasy_match_points fmp
+            LEFT JOIN {_SCHEMA}.nwsfl_roster_matched nr
+                ON fmp.player_id = nr.player_id::bigint
             {side_join}
             {where}
         ),
@@ -171,6 +192,7 @@ def load_leaderboard(
             player_name,
             STRING_AGG(DISTINCT team_name, ' / ')
                 FILTER (WHERE team_name IS NOT NULL)                           AS team_name,
+            MAX(manager)                                                        AS manager,
             COUNT(*)                                                            AS matches_played,
             ROUND(SUM(total_points)::numeric, 1)                               AS total_pts,
             ROUND(AVG(total_points)::numeric, 2)                               AS avg_pts,
