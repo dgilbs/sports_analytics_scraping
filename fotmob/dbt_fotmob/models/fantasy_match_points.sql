@@ -81,7 +81,16 @@ opponents as (
     join {{ source('fotmob', 'dim_teams') }} t on m.home_team_id = t.team_id
 ),
 
--- Goals scored per team per match (sum of all player goals)
+-- Goals conceded per team per match (manually tracked seed)
+team_conceded as (
+    select
+        team_id::bigint  as team_id,
+        match_id::bigint as match_id,
+        goals_conceded
+    from {{ ref('team_goals_conceded_2026') }}
+),
+
+-- Goals scored per team = sum of player goals from stats
 team_scored as (
     select
         match_id,
@@ -90,27 +99,6 @@ team_scored as (
     from players
     where team_id is not null
     group by 1, 2
-),
-
--- Goals conceded per team = opponent's goals scored, derived from dim_matches
-team_conceded as (
-    select
-        m.match_id,
-        m.home_team_id                          as team_id,
-        coalesce(ts.goals_scored, 0)            as goals_conceded
-    from {{ source('fotmob', 'dim_matches') }} m
-    left join team_scored ts
-        on ts.match_id = m.match_id
-        and ts.team_id = m.away_team_id
-    union all
-    select
-        m.match_id,
-        m.away_team_id                          as team_id,
-        coalesce(ts.goals_scored, 0)            as goals_conceded
-    from {{ source('fotmob', 'dim_matches') }} m
-    left join team_scored ts
-        on ts.match_id = m.match_id
-        and ts.team_id = m.home_team_id
 ),
 
 base as (
@@ -182,8 +170,7 @@ select
     0                                                                            as pts_goal_creating_actions,
     coalesce(successful_dribbles_succeeded, 0) * 0.5                             as pts_successful_takeons,
     case when coalesce(touches, 0) > 60 then 2 else 0 end                        as pts_touches,
-    case when coalesce(accurate_passes_pct, 0) > 0.85
-          and coalesce(accurate_passes_attempted, 0) >= 20 then 2 else 0 end     as pts_pass_completion,
+    case when coalesce(accurate_passes_pct, 0) > 0.85 then 2 else 0 end          as pts_pass_completion,
 
     -- From FBRef via crossref (null if player not in crossref)
     greatest(yellow_cards * -2, -4)                                              as pts_yellow_cards,
@@ -248,8 +235,7 @@ select
 
         + coalesce(successful_dribbles_succeeded, 0) * 0.5
         + case when coalesce(touches, 0) > 60 then 2 else 0 end
-        + case when coalesce(accurate_passes_pct, 0) > 0.85
-               and coalesce(accurate_passes_attempted, 0) >= 20 then 2 else 0 end
+        + case when coalesce(accurate_passes_pct, 0) > 0.85 then 2 else 0 end
         + greatest(yellow_cards * -2, -4)
         + red_cards * -6
         + pks_won * 2

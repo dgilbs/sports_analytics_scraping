@@ -213,11 +213,25 @@ def to_rows(df, cols):
     ]
 
 
-def read_csvs(pattern, skip_non_numeric_names=False):
-    """Glob files, optionally skip files whose stem is not a match_id integer."""
+def load_active_match_ids():
+    """Return a set of match IDs from data/active_match_ids.txt, or None if file doesn't exist."""
+    path = os.path.join(DATA_DIR, "active_match_ids.txt")
+    if not os.path.exists(path):
+        return None
+    with open(path) as f:
+        ids = {int(line.strip()) for line in f if line.strip().isdigit()}
+    print(f"  Filtering to {len(ids)} active match IDs from active_match_ids.txt")
+    return ids
+
+
+def read_csvs(pattern, skip_non_numeric_names=False, match_ids=None):
+    """Glob files, optionally skip files whose stem is not a match_id integer,
+    and optionally filter to a specific set of match IDs."""
     files = sorted(glob.glob(pattern))
     if skip_non_numeric_names:
         files = [f for f in files if os.path.splitext(os.path.basename(f))[0].isdigit()]
+    if match_ids is not None:
+        files = [f for f in files if int(os.path.splitext(os.path.basename(f))[0]) in match_ids]
     dfs = []
     for f in files:
         try:
@@ -290,9 +304,11 @@ def load_matches(conn):
     print(f"  Matches: {len(teams)} teams, {len(df)} matches across {len(csv_files)} season file(s)")
 
 
-def load_lineups(conn):
+def load_lineups(conn, match_ids=None):
     """Load dim_players (partial) and fact_lineups from data/lineups/*.pkl."""
-    files = sorted(glob.glob(os.path.join(DATA_DIR, "lineups", "*.pkl")))
+    all_files = sorted(glob.glob(os.path.join(DATA_DIR, "lineups", "*.pkl")))
+    files = [f for f in all_files
+             if match_ids is None or int(os.path.splitext(os.path.basename(f))[0]) in match_ids]
     if not files:
         print("  No lineup files found.")
         return
@@ -363,12 +379,13 @@ def load_lineups(conn):
     print(f"  Lineups:  {len(df)} rows from {n_files} files")
 
 
-def load_player_stats(conn):
+def load_player_stats(conn, match_ids=None):
     """Load dim_players (remainder) and fact_player_stats from data/match_reports/*.csv."""
     # skip_non_numeric_names filters out duplicate_metric_report_all_matches.csv etc.
     dfs, n_files = read_csvs(
         os.path.join(DATA_DIR, "match_reports", "*.csv"),
         skip_non_numeric_names=True,
+        match_ids=match_ids,
     )
     if not dfs:
         print("  No match report files found.")
@@ -430,10 +447,11 @@ def main():
         create_tables(conn)
         print("Loading matches and teams...")
         load_matches(conn)
+        match_ids = load_active_match_ids()
         print("Loading lineups...")
-        load_lineups(conn)
+        load_lineups(conn, match_ids=match_ids)
         print("Loading player stats...")
-        load_player_stats(conn)
+        load_player_stats(conn, match_ids=match_ids)
         print("\nDone.")
     finally:
         conn.close()

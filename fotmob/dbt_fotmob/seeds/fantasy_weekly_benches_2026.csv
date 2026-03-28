@@ -2,66 +2,132 @@ week,manager,benched_player
 1,Bill,Didi Haracic
 1,Bill,Kerry Abello
 1,Bill,Raquel Rodríguez
-2,Bill,Didi Haracic
-2,Bill,Kerry Abello
-2,Bill,Raquel Rodríguez
 1,Joey,Luisa Agudelo
 1,Joey,Tierna Davidson
 1,Joey,Barbra Olivieri
-2,Joey,Luisa Agudelo
-2,Joey,Tierna Davidson
-2,Joey,Barbra Olivieri
 1,Nancy,Mandy McGlynn
 1,Nancy,Savannah DeMelo
 1,Nancy,Mia Fishel
-2,Nancy,Mandy McGlynn
-2,Nancy,Savannah DeMelo
-2,Nancy,Mia Fishel
 1,Brock Wallace,Angelina Anderson
 1,Brock Wallace,Kate Wiesner
 1,Brock Wallace,Bea Franklin
-2,Brock Wallace,Angelina Anderson
-2,Brock Wallace,Marie Müller
-2,Brock Wallace,Midge Purce
 1,Chris,Jane Campbell
 1,Chris,Gia Corley
 1,Chris,Jun Endō
-2,Chris,Casey Murphy
-2,Chris,Narumi Miura
-2,Chris,Jun Endō
 1,Danny,Marisa Jordan
 1,Danny,Cristiana Girelli
 1,Danny,Lo'eau LaBonta
-2,Danny,Marisa Jordan
-2,Danny,Janine Sonis
-2,Danny,Manaka Matsukubo
 1,Mariam,Abby Smith
 1,Mariam,Ally Lemos
 1,Mariam,Karlie Lema
-2,Mariam,Pauline Peyraud-Magnin
-2,Mariam,Karlie Lema
-2,Mariam,Ally Brazier
 1,Noelle,Katie Lund
 1,Noelle,Lindsay Heaps
 1,Noelle,Temwa Chawinga
-2,Noelle,Katie Lund
-2,Noelle,Lindsay Heaps
-2,Noelle,Temwa Chawinga
 1,Ryne,Laurel Ivory
 1,Ryne,Linda Ullmark
 1,Ryne,Solai Washington
-2,Ryne,Laurel Ivory
-2,Ryne,Jordyn Bugg
-2,Ryne,Ally Schlegel
 1,Cameron,Alyssa Naeher
 1,Cameron,Ellie Jean
 1,Cameron,Andi Sullivan
-2,Cameron,Alyssa Naeher
-2,Cameron,Ellie Jean
-2,Cameron,Andi Sullivan
 1,Jackson,Mackenzie Arnold
 1,Jackson,Josefine Hasbo
 1,Jackson,Jasmine Aikey
+2,Bill,Didi Haracic
+2,Bill,Kerry Abello
+2,Bill,Raquel Rodríguez
+2,Joey,Luisa Agudelo
+2,Joey,Tierna Davidson
+2,Joey,Barbra Olivieri
+2,Nancy,Mandy McGlynn
+2,Nancy,Savannah DeMelo
+2,Nancy,Mia Fishel
+2,Brock Wallace,Angelina Anderson
+2,Brock Wallace,Marie Müller
+2,Brock Wallace,Midge Purce
+2,Chris,Casey Murphy
+2,Chris,Narumi Miura
+2,Chris,Jun Endō
+2,Danny,Marisa Jordan
+2,Danny,Janine Sonis
+2,Danny,Manaka Matsukubo
+2,Mariam,Pauline Peyraud-Magnin
+2,Mariam,Karlie Lema
+2,Mariam,Ally Brazier
+2,Noelle,Katie Lund
+2,Noelle,Lindsay Heaps
+2,Noelle,Temwa Chawinga
+2,Ryne,Laurel Ivory
+2,Ryne,Jordyn Bugg
+2,Ryne,Ally Schlegel
+2,Cameron,Alyssa Naeher
+2,Cameron,Ellie Jean
+2,Cameron,Andi Sullivan
 2,Jackson,Mackenzie Arnold
 2,Jackson,Sally Menti
 2,Jackson,Jasmine Aikey
+3,Bill,Didi Haracic
+3,Bill,Kerry Abello
+3,Bill,Raquel Rodríguez
+3,Joey,Luisa Agudelo
+3,Joey,Tierna Davidson
+3,Joey,Barbra Olivieri
+3,Nancy,Mandy McGlynn
+3,Nancy,Savannah DeMelo
+3,Nancy,Mia Fishel
+3,Brock Wallace,Angelina Anderson
+3,Brock Wallace,Marie Muller
+3,Brock Wallace,Midge Purce
+3,Chris,Casey Murphy
+3,Chris,Narumi Miura
+3,Chris,Jun Endo
+3,Danny,Marisa Jordan
+3,Danny,Deborah Abiodun
+3,Danny,Arin Wright
+3,Mariam,Pauline Peyraud-Magnin
+3,Mariam,Karlie Lema
+3,Mariam,Ally Brazier
+3,Noelle,Katie Lund
+3,Noelle,Lindsay Heaps
+3,Noelle,Temwa Chawinga
+3,Ryne,Laurel Ivory
+3,Ryne,Jordyn Bugg
+3,Ryne,Ally Schlegel
+3,Cameron,Alyssa Naeher
+3,Cameron,Ellie Jean
+3,Cameron,Andi Sullivan
+3,Jackson,Mackenzie Arnold
+3,Jackson,Sally Menti
+3,Jackson,Jasmine Aikey
+4,Bill,Didi Haracic
+4,Bill,Kerry Abello
+4,Bill,Raquel Rodríguez
+4,Joey,Luisa Agudelo
+4,Joey,Tierna Davidson
+4,Joey,Barbra Olivieri
+4,Nancy,Mandy McGlynn
+4,Nancy,Savannah DeMelo
+4,Nancy,Mia Fishel
+4,Brock Wallace,Angelina Anderson
+4,Brock Wallace,Marie Muller
+4,Brock Wallace,Midge Purce
+4,Chris,Casey Murphy
+4,Chris,Narumi Miura
+4,Chris,Jun Endo
+4,Danny,Marisa Jordan
+4,Danny,Deborah Abiodun
+4,Danny,Arin Wright
+4,Mariam,Pauline Peyraud-Magnin
+4,Mariam,Karlie Lema
+4,Mariam,Ally Brazier
+4,Noelle,Katie Lund
+4,Noelle,Lindsay Heaps
+4,Noelle,Temwa Chawinga
+4,Ryne,Laurel Ivory
+4,Ryne,Jordyn Bugg
+4,Ryne,Ally Schlegel
+4,Cameron,Alyssa Naeher
+4,Cameron,Ellie Jean
+4,Cameron,Andi Sullivan
+4,Jackson,Mackenzie Arnold
+4,Jackson,Sally Menti
+4,Jackson,Jasmine Aikey
