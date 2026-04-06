@@ -33,6 +33,17 @@ import pandas as pd
 import psycopg2
 from psycopg2.extras import execute_values
 
+# Load .envrc if env vars not already set
+_envrc = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", ".envrc")
+if os.path.exists(_envrc):
+    for _line in open(_envrc).read().splitlines():
+        _line = _line.strip()
+        if _line.startswith("export "):
+            _line = _line[len("export "):]
+        if "=" in _line and not _line.startswith("#"):
+            _k, _v = _line.split("=", 1)
+            os.environ.setdefault(_k.strip(), _v.strip())
+
 DATA_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "data")
 
 
