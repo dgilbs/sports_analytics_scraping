@@ -8,7 +8,6 @@ with weekly as (
         max(weekly_points)                as best_week,
         min(weekly_points)                as worst_week
     from {{ ref('fantasy_weekly_points_2026') }}
-    where week != 3
     group by manager, teamname
 ),
 
