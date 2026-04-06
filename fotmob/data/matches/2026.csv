@@ -1,0 +1,241 @@
+match_id,home_team,away_team,home_team_id,away_team_id,utc_time,pageUrl,match_date
+5161451,Washington Spirit (W),Portland Thorns (W),433030,433029,2026-03-14T00:00:00Z,/matches/portland-thorns-vs-washington-spirit/4sab5miw#5161451,2026-03-14
+5161452,Boston Legacy FC (W),Gotham FC (W),1795723,189397,2026-03-14T16:30:00Z,/matches/gotham-fc-vs-boston-legacy-fc/p560n3t1#5161452,2026-03-14
+5161453,Kansas City Current (W),Utah Royals (W),1237561,923654,2026-03-14T20:00:00Z,/matches/utah-royals-vs-kansas-city-current/tsvp0s12#5161453,2026-03-14
+5161454,Bay FC (W),Denver Summit FC (W),1607273,1795705,2026-03-14T22:30:00Z,/matches/bay-fc-vs-denver-summit-fc/21vy7rpgs#5161454,2026-03-14
+5161455,North Carolina Courage (W),Racing Louisville (W),243295,1237244,2026-03-14T23:00:00Z,/matches/north-carolina-courage-vs-racing-louisville/dzhtf03d#5161455,2026-03-14
+5161456,San Diego Wave FC (W),Houston Dash (W),1335917,521233,2026-03-15T00:45:00Z,/matches/houston-dash-vs-san-diego-wave-fc/m085gksy#5161456,2026-03-15
+5161457,Orlando Pride (W),Seattle Reign FC (W),728922,433031,2026-03-15T20:00:00Z,/matches/seattle-reign-fc-vs-orlando-pride/8m4eh0a3#5161457,2026-03-15
+5161458,Angel City FC (W),Chicago Stars (W),1335914,189393,2026-03-15T23:00:00Z,/matches/chicago-stars-vs-angel-city-fc/euejvge3#5161458,2026-03-15
+5161459,Orlando Pride (W),Denver Summit FC (W),728922,1795705,2026-03-21T00:00:00Z,/matches/orlando-pride-vs-denver-summit-fc/14o11qsl4#5161459,2026-03-21
+5161460,Racing Louisville (W),Washington Spirit (W),1237244,433030,2026-03-21T00:00:00Z,/matches/washington-spirit-vs-racing-louisville/hst8qgnd#5161460,2026-03-21
+5161461,Portland Thorns (W),Seattle Reign FC (W),433029,433031,2026-03-21T02:00:00Z,/matches/portland-thorns-vs-seattle-reign-fc/4sabo6s5#5161461,2026-03-21
+5161462,Houston Dash (W),Boston Legacy FC (W),521233,1795723,2026-03-21T20:00:00Z,/matches/houston-dash-vs-boston-legacy-fc/y92u68yv#5161462,2026-03-21
+5161463,Gotham FC (W),North Carolina Courage (W),189397,243295,2026-03-21T22:30:00Z,/matches/gotham-fc-vs-north-carolina-courage/1705ye2p#5161463,2026-03-21
+5161464,Bay FC (W),Angel City FC (W),1607273,1335914,2026-03-22T00:45:00Z,/matches/angel-city-fc-vs-bay-fc/1j9prikzr#5161464,2026-03-22
+5161465,Chicago Stars (W),Kansas City Current (W),189393,1237561,2026-03-22T18:00:00Z,/matches/chicago-stars-vs-kansas-city-current/czpib7yg#5161465,2026-03-22
+5161466,Utah Royals (W),San Diego Wave FC (W),923654,1335917,2026-03-22T23:00:00Z,/matches/utah-royals-vs-san-diego-wave-fc/wkr6mcyc#5161466,2026-03-22
+5161468,Gotham FC (W),Denver Summit FC (W),189397,1795705,2026-03-25T23:00:00Z,/matches/gotham-fc-vs-denver-summit-fc/p55fd8ta#5161468,2026-03-25
+5161467,Washington Spirit (W),Utah Royals (W),433030,923654,2026-03-25T23:00:00Z,/matches/washington-spirit-vs-utah-royals/bqs19w5w#5161467,2026-03-25
+5161469,Chicago Stars (W),Orlando Pride (W),189393,728922,2026-03-26T00:00:00Z,/matches/chicago-stars-vs-orlando-pride/5dpcyg0c#5161469,2026-03-26
+5161470,Seattle Reign FC (W),Kansas City Current (W),433031,1237561,2026-03-26T01:00:00Z,/matches/seattle-reign-fc-vs-kansas-city-current/ht20zvjb#5161470,2026-03-26
+5161471,San Diego Wave FC (W),Portland Thorns (W),1335917,433029,2026-03-26T02:00:00Z,/matches/portland-thorns-vs-san-diego-wave-fc/jyrea600#5161471,2026-03-26
+5161472,Angel City FC (W),Houston Dash (W),1335914,521233,2026-03-28T02:00:00Z,/matches/houston-dash-vs-angel-city-fc/m08255uj#5161472,2026-03-28
+5161473,Boston Legacy FC (W),Utah Royals (W),1795723,923654,2026-03-28T16:00:00Z,/matches/utah-royals-vs-boston-legacy-fc/1b6m0qwdb#5161473,2026-03-28
+5161474,Denver Summit FC (W),Washington Spirit (W),1795705,433030,2026-03-28T18:00:00Z,/matches/washington-spirit-vs-denver-summit-fc/voyq0b5y#5161474,2026-03-28
+5161475,Portland Thorns (W),Kansas City Current (W),433029,1237561,2026-03-28T20:00:00Z,/matches/portland-thorns-vs-kansas-city-current/ht1z09gm#5161475,2026-03-28
+5161476,Seattle Reign FC (W),Racing Louisville (W),433031,1237244,2026-03-28T22:30:00Z,/matches/seattle-reign-fc-vs-racing-louisville/hst9q9fx#5161476,2026-03-28
+5161477,North Carolina Courage (W),Bay FC (W),243295,1607273,2026-03-28T23:00:00Z,/matches/north-carolina-courage-vs-bay-fc/lumch78j#5161477,2026-03-28
+5161478,San Diego Wave FC (W),Chicago Stars (W),1335917,189393,2026-03-29T00:45:00Z,/matches/chicago-stars-vs-san-diego-wave-fc/euemlj76#5161478,2026-03-29
+5161479,Gotham FC (W),Orlando Pride (W),189397,728922,2026-03-29T23:00:00Z,/matches/gotham-fc-vs-orlando-pride/5dpf56bm#5161479,2026-03-29
+5161481,Boston Legacy FC (W),San Diego Wave FC (W),1795723,1335917,2026-04-04T00:00:00Z,/matches/san-diego-wave-fc-vs-boston-legacy-fc/1qkodmrs7#5161481,2026-04-04
+5161480,Orlando Pride (W),Angel City FC (W),728922,1335914,2026-04-04T00:00:00Z,/matches/orlando-pride-vs-angel-city-fc/r7bo5rno#5161480,2026-04-04
+5161482,Houston Dash (W),Racing Louisville (W),521233,1237244,2026-04-04T00:30:00Z,/matches/houston-dash-vs-racing-louisville/jqa160a4#5161482,2026-04-04
+5161483,Utah Royals (W),Chicago Stars (W),923654,189393,2026-04-04T01:00:00Z,/matches/chicago-stars-vs-utah-royals/7wkdkda2#5161483,2026-04-04
+5161484,Kansas City Current (W),Gotham FC (W),1237561,189397,2026-04-04T20:00:00Z,/matches/gotham-fc-vs-kansas-city-current/czplpk5a#5161484,2026-04-04
+5161485,North Carolina Courage (W),Portland Thorns (W),243295,433029,2026-04-04T22:30:00Z,/matches/north-carolina-courage-vs-portland-thorns/2x2eqwov#5161485,2026-04-04
+5161486,Seattle Reign FC (W),Denver Summit FC (W),433031,1795705,2026-04-05T00:45:00Z,/matches/seattle-reign-fc-vs-denver-summit-fc/voyrc2vb#5161486,2026-04-05
+5161487,Bay FC (W),Washington Spirit (W),1607273,433030,2026-04-05T21:00:00Z,/matches/washington-spirit-vs-bay-fc/qk6vi0pa#5161487,2026-04-05
+5161488,Racing Louisville (W),Orlando Pride (W),1237244,728922,2026-04-24T21:30:00Z,/matches/orlando-pride-vs-racing-louisville/onyqdhx3#5161488,2026-04-24
+5161489,Washington Spirit (W),Kansas City Current (W),433030,1237561,2026-04-25T00:00:00Z,/matches/washington-spirit-vs-kansas-city-current/ht2002hy#5161489,2026-04-25
+5161490,Gotham FC (W),Bay FC (W),189397,1607273,2026-04-25T17:00:00Z,/matches/gotham-fc-vs-bay-fc/klgtg5fa#5161490,2026-04-25
+5161491,Chicago Stars (W),Boston Legacy FC (W),189393,1795723,2026-04-25T22:30:00Z,/matches/chicago-stars-vs-boston-legacy-fc/p55vwww7#5161491,2026-04-25
+5161492,Houston Dash (W),North Carolina Courage (W),521233,243295,2026-04-26T00:00:00Z,/matches/north-carolina-courage-vs-houston-dash/3q9bjxzd#5161492,2026-04-26
+5161493,Denver Summit FC (W),San Diego Wave FC (W),1795705,1335917,2026-04-26T00:45:00Z,/matches/san-diego-wave-fc-vs-denver-summit-fc/1qkng2kvy#5161493,2026-04-26
+5161494,Angel City FC (W),Portland Thorns (W),1335914,433029,2026-04-26T22:00:00Z,/matches/portland-thorns-vs-angel-city-fc/jyrb4f7x#5161494,2026-04-26
+5161495,Seattle Reign FC (W),Utah Royals (W),433031,923654,2026-04-27T00:00:00Z,/matches/seattle-reign-fc-vs-utah-royals/bqs22yzl#5161495,2026-04-27
+5161496,Washington Spirit (W),Racing Louisville (W),433030,1237244,2026-04-29T23:00:00Z,/matches/washington-spirit-vs-racing-louisville/hst8qgnd#5161496,2026-04-29
+5161498,Boston Legacy FC (W),North Carolina Courage (W),1795723,243295,2026-04-30T00:00:00Z,/matches/north-carolina-courage-vs-boston-legacy-fc/qizixl8m#5161498,2026-04-30
+5161497,Chicago Stars (W),Gotham FC (W),189393,189397,2026-04-30T00:00:00Z,/matches/chicago-stars-vs-gotham-fc/wygx9q2#5161497,2026-04-30
+5161499,Portland Thorns (W),San Diego Wave FC (W),433029,1335917,2026-04-30T02:00:00Z,/matches/portland-thorns-vs-san-diego-wave-fc/jyrea600#5161499,2026-04-30
+5161500,Houston Dash (W),Seattle Reign FC (W),521233,433031,2026-05-02T00:00:00Z,/matches/seattle-reign-fc-vs-houston-dash/5t60cikd#5161500,2026-05-02
+5161501,Orlando Pride (W),Washington Spirit (W),728922,433030,2026-05-02T20:00:00Z,/matches/washington-spirit-vs-orlando-pride/8m4ds3pm#5161501,2026-05-02
+5161502,North Carolina Courage (W),Kansas City Current (W),243295,1237561,2026-05-02T22:30:00Z,/matches/north-carolina-courage-vs-kansas-city-current/dzpkvgzv#5161502,2026-05-02
+5161503,Angel City FC (W),Utah Royals (W),1335914,923654,2026-05-03T00:45:00Z,/matches/utah-royals-vs-angel-city-fc/wkr2l2gu#5161503,2026-05-03
+5161504,Chicago Stars (W),Portland Thorns (W),189393,433029,2026-05-03T17:00:00Z,/matches/chicago-stars-vs-portland-thorns/2gzj57du#5161504,2026-05-03
+5161505,Boston Legacy FC (W),Denver Summit FC (W),1795723,1795705,2026-05-03T19:00:00Z,/matches/denver-summit-fc-vs-boston-legacy-fc/2aapnxkid#5161505,2026-05-03
+5161506,Gotham FC (W),Racing Louisville (W),189397,1237244,2026-05-03T21:00:00Z,/matches/gotham-fc-vs-racing-louisville/czi4famm#5161506,2026-05-03
+5161507,San Diego Wave FC (W),Bay FC (W),1335917,1607273,2026-05-03T23:00:00Z,/matches/san-diego-wave-fc-vs-bay-fc/1j9pwrtxi#5161507,2026-05-03
+5161508,Utah Royals (W),Houston Dash (W),923654,521233,2026-05-07T02:00:00Z,/matches/houston-dash-vs-utah-royals/dbjdus62#5161508,2026-05-07
+5161509,Racing Louisville (W),Portland Thorns (W),1237244,433029,2026-05-08T22:30:00Z,/matches/portland-thorns-vs-racing-louisville/hst7qnuu#5161509,2026-05-08
+5161510,Orlando Pride (W),North Carolina Courage (W),728922,243295,2026-05-09T00:00:00Z,/matches/north-carolina-courage-vs-orlando-pride/6140bdov#5161510,2026-05-09
+5161511,Gotham FC (W),Boston Legacy FC (W),189397,1795723,2026-05-09T22:30:00Z,/matches/gotham-fc-vs-boston-legacy-fc/p560n3t1#5161511,2026-05-09
+5161512,Houston Dash (W),Denver Summit FC (W),521233,1795705,2026-05-10T00:00:00Z,/matches/houston-dash-vs-denver-summit-fc/y925cd54#5161512,2026-05-10
+5161513,Angel City FC (W),San Diego Wave FC (W),1335914,1335917,2026-05-10T00:45:00Z,/matches/angel-city-fc-vs-san-diego-wave-fc/19jqeqgbl#5161513,2026-05-10
+5161514,Kansas City Current (W),Chicago Stars (W),1237561,189393,2026-05-10T16:30:00Z,/matches/chicago-stars-vs-kansas-city-current/czpib7yg#5161514,2026-05-10
+5161515,Bay FC (W),Utah Royals (W),1607273,923654,2026-05-10T20:00:00Z,/matches/utah-royals-vs-bay-fc/14vcf6y4u#5161515,2026-05-10
+5161516,Seattle Reign FC (W),Washington Spirit (W),433031,433030,2026-05-10T23:00:00Z,/matches/washington-spirit-vs-seattle-reign-fc/4sac6r1e#5161516,2026-05-10
+5161517,Boston Legacy FC (W),Orlando Pride (W),1795723,728922,2026-05-13T00:00:00Z,/matches/orlando-pride-vs-boston-legacy-fc/14o1ssszd#5161517,2026-05-13
+5161518,Kansas City Current (W),Houston Dash (W),1237561,521233,2026-05-16T00:00:00Z,/matches/houston-dash-vs-kansas-city-current/jqj92wh4#5161518,2026-05-16
+5161521,Bay FC (W),Boston Legacy FC (W),1607273,1795723,2026-05-16T02:00:00Z,/matches/bay-fc-vs-boston-legacy-fc/21vz88l71#5161521,2026-05-16
+5161519,San Diego Wave FC (W),Washington Spirit (W),1335917,433030,2026-05-16T02:00:00Z,/matches/washington-spirit-vs-san-diego-wave-fc/jyrfc2xg#5161519,2026-05-16
+5161520,Seattle Reign FC (W),Gotham FC (W),433031,189397,2026-05-16T02:00:00Z,/matches/gotham-fc-vs-seattle-reign-fc/2gzld8zh#5161520,2026-05-16
+5161522,North Carolina Courage (W),Chicago Stars (W),243295,189393,2026-05-16T22:30:00Z,/matches/chicago-stars-vs-north-carolina-courage/1704xalz#5161522,2026-05-16
+5161523,Denver Summit FC (W),Orlando Pride (W),1795705,728922,2026-05-17T00:45:00Z,/matches/orlando-pride-vs-denver-summit-fc/14o11qsl4#5161523,2026-05-17
+5161524,Portland Thorns (W),Angel City FC (W),433029,1335914,2026-05-17T22:00:00Z,/matches/portland-thorns-vs-angel-city-fc/jyrb4f7x#5161524,2026-05-17
+5161525,Utah Royals (W),Racing Louisville (W),923654,1237244,2026-05-18T00:00:00Z,/matches/utah-royals-vs-racing-louisville/tskd5o5l#5161525,2026-05-18
+5161526,Houston Dash (W),San Diego Wave FC (W),521233,1335917,2026-05-21T00:00:00Z,/matches/houston-dash-vs-san-diego-wave-fc/m085gksy#5161526,2026-05-21
+5161528,Angel City FC (W),Kansas City Current (W),1335914,1237561,2026-05-21T02:00:00Z,/matches/kansas-city-current-vs-angel-city-fc/1698br9nk#5161528,2026-05-21
+5161527,Portland Thorns (W),Bay FC (W),433029,1607273,2026-05-21T02:00:00Z,/matches/portland-thorns-vs-bay-fc/qk6uaae6#5161527,2026-05-21
+5161529,Boston Legacy FC (W),Seattle Reign FC (W),1795723,433031,2026-05-23T00:00:00Z,/matches/seattle-reign-fc-vs-boston-legacy-fc/vozf7xo2#5161529,2026-05-23
+5161530,Racing Louisville (W),North Carolina Courage (W),1237244,243295,2026-05-23T20:00:00Z,/matches/north-carolina-courage-vs-racing-louisville/dzhtf03d#5161530,2026-05-23
+5161531,Utah Royals (W),Denver Summit FC (W),923654,1795705,2026-05-23T22:30:00Z,/matches/utah-royals-vs-denver-summit-fc/1b6l7lrd2#5161531,2026-05-23
+5161532,Houston Dash (W),Angel City FC (W),521233,1335914,2026-05-24T00:45:00Z,/matches/houston-dash-vs-angel-city-fc/m08255uj#5161532,2026-05-24
+5161533,Kansas City Current (W),Portland Thorns (W),1237561,433029,2026-05-24T17:00:00Z,/matches/portland-thorns-vs-kansas-city-current/ht1z09gm#5161533,2026-05-24
+5161534,Bay FC (W),Chicago Stars (W),1607273,189393,2026-05-24T21:00:00Z,/matches/chicago-stars-vs-bay-fc/klgp645c#5161534,2026-05-24
+5161535,San Diego Wave FC (W),Orlando Pride (W),1335917,728922,2026-05-24T23:00:00Z,/matches/orlando-pride-vs-san-diego-wave-fc/r7brujdi#5161535,2026-05-24
+5161536,Orlando Pride (W),Bay FC (W),728922,1607273,2026-05-29T23:00:00Z,/matches/orlando-pride-vs-bay-fc/ytn3u6io#5161536,2026-05-29
+5161537,Racing Louisville (W),Denver Summit FC (W),1237244,1795705,2026-05-30T00:00:00Z,/matches/racing-louisville-vs-denver-summit-fc/1moxjx0j4#5161537,2026-05-30
+5161538,Kansas City Current (W),Boston Legacy FC (W),1237561,1795723,2026-05-30T17:30:00Z,/matches/kansas-city-current-vs-boston-legacy-fc/1mpecvfud#5161538,2026-05-30
+5161539,Portland Thorns (W),Utah Royals (W),433029,923654,2026-05-30T20:00:00Z,/matches/portland-thorns-vs-utah-royals/bqs0gtc8#5161539,2026-05-30
+5161540,Washington Spirit (W),Seattle Reign FC (W),433030,433031,2026-05-30T22:30:00Z,/matches/washington-spirit-vs-seattle-reign-fc/4sac6r1e#5161540,2026-05-30
+5161541,Chicago Stars (W),San Diego Wave FC (W),189393,1335917,2026-05-31T17:00:00Z,/matches/chicago-stars-vs-san-diego-wave-fc/euemlj76#5161541,2026-05-31
+5161542,Gotham FC (W),Houston Dash (W),189397,521233,2026-05-31T19:00:00Z,/matches/gotham-fc-vs-houston-dash/37zv0h1y#5161542,2026-05-31
+5161543,Angel City FC (W),North Carolina Courage (W),1335914,243295,2026-05-31T23:00:00Z,/matches/north-carolina-courage-vs-angel-city-fc/fwuarlws#5161543,2026-05-31
+5161544,Washington Spirit (W),Houston Dash (W),433030,521233,2026-07-04T00:00:00Z,/matches/washington-spirit-vs-houston-dash/5t5zs291#5161544,2026-07-04
+5161545,Denver Summit FC (W),Kansas City Current (W),1795705,1237561,2026-07-04T01:30:00Z,/matches/kansas-city-current-vs-denver-summit-fc/1mpdgd704#5161545,2026-07-04
+5161546,Angel City FC (W),Orlando Pride (W),1335914,728922,2026-07-04T02:00:00Z,/matches/orlando-pride-vs-angel-city-fc/r7bo5rno#5161546,2026-07-04
+5161547,North Carolina Courage (W),Seattle Reign FC (W),243295,433031,2026-07-04T22:30:00Z,/matches/north-carolina-courage-vs-seattle-reign-fc/2x2fjwek#5161547,2026-07-04
+5161548,San Diego Wave FC (W),Gotham FC (W),1335917,189397,2026-07-05T00:45:00Z,/matches/gotham-fc-vs-san-diego-wave-fc/eueq8ayg#5161548,2026-07-05
+5161549,Boston Legacy FC (W),Bay FC (W),1795723,1607273,2026-07-05T16:00:00Z,/matches/bay-fc-vs-boston-legacy-fc/21vz88l71#5161549,2026-07-05
+5161550,Chicago Stars (W),Utah Royals (W),189393,923654,2026-07-05T21:00:00Z,/matches/chicago-stars-vs-utah-royals/7wkdkda2#5161550,2026-07-05
+5161551,Portland Thorns (W),Racing Louisville (W),433029,1237244,2026-07-05T23:00:00Z,/matches/portland-thorns-vs-racing-louisville/hst7qnuu#5161551,2026-07-05
+5161554,Boston Legacy FC (W),Chicago Stars (W),1795723,189393,2026-07-11T00:00:00Z,/matches/chicago-stars-vs-boston-legacy-fc/p55vwww7#5161554,2026-07-11
+5161552,Orlando Pride (W),Kansas City Current (W),728922,1237561,2026-07-11T00:00:00Z,/matches/orlando-pride-vs-kansas-city-current/oo91hil4#5161552,2026-07-11
+5161553,Racing Louisville (W),Bay FC (W),1237244,1607273,2026-07-11T00:00:00Z,/matches/racing-louisville-vs-bay-fc/1fmjii0i0#5161553,2026-07-11
+5161555,Utah Royals (W),Gotham FC (W),923654,189397,2026-07-11T02:00:00Z,/matches/gotham-fc-vs-utah-royals/7wkg7sm8#5161555,2026-07-11
+5161556,North Carolina Courage (W),Washington Spirit (W),243295,433030,2026-07-11T22:30:00Z,/matches/north-carolina-courage-vs-washington-spirit/2x2f5ejp#5161556,2026-07-11
+5161557,San Diego Wave FC (W),Angel City FC (W),1335917,1335914,2026-07-12T00:45:00Z,/matches/angel-city-fc-vs-san-diego-wave-fc/19jqeqgbl#5161557,2026-07-12
+5161558,Seattle Reign FC (W),Portland Thorns (W),433031,433029,2026-07-12T20:00:00Z,/matches/portland-thorns-vs-seattle-reign-fc/4sabo6s5#5161558,2026-07-12
+5161559,Denver Summit FC (W),Houston Dash (W),1795705,521233,2026-07-12T23:00:00Z,/matches/houston-dash-vs-denver-summit-fc/y925cd54#5161559,2026-07-12
+5161561,Gotham FC (W),Washington Spirit (W),189397,433030,2026-07-15T23:00:00Z,/matches/gotham-fc-vs-washington-spirit/2gzkzwps#5161561,2026-07-15
+5161560,Orlando Pride (W),Boston Legacy FC (W),728922,1795723,2026-07-15T23:00:00Z,/matches/orlando-pride-vs-boston-legacy-fc/14o1ssszd#5161560,2026-07-15
+5161562,Kansas City Current (W),San Diego Wave FC (W),1237561,1335917,2026-07-18T00:00:00Z,/matches/kansas-city-current-vs-san-diego-wave-fc/1698gcqs2#5161562,2026-07-18
+5161563,Gotham FC (W),Seattle Reign FC (W),189397,433031,2026-07-18T16:00:00Z,/matches/gotham-fc-vs-seattle-reign-fc/2gzld8zh#5161563,2026-07-18
+5161564,Denver Summit FC (W),Portland Thorns (W),1795705,433029,2026-07-18T18:00:00Z,/matches/portland-thorns-vs-denver-summit-fc/voyoojgm#5161564,2026-07-18
+5161565,Bay FC (W),North Carolina Courage (W),1607273,243295,2026-07-18T20:00:00Z,/matches/north-carolina-courage-vs-bay-fc/lumch78j#5161565,2026-07-18
+5161566,Chicago Stars (W),Angel City FC (W),189393,1335914,2026-07-18T22:30:00Z,/matches/chicago-stars-vs-angel-city-fc/euejvge3#5161566,2026-07-18
+5161567,Racing Louisville (W),Houston Dash (W),1237244,521233,2026-07-19T00:00:00Z,/matches/houston-dash-vs-racing-louisville/jqa160a4#5161567,2026-07-19
+5161568,Utah Royals (W),Orlando Pride (W),923654,728922,2026-07-19T00:45:00Z,/matches/orlando-pride-vs-utah-royals/hfayp67q#5161568,2026-07-19
+5161569,Boston Legacy FC (W),Washington Spirit (W),1795723,433030,2026-07-19T23:00:00Z,/matches/washington-spirit-vs-boston-legacy-fc/vozdw5y7#5161569,2026-07-19
+5161571,Houston Dash (W),Bay FC (W),521233,1607273,2026-07-25T00:00:00Z,/matches/houston-dash-vs-bay-fc/swnfk21s#5161571,2026-07-25
+5161570,Orlando Pride (W),Chicago Stars (W),728922,189393,2026-07-25T00:00:00Z,/matches/chicago-stars-vs-orlando-pride/5dpcyg0c#5161570,2026-07-25
+5161572,Portland Thorns (W),Gotham FC (W),433029,189397,2026-07-25T02:00:00Z,/matches/gotham-fc-vs-portland-thorns/2gzkmkg4#5161572,2026-07-25
+5161573,Boston Legacy FC (W),Kansas City Current (W),1795723,1237561,2026-07-25T21:00:00Z,/matches/kansas-city-current-vs-boston-legacy-fc/1mpecvfud#5161573,2026-07-25
+5161574,North Carolina Courage (W),Utah Royals (W),243295,923654,2026-07-25T23:45:00Z,/matches/north-carolina-courage-vs-utah-royals/8osm8j6t#5161574,2026-07-25
+5161575,San Diego Wave FC (W),Seattle Reign FC (W),1335917,433031,2026-07-26T21:00:00Z,/matches/seattle-reign-fc-vs-san-diego-wave-fc/jyrgdzux#5161575,2026-07-26
+5161576,Washington Spirit (W),Denver Summit FC (W),433030,1795705,2026-07-26T23:00:00Z,/matches/washington-spirit-vs-denver-summit-fc/voyq0b5y#5161576,2026-07-26
+5161577,Angel City FC (W),Racing Louisville (W),1335914,1237244,2026-07-27T01:00:00Z,/matches/racing-louisville-vs-angel-city-fc/168uu33hr#5161577,2026-07-27
+5161578,Kansas City Current (W),Racing Louisville (W),1237561,1237244,2026-07-30T00:00:00Z,/matches/racing-louisville-vs-kansas-city-current/132tdmij4#5161578,2026-07-30
+5161579,Utah Royals (W),Washington Spirit (W),923654,433030,2026-07-30T01:00:00Z,/matches/washington-spirit-vs-utah-royals/bqs19w5w#5161579,2026-07-30
+5161580,Bay FC (W),Gotham FC (W),1607273,189397,2026-07-30T02:00:00Z,/matches/gotham-fc-vs-bay-fc/klgtg5fa#5161580,2026-07-30
+5161581,North Carolina Courage (W),Orlando Pride (W),243295,728922,2026-08-01T00:00:00Z,/matches/north-carolina-courage-vs-orlando-pride/6140bdov#5161581,2026-08-01
+5161582,Racing Louisville (W),Chicago Stars (W),1237244,189393,2026-08-01T20:00:00Z,/matches/chicago-stars-vs-racing-louisville/czi10zf0#5161582,2026-08-01
+5161583,Kansas City Current (W),Angel City FC (W),1237561,1335914,2026-08-01T22:30:00Z,/matches/kansas-city-current-vs-angel-city-fc/1698br9nk#5161583,2026-08-01
+5161584,Houston Dash (W),Gotham FC (W),521233,189397,2026-08-02T00:00:00Z,/matches/gotham-fc-vs-houston-dash/37zv0h1y#5161584,2026-08-02
+5161585,Bay FC (W),Seattle Reign FC (W),1607273,433031,2026-08-02T00:45:00Z,/matches/seattle-reign-fc-vs-bay-fc/qk6wpr0f#5161585,2026-08-02
+5161586,Washington Spirit (W),San Diego Wave FC (W),433030,1335917,2026-08-02T20:00:00Z,/matches/washington-spirit-vs-san-diego-wave-fc/jyrfc2xg#5161586,2026-08-02
+5161587,Utah Royals (W),Portland Thorns (W),923654,433029,2026-08-02T23:00:00Z,/matches/portland-thorns-vs-utah-royals/bqs0gtc8#5161587,2026-08-02
+5161588,Denver Summit FC (W),Boston Legacy FC (W),1795705,1795723,2026-08-03T01:00:00Z,/matches/denver-summit-fc-vs-boston-legacy-fc/2aapnxkid#5161588,2026-08-03
+5161589,Denver Summit FC (W),North Carolina Courage (W),1795705,243295,2026-08-06T02:00:00Z,/matches/north-carolina-courage-vs-denver-summit-fc/qiyx2xnv#5161589,2026-08-06
+5161590,Gotham FC (W),San Diego Wave FC (W),189397,1335917,2026-08-08T00:00:00Z,/matches/gotham-fc-vs-san-diego-wave-fc/eueq8ayg#5161590,2026-08-08
+5161591,Denver Summit FC (W),Utah Royals (W),1795705,923654,2026-08-08T20:00:00Z,/matches/utah-royals-vs-denver-summit-fc/1b6l7lrd2#5161591,2026-08-08
+5161592,Washington Spirit (W),North Carolina Courage (W),433030,243295,2026-08-08T22:30:00Z,/matches/north-carolina-courage-vs-washington-spirit/2x2f5ejp#5161592,2026-08-08
+5161593,Orlando Pride (W),Racing Louisville (W),728922,1237244,2026-08-08T23:00:00Z,/matches/orlando-pride-vs-racing-louisville/onyqdhx3#5161593,2026-08-08
+5161594,Houston Dash (W),Kansas City Current (W),521233,1237561,2026-08-09T00:45:00Z,/matches/houston-dash-vs-kansas-city-current/jqj92wh4#5161594,2026-08-09
+5161595,Boston Legacy FC (W),Portland Thorns (W),1795723,433029,2026-08-09T20:00:00Z,/matches/portland-thorns-vs-boston-legacy-fc/vozcke8d#5161595,2026-08-09
+5161596,Chicago Stars (W),Bay FC (W),189393,1607273,2026-08-09T23:00:00Z,/matches/chicago-stars-vs-bay-fc/klgp645c#5161596,2026-08-09
+5161597,Seattle Reign FC (W),Angel City FC (W),433031,1335914,2026-08-10T01:00:00Z,/matches/seattle-reign-fc-vs-angel-city-fc/jyrd892o#5161597,2026-08-10
+5161598,Gotham FC (W),Kansas City Current (W),189397,1237561,2026-08-15T00:00:00Z,/matches/gotham-fc-vs-kansas-city-current/czplpk5a#5161598,2026-08-15
+5161601,San Diego Wave FC (W),Denver Summit FC (W),1335917,1795705,2026-08-15T02:00:00Z,/matches/san-diego-wave-fc-vs-denver-summit-fc/1qkng2kvy#5161601,2026-08-15
+5161600,Seattle Reign FC (W),Chicago Stars (W),433031,189393,2026-08-15T02:00:00Z,/matches/chicago-stars-vs-seattle-reign-fc/2gzjvvwz#5161600,2026-08-15
+5161599,Utah Royals (W),Bay FC (W),923654,1607273,2026-08-15T02:00:00Z,/matches/utah-royals-vs-bay-fc/14vcf6y4u#5161599,2026-08-15
+5161602,Racing Louisville (W),Boston Legacy FC (W),1237244,1795723,2026-08-15T22:30:00Z,/matches/racing-louisville-vs-boston-legacy-fc/1moygf4yv#5161602,2026-08-15
+5161603,Portland Thorns (W),Orlando Pride (W),433029,728922,2026-08-16T00:45:00Z,/matches/portland-thorns-vs-orlando-pride/8m4d3756#5161603,2026-08-16
+5161604,North Carolina Courage (W),Houston Dash (W),243295,521233,2026-08-16T23:00:00Z,/matches/north-carolina-courage-vs-houston-dash/3q9bjxzd#5161604,2026-08-16
+5161605,Angel City FC (W),Washington Spirit (W),1335914,433030,2026-08-17T01:00:00Z,/matches/washington-spirit-vs-angel-city-fc/jyrc6c5a#5161605,2026-08-17
+5161606,Racing Louisville (W),Seattle Reign FC (W),1237244,433031,2026-08-19T22:30:00Z,/matches/seattle-reign-fc-vs-racing-louisville/hst9q9fx#5161606,2026-08-19
+5161607,Houston Dash (W),Chicago Stars (W),521233,189393,2026-08-20T00:00:00Z,/matches/chicago-stars-vs-houston-dash/37ztbjr8#5161607,2026-08-20
+5161608,San Diego Wave FC (W),Utah Royals (W),1335917,923654,2026-08-22T02:00:00Z,/matches/utah-royals-vs-san-diego-wave-fc/wkr6mcyc#5161608,2026-08-22
+5161609,Kansas City Current (W),Seattle Reign FC (W),1237561,433031,2026-08-22T22:30:00Z,/matches/seattle-reign-fc-vs-kansas-city-current/ht20zvjb#5161609,2026-08-22
+5161610,North Carolina Courage (W),Boston Legacy FC (W),243295,1795723,2026-08-22T23:30:00Z,/matches/north-carolina-courage-vs-boston-legacy-fc/qizixl8m#5161610,2026-08-22
+5161611,Portland Thorns (W),Denver Summit FC (W),433029,1795705,2026-08-23T00:45:00Z,/matches/portland-thorns-vs-denver-summit-fc/voyoojgm#5161611,2026-08-23
+5161612,Chicago Stars (W),Racing Louisville (W),189393,1237244,2026-08-23T18:00:00Z,/matches/chicago-stars-vs-racing-louisville/czi10zf0#5161612,2026-08-23
+5161613,Washington Spirit (W),Orlando Pride (W),433030,728922,2026-08-23T20:00:00Z,/matches/washington-spirit-vs-orlando-pride/8m4ds3pm#5161613,2026-08-23
+5161614,Bay FC (W),Houston Dash (W),1607273,521233,2026-08-23T22:00:00Z,/matches/houston-dash-vs-bay-fc/swnfk21s#5161614,2026-08-23
+5161615,Angel City FC (W),Gotham FC (W),1335914,189397,2026-08-24T00:00:00Z,/matches/gotham-fc-vs-angel-city-fc/eueni851#5161615,2026-08-24
+5161616,North Carolina Courage (W),Angel City FC (W),243295,1335914,2026-08-27T00:00:00Z,/matches/north-carolina-courage-vs-angel-city-fc/fwuarlws#5161616,2026-08-27
+5161617,Gotham FC (W),Portland Thorns (W),189397,433029,2026-08-29T00:00:00Z,/matches/gotham-fc-vs-portland-thorns/2gzkmkg4#5161617,2026-08-29
+5161618,San Diego Wave FC (W),Racing Louisville (W),1335917,1237244,2026-08-29T02:00:00Z,/matches/racing-louisville-vs-san-diego-wave-fc/168uyojvu#5161618,2026-08-29
+5161619,Kansas City Current (W),North Carolina Courage (W),1237561,243295,2026-08-29T22:30:00Z,/matches/north-carolina-courage-vs-kansas-city-current/dzpkvgzv#5161619,2026-08-29
+5161620,Orlando Pride (W),Utah Royals (W),728922,923654,2026-08-29T23:00:00Z,/matches/orlando-pride-vs-utah-royals/hfayp67q#5161620,2026-08-29
+5161621,Denver Summit FC (W),Chicago Stars (W),1795705,189393,2026-08-30T00:45:00Z,/matches/chicago-stars-vs-denver-summit-fc/p55an1yg#5161621,2026-08-30
+5161622,Washington Spirit (W),Bay FC (W),433030,1607273,2026-08-30T16:30:00Z,/matches/washington-spirit-vs-bay-fc/qk6vi0pa#5161622,2026-08-30
+5161623,Seattle Reign FC (W),Houston Dash (W),433031,521233,2026-08-30T23:00:00Z,/matches/seattle-reign-fc-vs-houston-dash/5t60cikd#5161623,2026-08-30
+5161624,Boston Legacy FC (W),Angel City FC (W),1795723,1335914,2026-09-01T00:00:00Z,/matches/angel-city-fc-vs-boston-legacy-fc/1qko81ema#5161624,2026-09-01
+5161625,Utah Royals (W),Boston Legacy FC (W),923654,1795723,2026-09-05T01:30:00Z,/matches/utah-royals-vs-boston-legacy-fc/1b6m0qwdb#5161625,2026-09-05
+5161626,Bay FC (W),Kansas City Current (W),1607273,1237561,2026-09-05T02:00:00Z,/matches/kansas-city-current-vs-bay-fc/1fmyfdwqk#5161626,2026-09-05
+5161627,Racing Louisville (W),Angel City FC (W),1237244,1335914,2026-09-05T22:30:00Z,/matches/racing-louisville-vs-angel-city-fc/168uu33hr#5161627,2026-09-05
+5161628,Denver Summit FC (W),Gotham FC (W),1795705,189397,2026-09-06T18:00:00Z,/matches/gotham-fc-vs-denver-summit-fc/p55fd8ta#5161628,2026-09-06
+5161629,Chicago Stars (W),North Carolina Courage (W),189393,243295,2026-09-06T20:00:00Z,/matches/chicago-stars-vs-north-carolina-courage/1704xalz#5161629,2026-09-06
+5161630,Portland Thorns (W),Washington Spirit (W),433029,433030,2026-09-06T20:00:00Z,/matches/portland-thorns-vs-washington-spirit/4sab5miw#5161630,2026-09-06
+5161631,Orlando Pride (W),Houston Dash (W),728922,521233,2026-09-06T23:00:00Z,/matches/houston-dash-vs-orlando-pride/9yzo8ui4#5161631,2026-09-06
+5161632,Seattle Reign FC (W),San Diego Wave FC (W),433031,1335917,2026-09-07T01:00:00Z,/matches/seattle-reign-fc-vs-san-diego-wave-fc/jyrgdzux#5161632,2026-09-07
+5161633,Racing Louisville (W),Gotham FC (W),1237244,189397,2026-09-11T22:30:00Z,/matches/gotham-fc-vs-racing-louisville/czi4famm#5161633,2026-09-11
+5161634,Kansas City Current (W),Orlando Pride (W),1237561,728922,2026-09-12T00:00:00Z,/matches/orlando-pride-vs-kansas-city-current/oo91hil4#5161634,2026-09-12
+5161636,Angel City FC (W),Denver Summit FC (W),1335914,1795705,2026-09-12T02:00:00Z,/matches/angel-city-fc-vs-denver-summit-fc/1qknah7rj#5161636,2026-09-12
+5161637,San Diego Wave FC (W),North Carolina Courage (W),1335917,243295,2026-09-12T22:30:00Z,/matches/north-carolina-courage-vs-san-diego-wave-fc/fwudl5hp#5161637,2026-09-12
+5161635,Seattle Reign FC (W),Bay FC (W),433031,1607273,2026-09-13T00:00:00Z,/matches/seattle-reign-fc-vs-bay-fc/qk6wpr0f#5161635,2026-09-13
+5161638,Houston Dash (W),Utah Royals (W),521233,923654,2026-09-13T00:45:00Z,/matches/houston-dash-vs-utah-royals/dbjdus62#5161638,2026-09-13
+5161639,Washington Spirit (W),Boston Legacy FC (W),433030,1795723,2026-09-13T17:00:00Z,/matches/washington-spirit-vs-boston-legacy-fc/vozdw5y7#5161639,2026-09-13
+5161640,Portland Thorns (W),Chicago Stars (W),433029,189393,2026-09-13T23:00:00Z,/matches/chicago-stars-vs-portland-thorns/2gzj57du#5161640,2026-09-13
+5161641,Denver Summit FC (W),Bay FC (W),1795705,1607273,2026-09-17T01:30:00Z,/matches/bay-fc-vs-denver-summit-fc/21vy7rpgs#5161641,2026-09-17
+5161642,Angel City FC (W),Seattle Reign FC (W),1335914,433031,2026-09-17T02:00:00Z,/matches/seattle-reign-fc-vs-angel-city-fc/jyrd892o#5161642,2026-09-17
+5161643,San Diego Wave FC (W),Kansas City Current (W),1335917,1237561,2026-09-19T00:00:00Z,/matches/kansas-city-current-vs-san-diego-wave-fc/1698gcqs2#5161643,2026-09-19
+5161644,Orlando Pride (W),Portland Thorns (W),728922,433029,2026-09-19T20:00:00Z,/matches/portland-thorns-vs-orlando-pride/8m4d3756#5161644,2026-09-19
+5161645,North Carolina Courage (W),Gotham FC (W),243295,189397,2026-09-19T22:30:00Z,/matches/gotham-fc-vs-north-carolina-courage/1705ye2p#5161645,2026-09-19
+5161646,Denver Summit FC (W),Seattle Reign FC (W),1795705,433031,2026-09-20T00:45:00Z,/matches/seattle-reign-fc-vs-denver-summit-fc/voyrc2vb#5161646,2026-09-20
+5161647,Boston Legacy FC (W),Houston Dash (W),1795723,521233,2026-09-20T18:00:00Z,/matches/houston-dash-vs-boston-legacy-fc/y92u68yv#5161647,2026-09-20
+5161648,Chicago Stars (W),Washington Spirit (W),189393,433030,2026-09-20T21:00:00Z,/matches/chicago-stars-vs-washington-spirit/2gzjijne#5161648,2026-09-20
+5161649,Bay FC (W),Racing Louisville (W),1607273,1237244,2026-09-20T23:00:00Z,/matches/racing-louisville-vs-bay-fc/1fmjii0i0#5161649,2026-09-20
+5161650,Utah Royals (W),Angel City FC (W),923654,1335914,2026-09-20T23:00:00Z,/matches/utah-royals-vs-angel-city-fc/wkr2l2gu#5161650,2026-09-20
+5161651,Racing Louisville (W),San Diego Wave FC (W),1237244,1335917,2026-09-25T22:30:00Z,/matches/racing-louisville-vs-san-diego-wave-fc/168uyojvu#5161651,2026-09-25
+5161652,Gotham FC (W),Chicago Stars (W),189397,189393,2026-09-26T00:00:00Z,/matches/chicago-stars-vs-gotham-fc/wygx9q2#5161652,2026-09-26
+5161653,Seattle Reign FC (W),Boston Legacy FC (W),433031,1795723,2026-09-26T00:30:00Z,/matches/seattle-reign-fc-vs-boston-legacy-fc/vozf7xo2#5161653,2026-09-26
+5161654,Kansas City Current (W),Denver Summit FC (W),1237561,1795705,2026-09-26T16:30:00Z,/matches/kansas-city-current-vs-denver-summit-fc/1mpdgd704#5161654,2026-09-26
+5161655,Washington Spirit (W),Angel City FC (W),433030,1335914,2026-09-26T22:30:00Z,/matches/washington-spirit-vs-angel-city-fc/jyrc6c5a#5161655,2026-09-26
+5161656,Portland Thorns (W),Houston Dash (W),433029,521233,2026-09-27T00:45:00Z,/matches/portland-thorns-vs-houston-dash/5t5z7lxq#5161656,2026-09-27
+5161657,Bay FC (W),Orlando Pride (W),1607273,728922,2026-09-27T21:00:00Z,/matches/orlando-pride-vs-bay-fc/ytn3u6io#5161657,2026-09-27
+5161658,Utah Royals (W),North Carolina Courage (W),923654,243295,2026-09-27T23:00:00Z,/matches/north-carolina-courage-vs-utah-royals/8osm8j6t#5161658,2026-09-27
+5161659,Orlando Pride (W),San Diego Wave FC (W),728922,1335917,2026-10-03T00:00:00Z,/matches/orlando-pride-vs-san-diego-wave-fc/r7brujdi#5161659,2026-10-03
+5161660,Seattle Reign FC (W),North Carolina Courage (W),433031,243295,2026-10-03T02:00:00Z,/matches/north-carolina-courage-vs-seattle-reign-fc/2x2fjwek#5161660,2026-10-03
+5161661,Racing Louisville (W),Utah Royals (W),1237244,923654,2026-10-03T20:00:00Z,/matches/utah-royals-vs-racing-louisville/tskd5o5l#5161661,2026-10-03
+5161662,Kansas City Current (W),Bay FC (W),1237561,1607273,2026-10-03T22:30:00Z,/matches/kansas-city-current-vs-bay-fc/1fmyfdwqk#5161662,2026-10-03
+5161663,Portland Thorns (W),Boston Legacy FC (W),433029,1795723,2026-10-04T00:45:00Z,/matches/portland-thorns-vs-boston-legacy-fc/vozcke8d#5161663,2026-10-04
+5161664,Gotham FC (W),Angel City FC (W),189397,1335914,2026-10-04T16:00:00Z,/matches/gotham-fc-vs-angel-city-fc/eueni851#5161664,2026-10-04
+5161665,Chicago Stars (W),Denver Summit FC (W),189393,1795705,2026-10-04T20:00:00Z,/matches/chicago-stars-vs-denver-summit-fc/p55an1yg#5161665,2026-10-04
+5161666,Houston Dash (W),Washington Spirit (W),521233,433030,2026-10-04T23:00:00Z,/matches/washington-spirit-vs-houston-dash/5t5zs291#5161666,2026-10-04
+5161667,Boston Legacy FC (W),Racing Louisville (W),1795723,1237244,2026-10-17T00:00:00Z,/matches/racing-louisville-vs-boston-legacy-fc/1moygf4yv#5161667,2026-10-17
+5161668,Washington Spirit (W),Gotham FC (W),433030,189397,2026-10-17T16:30:00Z,/matches/gotham-fc-vs-washington-spirit/2gzkzwps#5161668,2026-10-17
+5161669,Utah Royals (W),Kansas City Current (W),923654,1237561,2026-10-17T22:30:00Z,/matches/utah-royals-vs-kansas-city-current/tsvp0s12#5161669,2026-10-17
+5161670,North Carolina Courage (W),San Diego Wave FC (W),243295,1335917,2026-10-17T23:00:00Z,/matches/north-carolina-courage-vs-san-diego-wave-fc/fwudl5hp#5161670,2026-10-17
+5161671,Denver Summit FC (W),Angel City FC (W),1795705,1335914,2026-10-18T00:45:00Z,/matches/angel-city-fc-vs-denver-summit-fc/1qknah7rj#5161671,2026-10-18
+5161672,Houston Dash (W),Orlando Pride (W),521233,728922,2026-10-18T17:00:00Z,/matches/houston-dash-vs-orlando-pride/9yzo8ui4#5161672,2026-10-18
+5161673,Bay FC (W),Portland Thorns (W),1607273,433029,2026-10-18T21:00:00Z,/matches/portland-thorns-vs-bay-fc/qk6uaae6#5161673,2026-10-18
+5161674,Chicago Stars (W),Seattle Reign FC (W),189393,433031,2026-10-18T23:00:00Z,/matches/chicago-stars-vs-seattle-reign-fc/2gzjvvwz#5161674,2026-10-18
+5161675,Chicago Stars (W),Houston Dash (W),189393,521233,2026-10-24T00:00:00Z,/matches/chicago-stars-vs-houston-dash/37ztbjr8#5161675,2026-10-24
+5161676,Utah Royals (W),Seattle Reign FC (W),923654,433031,2026-10-24T01:30:00Z,/matches/seattle-reign-fc-vs-utah-royals/bqs22yzl#5161676,2026-10-24
+5161677,Portland Thorns (W),North Carolina Courage (W),433029,243295,2026-10-24T02:00:00Z,/matches/north-carolina-courage-vs-portland-thorns/2x2eqwov#5161677,2026-10-24
+5161678,Denver Summit FC (W),Racing Louisville (W),1795705,1237244,2026-10-24T22:30:00Z,/matches/racing-louisville-vs-denver-summit-fc/1moxjx0j4#5161678,2026-10-24
+5161679,Angel City FC (W),Bay FC (W),1335914,1607273,2026-10-25T01:45:00Z,/matches/angel-city-fc-vs-bay-fc/1j9prikzr#5161679,2026-10-25
+5161680,Orlando Pride (W),Gotham FC (W),728922,189397,2026-10-25T19:00:00Z,/matches/gotham-fc-vs-orlando-pride/5dpf56bm#5161680,2026-10-25
+5161681,Kansas City Current (W),Washington Spirit (W),1237561,433030,2026-10-25T21:00:00Z,/matches/washington-spirit-vs-kansas-city-current/ht2002hy#5161681,2026-10-25
+5161682,San Diego Wave FC (W),Boston Legacy FC (W),1335917,1795723,2026-10-25T23:00:00Z,/matches/san-diego-wave-fc-vs-boston-legacy-fc/1qkodmrs7#5161682,2026-10-25
+5161687,Angel City FC (W),Boston Legacy FC (W),1335914,1795723,2026-11-01T22:00:00Z,/matches/angel-city-fc-vs-boston-legacy-fc/1qko81ema#5161687,2026-11-01
+5161690,Bay FC (W),San Diego Wave FC (W),1607273,1335917,2026-11-01T22:00:00Z,/matches/san-diego-wave-fc-vs-bay-fc/1j9pwrtxi#5161690,2026-11-01
+5161689,Gotham FC (W),Utah Royals (W),189397,923654,2026-11-01T22:00:00Z,/matches/gotham-fc-vs-utah-royals/7wkg7sm8#5161689,2026-11-01
+5161688,Houston Dash (W),Portland Thorns (W),521233,433029,2026-11-01T22:00:00Z,/matches/portland-thorns-vs-houston-dash/5t5z7lxq#5161688,2026-11-01
+5161685,North Carolina Courage (W),Denver Summit FC (W),243295,1795705,2026-11-01T22:00:00Z,/matches/north-carolina-courage-vs-denver-summit-fc/qiyx2xnv#5161685,2026-11-01
+5161686,Racing Louisville (W),Kansas City Current (W),1237244,1237561,2026-11-01T22:00:00Z,/matches/racing-louisville-vs-kansas-city-current/132tdmij4#5161686,2026-11-01
+5161684,Seattle Reign FC (W),Orlando Pride (W),433031,728922,2026-11-01T22:00:00Z,/matches/seattle-reign-fc-vs-orlando-pride/8m4eh0a3#5161684,2026-11-01
+5161683,Washington Spirit (W),Chicago Stars (W),433030,189393,2026-11-01T22:00:00Z,/matches/chicago-stars-vs-washington-spirit/2gzjijne#5161683,2026-11-01

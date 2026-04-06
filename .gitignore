@@ -10,6 +10,7 @@
 **/benchmark_data
 *.csv
 !**/seeds/*.csv
+!fotmob/data/matches/2026.csv
 *.zip
 *.ipynb
 !fotmob/scraping_code.ipynb
