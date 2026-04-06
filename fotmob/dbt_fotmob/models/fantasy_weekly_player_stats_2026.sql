@@ -73,6 +73,14 @@ draft_names as (
     order by player_id::bigint
 ),
 
+team_goals_conceded as (
+    select
+        team_id::bigint  as team_id,
+        match_id::bigint as match_id,
+        goals_conceded
+    from {{ ref('team_goals_conceded_2026') }}
+),
+
 base as (
     select
         ps.*,
@@ -84,7 +92,8 @@ base as (
         coalesce(og.own_goals, 0)           as own_goals,
         coalesce(pka.pk_made, 0)            as pk_made,
         coalesce(pka.pk_att, 0)             as pk_att,
-        coalesce(rn.roster_name, dn.draft_name, ps.player_name) as display_name
+        coalesce(rn.roster_name, dn.draft_name, ps.player_name) as display_name,
+        tgc.goals_conceded                                       as team_goals_conceded
     from player_stats ps
     inner join fantasy_weeks fw
         on ps.match_date between fw.week_start::date and fw.week_end::date
@@ -106,23 +115,28 @@ base as (
         on ps.player_id = rn.player_id
     left join draft_names dn
         on ps.player_id = dn.player_id
+    left join team_goals_conceded tgc
+        on ps.match_id = tgc.match_id
+        and ps.team_id = tgc.team_id
 )
 
 select
-    fantasy_week                                                                as week,
-    player_id,
+    base.fantasy_week                                                           as week,
+    base.player_id,
+
+    -- ── TEMPLATE COLUMN ORDER ────────────────────────────────────────────────
     display_name                                                                as player,
-    round(avg(fotmob_rating)::numeric, 1)                                       as fotmob_rating,
-    team_name,
-    draft_position                                                              as pos,
     max(shirt_number)                                                           as number,
-    sum(minutes_played)                                                         as min_played,
+    round(avg(fotmob_rating)::numeric, 1)                                       as rating,
+    draft_position                                                              as pos,
+    team_name,
+    sum(minutes_played)                                                         as min,
     sum(coalesce(goals, 0))                                                     as gls,
     sum(coalesce(assists, 0))                                                   as ast,
-    sum(pk_made)                                                                as pk_made,
-    sum(pk_att)                                                                 as pk_att,
-    null::integer                                                               as sh,          -- total shots not in source
-    sum(coalesce(shots_on_target, 0))                                           as sot,
+    sum(pk_made)                                                                as pk,
+    sum(pk_att)                                                                 as pkatt,
+    sum(coalesce(shots_on_target, 0))                                           as sog,
+    sum(coalesce(offsides, 0))                                                  as offsides,
     sum(yellow_cards)                                                           as crdy,
     sum(red_cards)                                                              as crdr,
     sum(coalesce(touches, 0))                                                   as touches,
@@ -130,9 +144,9 @@ select
     sum(coalesce(interceptions, 0))                                             as int,
     sum(coalesce(blocks, 0))                                                    as blocks,
     round(sum(coalesce(xg, 0))::numeric, 2)                                     as xg,
-    null::numeric                                                               as npxg,        -- not in source
-    round(sum(coalesce(xa, 0))::numeric, 2)                                     as xag,
-    null::integer                                                               as sca,         -- not in source
+    round(sum(coalesce(xa, 0))::numeric, 2)                                     as xa,
+    round(sum(coalesce(xg_plus_xa, 0))::numeric, 2)                             as xg_plus_xa,
+    sum(coalesce(aerial_duels_won_succeeded, 0))                                as aerials_won,
     sum(coalesce(chances_created, 0))                                           as gca,
     sum(coalesce(accurate_passes_succeeded, 0))                                 as pass_cmp,
     sum(coalesce(accurate_passes_attempted, 0))                                 as pass_att,
@@ -142,16 +156,17 @@ select
                   / sum(coalesce(accurate_passes_attempted, 0)) * 100), 1)
         else null
     end                                                                         as pass_cmp_pct,
-    sum(coalesce(passes_into_final_third, 0))                                   as prg_pass,
-    null::integer                                                               as carries,     -- not in source
-    null::integer                                                               as prg_carries, -- not in source
-    sum(coalesce(successful_dribbles_attempted, 0))                             as carry_att,
-    sum(coalesce(successful_dribbles_succeeded, 0))                             as carry_succ,
+    sum(coalesce(fouls_committed, 0))                                           as fouls_committed,
+    sum(coalesce(was_fouled, 0))                                                as fouls_taken,
+    round(sum(coalesce(goals_prevented, 0))::numeric, 2)                        as goals_prevented,
+    sum(coalesce(successful_dribbles_attempted, 0))                             as drib_att,
+    sum(coalesce(successful_dribbles_succeeded, 0))                             as drib_succ,
     sum(own_goals)                                                              as og,
     sum(coalesce(tackles, 0))                                                   as tkl_won,
     sum(coalesce(saves, 0))                                                     as saves,
     sum(pk_saves)                                                               as pk_saves,
-    sum(coalesce(goals_conceded, 0))                                            as goals_conc
+    sum(coalesce(team_goals_conceded, 0))                                       as goals_conc
+
 from base
-group by fantasy_week, player_id, display_name, team_name, draft_position
-order by fantasy_week, team_name, display_name
+group by base.fantasy_week, base.player_id, display_name, team_name, draft_position
+order by base.fantasy_week, team_name, display_name

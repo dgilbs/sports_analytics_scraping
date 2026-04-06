@@ -169,8 +169,9 @@ select
     coalesce(blocks, 0) * 0.5                                                    as pts_blocks,
     0                                                                            as pts_goal_creating_actions,
     coalesce(successful_dribbles_succeeded, 0) * 0.5                             as pts_successful_takeons,
-    case when coalesce(touches, 0) > 60 then 2 else 0 end                        as pts_touches,
-    case when coalesce(accurate_passes_pct, 0) > 0.85 then 2 else 0 end          as pts_pass_completion,
+    case when coalesce(touches, 0) >= 60 then 2 else 0 end                       as pts_touches,
+    case when coalesce(accurate_passes_pct, 0) >= 0.85
+              and coalesce(accurate_passes_attempted, 0) >= 20 then 2 else 0 end  as pts_pass_completion,
 
     -- From FBRef via crossref (null if player not in crossref)
     greatest(yellow_cards * -2, -4)                                              as pts_yellow_cards,
@@ -181,12 +182,12 @@ select
 
     -- ── POSITION-SPECIFIC ────────────────────────────────────────────────────
 
-    -- Goals (FW=4, MF=5, DF=6, GK=10)
+    -- Goals (FW=4, MF=5, DF=6, GK=10) — penalty goals excluded (counted via pts_penalty_converted)
     case draft_position
-        when 'FW' then coalesce(goals, 0) * 4
-        when 'MF' then coalesce(goals, 0) * 5
-        when 'DF' then coalesce(goals, 0) * 6
-        when 'GK' then coalesce(goals, 0) * 10
+        when 'FW' then greatest(coalesce(goals, 0) - coalesce(pks_won, 0), 0) * 4
+        when 'MF' then greatest(coalesce(goals, 0) - coalesce(pks_won, 0), 0) * 5
+        when 'DF' then greatest(coalesce(goals, 0) - coalesce(pks_won, 0), 0) * 6
+        when 'GK' then greatest(coalesce(goals, 0) - coalesce(pks_won, 0), 0) * 10
         else 0
     end                                                                          as pts_goals,
 
@@ -234,18 +235,19 @@ select
         + coalesce(blocks, 0) * 0.5
 
         + coalesce(successful_dribbles_succeeded, 0) * 0.5
-        + case when coalesce(touches, 0) > 60 then 2 else 0 end
-        + case when coalesce(accurate_passes_pct, 0) > 0.85 then 2 else 0 end
+        + case when coalesce(touches, 0) >= 60 then 2 else 0 end
+        + case when coalesce(accurate_passes_pct, 0) >= 0.85
+                   and coalesce(accurate_passes_attempted, 0) >= 20 then 2 else 0 end
         + greatest(yellow_cards * -2, -4)
         + red_cards * -6
         + pks_won * 2
         + own_goals * -3
         + pks_missed * -3
         + case draft_position
-            when 'FW' then coalesce(goals, 0) * 4
-            when 'MF' then coalesce(goals, 0) * 5
-            when 'DF' then coalesce(goals, 0) * 6
-            when 'GK' then coalesce(goals, 0) * 10
+            when 'FW' then greatest(coalesce(goals, 0) - coalesce(pks_won, 0), 0) * 4
+            when 'MF' then greatest(coalesce(goals, 0) - coalesce(pks_won, 0), 0) * 5
+            when 'DF' then greatest(coalesce(goals, 0) - coalesce(pks_won, 0), 0) * 6
+            when 'GK' then greatest(coalesce(goals, 0) - coalesce(pks_won, 0), 0) * 10
             else 0 end
         + case draft_position
             when 'FW' then coalesce(tackles, 0) * 1.0

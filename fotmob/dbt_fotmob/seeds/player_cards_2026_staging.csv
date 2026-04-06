@@ -1,319 +1,319 @@
 match_id,side,bucket,team_id,team_name,formation,player_id,player_name,shirt_number,position_id,usual_position_id,rating,h_x,h_y,v_x,v_y,match_date,yellow_cards,red_cards
-5161472,home,bench,1335914,Angel City FC,4-1-4-1,1922266,Carina Lageyre,16,,2,,,,,,2026-03-28,0,0
-5161472,home,bench,1335914,Angel City FC,4-1-4-1,1510841,Casey Phair,9,,3,,,,,,2026-03-28,0,0
-5161472,home,bench,1335914,Angel City FC,4-1-4-1,1922262,Faith Nguyen,30,,0,,,,,,2026-03-28,0,0
-5161472,home,bench,1335914,Angel City FC,4-1-4-1,931178,Hannah Seabert,13,,0,,,,,,2026-03-28,0,0
-5161472,home,bench,1335914,Angel City FC,4-1-4-1,1234938,Prisca Chilufya,24,,2,,,,,,2026-03-28,0,0
-5161472,home,bench,1335914,Angel City FC,4-1-4-1,1929089,Rajanah Reed,37,,2,,,,,,2026-03-28,0,0
-5161472,home,bench,1335914,Angel City FC,4-1-4-1,1081810,Sarah Gorden,11,,1,,,,,,2026-03-28,0,0
-5161472,home,bench,1335914,Angel City FC,4-1-4-1,1759845,Sophia Mattice,25,,1,,,,,,2026-03-28,0,0
-5161472,home,bench,1335914,Angel City FC,4-1-4-1,1922259,Taylor Suarez,99,,2,5.8,,,,,2026-03-28,0,0
-5161472,home,starters,1335914,Angel City FC,4-1-4-1,1451621,Angelina Anderson,19,11.0,0,7.0,0.1,0.5,0.5,0.1,2026-03-28,0,0
-5161472,home,starters,1335914,Angel City FC,4-1-4-1,1366878,Ary Borges,8,84.0,2,6.7,0.678,0.625,0.375,0.678,2026-03-28,0,0
-5161472,home,starters,1335914,Angel City FC,4-1-4-1,1406297,Emily Sams,6,34.0,1,7.2,0.292,0.625,0.375,0.292,2026-03-28,0,0
-5161472,home,starters,1335914,Angel City FC,4-1-4-1,1793298,Evelyn Shores,15,38.0,1,8.0,0.292,0.125,0.875,0.292,2026-03-28,0,0
-5161472,home,starters,1335914,Angel City FC,4-1-4-1,1618094,Gisele Thompson,20,32.0,1,7.3,0.292,0.875,0.125,0.292,2026-03-28,0,0
-5161472,home,starters,1335914,Angel City FC,4-1-4-1,1624205,Kennedy Fuller,17,82.0,2,6.9,0.678,0.875,0.125,0.678,2026-03-28,0,0
-5161472,home,starters,1335914,Angel City FC,4-1-4-1,1553648,Maiara Niehues,12,86.0,2,7.3,0.678,0.375,0.625,0.678,2026-03-28,0,0
-5161472,home,starters,1335914,Angel City FC,4-1-4-1,1266135,Nealy Martin,14,65.0,2,6.5,0.485,0.5,0.5,0.485,2026-03-28,0,0
-5161472,home,starters,1335914,Angel City FC,4-1-4-1,1727376,Riley Tiernan,33,88.0,3,7.5,0.678,0.125,0.875,0.678,2026-03-28,0,0
-5161472,home,starters,1335914,Angel City FC,4-1-4-1,1618171,Savy King,3,36.0,1,6.9,0.292,0.375,0.625,0.292,2026-03-28,0,0
-5161472,home,starters,1335914,Angel City FC,4-1-4-1,1187388,Sveindís Jónsdóttir,32,115.0,3,7.5,0.89,0.5,0.5,0.89,2026-03-28,0,0
-5161477,away,bench,1607273,Bay FC,4-2-3-1,1194830,Anouk Denton,25,,1,,,,,,2026-03-28,0,0
-5161477,away,bench,1607273,Bay FC,4-2-3-1,1624860,Caroline Conti,23,,2,,,,,,2026-03-28,0,0
-5161477,away,bench,1607273,Bay FC,4-2-3-1,1060628,Dorian Bailey,19,,2,,,,,,2026-03-28,0,0
-5161477,away,bench,1607273,Bay FC,4-2-3-1,1637734,Emmie Allen,32,,0,,,,,,2026-03-28,0,0
-5161477,away,bench,1607273,Bay FC,4-2-3-1,1626415,Jamie Shepherd,14,,2,,,,,,2026-03-28,0,0
-5161477,away,bench,1607273,Bay FC,4-2-3-1,1344369,Keira Barry,27,,2,,,,,,2026-03-28,0,0
-5161477,away,bench,1607273,Bay FC,4-2-3-1,1081881,Kelli Hubly,11,,1,,,,,,2026-03-28,0,0
-5161477,away,bench,1607273,Bay FC,4-2-3-1,1922288,Onyeka Gamero,6,,3,,,,,,2026-03-28,0,0
-5161477,away,bench,1607273,Bay FC,4-2-3-1,1360033,Tess Boade,12,,2,,,,,,2026-03-28,0,0
-5161477,away,starters,1607273,Bay FC,4-2-3-1,1623817,Alex Pfeiffer,17,83.0,3,,0.678,0.837,0.162,0.678,2026-03-28,0,0
-5161477,away,starters,1607273,Bay FC,4-2-3-1,1727443,Brooklyn Courtnall,22,34.0,1,,0.292,0.625,0.375,0.292,2026-03-28,0,0
-5161477,away,starters,1607273,Bay FC,4-2-3-1,1618202,Claire Hutton,8,64.0,2,,0.485,0.7,0.3,0.485,2026-03-28,0,0
-5161477,away,starters,1607273,Bay FC,4-2-3-1,734768,Cristiana Girelli,10,115.0,3,,0.87,0.5,0.5,0.87,2026-03-28,0,0
-5161477,away,starters,1607273,Bay FC,4-2-3-1,1728494,Hannah Bebar,41,66.0,2,,0.485,0.3,0.7,0.485,2026-03-28,0,0
-5161477,away,starters,1607273,Bay FC,4-2-3-1,1360364,Joelle Anderson,18,36.0,1,,0.292,0.375,0.625,0.292,2026-03-28,0,0
-5161477,away,starters,1607273,Bay FC,4-2-3-1,1455307,Jordan Silkowitz,29,11.0,0,,0.1,0.5,0.5,0.1,2026-03-28,0,0
-5161477,away,starters,1607273,Bay FC,4-2-3-1,1727395,Karlie Lema,5,87.0,3,,0.678,0.163,0.837,0.678,2026-03-28,0,0
-5161477,away,starters,1607273,Bay FC,4-2-3-1,1626413,Madeline Moreau,24,38.0,1,,0.292,0.125,0.875,0.292,2026-03-28,0,0
-5161477,away,starters,1607273,Bay FC,4-2-3-1,1455304,Sydney Collins,16,32.0,1,,0.292,0.875,0.125,0.292,2026-03-28,0,0
-5161477,away,starters,1607273,Bay FC,4-2-3-1,1727394,Taylor Huff,7,85.0,2,,0.678,0.5,0.5,0.678,2026-03-28,0,0
-5161473,home,bench,1795723,Boston Legacy FC,4-1-4-1,1437709,Aleigh Gambone,15,,1,7.3,,,,,2026-03-28,0,0
-5161473,home,bench,1795723,Boston Legacy FC,4-1-4-1,1345776,Amanda,9,,3,6.8,,,,,2026-03-28,0,0
-5161473,home,bench,1795723,Boston Legacy FC,4-1-4-1,1469900,Amanda Allen,7,,3,,,,,,2026-03-28,0,0
-5161473,home,bench,1795723,Boston Legacy FC,4-1-4-1,1463399,Chloe Ricketts,11,,2,,,,,,2026-03-28,0,0
-5161473,home,bench,1795723,Boston Legacy FC,4-1-4-1,1744056,Emerson Elgin,4,,1,,,,,,2026-03-28,0,0
-5161473,home,bench,1795723,Boston Legacy FC,4-1-4-1,1077559,Josefine Hasbo,5,,2,5.8,,,,,2026-03-28,0,0
-5161473,home,bench,1795723,Boston Legacy FC,4-1-4-1,1359806,Laurel Ivory,18,,0,,,,,,2026-03-28,0,0
-5161473,home,bench,1795723,Boston Legacy FC,4-1-4-1,734808,Nichelle Prince,12,,3,6.0,,,,,2026-03-28,0,0
-5161473,home,bench,1795723,Boston Legacy FC,4-1-4-1,1922301,Sophia Lowenberg,25,,2,,,,,,2026-03-28,0,0
-5161473,home,starters,1795723,Boston Legacy FC,4-1-4-1,1127307,Aissata Traoré,14,115.0,3,7.6,0.89,0.5,0.5,0.89,2026-03-28,0,0
-5161473,home,starters,1795723,Boston Legacy FC,4-1-4-1,1408768,Alba Caño,26,84.0,2,6.8,0.678,0.625,0.375,0.678,2026-03-28,0,0
-5161473,home,starters,1795723,Boston Legacy FC,4-1-4-1,1607087,Annie Karich,6,65.0,1,6.0,0.485,0.5,0.5,0.485,2026-03-28,0,0
-5161473,home,starters,1795723,Boston Legacy FC,4-1-4-1,1350551,Barbara Olivieri,21,88.0,3,6.3,0.678,0.125,0.875,0.678,2026-03-28,0,0
-5161473,home,starters,1795723,Boston Legacy FC,4-1-4-1,1170228,Bianca Rose St-Georges,53,32.0,3,7.7,0.292,0.875,0.125,0.292,2026-03-28,0,0
-5161473,home,starters,1795723,Boston Legacy FC,4-1-4-1,1081894,Casey Murphy,1,11.0,0,6.0,0.1,0.5,0.5,0.1,2026-03-28,0,0
-5161473,home,starters,1795723,Boston Legacy FC,4-1-4-1,1170671,Ella Stevens,10,86.0,2,5.9,0.678,0.375,0.625,0.678,2026-03-28,0,0
-5161473,home,starters,1795723,Boston Legacy FC,4-1-4-1,1466142,Fauzia Najjemba,13,82.0,3,5.8,0.678,0.875,0.125,0.678,2026-03-28,0,0
-5161473,home,starters,1795723,Boston Legacy FC,4-1-4-1,1378691,Jorelyn Carabalí,16,36.0,1,6.3,0.292,0.375,0.625,0.292,2026-03-28,0,0
-5161473,home,starters,1795723,Boston Legacy FC,4-1-4-1,1714650,Laurel Ansbrow,34,34.0,1,6.4,0.292,0.625,0.375,0.292,2026-03-28,0,0
-5161473,home,starters,1795723,Boston Legacy FC,4-1-4-1,1677744,Sammy Smith,8,38.0,2,6.2,0.292,0.125,0.875,0.292,2026-03-28,0,0
-5161474,home,bench,1795705,Denver Summit FC,4-2-3-1,1135809,Ally Brazier,11,,3,,,,,,2026-03-28,0,0
-5161474,home,bench,1795705,Denver Summit FC,4-2-3-1,1748347,Ayooluwa Oke,7,,1,,,,,,2026-03-28,0,0
-5161474,home,bench,1795705,Denver Summit FC,4-2-3-1,1436911,Emma Regan,8,,2,,,,,,2026-03-28,0,0
-5161474,home,bench,1795705,Denver Summit FC,4-2-3-1,1693385,Lourdes Bosch,19,,2,,,,,,2026-03-28,0,0
-5161474,home,bench,1795705,Denver Summit FC,4-2-3-1,1727512,Meg Boade,34,,2,,,,,,2026-03-28,0,0
-5161474,home,bench,1795705,Denver Summit FC,4-2-3-1,809796,Nahikari García,79,,3,,,,,,2026-03-28,0,0
-5161474,home,bench,1795705,Denver Summit FC,4-2-3-1,1922336,Natalie Means,4,,1,6.0,,,,,2026-03-28,0,0
-5161474,home,bench,1795705,Denver Summit FC,4-2-3-1,1922334,Olivia Thomas,33,,3,,,,,,2026-03-28,0,0
-5161474,home,bench,1795705,Denver Summit FC,4-2-3-1,887466,Pauline Peyraud-Magnin,21,,0,,,,,,2026-03-28,0,0
-5161474,home,starters,1795705,Denver Summit FC,4-2-3-1,1081909,Abby Smith,1,11.0,0,7.6,0.1,0.5,0.5,0.1,2026-03-28,0,0
-5161474,home,starters,1795705,Denver Summit FC,4-2-3-1,762340,Carson Pickett,16,38.0,1,7.3,0.292,0.125,0.875,0.292,2026-03-28,0,0
-5161474,home,starters,1795705,Denver Summit FC,4-2-3-1,1272790,Delanie Sheehan,24,64.0,2,7.2,0.485,0.7,0.3,0.485,2026-03-28,0,0
-5161474,home,starters,1795705,Denver Summit FC,4-2-3-1,1922338,Devin Lynch,5,66.0,2,7.7,0.485,0.3,0.7,0.485,2026-03-28,0,0
-5161474,home,starters,1795705,Denver Summit FC,4-2-3-1,734795,Janine Sonis,6,32.0,1,7.1,0.292,0.875,0.125,0.292,2026-03-28,0,0
-5161474,home,starters,1795705,Denver Summit FC,4-2-3-1,1081853,Kaleigh Kurtz,3,36.0,1,6.9,0.292,0.375,0.625,0.292,2026-03-28,0,0
-5161474,home,starters,1795705,Denver Summit FC,4-2-3-1,1359610,Megan Reid,2,34.0,1,6.9,0.292,0.625,0.375,0.292,2026-03-28,0,0
-5161474,home,starters,1795705,Denver Summit FC,4-2-3-1,898503,Melissa Kössler,25,115.0,3,5.8,0.87,0.5,0.5,0.87,2026-03-28,0,0
-5161474,home,starters,1795705,Denver Summit FC,4-2-3-1,1256374,Natasha Flint,26,85.0,3,6.6,0.678,0.5,0.5,0.678,2026-03-28,0,0
-5161474,home,starters,1795705,Denver Summit FC,4-2-3-1,1266129,Yazmeen Ryan,9,87.0,3,6.9,0.678,0.163,0.837,0.678,2026-03-28,0,0
-5161474,home,starters,1795705,Denver Summit FC,4-2-3-1,1922337,Yuna McCormack,14,83.0,3,6.3,0.678,0.837,0.162,0.678,2026-03-28,0,0
-5161472,away,bench,521233,Houston Dash,4-4-2,646135,Allysha Chapman,2,,1,,,,,,2026-03-28,0,0
-5161472,away,bench,521233,Houston Dash,4-4-2,1679907,Caroline DeLisle,40,,0,,,,,,2026-03-28,0,0
-5161472,away,bench,521233,Houston Dash,4-4-2,1927671,Cate Hardin,18,,1,,,,,,2026-03-28,0,0
-5161472,away,bench,521233,Houston Dash,4-4-2,1418346,Clarissa Laris­ey,9,,3,,,,,,2026-03-28,0,0
-5161472,away,bench,521233,Houston Dash,4-4-2,961436,Evelina Duljan,7,,3,,,,,,2026-03-28,0,0
-5161472,away,bench,521233,Houston Dash,4-4-2,1359772,Hillary Beall,21,,0,,,,,,2026-03-28,0,0
-5161472,away,bench,521233,Houston Dash,4-4-2,734740,Lisa Boattin,27,,2,,,,,,2026-03-28,0,0
-5161472,away,bench,521233,Houston Dash,4-4-2,1455495,Messiah Bright,6,,3,6.1,,,,,2026-03-28,0,0
-5161472,away,bench,521233,Houston Dash,4-4-2,856548,Sarah Puntigam,17,,2,,,,,,2026-03-28,0,0
-5161472,away,starters,521233,Houston Dash,4-4-2,1623859,Avery Patterson,15,32.0,1,7.1,0.357,0.875,0.125,0.357,2026-03-28,0,0
-5161472,away,starters,521233,Houston Dash,4-4-2,638007,Danielle Colaprico,24,76.0,2,6.5,0.613,0.375,0.625,0.613,2026-03-28,0,0
-5161472,away,starters,521233,Houston Dash,4-4-2,1081831,Jane Campbell,1,11.0,0,5.6,0.1,0.5,0.5,0.1,2026-03-28,0,0
-5161472,away,starters,521233,Houston Dash,4-4-2,1386849,Kalyssa van Zanten,12,106.0,2,6.8,0.87,0.3,0.7,0.87,2026-03-28,0,0
-5161472,away,starters,521233,Houston Dash,4-4-2,1927669,Kat Rader,22,72.0,2,7.6,0.613,0.875,0.125,0.613,2026-03-28,0,0
-5161472,away,starters,521233,Houston Dash,4-4-2,1927670,Leah Klenke,4,38.0,1,6.1,0.357,0.125,0.875,0.357,2026-03-28,0,0
-5161472,away,starters,521233,Houston Dash,4-4-2,1927666,Linda Ullmark,30,78.0,2,6.2,0.613,0.125,0.875,0.613,2026-03-28,0,0
-5161472,away,starters,521233,Houston Dash,4-4-2,1727415,Maggie Graham,19,74.0,2,8.0,0.613,0.625,0.375,0.613,2026-03-28,0,0
-5161472,away,starters,521233,Houston Dash,4-4-2,758742,Makenzy Robbe,25,104.0,3,7.4,0.87,0.7,0.3,0.87,2026-03-28,0,0
-5161472,away,starters,521233,Houston Dash,4-4-2,1294816,Malia Berkely,10,36.0,1,6.1,0.357,0.375,0.625,0.357,2026-03-28,0,0
-5161472,away,starters,521233,Houston Dash,4-4-2,1079072,Paige Nielsen,14,34.0,1,6.6,0.357,0.625,0.375,0.357,2026-03-28,0,0
-5161475,away,bench,1237561,Kansas City Current,4-2-3-1,1927673,Amelia White,3,,3,,,,,,2026-03-28,0,0
-5161475,away,bench,1237561,Kansas City Current,4-2-3-1,1455303,Haley Hopkins,13,,2,,,,,,2026-03-28,0,0
-5161475,away,bench,1237561,Kansas City Current,4-2-3-1,1081818,Kayla Sharples,27,,1,,,,,,2026-03-28,0,0
-5161475,away,bench,1237561,Kansas City Current,4-2-3-1,1933430,Kelsey Branson,34,,2,,,,,,2026-03-28,0,0
-5161475,away,bench,1237561,Kansas City Current,4-2-3-1,1927674,Kolo Suliafu,44,,1,,,,,,2026-03-28,0,0
-5161475,away,bench,1237561,Kansas City Current,4-2-3-1,1170524,Kyra Carusa,66,,3,,,,,,2026-03-28,0,0
-5161475,away,bench,1237561,Kansas City Current,4-2-3-1,1927675,Laney Rouse,2,,1,,,,,,2026-03-28,0,0
-5161475,away,bench,1237561,Kansas City Current,4-2-3-1,1360027,Marisa Jordan,1,,0,,,,,,2026-03-28,0,0
-5161475,away,bench,1237561,Kansas City Current,4-2-3-1,1455363,Penelope Hocking,55,,3,,,,,,2026-03-28,0,0
-5161475,away,starters,1237561,Kansas City Current,4-2-3-1,1623860,Ally Sentnor,21,115.0,3,6.1,0.87,0.5,0.5,0.87,2026-03-28,0,0
-5161475,away,starters,1237561,Kansas City Current,4-2-3-1,1624167,Croix Bethune,8,87.0,2,6.1,0.678,0.163,0.837,0.678,2026-03-28,0,0
-5161475,away,starters,1237561,Kansas City Current,4-2-3-1,351266,Debinha,99,85.0,3,6.5,0.678,0.5,0.5,0.678,2026-03-28,0,0
-5161475,away,starters,1237561,Kansas City Current,4-2-3-1,1081882,Elizabeth Ball,7,34.0,1,6.3,0.292,0.625,0.375,0.292,2026-03-28,0,0
-5161475,away,starters,1237561,Kansas City Current,4-2-3-1,1623814,Ellie Bravo-Young,5,32.0,1,6.3,0.292,0.875,0.125,0.292,2026-03-28,0,0
-5161475,away,starters,1237561,Kansas City Current,4-2-3-1,1455335,Gabrielle Robinson,24,36.0,1,6.4,0.292,0.375,0.625,0.292,2026-03-28,0,0
-5161475,away,starters,1237561,Kansas City Current,4-2-3-1,1360354,Izzy Rodriguez,18,38.0,1,6.3,0.292,0.125,0.875,0.292,2026-03-28,0,0
-5161475,away,starters,1237561,Kansas City Current,4-2-3-1,1727427,Katie Scott,31,66.0,2,6.4,0.485,0.3,0.7,0.485,2026-03-28,0,0
-5161475,away,starters,1237561,Kansas City Current,4-2-3-1,860076,Lo'eau LaBonta,10,64.0,2,6.5,0.485,0.7,0.3,0.485,2026-03-28,0,0
-5161475,away,starters,1237561,Kansas City Current,4-2-3-1,1366882,Lorena Leite,23,11.0,0,6.0,0.1,0.5,0.5,0.1,2026-03-28,0,0
-5161475,away,starters,1237561,Kansas City Current,4-2-3-1,1451722,Michelle Cooper,17,83.0,3,6.1,0.678,0.837,0.162,0.678,2026-03-28,0,0
-5161477,home,bench,243295,North Carolina Courage,5-3-2,979343,Cortnee Vine,22,,3,,,,,,2026-03-28,0,0
-5161477,home,bench,243295,North Carolina Courage,5-3-2,872714,Danielle Weatherholt,17,,1,,,,,,2026-03-28,0,0
-5161477,home,bench,243295,North Carolina Courage,5-3-2,1091768,Evelyn Ijeh,10,,3,,,,,,2026-03-28,0,0
-5161477,home,bench,243295,North Carolina Courage,5-3-2,1933118,Ivy Garner,6,,1,,,,,,2026-03-28,0,0
-5161477,home,bench,243295,North Carolina Courage,5-3-2,1927664,Lauryn Thompson,7,,3,,,,,,2026-03-28,0,0
-5161477,home,bench,243295,North Carolina Courage,5-3-2,1652385,Madison White,99,,0,,,,,,2026-03-28,0,0
-5161477,home,bench,243295,North Carolina Courage,5-3-2,1639262,Payton Linnehan,15,,3,,,,,,2026-03-28,0,0
-5161477,home,bench,243295,North Carolina Courage,5-3-2,1813496,Sydney Schmidt,3,,2,,,,,,2026-03-28,0,0
-5161477,home,bench,243295,North Carolina Courage,5-3-2,1623136,Uno Shiragaki,18,,1,,,,,,2026-03-28,0,0
-5161477,home,starters,243295,North Carolina Courage,5-3-2,1170693,Ashley Sanchez,2,77.0,3,,0.613,0.21,0.79,0.613,2026-03-28,0,0
-5161477,home,starters,243295,North Carolina Courage,5-3-2,1241250,Carly Wickenheiser,14,37.0,2,,0.357,0.305,0.695,0.357,2026-03-28,0,0
-5161477,home,starters,243295,North Carolina Courage,5-3-2,886252,Felicitas Rauch,11,59.0,2,,0.371,0.11,0.89,0.371,2026-03-28,0,0
-5161477,home,starters,243295,North Carolina Courage,5-3-2,1266209,Hannah Betfort,33,106.0,3,,0.87,0.3,0.7,0.87,2026-03-28,0,0
-5161477,home,starters,243295,North Carolina Courage,5-3-2,1055859,Kailen Sheridan,1,11.0,0,,0.1,0.5,0.5,0.1,2026-03-28,0,0
-5161477,home,starters,243295,North Carolina Courage,5-3-2,1618206,Maycee Bell,25,73.0,1,,0.613,0.79,0.21,0.613,2026-03-28,0,0
-5161477,home,starters,243295,North Carolina Courage,5-3-2,1652402,Natalia Staude,12,35.0,1,,0.357,0.5,0.5,0.357,2026-03-28,0,0
-5161477,home,starters,243295,North Carolina Courage,5-3-2,1170697,Natalie Jacobs,4,33.0,1,,0.357,0.695,0.305,0.357,2026-03-28,0,0
-5161477,home,starters,243295,North Carolina Courage,5-3-2,1618208,Riley Jackson,16,75.0,2,,0.613,0.5,0.5,0.613,2026-03-28,0,0
-5161477,home,starters,243295,North Carolina Courage,5-3-2,1081857,Ryan Williams,13,51.0,1,,0.371,0.89,0.11,0.371,2026-03-28,0,0
-5161477,home,starters,243295,North Carolina Courage,5-3-2,1636892,Shinomi Koyama,20,104.0,2,,0.87,0.7,0.3,0.87,2026-03-28,0,0
-5161475,home,bench,433029,Portland Thorns,4-2-3-1,1192811,Deyna Castellanos,10,,3,,,,,,2026-03-28,0,0
-5161475,home,bench,433029,Portland Thorns,4-2-3-1,985424,Isabella Bryld Obaze,5,,1,,,,,,2026-03-28,0,0
-5161475,home,bench,433029,Portland Thorns,4-2-3-1,1922977,Jennie Immethun,40,,2,,,,,,2026-03-28,0,0
-5161475,home,bench,433029,Portland Thorns,4-2-3-1,1922997,Maddie Padelski,11,,3,,,,,,2026-03-28,0,0
-5161475,home,bench,433029,Portland Thorns,4-2-3-1,1626778,Mallie McKenzie,29,,1,,,,,,2026-03-28,0,0
-5161475,home,bench,433029,Portland Thorns,4-2-3-1,1642025,Morgan Messner,35,,0,,,,,,2026-03-28,0,0
-5161475,home,bench,433029,Portland Thorns,4-2-3-1,1727476,Pietra Tordin,19,,3,,,,,,2026-03-28,0,0
-5161475,home,bench,433029,Portland Thorns,4-2-3-1,1922966,Shae Harvey,15,,2,,,,,,2026-03-28,0,0
-5161475,home,bench,433029,Portland Thorns,4-2-3-1,1798385,Valerin Loboa,88,,3,,,,,,2026-03-28,0,0
-5161475,home,starters,433029,Portland Thorns,4-2-3-1,1347063,Cassandra Bogere,6,66.0,2,6.4,0.485,0.3,0.7,0.485,2026-03-28,0,0
-5161475,home,starters,433029,Portland Thorns,4-2-3-1,1727474,Jayden Perry,24,36.0,1,6.7,0.292,0.375,0.625,0.292,2026-03-28,0,0
-5161475,home,starters,433029,Portland Thorns,4-2-3-1,646136,Jessie Fleming,21,64.0,2,6.3,0.485,0.7,0.3,0.485,2026-03-28,0,0
-5161475,home,starters,433029,Portland Thorns,4-2-3-1,645998,Mackenzie Arnold,18,11.0,0,6.3,0.1,0.5,0.5,0.1,2026-03-28,0,0
-5161475,home,starters,433029,Portland Thorns,4-2-3-1,896371,Marie Müller,23,32.0,1,6.3,0.292,0.875,0.125,0.292,2026-03-28,0,0
-5161475,home,starters,433029,Portland Thorns,4-2-3-1,881820,Marie-Yasmine Alidou D'Anjou,26,87.0,2,6.1,0.678,0.163,0.837,0.678,2026-03-28,0,0
-5161475,home,starters,433029,Portland Thorns,4-2-3-1,1360382,Mary Alice Vignola,25,38.0,1,6.3,0.292,0.125,0.875,0.292,2026-03-28,0,0
-5161475,home,starters,433029,Portland Thorns,4-2-3-1,1269653,Olivia Moultrie,13,85.0,2,6.4,0.678,0.5,0.5,0.678,2026-03-28,0,0
-5161475,home,starters,433029,Portland Thorns,4-2-3-1,1623838,Reilyn Turner,66,83.0,3,6.1,0.678,0.837,0.162,0.678,2026-03-28,0,0
-5161475,home,starters,433029,Portland Thorns,4-2-3-1,1194742,Samantha Hiatt,16,34.0,1,6.5,0.292,0.625,0.375,0.292,2026-03-28,0,0
-5161475,home,starters,433029,Portland Thorns,4-2-3-1,1170982,Sophia Wilson,9,115.0,3,6.0,0.87,0.5,0.5,0.87,2026-03-28,0,0
-5161476,away,bench,1237244,Racing Louisville,4-2-3-1,1923125,Audrey Mckeen,88,,3,,,,,,2026-03-28,0,0
-5161476,away,bench,1237244,Racing Louisville,4-2-3-1,1732591,Avery Kalitta,19,,2,,,,,,2026-03-28,0,0
-5161476,away,bench,1237244,Racing Louisville,4-2-3-1,1727372,Macey Hodge,10,,2,,,,,,2026-03-28,0,0
-5161476,away,bench,1237244,Racing Louisville,4-2-3-1,1923115,Macy Blackburn,23,,1,,,,,,2026-03-28,0,0
-5161476,away,bench,1237244,Racing Louisville,4-2-3-1,1727504,Maddie Prohaska,1,,0,,,,,,2026-03-28,0,0
-5161476,away,bench,1237244,Racing Louisville,4-2-3-1,1928436,Natalie Mitchell,22,,3,,,,,,2026-03-28,0,0
-5161476,away,bench,1237244,Racing Louisville,4-2-3-1,858405,Rachel Hill,21,,3,,,,,,2026-03-28,0,0
-5161476,away,bench,1237244,Racing Louisville,4-2-3-1,1923127,Taylor White,11,,3,,,,,,2026-03-28,0,0
-5161476,away,starters,1237244,Racing Louisville,4-2-3-1,1171148,Courtney Petersen,8,36.0,1,,0.292,0.375,0.625,0.292,2026-03-28,0,0
-5161476,away,starters,1237244,Racing Louisville,4-2-3-1,1727492,Ella Hase,6,87.0,3,,0.678,0.163,0.837,0.678,2026-03-28,0,0
-5161476,away,starters,1237244,Racing Louisville,4-2-3-1,1127984,Ellie Jean,5,34.0,1,,0.292,0.625,0.375,0.292,2026-03-28,0,0
-5161476,away,starters,1237244,Racing Louisville,4-2-3-1,1623842,Emma Sears,13,83.0,3,,0.678,0.837,0.162,0.678,2026-03-28,0,0
-5161476,away,starters,1237244,Racing Louisville,4-2-3-1,1359774,Jordyn Bloomer,24,11.0,0,,0.1,0.5,0.5,0.1,2026-03-28,0,0
-5161476,away,starters,1237244,Racing Louisville,4-2-3-1,1727485,Katie O'Kane,20,66.0,2,,0.485,0.3,0.7,0.485,2026-03-28,0,0
-5161476,away,starters,1237244,Racing Louisville,4-2-3-1,1455519,Kayla Fischer,9,85.0,3,,0.678,0.5,0.5,0.678,2026-03-28,0,0
-5161476,away,starters,1237244,Racing Louisville,4-2-3-1,1081863,Lauren Milliet,2,32.0,1,,0.292,0.875,0.125,0.292,2026-03-28,0,0
-5161476,away,starters,1237244,Racing Louisville,4-2-3-1,1923120,Mirann Gacioch,15,38.0,1,,0.292,0.125,0.875,0.292,2026-03-28,0,0
-5161476,away,starters,1237244,Racing Louisville,4-2-3-1,1727482,Sarah Weber,42,115.0,3,,0.87,0.5,0.5,0.87,2026-03-28,0,0
-5161476,away,starters,1237244,Racing Louisville,4-2-3-1,1171147,Taylor Flint,26,64.0,2,,0.485,0.7,0.3,0.485,2026-03-28,0,0
-5161476,home,bench,433031,Seattle Reign FC,4-2-3-1,1675026,Ainsley McCammon,16,,2,,,,,,2026-03-28,0,0
-5161476,home,bench,433031,Seattle Reign FC,4-2-3-1,1740667,Holly Noushin Ward,12,,3,,,,,,2026-03-28,0,0
-5161476,home,bench,433031,Seattle Reign FC,4-2-3-1,1932788,Keeley Dockter,42,,1,,,,,,2026-03-28,0,0
-5161476,home,bench,433031,Seattle Reign FC,4-2-3-1,1727502,Maddie Dahlien,5,,2,,,,,,2026-03-28,0,0
-5161476,home,bench,433031,Seattle Reign FC,4-2-3-1,1670641,Neeku Purcell,35,,0,,,,,,2026-03-28,0,0
-5161476,home,bench,433031,Seattle Reign FC,4-2-3-1,887722,Nérilia Mondésir,30,,2,,,,,,2026-03-28,0,0
-5161476,home,bench,433031,Seattle Reign FC,4-2-3-1,1380587,Ryanne Brown,22,,1,,,,,,2026-03-28,0,0
-5161476,home,bench,433031,Seattle Reign FC,4-2-3-1,1759742,Sally Menti,17,,2,,,,,,2026-03-28,0,0
-5161476,home,bench,433031,Seattle Reign FC,4-2-3-1,1797714,Sofía Cedeño,36,,2,,,,,,2026-03-28,0,0
-5161476,home,starters,433031,Seattle Reign FC,4-2-3-1,1082570,Angharad James,8,64.0,2,,0.485,0.7,0.3,0.485,2026-03-28,0,0
-5161476,home,starters,433031,Seattle Reign FC,4-2-3-1,859866,Brittany Ratcliffe,13,87.0,3,,0.678,0.163,0.837,0.678,2026-03-28,0,0
-5161476,home,starters,433031,Seattle Reign FC,4-2-3-1,1359805,Claudia Dickey,1,11.0,0,,0.1,0.5,0.5,0.1,2026-03-28,0,0
-5161476,home,starters,433031,Seattle Reign FC,4-2-3-1,1624166,Emeri Adames,7,83.0,3,,0.678,0.837,0.162,0.678,2026-03-28,0,0
-5161476,home,starters,433031,Seattle Reign FC,4-2-3-1,1727503,Emily Mason,14,34.0,1,,0.292,0.625,0.375,0.292,2026-03-28,0,0
-5161476,home,starters,433031,Seattle Reign FC,4-2-3-1,638033,Jessica Fishlock,10,85.0,2,,0.678,0.5,0.5,0.678,2026-03-28,0,0
-5161476,home,starters,433031,Seattle Reign FC,4-2-3-1,1626116,Madison Curry,24,38.0,1,,0.292,0.125,0.875,0.292,2026-03-28,0,0
-5161476,home,starters,433031,Seattle Reign FC,4-2-3-1,1643301,Madison Mercado,2,115.0,3,,0.87,0.5,0.5,0.87,2026-03-28,0,0
-5161476,home,starters,433031,Seattle Reign FC,4-2-3-1,1266133,Phoebe McClernon,21,36.0,1,,0.292,0.375,0.625,0.292,2026-03-28,0,0
-5161476,home,starters,433031,Seattle Reign FC,4-2-3-1,1618236,Samantha Meza,20,66.0,2,,0.485,0.3,0.7,0.485,2026-03-28,0,0
-5161476,home,starters,433031,Seattle Reign FC,4-2-3-1,638633,Sofia Huerta,11,32.0,1,,0.292,0.875,0.125,0.292,2026-03-28,0,0
-5161473,away,bench,923654,Utah Royals,4-2-3-1,1727506,Aria Nagai,20,,2,,,,,,2026-03-28,0,0
-5161473,away,bench,923654,Utah Royals,4-2-3-1,1624171,Courtney Brown,16,,3,6.2,,,,,2026-03-28,0,0
-5161473,away,bench,923654,Utah Royals,4-2-3-1,1727458,DeAira Jackson,77,,0,,,,,,2026-03-28,0,0
-5161473,away,bench,923654,Utah Royals,4-2-3-1,931206,Janni Thomsen,7,,1,6.9,,,,,2026-03-28,0,0
-5161473,away,bench,923654,Utah Royals,4-2-3-1,1170881,Kaleigh Riehl,18,,1,,,,,,2026-03-28,0,0
-5161473,away,bench,923654,Utah Royals,4-2-3-1,1510768,Kameron Simmonds,6,,1,,,,,,2026-03-28,0,0
-5161473,away,bench,923654,Utah Royals,4-2-3-1,934143,Kiana Palacios,21,,3,6.3,,,,,2026-03-28,0,0
-5161473,away,bench,923654,Utah Royals,4-2-3-1,1170956,Madison Hammond,99,,2,6.4,,,,,2026-03-28,0,0
-5161473,away,starters,923654,Utah Royals,4-2-3-1,1455302,Alexa Spaanstra,30,32.0,3,6.7,0.292,0.875,0.125,0.292,2026-03-28,0,0
-5161473,away,starters,923654,Utah Royals,4-2-3-1,1044346,Ana Tejada,17,66.0,2,6.8,0.485,0.3,0.7,0.485,2026-03-28,0,0
-5161473,away,starters,923654,Utah Royals,4-2-3-1,1081834,Cecelia Delzer,5,83.0,2,6.8,0.678,0.837,0.162,0.678,2026-03-28,0,0
-5161473,away,starters,923654,Utah Royals,4-2-3-1,1214612,Cloé Lacasse,24,87.0,3,7.7,0.678,0.163,0.837,0.678,2026-03-28,0,0
-5161473,away,starters,923654,Utah Royals,4-2-3-1,1468669,Dayana Pierre,15,64.0,2,7.2,0.485,0.7,0.3,0.485,2026-03-28,0,0
-5161473,away,starters,923654,Utah Royals,4-2-3-1,1170870,Kate Del Fava,8,36.0,1,7.3,0.292,0.375,0.625,0.292,2026-03-28,0,0
-5161473,away,starters,923654,Utah Royals,4-2-3-1,898505,Lara Prasnikar,9,115.0,3,8.3,0.87,0.5,0.5,0.87,2026-03-28,0,0
-5161473,away,starters,923654,Utah Royals,4-2-3-1,1727509,Mia Justus,23,11.0,0,6.9,0.1,0.5,0.5,0.1,2026-03-28,0,0
-5161473,away,starters,923654,Utah Royals,4-2-3-1,980948,Mina Tanaka,11,85.0,2,7.0,0.678,0.5,0.5,0.678,2026-03-28,0,0
-5161473,away,starters,923654,Utah Royals,4-2-3-1,1510619,Miyabi Moriya,22,38.0,1,7.5,0.292,0.125,0.875,0.292,2026-03-28,0,0
-5161473,away,starters,923654,Utah Royals,4-2-3-1,1266154,Tatumn Milazzo,2,34.0,1,7.9,0.292,0.625,0.375,0.292,2026-03-28,0,0
-5161474,away,bench,433030,Washington Spirit,4-2-3-1,1028124,Andi Sullivan,12,,2,,,,,,2026-03-28,0,0
-5161474,away,bench,433030,Washington Spirit,4-2-3-1,1798813,Claudia Martínez,11,,3,5.8,,,,,2026-03-28,0,0
-5161474,away,bench,433030,Washington Spirit,4-2-3-1,734811,Gabrielle Carle,14,,1,,,,,,2026-03-28,0,0
-5161474,away,bench,433030,Washington Spirit,4-2-3-1,1402026,Gift Monday,21,,3,,,,,,2026-03-28,0,0
-5161474,away,bench,433030,Washington Spirit,4-2-3-1,1269897,Kaylie Collins,31,,0,,,,,,2026-03-28,0,0
-5161474,away,bench,433030,Washington Spirit,4-2-3-1,1455483,Paige Metayer,26,,1,,,,,,2026-03-28,0,0
-5161474,away,bench,433030,Washington Spirit,4-2-3-1,1314369,Rosemonde Kouassi,19,,3,6.8,,,,,2026-03-28,0,0
-5161474,away,bench,433030,Washington Spirit,4-2-3-1,1717449,Tamara Bolt,16,,2,,,,,,2026-03-28,0,0
-5161474,away,bench,433030,Washington Spirit,4-2-3-1,1544582,Élisabeth Tsé,5,,1,6.2,,,,,2026-03-28,0,0
-5161474,away,starters,433030,Washington Spirit,4-2-3-1,1402028,Deborah Abiodun,20,87.0,2,7.0,0.678,0.163,0.837,0.678,2026-03-28,0,0
-5161474,away,starters,433030,Washington Spirit,4-2-3-1,887862,Esme Morgan,24,34.0,1,7.5,0.292,0.625,0.375,0.292,2026-03-28,0,0
-5161474,away,starters,433030,Washington Spirit,4-2-3-1,1624170,Hal Hershfelt,17,64.0,2,7.2,0.485,0.7,0.3,0.485,2026-03-28,0,0
-5161474,away,starters,433030,Washington Spirit,4-2-3-1,1624169,Kate Wiesner,6,38.0,1,7.8,0.292,0.125,0.875,0.292,2026-03-28,0,0
-5161474,away,starters,433030,Washington Spirit,4-2-3-1,646050,Leicy Santos,10,85.0,2,7.0,0.678,0.5,0.5,0.678,2026-03-28,0,0
-5161474,away,starters,433030,Washington Spirit,4-2-3-1,1184923,Lucia Di Guglielmo,13,32.0,1,6.3,0.292,0.875,0.125,0.292,2026-03-28,0,0
-5161474,away,starters,433030,Washington Spirit,4-2-3-1,1269074,Rebeca Bernal,4,66.0,1,7.0,0.485,0.3,0.7,0.485,2026-03-28,0,0
-5161474,away,starters,433030,Washington Spirit,4-2-3-1,1130945,Sandy MacIver,18,11.0,0,7.6,0.1,0.5,0.5,0.1,2026-03-28,0,0
-5161474,away,starters,433030,Washington Spirit,4-2-3-1,1184986,Sofia Cantore,27,115.0,3,6.2,0.87,0.5,0.5,0.87,2026-03-28,0,0
-5161474,away,starters,433030,Washington Spirit,4-2-3-1,1266150,Tara McKeown,9,36.0,1,7.6,0.292,0.375,0.625,0.292,2026-03-28,0,0
-5161474,away,starters,433030,Washington Spirit,4-2-3-1,1246577,Trinity Rodman,2,83.0,3,6.6,0.678,0.837,0.162,0.678,2026-03-28,0,0
-5161478,away,bench,189393,Chicago Stars,4-2-3-1,1813205,Aaliyah Farmer,25,,3,,,,,,2026-03-29,0,0
-5161478,away,bench,189393,Chicago Stars,4-2-3-1,1922325,Elise Evans,15,,1,,,,,,2026-03-29,0,0
-5161478,away,bench,189393,Chicago Stars,4-2-3-1,1922326,Emma Egizii,28,,2,,,,,,2026-03-29,0,0
-5161478,away,bench,189393,Chicago Stars,4-2-3-1,1406321,Ivonne Chacón,18,,3,,,,,,2026-03-29,0,0
-5161478,away,bench,189393,Chicago Stars,4-2-3-1,1380847,Jenna Bike,4,,3,,,,,,2026-03-29,0,0
-5161478,away,bench,189393,Chicago Stars,4-2-3-1,1170720,Katie Lund,27,,0,,,,,,2026-03-29,0,0
-5161478,away,bench,189393,Chicago Stars,4-2-3-1,1618191,Leilanni Nesbeth,13,,2,,,,,,2026-03-29,0,0
-5161478,away,bench,189393,Chicago Stars,4-2-3-1,1727396,Micayla Johnson,23,,3,,,,,,2026-03-29,0,0
-5161478,away,bench,189393,Chicago Stars,4-2-3-1,931204,Nádia Gomes,11,,3,,,,,,2026-03-29,0,0
-5161478,away,starters,189393,Chicago Stars,4-2-3-1,294601,Alyssa Naeher,1,11.0,0,,0.1,0.5,0.5,0.1,2026-03-29,0,0
-5161478,away,starters,189393,Chicago Stars,4-2-3-1,1618188,Bea Franklin,20,34.0,2,,0.292,0.625,0.375,0.292,2026-03-29,0,0
-5161478,away,starters,189393,Chicago Stars,4-2-3-1,1266126,Brianna Pinto,10,83.0,3,,0.678,0.837,0.162,0.678,2026-03-29,0,0
-5161478,away,starters,189393,Chicago Stars,4-2-3-1,1618190,Jameese Joseph,8,115.0,3,,0.87,0.5,0.5,0.87,2026-03-29,0,0
-5161478,away,starters,189393,Chicago Stars,4-2-3-1,1055857,Julia Grosso,7,85.0,2,,0.678,0.5,0.5,0.678,2026-03-29,0,0
-5161478,away,starters,189393,Chicago Stars,4-2-3-1,1044175,Maitane López,77,66.0,2,,0.485,0.3,0.7,0.485,2026-03-29,0,0
-5161478,away,starters,189393,Chicago Stars,4-2-3-1,1727398,Manaka Hayashi,16,64.0,2,,0.485,0.7,0.3,0.485,2026-03-29,0,0
-5161478,away,starters,189393,Chicago Stars,4-2-3-1,1264757,Michelle Alozie,5,32.0,1,,0.292,0.875,0.125,0.292,2026-03-29,0,0
-5161478,away,starters,189393,Chicago Stars,4-2-3-1,1360362,Ryan Gareis,24,87.0,2,,0.678,0.163,0.837,0.678,2026-03-29,0,0
-5161478,away,starters,189393,Chicago Stars,4-2-3-1,1045033,Samantha Staab,3,36.0,1,,0.292,0.375,0.625,0.292,2026-03-29,0,0
-5161478,away,starters,189393,Chicago Stars,4-2-3-1,1922328,Tessa Dellarose,34,38.0,1,,0.292,0.125,0.875,0.292,2026-03-29,0,0
-5161479,home,bench,189397,Gotham FC,4-3-3,857417,Esther González,9,,3,,,,,,2026-03-29,0,0
-5161479,home,bench,189397,Gotham FC,4-3-3,1898811,Jordynn Dudley,2,,3,,,,,,2026-03-29,0,0
-5161479,home,bench,189397,Gotham FC,4-3-3,1727433,Khyah Harper,34,,3,,,,,,2026-03-29,0,0
-5161479,home,bench,189397,Gotham FC,4-3-3,1727434,Mckenna Whitham,17,,3,,,,,,2026-03-29,0,0
-5161479,home,bench,189397,Gotham FC,4-3-3,860079,Midge Purce,23,,3,,,,,,2026-03-29,0,0
-5161479,home,bench,189397,Gotham FC,4-3-3,844537,Rose Lavelle,16,,2,,,,,,2026-03-29,0,0
-5161479,home,bench,189397,Gotham FC,4-3-3,1266210,Shelby Hogan,1,,0,,,,,,2026-03-29,0,0
-5161479,home,bench,189397,Gotham FC,4-3-3,1584213,Talia Sommer,14,,1,,,,,,2026-03-29,0,0
-5161479,home,bench,189397,Gotham FC,4-3-3,953349,Tierna Davidson,15,,1,,,,,,2026-03-29,0,0
-5161479,home,starters,189397,Gotham FC,4-3-3,1898807,Andrea Kitahata,24,73.0,3,,0.613,0.79,0.21,0.613,2026-03-29,0,0
-5161479,home,starters,189397,Gotham FC,4-3-3,294602,Ann-Katrin Berger,30,11.0,0,,0.1,0.5,0.5,0.1,2026-03-29,0,0
-5161479,home,starters,189397,Gotham FC,4-3-3,799212,Emily Sonnett,6,34.0,1,,0.357,0.625,0.375,0.357,2026-03-29,0,0
-5161479,home,starters,189397,Gotham FC,4-3-3,1359791,Jaelin Howell,7,75.0,2,,0.613,0.5,0.5,0.613,2026-03-29,0,0
-5161479,home,starters,189397,Gotham FC,4-3-3,932208,Jessica Carter,27,36.0,1,,0.357,0.375,0.625,0.357,2026-03-29,0,0
-5161479,home,starters,189397,Gotham FC,4-3-3,758047,Katie Stengel,28,105.0,3,,0.87,0.5,0.5,0.87,2026-03-29,0,0
-5161479,home,starters,189397,Gotham FC,4-3-3,1793292,Kayla Duran,19,32.0,1,,0.357,0.875,0.125,0.357,2026-03-29,0,0
-5161479,home,starters,189397,Gotham FC,4-3-3,1727438,Lilly Reale,4,38.0,1,,0.357,0.125,0.875,0.357,2026-03-29,0,0
-5161479,home,starters,189397,Gotham FC,4-3-3,1727435,Sarah Schupansky,11,103.0,2,,0.87,0.79,0.21,0.87,2026-03-29,0,0
-5161479,home,starters,189397,Gotham FC,4-3-3,938858,Savannah McCaskill,13,77.0,2,,0.613,0.21,0.79,0.613,2026-03-29,0,0
-5161479,home,starters,189397,Gotham FC,4-3-3,1728513,Sofia Cook,21,107.0,2,,0.87,0.21,0.79,0.87,2026-03-29,0,0
-5161479,away,bench,728922,Orlando Pride,4-2-3-1,1899892,Cara Martin,31,,0,,,,,,2026-03-29,0,0
-5161479,away,bench,728922,Orlando Pride,4-2-3-1,1359798,Julie Doyle,20,,3,,,,,,2026-03-29,0,0
-5161479,away,bench,728922,Orlando Pride,4-2-3-1,626681,Luana,8,,2,,,,,,2026-03-29,0,0
-5161479,away,bench,728922,Orlando Pride,4-2-3-1,99818,Marta,10,,3,,,,,,2026-03-29,0,0
-5161479,away,bench,728922,Orlando Pride,4-2-3-1,646065,Rafaelle,4,,1,,,,,,2026-03-29,0,0
-5161479,away,bench,728922,Orlando Pride,4-2-3-1,1927439,Reagan Raabe,38,,3,,,,,,2026-03-29,0,0
-5161479,away,bench,728922,Orlando Pride,4-2-3-1,1899893,Seven Castain,30,,3,,,,,,2026-03-29,0,0
-5161479,away,bench,728922,Orlando Pride,4-2-3-1,1776132,Simone Jackson,80,,3,,,,,,2026-03-29,0,0
-5161479,away,bench,728922,Orlando Pride,4-2-3-1,1455494,Summer Yates,28,,2,,,,,,2026-03-29,0,0
-5161479,away,starters,728922,Orlando Pride,4-2-3-1,1618241,Ally Lemos,6,64.0,2,,0.485,0.7,0.3,0.485,2026-03-29,0,0
-5161479,away,starters,728922,Orlando Pride,4-2-3-1,1266142,Angelina,7,66.0,2,,0.485,0.3,0.7,0.485,2026-03-29,0,0
-5161479,away,starters,728922,Orlando Pride,4-2-3-1,1045113,Anna Moorhouse,1,11.0,0,,0.1,0.5,0.5,0.1,2026-03-29,0,0
-5161479,away,starters,728922,Orlando Pride,4-2-3-1,1044266,Barbra Banda,11,115.0,3,,0.87,0.5,0.5,0.87,2026-03-29,0,0
-5161479,away,starters,728922,Orlando Pride,4-2-3-1,1626117,Coriana Dyke,12,38.0,1,,0.292,0.125,0.875,0.292,2026-03-29,0,0
-5161479,away,starters,728922,Orlando Pride,4-2-3-1,1018828,Hailie Mace,5,34.0,1,,0.292,0.625,0.375,0.292,2026-03-29,0,0
-5161479,away,starters,728922,Orlando Pride,4-2-3-1,964357,Haley McCutcheon,2,85.0,2,,0.678,0.5,0.5,0.678,2026-03-29,0,0
-5161479,away,starters,728922,Orlando Pride,4-2-3-1,1618187,Hannah Anderson,41,36.0,1,,0.292,0.375,0.625,0.292,2026-03-29,0,0
-5161479,away,starters,728922,Orlando Pride,4-2-3-1,1269082,Jacqueline Ovalle,13,83.0,3,,0.678,0.837,0.162,0.678,2026-03-29,0,0
-5161479,away,starters,728922,Orlando Pride,4-2-3-1,1043809,Oihane Hernández,21,32.0,1,,0.292,0.875,0.125,0.292,2026-03-29,0,0
-5161479,away,starters,728922,Orlando Pride,4-2-3-1,1510765,Solai Washington,29,87.0,3,,0.678,0.163,0.837,0.678,2026-03-29,0,0
-5161478,home,bench,1335917,San Diego Wave FC,4-3-3,1378688,Daniela Arias,30,,1,,,,,,2026-03-29,0,0
-5161478,home,bench,1335917,San Diego Wave FC,4-3-3,1611594,Gabi Portilho,81,,3,,,,,,2026-03-29,0,0
-5161478,home,bench,1335917,San Diego Wave FC,4-3-3,1728517,Jordan Fusco,28,,3,,,,,,2026-03-29,0,0
-5161478,home,bench,1335917,San Diego Wave FC,4-3-3,1266199,Kiara Pickett,33,,2,,,,,,2026-03-29,0,0
-5161478,home,bench,1335917,San Diego Wave FC,4-3-3,1178346,Laurina Fazer,18,,2,,,,,,2026-03-29,0,0
-5161478,home,bench,1335917,San Diego Wave FC,4-3-3,1718930,Luisa Agudelo,1,,0,,,,,,2026-03-29,0,0
-5161478,home,bench,1335917,San Diego Wave FC,4-3-3,1457722,Melanie Barcenas,7,,3,,,,,,2026-03-29,0,0
-5161478,home,bench,1335917,San Diego Wave FC,4-3-3,1728516,Nya Harrison,23,,1,,,,,,2026-03-29,0,0
-5161478,home,bench,1335917,San Diego Wave FC,4-3-3,1928448,Tatum Wynalda,19,,2,,,,,,2026-03-29,0,0
-5161478,home,starters,1335917,San Diego Wave FC,4-3-3,1766427,Amelia Van Zanten,16,32.0,1,,0.357,0.875,0.125,0.357,2026-03-29,0,0
-5161478,home,starters,1335917,San Diego Wave FC,4-3-3,1798391,Dudinha,88,107.0,3,,0.87,0.21,0.79,0.87,2026-03-29,0,0
-5161478,home,starters,1335917,San Diego Wave FC,4-3-3,1091594,Gia Corley,11,73.0,2,,0.613,0.79,0.21,0.613,2026-03-29,0,0
-5161478,home,starters,1335917,San Diego Wave FC,4-3-3,1618280,Kennedy Wesley,2,34.0,1,,0.357,0.625,0.375,0.357,2026-03-29,0,0
-5161478,home,starters,1335917,San Diego Wave FC,4-3-3,294925,Kenza Dali,10,75.0,2,,0.613,0.5,0.5,0.613,2026-03-29,0,0
-5161478,home,starters,1335917,San Diego Wave FC,4-3-3,1630732,Kimmi Ascanio,8,77.0,3,,0.613,0.21,0.79,0.613,2026-03-29,0,0
-5161478,home,starters,1335917,San Diego Wave FC,4-3-3,841942,Kristen McNabb,14,36.0,1,,0.357,0.375,0.625,0.357,2026-03-29,0,0
-5161478,home,starters,1335917,San Diego Wave FC,4-3-3,1793924,Leah Freeman,99,11.0,0,,0.1,0.5,0.5,0.1,2026-03-29,0,0
-5161478,home,starters,1335917,San Diego Wave FC,4-3-3,1923163,Lia Godfrey,22,103.0,2,,0.87,0.79,0.21,0.87,2026-03-29,0,0
-5161478,home,starters,1335917,San Diego Wave FC,4-3-3,887335,Ludmila da Silva,17,105.0,3,,0.87,0.5,0.5,0.87,2026-03-29,0,0
-5161478,home,starters,1335917,San Diego Wave FC,4-3-3,851316,Perle Morroni,75,38.0,1,,0.357,0.125,0.875,0.357,2026-03-29,0,0
+5161472,home,bench,1335914,Angel City FC,4-1-4-1,1922266,Carina Lageyre,16,,2,,,,,,3/28/26,0,0
+5161472,home,bench,1335914,Angel City FC,4-1-4-1,1510841,Casey Phair,9,,3,,,,,,3/28/26,0,0
+5161472,home,bench,1335914,Angel City FC,4-1-4-1,1922262,Faith Nguyen,30,,0,,,,,,3/28/26,0,0
+5161472,home,bench,1335914,Angel City FC,4-1-4-1,931178,Hannah Seabert,13,,0,,,,,,3/28/26,0,0
+5161472,home,bench,1335914,Angel City FC,4-1-4-1,1234938,Prisca Chilufya,24,,2,,,,,,3/28/26,0,0
+5161472,home,bench,1335914,Angel City FC,4-1-4-1,1929089,Rajanah Reed,37,,2,,,,,,3/28/26,0,0
+5161472,home,bench,1335914,Angel City FC,4-1-4-1,1081810,Sarah Gorden,11,,1,,,,,,3/28/26,0,0
+5161472,home,bench,1335914,Angel City FC,4-1-4-1,1759845,Sophia Mattice,25,,1,,,,,,3/28/26,0,0
+5161472,home,bench,1335914,Angel City FC,4-1-4-1,1922259,Taylor Suarez,99,,2,5.8,,,,,3/28/26,0,0
+5161472,home,starters,1335914,Angel City FC,4-1-4-1,1451621,Angelina Anderson,19,11,0,7,0.1,0.5,0.5,0.1,3/28/26,0,0
+5161472,home,starters,1335914,Angel City FC,4-1-4-1,1366878,Ary Borges,8,84,2,6.7,0.678,0.625,0.375,0.678,3/28/26,0,0
+5161472,home,starters,1335914,Angel City FC,4-1-4-1,1406297,Emily Sams,6,34,1,7.2,0.292,0.625,0.375,0.292,3/28/26,0,0
+5161472,home,starters,1335914,Angel City FC,4-1-4-1,1793298,Evelyn Shores,15,38,1,8,0.292,0.125,0.875,0.292,3/28/26,1,0
+5161472,home,starters,1335914,Angel City FC,4-1-4-1,1618094,Gisele Thompson,20,32,1,7.3,0.292,0.875,0.125,0.292,3/28/26,0,0
+5161472,home,starters,1335914,Angel City FC,4-1-4-1,1624205,Kennedy Fuller,17,82,2,6.9,0.678,0.875,0.125,0.678,3/28/26,0,0
+5161472,home,starters,1335914,Angel City FC,4-1-4-1,1553648,Maiara Niehues,12,86,2,7.3,0.678,0.375,0.625,0.678,3/28/26,0,0
+5161472,home,starters,1335914,Angel City FC,4-1-4-1,1266135,Nealy Martin,14,65,2,6.5,0.485,0.5,0.5,0.485,3/28/26,0,0
+5161472,home,starters,1335914,Angel City FC,4-1-4-1,1727376,Riley Tiernan,33,88,3,7.5,0.678,0.125,0.875,0.678,3/28/26,0,0
+5161472,home,starters,1335914,Angel City FC,4-1-4-1,1618171,Savy King,3,36,1,6.9,0.292,0.375,0.625,0.292,3/28/26,0,0
+5161472,home,starters,1335914,Angel City FC,4-1-4-1,1187388,Sveindís Jónsdóttir,32,115,3,7.5,0.89,0.5,0.5,0.89,3/28/26,1,0
+5161477,away,bench,1607273,Bay FC,4-2-3-1,1194830,Anouk Denton,25,,1,,,,,,3/28/26,0,0
+5161477,away,bench,1607273,Bay FC,4-2-3-1,1624860,Caroline Conti,23,,2,,,,,,3/28/26,0,0
+5161477,away,bench,1607273,Bay FC,4-2-3-1,1060628,Dorian Bailey,19,,2,,,,,,3/28/26,0,0
+5161477,away,bench,1607273,Bay FC,4-2-3-1,1637734,Emmie Allen,32,,0,,,,,,3/28/26,0,0
+5161477,away,bench,1607273,Bay FC,4-2-3-1,1626415,Jamie Shepherd,14,,2,,,,,,3/28/26,0,0
+5161477,away,bench,1607273,Bay FC,4-2-3-1,1344369,Keira Barry,27,,2,,,,,,3/28/26,1,0
+5161477,away,bench,1607273,Bay FC,4-2-3-1,1081881,Kelli Hubly,11,,1,,,,,,3/28/26,0,0
+5161477,away,bench,1607273,Bay FC,4-2-3-1,1922288,Onyeka Gamero,6,,3,,,,,,3/28/26,0,0
+5161477,away,bench,1607273,Bay FC,4-2-3-1,1360033,Tess Boade,12,,2,,,,,,3/28/26,0,0
+5161477,away,starters,1607273,Bay FC,4-2-3-1,1623817,Alex Pfeiffer,17,83,3,,0.678,0.837,0.162,0.678,3/28/26,0,0
+5161477,away,starters,1607273,Bay FC,4-2-3-1,1727443,Brooklyn Courtnall,22,34,1,,0.292,0.625,0.375,0.292,3/28/26,0,0
+5161477,away,starters,1607273,Bay FC,4-2-3-1,1618202,Claire Hutton,8,64,2,,0.485,0.7,0.3,0.485,3/28/26,0,0
+5161477,away,starters,1607273,Bay FC,4-2-3-1,734768,Cristiana Girelli,10,115,3,,0.87,0.5,0.5,0.87,3/28/26,0,0
+5161477,away,starters,1607273,Bay FC,4-2-3-1,1728494,Hannah Bebar,41,66,2,,0.485,0.3,0.7,0.485,3/28/26,0,0
+5161477,away,starters,1607273,Bay FC,4-2-3-1,1360364,Joelle Anderson,18,36,1,,0.292,0.375,0.625,0.292,3/28/26,0,0
+5161477,away,starters,1607273,Bay FC,4-2-3-1,1455307,Jordan Silkowitz,29,11,0,,0.1,0.5,0.5,0.1,3/28/26,0,0
+5161477,away,starters,1607273,Bay FC,4-2-3-1,1727395,Karlie Lema,5,87,3,,0.678,0.163,0.837,0.678,3/28/26,1,0
+5161477,away,starters,1607273,Bay FC,4-2-3-1,1626413,Madeline Moreau,24,38,1,,0.292,0.125,0.875,0.292,3/28/26,0,0
+5161477,away,starters,1607273,Bay FC,4-2-3-1,1455304,Sydney Collins,16,32,1,,0.292,0.875,0.125,0.292,3/28/26,0,0
+5161477,away,starters,1607273,Bay FC,4-2-3-1,1727394,Taylor Huff,7,85,2,,0.678,0.5,0.5,0.678,3/28/26,0,0
+5161473,home,bench,1795723,Boston Legacy FC,4-1-4-1,1437709,Aleigh Gambone,15,,1,7.3,,,,,3/28/26,0,0
+5161473,home,bench,1795723,Boston Legacy FC,4-1-4-1,1345776,Amanda,9,,3,6.8,,,,,3/28/26,0,0
+5161473,home,bench,1795723,Boston Legacy FC,4-1-4-1,1469900,Amanda Allen,7,,3,,,,,,3/28/26,0,0
+5161473,home,bench,1795723,Boston Legacy FC,4-1-4-1,1463399,Chloe Ricketts,11,,2,,,,,,3/28/26,0,0
+5161473,home,bench,1795723,Boston Legacy FC,4-1-4-1,1744056,Emerson Elgin,4,,1,,,,,,3/28/26,0,0
+5161473,home,bench,1795723,Boston Legacy FC,4-1-4-1,1077559,Josefine Hasbo,5,,2,5.8,,,,,3/28/26,0,0
+5161473,home,bench,1795723,Boston Legacy FC,4-1-4-1,1359806,Laurel Ivory,18,,0,,,,,,3/28/26,0,0
+5161473,home,bench,1795723,Boston Legacy FC,4-1-4-1,734808,Nichelle Prince,12,,3,6,,,,,3/28/26,0,0
+5161473,home,bench,1795723,Boston Legacy FC,4-1-4-1,1922301,Sophia Lowenberg,25,,2,,,,,,3/28/26,0,0
+5161473,home,starters,1795723,Boston Legacy FC,4-1-4-1,1127307,Aissata Traoré,14,115,3,7.6,0.89,0.5,0.5,0.89,3/28/26,1,0
+5161473,home,starters,1795723,Boston Legacy FC,4-1-4-1,1408768,Alba Caño,26,84,2,6.8,0.678,0.625,0.375,0.678,3/28/26,1,0
+5161473,home,starters,1795723,Boston Legacy FC,4-1-4-1,1607087,Annie Karich,6,65,1,6,0.485,0.5,0.5,0.485,3/28/26,1,0
+5161473,home,starters,1795723,Boston Legacy FC,4-1-4-1,1350551,Barbara Olivieri,21,88,3,6.3,0.678,0.125,0.875,0.678,3/28/26,0,0
+5161473,home,starters,1795723,Boston Legacy FC,4-1-4-1,1170228,Bianca Rose St-Georges,53,32,3,7.7,0.292,0.875,0.125,0.292,3/28/26,0,0
+5161473,home,starters,1795723,Boston Legacy FC,4-1-4-1,1081894,Casey Murphy,1,11,0,6,0.1,0.5,0.5,0.1,3/28/26,0,0
+5161473,home,starters,1795723,Boston Legacy FC,4-1-4-1,1170671,Ella Stevens,10,86,2,5.9,0.678,0.375,0.625,0.678,3/28/26,0,0
+5161473,home,starters,1795723,Boston Legacy FC,4-1-4-1,1466142,Fauzia Najjemba,13,82,3,5.8,0.678,0.875,0.125,0.678,3/28/26,1,0
+5161473,home,starters,1795723,Boston Legacy FC,4-1-4-1,1378691,Jorelyn Carabalí,16,36,1,6.3,0.292,0.375,0.625,0.292,3/28/26,0,0
+5161473,home,starters,1795723,Boston Legacy FC,4-1-4-1,1714650,Laurel Ansbrow,34,34,1,6.4,0.292,0.625,0.375,0.292,3/28/26,0,0
+5161473,home,starters,1795723,Boston Legacy FC,4-1-4-1,1677744,Sammy Smith,8,38,2,6.2,0.292,0.125,0.875,0.292,3/28/26,0,0
+5161474,home,bench,1795705,Denver Summit FC,4-2-3-1,1135809,Ally Brazier,11,,3,,,,,,3/28/26,0,0
+5161474,home,bench,1795705,Denver Summit FC,4-2-3-1,1748347,Ayooluwa Oke,7,,1,,,,,,3/28/26,0,0
+5161474,home,bench,1795705,Denver Summit FC,4-2-3-1,1436911,Emma Regan,8,,2,,,,,,3/28/26,0,0
+5161474,home,bench,1795705,Denver Summit FC,4-2-3-1,1693385,Lourdes Bosch,19,,2,,,,,,3/28/26,0,0
+5161474,home,bench,1795705,Denver Summit FC,4-2-3-1,1727512,Meg Boade,34,,2,,,,,,3/28/26,0,0
+5161474,home,bench,1795705,Denver Summit FC,4-2-3-1,809796,Nahikari García,79,,3,,,,,,3/28/26,0,0
+5161474,home,bench,1795705,Denver Summit FC,4-2-3-1,1922336,Natalie Means,4,,1,6,,,,,3/28/26,0,0
+5161474,home,bench,1795705,Denver Summit FC,4-2-3-1,1922334,Olivia Thomas,33,,3,,,,,,3/28/26,0,0
+5161474,home,bench,1795705,Denver Summit FC,4-2-3-1,887466,Pauline Peyraud-Magnin,21,,0,,,,,,3/28/26,0,0
+5161474,home,starters,1795705,Denver Summit FC,4-2-3-1,1081909,Abby Smith,1,11,0,7.6,0.1,0.5,0.5,0.1,3/28/26,0,0
+5161474,home,starters,1795705,Denver Summit FC,4-2-3-1,762340,Carson Pickett,16,38,1,7.3,0.292,0.125,0.875,0.292,3/28/26,0,0
+5161474,home,starters,1795705,Denver Summit FC,4-2-3-1,1272790,Delanie Sheehan,24,64,2,7.2,0.485,0.7,0.3,0.485,3/28/26,0,0
+5161474,home,starters,1795705,Denver Summit FC,4-2-3-1,1922338,Devin Lynch,5,66,2,7.7,0.485,0.3,0.7,0.485,3/28/26,0,0
+5161474,home,starters,1795705,Denver Summit FC,4-2-3-1,734795,Janine Sonis,6,32,1,7.1,0.292,0.875,0.125,0.292,3/28/26,0,0
+5161474,home,starters,1795705,Denver Summit FC,4-2-3-1,1081853,Kaleigh Kurtz,3,36,1,6.9,0.292,0.375,0.625,0.292,3/28/26,1,0
+5161474,home,starters,1795705,Denver Summit FC,4-2-3-1,1359610,Megan Reid,2,34,1,6.9,0.292,0.625,0.375,0.292,3/28/26,0,0
+5161474,home,starters,1795705,Denver Summit FC,4-2-3-1,898503,Melissa Kössler,25,115,3,5.8,0.87,0.5,0.5,0.87,3/28/26,0,0
+5161474,home,starters,1795705,Denver Summit FC,4-2-3-1,1256374,Natasha Flint,26,85,3,6.6,0.678,0.5,0.5,0.678,3/28/26,0,0
+5161474,home,starters,1795705,Denver Summit FC,4-2-3-1,1266129,Yazmeen Ryan,9,87,3,6.9,0.678,0.163,0.837,0.678,3/28/26,0,0
+5161474,home,starters,1795705,Denver Summit FC,4-2-3-1,1922337,Yuna McCormack,14,83,3,6.3,0.678,0.837,0.162,0.678,3/28/26,0,0
+5161472,away,bench,521233,Houston Dash,4/4/02,646135,Allysha Chapman,2,,1,,,,,,3/28/26,0,0
+5161472,away,bench,521233,Houston Dash,4/4/02,1679907,Caroline DeLisle,40,,0,,,,,,3/28/26,0,0
+5161472,away,bench,521233,Houston Dash,4/4/02,1927671,Cate Hardin,18,,1,,,,,,3/28/26,0,0
+5161472,away,bench,521233,Houston Dash,4/4/02,1418346,Clarissa Laris­ey,9,,3,,,,,,3/28/26,0,0
+5161472,away,bench,521233,Houston Dash,4/4/02,961436,Evelina Duljan,7,,3,,,,,,3/28/26,0,0
+5161472,away,bench,521233,Houston Dash,4/4/02,1359772,Hillary Beall,21,,0,,,,,,3/28/26,0,0
+5161472,away,bench,521233,Houston Dash,4/4/02,734740,Lisa Boattin,27,,2,,,,,,3/28/26,0,0
+5161472,away,bench,521233,Houston Dash,4/4/02,1455495,Messiah Bright,6,,3,6.1,,,,,3/28/26,0,0
+5161472,away,bench,521233,Houston Dash,4/4/02,856548,Sarah Puntigam,17,,2,,,,,,3/28/26,0,0
+5161472,away,starters,521233,Houston Dash,4/4/02,1623859,Avery Patterson,15,32,1,7.1,0.357,0.875,0.125,0.357,3/28/26,0,0
+5161472,away,starters,521233,Houston Dash,4/4/02,638007,Danielle Colaprico,24,76,2,6.5,0.613,0.375,0.625,0.613,3/28/26,1,0
+5161472,away,starters,521233,Houston Dash,4/4/02,1081831,Jane Campbell,1,11,0,5.6,0.1,0.5,0.5,0.1,3/28/26,0,0
+5161472,away,starters,521233,Houston Dash,4/4/02,1386849,Kalyssa van Zanten,12,106,2,6.8,0.87,0.3,0.7,0.87,3/28/26,1,0
+5161472,away,starters,521233,Houston Dash,4/4/02,1927669,Kat Rader,22,72,2,7.6,0.613,0.875,0.125,0.613,3/28/26,0,0
+5161472,away,starters,521233,Houston Dash,4/4/02,1927670,Leah Klenke,4,38,1,6.1,0.357,0.125,0.875,0.357,3/28/26,0,0
+5161472,away,starters,521233,Houston Dash,4/4/02,1927666,Linda Ullmark,30,78,2,6.2,0.613,0.125,0.875,0.613,3/28/26,0,0
+5161472,away,starters,521233,Houston Dash,4/4/02,1727415,Maggie Graham,19,74,2,8,0.613,0.625,0.375,0.613,3/28/26,0,0
+5161472,away,starters,521233,Houston Dash,4/4/02,758742,Makenzy Robbe,25,104,3,7.4,0.87,0.7,0.3,0.87,3/28/26,0,0
+5161472,away,starters,521233,Houston Dash,4/4/02,1294816,Malia Berkely,10,36,1,6.1,0.357,0.375,0.625,0.357,3/28/26,0,0
+5161472,away,starters,521233,Houston Dash,4/4/02,1079072,Paige Nielsen,14,34,1,6.6,0.357,0.625,0.375,0.357,3/28/26,0,0
+5161475,away,bench,1237561,Kansas City Current,4-2-3-1,1927673,Amelia White,3,,3,,,,,,3/28/26,0,0
+5161475,away,bench,1237561,Kansas City Current,4-2-3-1,1455303,Haley Hopkins,13,,2,,,,,,3/28/26,0,0
+5161475,away,bench,1237561,Kansas City Current,4-2-3-1,1081818,Kayla Sharples,27,,1,,,,,,3/28/26,0,0
+5161475,away,bench,1237561,Kansas City Current,4-2-3-1,1933430,Kelsey Branson,34,,2,,,,,,3/28/26,0,0
+5161475,away,bench,1237561,Kansas City Current,4-2-3-1,1927674,Kolo Suliafu,44,,1,,,,,,3/28/26,0,0
+5161475,away,bench,1237561,Kansas City Current,4-2-3-1,1170524,Kyra Carusa,66,,3,,,,,,3/28/26,0,0
+5161475,away,bench,1237561,Kansas City Current,4-2-3-1,1927675,Laney Rouse,2,,1,,,,,,3/28/26,0,0
+5161475,away,bench,1237561,Kansas City Current,4-2-3-1,1360027,Marisa Jordan,1,,0,,,,,,3/28/26,0,0
+5161475,away,bench,1237561,Kansas City Current,4-2-3-1,1455363,Penelope Hocking,55,,3,,,,,,3/28/26,0,0
+5161475,away,starters,1237561,Kansas City Current,4-2-3-1,1623860,Ally Sentnor,21,115,3,6.1,0.87,0.5,0.5,0.87,3/28/26,0,0
+5161475,away,starters,1237561,Kansas City Current,4-2-3-1,1624167,Croix Bethune,8,87,2,6.1,0.678,0.163,0.837,0.678,3/28/26,1,0
+5161475,away,starters,1237561,Kansas City Current,4-2-3-1,351266,Debinha,99,85,3,6.5,0.678,0.5,0.5,0.678,3/28/26,0,0
+5161475,away,starters,1237561,Kansas City Current,4-2-3-1,1081882,Elizabeth Ball,7,34,1,6.3,0.292,0.625,0.375,0.292,3/28/26,0,0
+5161475,away,starters,1237561,Kansas City Current,4-2-3-1,1623814,Ellie Bravo-Young,5,32,1,6.3,0.292,0.875,0.125,0.292,3/28/26,1,0
+5161475,away,starters,1237561,Kansas City Current,4-2-3-1,1455335,Gabrielle Robinson,24,36,1,6.4,0.292,0.375,0.625,0.292,3/28/26,0,0
+5161475,away,starters,1237561,Kansas City Current,4-2-3-1,1360354,Izzy Rodriguez,18,38,1,6.3,0.292,0.125,0.875,0.292,3/28/26,0,0
+5161475,away,starters,1237561,Kansas City Current,4-2-3-1,1727427,Katie Scott,31,66,2,6.4,0.485,0.3,0.7,0.485,3/28/26,0,0
+5161475,away,starters,1237561,Kansas City Current,4-2-3-1,860076,Lo'eau LaBonta,10,64,2,6.5,0.485,0.7,0.3,0.485,3/28/26,0,0
+5161475,away,starters,1237561,Kansas City Current,4-2-3-1,1366882,Lorena Leite,23,11,0,6,0.1,0.5,0.5,0.1,3/28/26,0,0
+5161475,away,starters,1237561,Kansas City Current,4-2-3-1,1451722,Michelle Cooper,17,83,3,6.1,0.678,0.837,0.162,0.678,3/28/26,0,0
+5161477,home,bench,243295,North Carolina Courage,5/3/02,979343,Cortnee Vine,22,,3,,,,,,3/28/26,0,0
+5161477,home,bench,243295,North Carolina Courage,5/3/02,872714,Danielle Weatherholt,17,,1,,,,,,3/28/26,0,0
+5161477,home,bench,243295,North Carolina Courage,5/3/02,1091768,Evelyn Ijeh,10,,3,,,,,,3/28/26,1,0
+5161477,home,bench,243295,North Carolina Courage,5/3/02,1933118,Ivy Garner,6,,1,,,,,,3/28/26,0,0
+5161477,home,bench,243295,North Carolina Courage,5/3/02,1927664,Lauryn Thompson,7,,3,,,,,,3/28/26,0,0
+5161477,home,bench,243295,North Carolina Courage,5/3/02,1652385,Madison White,99,,0,,,,,,3/28/26,0,0
+5161477,home,bench,243295,North Carolina Courage,5/3/02,1639262,Payton Linnehan,15,,3,,,,,,3/28/26,0,0
+5161477,home,bench,243295,North Carolina Courage,5/3/02,1813496,Sydney Schmidt,3,,2,,,,,,3/28/26,0,0
+5161477,home,bench,243295,North Carolina Courage,5/3/02,1623136,Uno Shiragaki,18,,1,,,,,,3/28/26,0,0
+5161477,home,starters,243295,North Carolina Courage,5/3/02,1170693,Ashley Sanchez,2,77,3,,0.613,0.21,0.79,0.613,3/28/26,0,0
+5161477,home,starters,243295,North Carolina Courage,5/3/02,1241250,Carly Wickenheiser,14,37,2,,0.357,0.305,0.695,0.357,3/28/26,0,0
+5161477,home,starters,243295,North Carolina Courage,5/3/02,886252,Felicitas Rauch,11,59,2,,0.371,0.11,0.89,0.371,3/28/26,0,0
+5161477,home,starters,243295,North Carolina Courage,5/3/02,1266209,Hannah Betfort,33,106,3,,0.87,0.3,0.7,0.87,3/28/26,0,0
+5161477,home,starters,243295,North Carolina Courage,5/3/02,1055859,Kailen Sheridan,1,11,0,,0.1,0.5,0.5,0.1,3/28/26,0,0
+5161477,home,starters,243295,North Carolina Courage,5/3/02,1618206,Maycee Bell,25,73,1,,0.613,0.79,0.21,0.613,3/28/26,0,0
+5161477,home,starters,243295,North Carolina Courage,5/3/02,1652402,Natalia Staude,12,35,1,,0.357,0.5,0.5,0.357,3/28/26,0,0
+5161477,home,starters,243295,North Carolina Courage,5/3/02,1170697,Natalie Jacobs,4,33,1,,0.357,0.695,0.305,0.357,3/28/26,0,0
+5161477,home,starters,243295,North Carolina Courage,5/3/02,1618208,Riley Jackson,16,75,2,,0.613,0.5,0.5,0.613,3/28/26,0,0
+5161477,home,starters,243295,North Carolina Courage,5/3/02,1081857,Ryan Williams,13,51,1,,0.371,0.89,0.11,0.371,3/28/26,0,0
+5161477,home,starters,243295,North Carolina Courage,5/3/02,1636892,Shinomi Koyama,20,104,2,,0.87,0.7,0.3,0.87,3/28/26,0,0
+5161475,home,bench,433029,Portland Thorns,4-2-3-1,1192811,Deyna Castellanos,10,,3,,,,,,3/28/26,0,0
+5161475,home,bench,433029,Portland Thorns,4-2-3-1,985424,Isabella Bryld Obaze,5,,1,,,,,,3/28/26,0,0
+5161475,home,bench,433029,Portland Thorns,4-2-3-1,1922977,Jennie Immethun,40,,2,,,,,,3/28/26,0,0
+5161475,home,bench,433029,Portland Thorns,4-2-3-1,1922997,Maddie Padelski,11,,3,,,,,,3/28/26,0,0
+5161475,home,bench,433029,Portland Thorns,4-2-3-1,1626778,Mallie McKenzie,29,,1,,,,,,3/28/26,0,0
+5161475,home,bench,433029,Portland Thorns,4-2-3-1,1642025,Morgan Messner,35,,0,,,,,,3/28/26,0,0
+5161475,home,bench,433029,Portland Thorns,4-2-3-1,1727476,Pietra Tordin,19,,3,,,,,,3/28/26,0,0
+5161475,home,bench,433029,Portland Thorns,4-2-3-1,1922966,Shae Harvey,15,,2,,,,,,3/28/26,0,0
+5161475,home,bench,433029,Portland Thorns,4-2-3-1,1798385,Valerin Loboa,88,,3,,,,,,3/28/26,0,0
+5161475,home,starters,433029,Portland Thorns,4-2-3-1,1347063,Cassandra Bogere,6,66,2,6.4,0.485,0.3,0.7,0.485,3/28/26,0,0
+5161475,home,starters,433029,Portland Thorns,4-2-3-1,1727474,Jayden Perry,24,36,1,6.7,0.292,0.375,0.625,0.292,3/28/26,0,0
+5161475,home,starters,433029,Portland Thorns,4-2-3-1,646136,Jessie Fleming,21,64,2,6.3,0.485,0.7,0.3,0.485,3/28/26,0,0
+5161475,home,starters,433029,Portland Thorns,4-2-3-1,645998,Mackenzie Arnold,18,11,0,6.3,0.1,0.5,0.5,0.1,3/28/26,0,0
+5161475,home,starters,433029,Portland Thorns,4-2-3-1,896371,Marie Müller,23,32,1,6.3,0.292,0.875,0.125,0.292,3/28/26,0,0
+5161475,home,starters,433029,Portland Thorns,4-2-3-1,881820,Marie-Yasmine Alidou D'Anjou,26,87,2,6.1,0.678,0.163,0.837,0.678,3/28/26,0,0
+5161475,home,starters,433029,Portland Thorns,4-2-3-1,1360382,Mary Alice Vignola,25,38,1,6.3,0.292,0.125,0.875,0.292,3/28/26,1,0
+5161475,home,starters,433029,Portland Thorns,4-2-3-1,1269653,Olivia Moultrie,13,85,2,6.4,0.678,0.5,0.5,0.678,3/28/26,0,0
+5161475,home,starters,433029,Portland Thorns,4-2-3-1,1623838,Reilyn Turner,66,83,3,6.1,0.678,0.837,0.162,0.678,3/28/26,0,0
+5161475,home,starters,433029,Portland Thorns,4-2-3-1,1194742,Samantha Hiatt,16,34,1,6.5,0.292,0.625,0.375,0.292,3/28/26,0,0
+5161475,home,starters,433029,Portland Thorns,4-2-3-1,1170982,Sophia Wilson,9,115,3,6,0.87,0.5,0.5,0.87,3/28/26,0,0
+5161476,away,bench,1237244,Racing Louisville,4-2-3-1,1923125,Audrey Mckeen,88,,3,,,,,,3/28/26,0,0
+5161476,away,bench,1237244,Racing Louisville,4-2-3-1,1732591,Avery Kalitta,19,,2,,,,,,3/28/26,0,0
+5161476,away,bench,1237244,Racing Louisville,4-2-3-1,1727372,Macey Hodge,10,,2,,,,,,3/28/26,1,0
+5161476,away,bench,1237244,Racing Louisville,4-2-3-1,1923115,Macy Blackburn,23,,1,,,,,,3/28/26,0,0
+5161476,away,bench,1237244,Racing Louisville,4-2-3-1,1727504,Maddie Prohaska,1,,0,,,,,,3/28/26,0,0
+5161476,away,bench,1237244,Racing Louisville,4-2-3-1,1928436,Natalie Mitchell,22,,3,,,,,,3/28/26,0,0
+5161476,away,bench,1237244,Racing Louisville,4-2-3-1,858405,Rachel Hill,21,,3,,,,,,3/28/26,0,0
+5161476,away,bench,1237244,Racing Louisville,4-2-3-1,1923127,Taylor White,11,,3,,,,,,3/28/26,0,0
+5161476,away,starters,1237244,Racing Louisville,4-2-3-1,1171148,Courtney Petersen,8,36,1,,0.292,0.375,0.625,0.292,3/28/26,0,0
+5161476,away,starters,1237244,Racing Louisville,4-2-3-1,1727492,Ella Hase,6,87,3,,0.678,0.163,0.837,0.678,3/28/26,0,0
+5161476,away,starters,1237244,Racing Louisville,4-2-3-1,1127984,Ellie Jean,5,34,1,,0.292,0.625,0.375,0.292,3/28/26,0,0
+5161476,away,starters,1237244,Racing Louisville,4-2-3-1,1623842,Emma Sears,13,83,3,,0.678,0.837,0.162,0.678,3/28/26,0,0
+5161476,away,starters,1237244,Racing Louisville,4-2-3-1,1359774,Jordyn Bloomer,24,11,0,,0.1,0.5,0.5,0.1,3/28/26,0,0
+5161476,away,starters,1237244,Racing Louisville,4-2-3-1,1727485,Katie O'Kane,20,66,2,,0.485,0.3,0.7,0.485,3/28/26,0,0
+5161476,away,starters,1237244,Racing Louisville,4-2-3-1,1455519,Kayla Fischer,9,85,3,,0.678,0.5,0.5,0.678,3/28/26,0,0
+5161476,away,starters,1237244,Racing Louisville,4-2-3-1,1081863,Lauren Milliet,2,32,1,,0.292,0.875,0.125,0.292,3/28/26,0,0
+5161476,away,starters,1237244,Racing Louisville,4-2-3-1,1923120,Mirann Gacioch,15,38,1,,0.292,0.125,0.875,0.292,3/28/26,0,0
+5161476,away,starters,1237244,Racing Louisville,4-2-3-1,1727482,Sarah Weber,42,115,3,,0.87,0.5,0.5,0.87,3/28/26,0,0
+5161476,away,starters,1237244,Racing Louisville,4-2-3-1,1171147,Taylor Flint,26,64,2,,0.485,0.7,0.3,0.485,3/28/26,0,0
+5161476,home,bench,433031,Seattle Reign FC,4-2-3-1,1675026,Ainsley McCammon,16,,2,,,,,,3/28/26,0,0
+5161476,home,bench,433031,Seattle Reign FC,4-2-3-1,1740667,Holly Noushin Ward,12,,3,,,,,,3/28/26,0,0
+5161476,home,bench,433031,Seattle Reign FC,4-2-3-1,1932788,Keeley Dockter,42,,1,,,,,,3/28/26,0,0
+5161476,home,bench,433031,Seattle Reign FC,4-2-3-1,1727502,Maddie Dahlien,5,,2,,,,,,3/28/26,0,0
+5161476,home,bench,433031,Seattle Reign FC,4-2-3-1,1670641,Neeku Purcell,35,,0,,,,,,3/28/26,0,0
+5161476,home,bench,433031,Seattle Reign FC,4-2-3-1,887722,Nérilia Mondésir,30,,2,,,,,,3/28/26,0,0
+5161476,home,bench,433031,Seattle Reign FC,4-2-3-1,1380587,Ryanne Brown,22,,1,,,,,,3/28/26,0,0
+5161476,home,bench,433031,Seattle Reign FC,4-2-3-1,1759742,Sally Menti,17,,2,,,,,,3/28/26,0,0
+5161476,home,bench,433031,Seattle Reign FC,4-2-3-1,1797714,Sofía Cedeño,36,,2,,,,,,3/28/26,0,0
+5161476,home,starters,433031,Seattle Reign FC,4-2-3-1,1082570,Angharad James,8,64,2,,0.485,0.7,0.3,0.485,3/28/26,0,0
+5161476,home,starters,433031,Seattle Reign FC,4-2-3-1,859866,Brittany Ratcliffe,13,87,3,,0.678,0.163,0.837,0.678,3/28/26,0,0
+5161476,home,starters,433031,Seattle Reign FC,4-2-3-1,1359805,Claudia Dickey,1,11,0,,0.1,0.5,0.5,0.1,3/28/26,0,0
+5161476,home,starters,433031,Seattle Reign FC,4-2-3-1,1624166,Emeri Adames,7,83,3,,0.678,0.837,0.162,0.678,3/28/26,0,0
+5161476,home,starters,433031,Seattle Reign FC,4-2-3-1,1727503,Emily Mason,14,34,1,,0.292,0.625,0.375,0.292,3/28/26,0,0
+5161476,home,starters,433031,Seattle Reign FC,4-2-3-1,638033,Jessica Fishlock,10,85,2,,0.678,0.5,0.5,0.678,3/28/26,0,0
+5161476,home,starters,433031,Seattle Reign FC,4-2-3-1,1626116,Madison Curry,24,38,1,,0.292,0.125,0.875,0.292,3/28/26,0,0
+5161476,home,starters,433031,Seattle Reign FC,4-2-3-1,1643301,Madison Mercado,2,115,3,,0.87,0.5,0.5,0.87,3/28/26,0,0
+5161476,home,starters,433031,Seattle Reign FC,4-2-3-1,1266133,Phoebe McClernon,21,36,1,,0.292,0.375,0.625,0.292,3/28/26,0,0
+5161476,home,starters,433031,Seattle Reign FC,4-2-3-1,1618236,Samantha Meza,20,66,2,,0.485,0.3,0.7,0.485,3/28/26,0,0
+5161476,home,starters,433031,Seattle Reign FC,4-2-3-1,638633,Sofia Huerta,11,32,1,,0.292,0.875,0.125,0.292,3/28/26,0,0
+5161473,away,bench,923654,Utah Royals,4-2-3-1,1727506,Aria Nagai,20,,2,,,,,,3/28/26,0,0
+5161473,away,bench,923654,Utah Royals,4-2-3-1,1624171,Courtney Brown,16,,3,6.2,,,,,3/28/26,0,0
+5161473,away,bench,923654,Utah Royals,4-2-3-1,1727458,DeAira Jackson,77,,0,,,,,,3/28/26,0,0
+5161473,away,bench,923654,Utah Royals,4-2-3-1,931206,Janni Thomsen,7,,1,6.9,,,,,3/28/26,0,0
+5161473,away,bench,923654,Utah Royals,4-2-3-1,1170881,Kaleigh Riehl,18,,1,,,,,,3/28/26,0,0
+5161473,away,bench,923654,Utah Royals,4-2-3-1,1510768,Kameron Simmonds,6,,1,,,,,,3/28/26,0,0
+5161473,away,bench,923654,Utah Royals,4-2-3-1,934143,Kiana Palacios,21,,3,6.3,,,,,3/28/26,1,0
+5161473,away,bench,923654,Utah Royals,4-2-3-1,1170956,Madison Hammond,99,,2,6.4,,,,,3/28/26,0,0
+5161473,away,starters,923654,Utah Royals,4-2-3-1,1455302,Alexa Spaanstra,30,32,3,6.7,0.292,0.875,0.125,0.292,3/28/26,0,0
+5161473,away,starters,923654,Utah Royals,4-2-3-1,1044346,Ana Tejada,17,66,2,6.8,0.485,0.3,0.7,0.485,3/28/26,0,0
+5161473,away,starters,923654,Utah Royals,4-2-3-1,1081834,Cecelia Delzer,5,83,2,6.8,0.678,0.837,0.162,0.678,3/28/26,0,0
+5161473,away,starters,923654,Utah Royals,4-2-3-1,1214612,Cloé Lacasse,24,87,3,7.7,0.678,0.163,0.837,0.678,3/28/26,1,0
+5161473,away,starters,923654,Utah Royals,4-2-3-1,1468669,Dayana Pierre,15,64,2,7.2,0.485,0.7,0.3,0.485,3/28/26,0,0
+5161473,away,starters,923654,Utah Royals,4-2-3-1,1170870,Kate Del Fava,8,36,1,7.3,0.292,0.375,0.625,0.292,3/28/26,1,0
+5161473,away,starters,923654,Utah Royals,4-2-3-1,898505,Lara Prasnikar,9,115,3,8.3,0.87,0.5,0.5,0.87,3/28/26,0,0
+5161473,away,starters,923654,Utah Royals,4-2-3-1,1727509,Mia Justus,23,11,0,6.9,0.1,0.5,0.5,0.1,3/28/26,0,0
+5161473,away,starters,923654,Utah Royals,4-2-3-1,980948,Mina Tanaka,11,85,2,7,0.678,0.5,0.5,0.678,3/28/26,1,0
+5161473,away,starters,923654,Utah Royals,4-2-3-1,1510619,Miyabi Moriya,22,38,1,7.5,0.292,0.125,0.875,0.292,3/28/26,0,0
+5161473,away,starters,923654,Utah Royals,4-2-3-1,1266154,Tatumn Milazzo,2,34,1,7.9,0.292,0.625,0.375,0.292,3/28/26,0,0
+5161474,away,bench,433030,Washington Spirit,4-2-3-1,1028124,Andi Sullivan,12,,2,,,,,,3/28/26,0,0
+5161474,away,bench,433030,Washington Spirit,4-2-3-1,1798813,Claudia Martínez,11,,3,5.8,,,,,3/28/26,0,0
+5161474,away,bench,433030,Washington Spirit,4-2-3-1,734811,Gabrielle Carle,14,,1,,,,,,3/28/26,0,0
+5161474,away,bench,433030,Washington Spirit,4-2-3-1,1402026,Gift Monday,21,,3,,,,,,3/28/26,0,0
+5161474,away,bench,433030,Washington Spirit,4-2-3-1,1269897,Kaylie Collins,31,,0,,,,,,3/28/26,0,0
+5161474,away,bench,433030,Washington Spirit,4-2-3-1,1455483,Paige Metayer,26,,1,,,,,,3/28/26,0,0
+5161474,away,bench,433030,Washington Spirit,4-2-3-1,1314369,Rosemonde Kouassi,19,,3,6.8,,,,,3/28/26,0,0
+5161474,away,bench,433030,Washington Spirit,4-2-3-1,1717449,Tamara Bolt,16,,2,,,,,,3/28/26,0,0
+5161474,away,bench,433030,Washington Spirit,4-2-3-1,1544582,Élisabeth Tsé,5,,1,6.2,,,,,3/28/26,0,0
+5161474,away,starters,433030,Washington Spirit,4-2-3-1,1402028,Deborah Abiodun,20,87,2,7,0.678,0.163,0.837,0.678,3/28/26,0,0
+5161474,away,starters,433030,Washington Spirit,4-2-3-1,887862,Esme Morgan,24,34,1,7.5,0.292,0.625,0.375,0.292,3/28/26,0,0
+5161474,away,starters,433030,Washington Spirit,4-2-3-1,1624170,Hal Hershfelt,17,64,2,7.2,0.485,0.7,0.3,0.485,3/28/26,1,0
+5161474,away,starters,433030,Washington Spirit,4-2-3-1,1624169,Kate Wiesner,6,38,1,7.8,0.292,0.125,0.875,0.292,3/28/26,0,0
+5161474,away,starters,433030,Washington Spirit,4-2-3-1,646050,Leicy Santos,10,85,2,7,0.678,0.5,0.5,0.678,3/28/26,0,0
+5161474,away,starters,433030,Washington Spirit,4-2-3-1,1184923,Lucia Di Guglielmo,13,32,1,6.3,0.292,0.875,0.125,0.292,3/28/26,0,0
+5161474,away,starters,433030,Washington Spirit,4-2-3-1,1269074,Rebeca Bernal,4,66,1,7,0.485,0.3,0.7,0.485,3/28/26,0,0
+5161474,away,starters,433030,Washington Spirit,4-2-3-1,1130945,Sandy MacIver,18,11,0,7.6,0.1,0.5,0.5,0.1,3/28/26,0,0
+5161474,away,starters,433030,Washington Spirit,4-2-3-1,1184986,Sofia Cantore,27,115,3,6.2,0.87,0.5,0.5,0.87,3/28/26,0,0
+5161474,away,starters,433030,Washington Spirit,4-2-3-1,1266150,Tara McKeown,9,36,1,7.6,0.292,0.375,0.625,0.292,3/28/26,0,0
+5161474,away,starters,433030,Washington Spirit,4-2-3-1,1246577,Trinity Rodman,2,83,3,6.6,0.678,0.837,0.162,0.678,3/28/26,0,0
+5161478,away,bench,189393,Chicago Stars,4-2-3-1,1813205,Aaliyah Farmer,25,,3,,,,,,3/29/26,0,0
+5161478,away,bench,189393,Chicago Stars,4-2-3-1,1922325,Elise Evans,15,,1,,,,,,3/29/26,0,0
+5161478,away,bench,189393,Chicago Stars,4-2-3-1,1922326,Emma Egizii,28,,2,,,,,,3/29/26,0,0
+5161478,away,bench,189393,Chicago Stars,4-2-3-1,1406321,Ivonne Chacón,18,,3,,,,,,3/29/26,0,0
+5161478,away,bench,189393,Chicago Stars,4-2-3-1,1380847,Jenna Bike,4,,3,,,,,,3/29/26,0,0
+5161478,away,bench,189393,Chicago Stars,4-2-3-1,1170720,Katie Lund,27,,0,,,,,,3/29/26,0,0
+5161478,away,bench,189393,Chicago Stars,4-2-3-1,1618191,Leilanni Nesbeth,13,,2,,,,,,3/29/26,0,0
+5161478,away,bench,189393,Chicago Stars,4-2-3-1,1727396,Micayla Johnson,23,,3,,,,,,3/29/26,0,0
+5161478,away,bench,189393,Chicago Stars,4-2-3-1,931204,Nádia Gomes,11,,3,,,,,,3/29/26,0,0
+5161478,away,starters,189393,Chicago Stars,4-2-3-1,294601,Alyssa Naeher,1,11,0,,0.1,0.5,0.5,0.1,3/29/26,0,0
+5161478,away,starters,189393,Chicago Stars,4-2-3-1,1618188,Bea Franklin,20,34,2,,0.292,0.625,0.375,0.292,3/29/26,0,0
+5161478,away,starters,189393,Chicago Stars,4-2-3-1,1266126,Brianna Pinto,10,83,3,,0.678,0.837,0.162,0.678,3/29/26,0,0
+5161478,away,starters,189393,Chicago Stars,4-2-3-1,1618190,Jameese Joseph,8,115,3,,0.87,0.5,0.5,0.87,3/29/26,0,0
+5161478,away,starters,189393,Chicago Stars,4-2-3-1,1055857,Julia Grosso,7,85,2,,0.678,0.5,0.5,0.678,3/29/26,0,0
+5161478,away,starters,189393,Chicago Stars,4-2-3-1,1044175,Maitane López,77,66,2,,0.485,0.3,0.7,0.485,3/29/26,0,0
+5161478,away,starters,189393,Chicago Stars,4-2-3-1,1727398,Manaka Hayashi,16,64,2,,0.485,0.7,0.3,0.485,3/29/26,0,0
+5161478,away,starters,189393,Chicago Stars,4-2-3-1,1264757,Michelle Alozie,5,32,1,,0.292,0.875,0.125,0.292,3/29/26,0,0
+5161478,away,starters,189393,Chicago Stars,4-2-3-1,1360362,Ryan Gareis,24,87,2,,0.678,0.163,0.837,0.678,3/29/26,0,0
+5161478,away,starters,189393,Chicago Stars,4-2-3-1,1045033,Samantha Staab,3,36,1,,0.292,0.375,0.625,0.292,3/29/26,0,0
+5161478,away,starters,189393,Chicago Stars,4-2-3-1,1922328,Tessa Dellarose,34,38,1,,0.292,0.125,0.875,0.292,3/29/26,0,0
+5161479,home,bench,189397,Gotham FC,4/3/03,857417,Esther González,9,,3,,,,,,3/29/26,0,0
+5161479,home,bench,189397,Gotham FC,4/3/03,1898811,Jordynn Dudley,2,,3,,,,,,3/29/26,0,0
+5161479,home,bench,189397,Gotham FC,4/3/03,1727433,Khyah Harper,34,,3,,,,,,3/29/26,0,0
+5161479,home,bench,189397,Gotham FC,4/3/03,1727434,Mckenna Whitham,17,,3,,,,,,3/29/26,0,0
+5161479,home,bench,189397,Gotham FC,4/3/03,860079,Midge Purce,23,,3,,,,,,3/29/26,0,0
+5161479,home,bench,189397,Gotham FC,4/3/03,844537,Rose Lavelle,16,,2,,,,,,3/29/26,0,0
+5161479,home,bench,189397,Gotham FC,4/3/03,1266210,Shelby Hogan,1,,0,,,,,,3/29/26,0,0
+5161479,home,bench,189397,Gotham FC,4/3/03,1584213,Talia Sommer,14,,1,,,,,,3/29/26,0,0
+5161479,home,bench,189397,Gotham FC,4/3/03,953349,Tierna Davidson,15,,1,,,,,,3/29/26,0,0
+5161479,home,starters,189397,Gotham FC,4/3/03,1898807,Andrea Kitahata,24,73,3,,0.613,0.79,0.21,0.613,3/29/26,0,0
+5161479,home,starters,189397,Gotham FC,4/3/03,294602,Ann-Katrin Berger,30,11,0,,0.1,0.5,0.5,0.1,3/29/26,0,0
+5161479,home,starters,189397,Gotham FC,4/3/03,799212,Emily Sonnett,6,34,1,,0.357,0.625,0.375,0.357,3/29/26,0,0
+5161479,home,starters,189397,Gotham FC,4/3/03,1359791,Jaelin Howell,7,75,2,,0.613,0.5,0.5,0.613,3/29/26,0,0
+5161479,home,starters,189397,Gotham FC,4/3/03,932208,Jessica Carter,27,36,1,,0.357,0.375,0.625,0.357,3/29/26,1,0
+5161479,home,starters,189397,Gotham FC,4/3/03,758047,Katie Stengel,28,105,3,,0.87,0.5,0.5,0.87,3/29/26,0,0
+5161479,home,starters,189397,Gotham FC,4/3/03,1793292,Kayla Duran,19,32,1,,0.357,0.875,0.125,0.357,3/29/26,0,0
+5161479,home,starters,189397,Gotham FC,4/3/03,1727438,Lilly Reale,4,38,1,,0.357,0.125,0.875,0.357,3/29/26,0,0
+5161479,home,starters,189397,Gotham FC,4/3/03,1727435,Sarah Schupansky,11,103,2,,0.87,0.79,0.21,0.87,3/29/26,0,0
+5161479,home,starters,189397,Gotham FC,4/3/03,938858,Savannah McCaskill,13,77,2,,0.613,0.21,0.79,0.613,3/29/26,0,0
+5161479,home,starters,189397,Gotham FC,4/3/03,1728513,Sofia Cook,21,107,2,,0.87,0.21,0.79,0.87,3/29/26,0,0
+5161479,away,bench,728922,Orlando Pride,4-2-3-1,1899892,Cara Martin,31,,0,,,,,,3/29/26,0,0
+5161479,away,bench,728922,Orlando Pride,4-2-3-1,1359798,Julie Doyle,20,,3,,,,,,3/29/26,0,0
+5161479,away,bench,728922,Orlando Pride,4-2-3-1,626681,Luana,8,,2,,,,,,3/29/26,0,0
+5161479,away,bench,728922,Orlando Pride,4-2-3-1,99818,Marta,10,,3,,,,,,3/29/26,0,0
+5161479,away,bench,728922,Orlando Pride,4-2-3-1,646065,Rafaelle,4,,1,,,,,,3/29/26,0,0
+5161479,away,bench,728922,Orlando Pride,4-2-3-1,1927439,Reagan Raabe,38,,3,,,,,,3/29/26,0,0
+5161479,away,bench,728922,Orlando Pride,4-2-3-1,1899893,Seven Castain,30,,3,,,,,,3/29/26,0,0
+5161479,away,bench,728922,Orlando Pride,4-2-3-1,1776132,Simone Jackson,80,,3,,,,,,3/29/26,0,0
+5161479,away,bench,728922,Orlando Pride,4-2-3-1,1455494,Summer Yates,28,,2,,,,,,3/29/26,0,0
+5161479,away,starters,728922,Orlando Pride,4-2-3-1,1618241,Ally Lemos,6,64,2,,0.485,0.7,0.3,0.485,3/29/26,0,0
+5161479,away,starters,728922,Orlando Pride,4-2-3-1,1266142,Angelina,7,66,2,,0.485,0.3,0.7,0.485,3/29/26,0,0
+5161479,away,starters,728922,Orlando Pride,4-2-3-1,1045113,Anna Moorhouse,1,11,0,,0.1,0.5,0.5,0.1,3/29/26,0,0
+5161479,away,starters,728922,Orlando Pride,4-2-3-1,1044266,Barbra Banda,11,115,3,,0.87,0.5,0.5,0.87,3/29/26,0,0
+5161479,away,starters,728922,Orlando Pride,4-2-3-1,1626117,Coriana Dyke,12,38,1,,0.292,0.125,0.875,0.292,3/29/26,0,0
+5161479,away,starters,728922,Orlando Pride,4-2-3-1,1018828,Hailie Mace,5,34,1,,0.292,0.625,0.375,0.292,3/29/26,1,0
+5161479,away,starters,728922,Orlando Pride,4-2-3-1,964357,Haley McCutcheon,2,85,2,,0.678,0.5,0.5,0.678,3/29/26,0,0
+5161479,away,starters,728922,Orlando Pride,4-2-3-1,1618187,Hannah Anderson,41,36,1,,0.292,0.375,0.625,0.292,3/29/26,0,0
+5161479,away,starters,728922,Orlando Pride,4-2-3-1,1269082,Jacqueline Ovalle,13,83,3,,0.678,0.837,0.162,0.678,3/29/26,0,0
+5161479,away,starters,728922,Orlando Pride,4-2-3-1,1043809,Oihane Hernández,21,32,1,,0.292,0.875,0.125,0.292,3/29/26,0,0
+5161479,away,starters,728922,Orlando Pride,4-2-3-1,1510765,Solai Washington,29,87,3,,0.678,0.163,0.837,0.678,3/29/26,0,0
+5161478,home,bench,1335917,San Diego Wave FC,4/3/03,1378688,Daniela Arias,30,,1,,,,,,3/29/26,0,0
+5161478,home,bench,1335917,San Diego Wave FC,4/3/03,1611594,Gabi Portilho,81,,3,,,,,,3/29/26,0,0
+5161478,home,bench,1335917,San Diego Wave FC,4/3/03,1728517,Jordan Fusco,28,,3,,,,,,3/29/26,0,0
+5161478,home,bench,1335917,San Diego Wave FC,4/3/03,1266199,Kiara Pickett,33,,2,,,,,,3/29/26,0,0
+5161478,home,bench,1335917,San Diego Wave FC,4/3/03,1178346,Laurina Fazer,18,,2,,,,,,3/29/26,0,0
+5161478,home,bench,1335917,San Diego Wave FC,4/3/03,1718930,Luisa Agudelo,1,,0,,,,,,3/29/26,0,0
+5161478,home,bench,1335917,San Diego Wave FC,4/3/03,1457722,Melanie Barcenas,7,,3,,,,,,3/29/26,0,0
+5161478,home,bench,1335917,San Diego Wave FC,4/3/03,1728516,Nya Harrison,23,,1,,,,,,3/29/26,0,0
+5161478,home,bench,1335917,San Diego Wave FC,4/3/03,1928448,Tatum Wynalda,19,,2,,,,,,3/29/26,0,0
+5161478,home,starters,1335917,San Diego Wave FC,4/3/03,1766427,Amelia Van Zanten,16,32,1,,0.357,0.875,0.125,0.357,3/29/26,0,0
+5161478,home,starters,1335917,San Diego Wave FC,4/3/03,1798391,Dudinha,88,107,3,,0.87,0.21,0.79,0.87,3/29/26,0,0
+5161478,home,starters,1335917,San Diego Wave FC,4/3/03,1091594,Gia Corley,11,73,2,,0.613,0.79,0.21,0.613,3/29/26,0,0
+5161478,home,starters,1335917,San Diego Wave FC,4/3/03,1618280,Kennedy Wesley,2,34,1,,0.357,0.625,0.375,0.357,3/29/26,0,0
+5161478,home,starters,1335917,San Diego Wave FC,4/3/03,294925,Kenza Dali,10,75,2,,0.613,0.5,0.5,0.613,3/29/26,0,0
+5161478,home,starters,1335917,San Diego Wave FC,4/3/03,1630732,Kimmi Ascanio,8,77,3,,0.613,0.21,0.79,0.613,3/29/26,0,0
+5161478,home,starters,1335917,San Diego Wave FC,4/3/03,841942,Kristen McNabb,14,36,1,,0.357,0.375,0.625,0.357,3/29/26,0,0
+5161478,home,starters,1335917,San Diego Wave FC,4/3/03,1793924,Leah Freeman,99,11,0,,0.1,0.5,0.5,0.1,3/29/26,0,0
+5161478,home,starters,1335917,San Diego Wave FC,4/3/03,1923163,Lia Godfrey,22,103,2,,0.87,0.79,0.21,0.87,3/29/26,0,0
+5161478,home,starters,1335917,San Diego Wave FC,4/3/03,887335,Ludmila da Silva,17,105,3,,0.87,0.5,0.5,0.87,3/29/26,0,0
+5161478,home,starters,1335917,San Diego Wave FC,4/3/03,851316,Perle Morroni,75,38,1,,0.357,0.125,0.875,0.357,3/29/26,0,0
