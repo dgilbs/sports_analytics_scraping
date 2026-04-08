@@ -18,6 +18,7 @@ The DATABASE_URL can be found in .streamlit/secrets.toml under [database].url.
 import os
 import sys
 import glob
+import tomllib
 import numpy as np
 import pandas as pd
 import psycopg2
@@ -32,8 +33,23 @@ STATS_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "nwsl_match
 # ── Connection ────────────────────────────────────────────────────────────────
 
 def get_conn():
-    url = os.environ["DATABASE_URL"]
-    # psycopg2 doesn't support channel_binding — strip it from the URL
+    """Connect using NEON_* env vars (same as fotmob/dbt), or fall back to secrets.toml URL."""
+    if "NEON_HOST" in os.environ:
+        return psycopg2.connect(
+            host=os.environ["NEON_HOST"],
+            user=os.environ["NEON_USER"],
+            password=os.environ["NEON_PASSWORD"],
+            dbname=os.environ["NEON_DBNAME"],
+            port=int(os.environ.get("NEON_PORT", 5432)),
+            sslmode="require",
+        )
+    # Fall back to secrets.toml
+    secrets_path = os.path.join(
+        os.path.dirname(os.path.abspath(__file__)), "..", ".streamlit", "secrets.toml"
+    )
+    with open(secrets_path, "rb") as f:
+        secrets = tomllib.load(f)
+    url = "".join(secrets["database"]["url"].split())
     url = (url
            .replace("&channel_binding=require", "")
            .replace("?channel_binding=require&", "?")
