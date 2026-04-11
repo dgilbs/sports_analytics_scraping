@@ -77,12 +77,19 @@ def build_events_df(seasons):
     for year, season_id in seasons.items():
         events = get_season_events(1690, season_id)
         for e in events:
+            home_slug = e['homeTeam'].get('slug', '')
+            away_slug = e['awayTeam'].get('slug', '')
+            custom_id = e.get('customId', '')
             rows.append({
                 'event_id':          e['id'],
+                'custom_id':         custom_id,
                 'season':            year,
                 'round':             e.get('roundInfo', {}).get('round'),
                 'home_team':         e['homeTeam']['name'],
                 'away_team':         e['awayTeam']['name'],
+                'home_slug':         home_slug,
+                'away_slug':         away_slug,
+                'match_url':         f"https://www.sofascore.com/football/match/{home_slug}-{away_slug}/{custom_id}",
                 'home_score':        e['homeScore'].get('current'),
                 'away_score':        e['awayScore'].get('current'),
                 'winner_code':       e.get('winnerCode'),

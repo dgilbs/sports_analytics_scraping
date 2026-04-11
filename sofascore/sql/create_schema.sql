@@ -108,3 +108,50 @@ CREATE TABLE IF NOT EXISTS sofascore.fact_player_match_stats (
 
     PRIMARY KEY (event_id, player_id)
 );
+
+-- ── fact_shots ────────────────────────────────────────────────────────────────
+-- One row per shot. Populated from get_shotmap_table() in shot_script.py.
+-- No stable shot ID from the API, so rows are replaced wholesale per event.
+
+CREATE TABLE IF NOT EXISTS sofascore.fact_shots (
+    id                  bigserial       PRIMARY KEY,
+    event_id            bigint          NOT NULL REFERENCES sofascore.dim_matches(event_id),
+    season              varchar(10),
+    match_date          date,
+    home_team           varchar(100),
+    away_team           varchar(100),
+    team                varchar(100),
+    side                varchar(10),
+    player_id           bigint,
+    player_name         varchar(100),
+    position            varchar(10),
+
+    -- Shot details
+    shot_type           varchar(20),    -- goal, save, miss, block
+    situation           varchar(30),    -- open-play, corner, free-kick, counter
+    body_part           varchar(20),    -- right-foot, left-foot, head
+    goal_mouth_location varchar(30),
+    time                int,
+    added_time          int,
+    time_seconds        int,
+
+    -- Pitch coordinates
+    player_x            float,
+    player_y            float,
+
+    -- Goal mouth coordinates
+    goal_mouth_x        float,
+    goal_mouth_y        float,
+    goal_mouth_z        float,
+
+    -- Trajectory
+    draw_start_x        float,
+    draw_start_y        float,
+    draw_end_x          float,
+    draw_end_y          float,
+
+    -- Derived flags
+    is_goal             boolean,
+    is_on_target        boolean,
+    is_blocked          boolean
+);

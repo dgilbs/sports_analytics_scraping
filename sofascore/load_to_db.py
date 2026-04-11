@@ -28,6 +28,7 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from scraping_script import build_events_df, SEASONS
 
 STATS_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "nwsl_match_stats")
+SHOTS_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "nwsl_shot_tables")
 
 
 # ── Connection ────────────────────────────────────────────────────────────────
@@ -140,6 +141,39 @@ CREATE TABLE IF NOT EXISTS sofascore.fact_player_match_stats (
     dribble_value                   float,
     defensive_value                 float,
     PRIMARY KEY (event_id, player_id)
+);
+
+CREATE TABLE IF NOT EXISTS sofascore.fact_shots (
+    id                  bigserial       PRIMARY KEY,
+    event_id            bigint          NOT NULL REFERENCES sofascore.dim_matches(event_id),
+    season              varchar(10),
+    match_date          date,
+    home_team           varchar(100),
+    away_team           varchar(100),
+    team                varchar(100),
+    side                varchar(10),
+    player_id           bigint,
+    player_name         varchar(100),
+    position            varchar(10),
+    shot_type           varchar(20),
+    situation           varchar(30),
+    body_part           varchar(20),
+    goal_mouth_location varchar(30),
+    time                int,
+    added_time          int,
+    time_seconds        int,
+    player_x            float,
+    player_y            float,
+    goal_mouth_x        float,
+    goal_mouth_y        float,
+    goal_mouth_z        float,
+    draw_start_x        float,
+    draw_start_y        float,
+    draw_end_x          float,
+    draw_end_y          float,
+    is_goal             boolean,
+    is_on_target        boolean,
+    is_blocked          boolean
 );
 """
 
@@ -287,6 +321,85 @@ def load_player_stats(conn):
     print(f"  Player stats: {len(df)} rows from {len(files)} files upserted.")
 
 
+SHOTS_COLS = [
+    "event_id", "season", "match_date", "home_team", "away_team",
+    "team", "side", "player_id", "player_name", "position",
+    "shot_type", "situation", "body_part", "goal_mouth_location",
+    "time", "added_time", "time_seconds",
+    "player_x", "player_y",
+    "goal_mouth_x", "goal_mouth_y", "goal_mouth_z",
+    "draw_start_x", "draw_start_y", "draw_end_x", "draw_end_y",
+    "is_goal", "is_on_target", "is_blocked",
+]
+
+SHOTS_NUMERIC_COLS = [
+    "event_id", "player_id", "time", "added_time", "time_seconds",
+    "player_x", "player_y", "goal_mouth_x", "goal_mouth_y", "goal_mouth_z",
+    "draw_start_x", "draw_start_y", "draw_end_x", "draw_end_y",
+]
+
+
+def load_shots(conn):
+    files = sorted(glob.glob(os.path.join(SHOTS_DIR, "*.csv")))
+    if not files:
+        print("  No shot CSV files found in nwsl_shot_tables/.")
+        return
+
+    dfs = []
+    for f in files:
+        try:
+            dfs.append(pd.read_csv(f))
+        except Exception as e:
+            print(f"  Warning: skipping {os.path.basename(f)}: {e}")
+
+    if not dfs:
+        return
+
+    df = pd.concat(dfs, ignore_index=True)
+    df = df.rename(columns={"date": "match_date"})
+
+    for col in SHOTS_NUMERIC_COLS:
+        if col in df.columns:
+            df[col] = pd.to_numeric(df[col], errors="coerce")
+
+    for col in ["is_goal", "is_on_target", "is_blocked"]:
+        df[col] = df[col].map({"True": True, "False": False, True: True, False: False})
+
+    df["match_date"] = pd.to_datetime(df["match_date"], errors="coerce").dt.date
+
+    for col in SHOTS_COLS:
+        if col not in df.columns:
+            df[col] = None
+
+    # Skip rows whose event_id isn't yet in dim_matches
+    with conn.cursor() as cur:
+        cur.execute("SELECT event_id FROM sofascore.dim_matches")
+        known_ids = {row[0] for row in cur.fetchall()}
+
+    unknown = set(df["event_id"].dropna().astype(int)) - known_ids
+    if unknown:
+        print(f"  Skipping {len(unknown)} event IDs not in dim_matches (e.g. {sorted(unknown)[:3]})")
+        df = df[df["event_id"].astype(int).isin(known_ids)]
+
+    # Replace all shots for each event to avoid duplicates (no stable shot ID)
+    event_ids = df["event_id"].dropna().unique().tolist()
+    with conn.cursor() as cur:
+        cur.execute(
+            "DELETE FROM sofascore.fact_shots WHERE event_id = ANY(%s)",
+            (event_ids,)
+        )
+
+    insert_cols = ", ".join(SHOTS_COLS)
+    with conn.cursor() as cur:
+        execute_values(cur, f"""
+            INSERT INTO sofascore.fact_shots ({insert_cols})
+            VALUES %s
+        """, to_rows(df, SHOTS_COLS))
+
+    conn.commit()
+    print(f"  Shots: {len(df)} rows from {len(files)} files loaded.")
+
+
 # ── Entry point ───────────────────────────────────────────────────────────────
 
 def main():
@@ -299,6 +412,8 @@ def main():
         load_matches(conn)
         print("Loading player stats...")
         load_player_stats(conn)
+        print("Loading shots...")
+        load_shots(conn)
         print("\nDone.")
     finally:
         conn.close()
