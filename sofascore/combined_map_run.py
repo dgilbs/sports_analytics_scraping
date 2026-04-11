@@ -8,8 +8,8 @@ from dribbling_map_script import load_drib_map_files
 from defensive_map_script import load_def_map_files
 
 start_date = '2026-03-01'
-end_date   = str(date.today())
-overwrite  = False  # set to True to re-fetch even if file already exists
+end_date   = '2026-03-17'
+overwrite  = True  # set to True to re-fetch even if file already exists
 
 
 async def main():

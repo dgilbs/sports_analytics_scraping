@@ -27,8 +27,11 @@ from psycopg2.extras import execute_values
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from scraping_script import build_events_df, SEASONS
 
-STATS_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "nwsl_match_stats")
-SHOTS_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "nwsl_shot_tables")
+STATS_DIR     = os.path.join(os.path.dirname(os.path.abspath(__file__)), "nwsl_match_stats")
+SHOTS_DIR     = os.path.join(os.path.dirname(os.path.abspath(__file__)), "nwsl_shot_tables")
+PASS_MAP_DIR  = os.path.join(os.path.dirname(os.path.abspath(__file__)), "nwsl_passmap_data")
+DRIB_MAP_DIR  = os.path.join(os.path.dirname(os.path.abspath(__file__)), "nwsl_dribmap_data")
+DEF_MAP_DIR   = os.path.join(os.path.dirname(os.path.abspath(__file__)), "nwsl_defmap_data")
 
 
 # ── Connection ────────────────────────────────────────────────────────────────
@@ -174,6 +177,125 @@ CREATE TABLE IF NOT EXISTS sofascore.fact_shots (
     is_goal             boolean,
     is_on_target        boolean,
     is_blocked          boolean
+);
+
+CREATE TABLE IF NOT EXISTS sofascore.fact_pass_maps (
+    event_id                bigint      NOT NULL REFERENCES sofascore.dim_matches(event_id),
+    player_id               bigint      NOT NULL,
+    season                  varchar(10),
+    match_date              date,
+    home_team               varchar(100),
+    away_team               varchar(100),
+    team                    varchar(100),
+    side                    varchar(10),
+    player_name             varchar(100),
+    position                varchar(5),
+    substitute              boolean,
+    passes_total            int,
+    passes_accurate         int,
+    passes_inaccurate       int,
+    pass_accuracy           float,
+    avg_pass_length         float,
+    pct_forward             float,
+    pct_backward            float,
+    pct_lateral             float,
+    acc_pct_forward         float,
+    acc_pct_backward        float,
+    acc_pct_lateral         float,
+    origin_def_third        float,
+    origin_mid_third        float,
+    origin_att_third        float,
+    origin_left_wing        float,
+    origin_central          float,
+    origin_right_wing       float,
+    dest_def_third          float,
+    dest_mid_third          float,
+    dest_att_third          float,
+    dest_left_wing          float,
+    dest_central            float,
+    dest_right_wing         float,
+    acc_dest_def_third      float,
+    acc_dest_mid_third      float,
+    acc_dest_att_third      float,
+    acc_dest_left_wing      float,
+    acc_dest_central        float,
+    acc_dest_right_wing     float,
+    progressive_passes      int,
+    progressive_pass_pct    float,
+    PRIMARY KEY (event_id, player_id)
+);
+
+CREATE TABLE IF NOT EXISTS sofascore.fact_drib_maps (
+    event_id                bigint      NOT NULL REFERENCES sofascore.dim_matches(event_id),
+    player_id               bigint      NOT NULL,
+    season                  varchar(10),
+    match_date              date,
+    home_team               varchar(100),
+    away_team               varchar(100),
+    team                    varchar(100),
+    side                    varchar(10),
+    player_name             varchar(100),
+    position                varchar(5),
+    substitute              boolean,
+    dribbles_won            int,
+    dribbles_lost           int,
+    dribbles_total          int,
+    dribble_success         float,
+    carry_segments          int,
+    drib_def_third          float,
+    drib_mid_third          float,
+    drib_att_third          float,
+    drib_left_wing          float,
+    drib_central            float,
+    drib_right_wing         float,
+    carry_def_third         float,
+    carry_mid_third         float,
+    carry_att_third         float,
+    carry_left_wing         float,
+    carry_central           float,
+    carry_right_wing        float,
+    drib_won_def_third      float,
+    drib_won_mid_third      float,
+    drib_won_att_third      float,
+    PRIMARY KEY (event_id, player_id)
+);
+
+CREATE TABLE IF NOT EXISTS sofascore.fact_def_maps (
+    event_id                bigint      NOT NULL REFERENCES sofascore.dim_matches(event_id),
+    player_id               bigint      NOT NULL,
+    season                  varchar(10),
+    match_date              date,
+    home_team               varchar(100),
+    away_team               varchar(100),
+    team                    varchar(100),
+    side                    varchar(10),
+    player_name             varchar(100),
+    position                varchar(5),
+    substitute              boolean,
+    tackle_won              int,
+    missed_tackle           int,
+    interception            int,
+    clearance               int,
+    block                   int,
+    recovery                int,
+    total_def_actions       int,
+    tackle_success          float,
+    pct_def_third           float,
+    pct_mid_third           float,
+    pct_att_third           float,
+    pct_left_wing           float,
+    pct_central             float,
+    pct_right_wing          float,
+    tackle_def_third        float,
+    tackle_mid_third        float,
+    tackle_att_third        float,
+    intercept_def_third     float,
+    intercept_mid_third     float,
+    intercept_att_third     float,
+    recovery_def_third      float,
+    recovery_mid_third      float,
+    recovery_att_third      float,
+    PRIMARY KEY (event_id, player_id)
 );
 """
 
@@ -400,6 +522,118 @@ def load_shots(conn):
     print(f"  Shots: {len(df)} rows from {len(files)} files loaded.")
 
 
+PASS_MAP_COLS = [
+    "event_id", "player_id", "season", "match_date", "home_team", "away_team",
+    "team", "side", "player_name", "position", "substitute",
+    "passes_total", "passes_accurate", "passes_inaccurate", "pass_accuracy",
+    "avg_pass_length", "pct_forward", "pct_backward", "pct_lateral",
+    "acc_pct_forward", "acc_pct_backward", "acc_pct_lateral",
+    "origin_def_third", "origin_mid_third", "origin_att_third",
+    "origin_left_wing", "origin_central", "origin_right_wing",
+    "dest_def_third", "dest_mid_third", "dest_att_third",
+    "dest_left_wing", "dest_central", "dest_right_wing",
+    "acc_dest_def_third", "acc_dest_mid_third", "acc_dest_att_third",
+    "acc_dest_left_wing", "acc_dest_central", "acc_dest_right_wing",
+    "progressive_passes", "progressive_pass_pct",
+]
+
+DRIB_MAP_COLS = [
+    "event_id", "player_id", "season", "match_date", "home_team", "away_team",
+    "team", "side", "player_name", "position", "substitute",
+    "dribbles_won", "dribbles_lost", "dribbles_total", "dribble_success",
+    "carry_segments",
+    "drib_def_third", "drib_mid_third", "drib_att_third",
+    "drib_left_wing", "drib_central", "drib_right_wing",
+    "carry_def_third", "carry_mid_third", "carry_att_third",
+    "carry_left_wing", "carry_central", "carry_right_wing",
+    "drib_won_def_third", "drib_won_mid_third", "drib_won_att_third",
+]
+
+DEF_MAP_COLS = [
+    "event_id", "player_id", "season", "match_date", "home_team", "away_team",
+    "team", "side", "player_name", "position", "substitute",
+    "tackle_won", "missed_tackle", "interception", "clearance", "block",
+    "recovery", "total_def_actions", "tackle_success",
+    "pct_def_third", "pct_mid_third", "pct_att_third",
+    "pct_left_wing", "pct_central", "pct_right_wing",
+    "tackle_def_third", "tackle_mid_third", "tackle_att_third",
+    "intercept_def_third", "intercept_mid_third", "intercept_att_third",
+    "recovery_def_third", "recovery_mid_third", "recovery_att_third",
+]
+
+_MAP_NON_NUMERIC = {
+    "event_id", "player_id", "season", "match_date",
+    "home_team", "away_team", "team", "side", "player_name", "position",
+}
+
+
+def _load_map_table(conn, data_dir, cols, table_name, label):
+    files = sorted(glob.glob(os.path.join(data_dir, "*.csv")))
+    if not files:
+        print(f"  No CSV files found in {os.path.basename(data_dir)}/.")
+        return
+
+    dfs = []
+    for f in files:
+        try:
+            dfs.append(pd.read_csv(f))
+        except Exception as e:
+            print(f"  Warning: skipping {os.path.basename(f)}: {e}")
+
+    if not dfs:
+        return
+
+    df = pd.concat(dfs, ignore_index=True)
+    df = df.rename(columns={"date": "match_date"})
+
+    for col in [c for c in cols if c not in _MAP_NON_NUMERIC and c != "substitute"]:
+        if col in df.columns:
+            df[col] = pd.to_numeric(df[col], errors="coerce")
+
+    df["match_date"] = pd.to_datetime(df["match_date"], errors="coerce").dt.date
+    df["substitute"] = df["substitute"].map(
+        {"True": True, "False": False, True: True, False: False}
+    )
+
+    for col in cols:
+        if col not in df.columns:
+            df[col] = None
+
+    with conn.cursor() as cur:
+        cur.execute("SELECT event_id FROM sofascore.dim_matches")
+        known_ids = {row[0] for row in cur.fetchall()}
+
+    unknown = set(df["event_id"].dropna().astype(int)) - known_ids
+    if unknown:
+        print(f"  Skipping {len(unknown)} event IDs not in dim_matches")
+        df = df[df["event_id"].astype(int).isin(known_ids)]
+
+    insert_cols = ", ".join(cols)
+    update_set  = ", ".join(f"{c} = EXCLUDED.{c}" for c in cols[2:])
+
+    with conn.cursor() as cur:
+        execute_values(cur, f"""
+            INSERT INTO {table_name} ({insert_cols})
+            VALUES %s
+            ON CONFLICT (event_id, player_id) DO UPDATE SET {update_set}
+        """, to_rows(df, cols))
+
+    conn.commit()
+    print(f"  {label}: {len(df)} rows from {len(files)} files upserted.")
+
+
+def load_pass_maps(conn):
+    _load_map_table(conn, PASS_MAP_DIR, PASS_MAP_COLS, "sofascore.fact_pass_maps", "Pass maps")
+
+
+def load_drib_maps(conn):
+    _load_map_table(conn, DRIB_MAP_DIR, DRIB_MAP_COLS, "sofascore.fact_drib_maps", "Drib maps")
+
+
+def load_def_maps(conn):
+    _load_map_table(conn, DEF_MAP_DIR, DEF_MAP_COLS, "sofascore.fact_def_maps", "Def maps")
+
+
 # ── Entry point ───────────────────────────────────────────────────────────────
 
 def main():
@@ -414,6 +648,12 @@ def main():
         load_player_stats(conn)
         print("Loading shots...")
         load_shots(conn)
+        print("Loading pass maps...")
+        load_pass_maps(conn)
+        print("Loading drib maps...")
+        load_drib_maps(conn)
+        print("Loading def maps...")
+        load_def_maps(conn)
         print("\nDone.")
     finally:
         conn.close()

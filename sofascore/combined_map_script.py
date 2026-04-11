@@ -54,13 +54,18 @@ TAB_CONFIG = [
 async def scrape_all_maps(match_url, event_id, row, overwrite=False):
     filenames = {cfg['tab']: f"{cfg['data_dir']}/{event_id}.csv" for cfg in TAB_CONFIG}
 
-    tabs_to_scrape = [
-        cfg for cfg in TAB_CONFIG
-        if overwrite or not os.path.exists(filenames[cfg['tab']])
-    ]
-    if not tabs_to_scrape:
-        print(f"  Skipping {event_id} — all tabs already exist")
-        return
+    # Load existing CSVs to know which player IDs are already done per tab
+    existing_dfs = {}
+    done_ids = {}
+    for cfg in TAB_CONFIG:
+        tab = cfg['tab']
+        if not overwrite and os.path.exists(filenames[tab]):
+            df_ex = pd.read_csv(filenames[tab])
+            existing_dfs[tab] = df_ex
+            done_ids[tab] = set(df_ex['player_id'].astype(str))
+        else:
+            existing_dfs[tab] = pd.DataFrame()
+            done_ids[tab] = set()
 
     resp = requests.get(
         f"https://api.sofascore.com/api/v1/event/{event_id}/lineups",
@@ -76,14 +81,15 @@ async def scrape_all_maps(match_url, event_id, row, overwrite=False):
         for entry in lineups.get(side, {}).get('players', []):
             p = entry['player']
             player_meta[str(p['id'])] = {
-                'player_name': p['name'],
-                'team':        team_name,
-                'side':        side,
-                'position':    entry.get('position'),
-                'substitute':  entry.get('substitute'),
+                'player_name':   p['name'],
+                'team':          team_name,
+                'side':          side,
+                'position':      entry.get('position'),
+                'substitute':    entry.get('substitute'),
+                'minutes_played': entry.get('statistics', {}).get('minutesPlayed', 0),
             }
 
-    summary_rows = {cfg['tab']: [] for cfg in tabs_to_scrape}
+    new_rows = {cfg['tab']: [] for cfg in TAB_CONFIG}
 
     async with async_playwright() as p:
         browser = await p.chromium.launch(headless=False)
@@ -101,9 +107,11 @@ async def scrape_all_maps(match_url, event_id, row, overwrite=False):
         )
 
         await page.goto(match_url, wait_until='domcontentloaded', timeout=60000)
-        await asyncio.sleep(5)
+        await page.wait_for_selector(
+            'img[src*="sofascore.com/api/v1/player"]', timeout=20000
+        )
         await page.evaluate("window.scrollTo(0, 500)")
-        await asyncio.sleep(1)
+        await asyncio.sleep(0.5)
 
         imgs = await page.locator('img[src*="sofascore.com/api/v1/player"]').all()
         seen = set()
@@ -115,28 +123,73 @@ async def scrape_all_maps(match_url, event_id, row, overwrite=False):
                 seen.add(pid)
                 player_ids.append(pid)
 
-        tab_names = [cfg['tab'] for cfg in tabs_to_scrape]
-        print(f"  Found {len(player_ids)} players — scraping tabs: {tab_names}")
+        # Only scrape players who played at least 1 minute
+        player_ids = [
+            pid for pid in player_ids
+            if player_meta.get(pid, {}).get('minutes_played', 0) >= 1
+        ]
+        print(f"  {len(player_ids)} players with ≥1 min played")
+
+        # Check if there's actually anything to do
+        any_work = any(
+            pid not in done_ids[cfg['tab']]
+            for pid in player_ids
+            for cfg in TAB_CONFIG
+        )
+        if not any_work:
+            print(f"  Skipping {event_id} — all players already scraped for all tabs")
+            await browser.close()
+            return
+
+        print(f"  Found {len(player_ids)} players")
 
         for i, player_id in enumerate(player_ids):
             meta = player_meta.get(player_id, {})
+
+            # Which tabs still need this player?
+            tabs_needed = [cfg for cfg in TAB_CONFIG if player_id not in done_ids[cfg['tab']]]
+            if not tabs_needed:
+                print(f"  [{i+1}/{len(player_ids)}] {meta.get('player_name', player_id)} — already done")
+                continue
+
             print(f"  [{i+1}/{len(player_ids)}] {meta.get('player_name', player_id)}...")
 
             try:
                 img = page.locator(f'img[src*="/player/{player_id}/image"]').first
                 await img.click(force=True)
-                await asyncio.sleep(2)
+                try:
+                    # Wait for the player modal to open — a second [data-testid="tab-pass"]
+                    # appears in the modal (the main page already has one)
+                    await page.wait_for_function(
+                        'document.querySelectorAll(\'[data-testid="tab-pass"]\').length > 1',
+                        timeout=6000
+                    )
+                except Exception:
+                    await asyncio.sleep(1.5)  # fallback
 
-                for cfg in tabs_to_scrape:
+                for cfg in tabs_needed:
                     tab_name = cfg['tab']
 
-                    tab_btn = page.locator(f'button:has-text("{tab_name}")').first
+                    # Use .last — modal tab buttons appear after the main page tabs in the DOM
+                    tab_btn = page.locator(f'button:has-text("{tab_name}")').last
                     if await tab_btn.count() == 0:
                         print(f"    [{tab_name}] No tab found")
                         continue
 
                     await tab_btn.click(force=True)
-                    await asyncio.sleep(1.5)
+                    try:
+                        await page.wait_for_function(
+                            """() => {
+                                const svgs = document.querySelectorAll('svg');
+                                return Array.from(svgs).some(s => {
+                                    const b = s.getBoundingClientRect();
+                                    return b.width > 200 && b.x > 800 && b.height < 300;
+                                });
+                            }""",
+                            timeout=4000
+                        )
+                    except Exception:
+                        pass  # SVG may not exist for this player/tab
 
                     svgs = await page.locator('svg').all()
                     svg_el = None
@@ -164,7 +217,7 @@ async def scrape_all_maps(match_url, event_id, row, overwrite=False):
                             row['home_team'], row['away_team']
                         )
                         if summary:
-                            summary_rows[tab_name].append(summary)
+                            new_rows[tab_name].append(summary)
                             print(f"    [{tab_name}] {len(action_rows)} actions")
                     else:
                         print(f"    [{tab_name}] No SVG found")
@@ -174,23 +227,25 @@ async def scrape_all_maps(match_url, event_id, row, overwrite=False):
                     await close_btn.click(force=True)
                 else:
                     await page.mouse.click(1213, 318)
-                await asyncio.sleep(1)
+                await asyncio.sleep(0.5)
 
             except Exception as e:
                 print(f"    Error: {e}")
                 await page.keyboard.press('Escape')
-                await asyncio.sleep(1)
+                await asyncio.sleep(0.5)
 
         await browser.close()
 
-    for cfg in tabs_to_scrape:
+    # Merge new rows with existing and save
+    for cfg in TAB_CONFIG:
         tab_name = cfg['tab']
-        rows = summary_rows[tab_name]
-        if rows:
-            pd.DataFrame(rows).to_csv(filenames[tab_name], index=False)
-            print(f"  [{tab_name}] Saved {len(rows)} rows → {filenames[tab_name]}")
-        else:
-            print(f"  [{tab_name}] No data to save")
+        if not new_rows[tab_name]:
+            continue
+        df_new = pd.DataFrame(new_rows[tab_name])
+        df_ex = existing_dfs[tab_name]
+        df_out = pd.concat([df_ex, df_new], ignore_index=True) if not df_ex.empty else df_new
+        df_out.to_csv(filenames[tab_name], index=False)
+        print(f"  [{tab_name}] Saved {len(new_rows[tab_name])} new rows → {filenames[tab_name]}")
 
 
 # ── Fetch pipeline ─────────────────────────────────────────────────────────────
