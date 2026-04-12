@@ -15,7 +15,7 @@ from combined_map_script import fetch_all_maps_for_dates
 
 start_date = '2026-03-01'
 end_date   = str(date.today())
-overwrite  = False   # set to True to re-fetch already-scraped matches
+overwrite  = True   # set to True to re-fetch already-scraped matches
 statuses   = ('Ended', 'AET', 'AP')
 
 
@@ -33,7 +33,7 @@ async def main():
         (df_matches['date'] <= pd.to_datetime(end_date).date()) &
         (df_matches['status'].isin(statuses))
     )
-    subset = df_matches[mask].reset_index(drop=True)
+    subset = df_matches[mask].reset_index(drop=True).tail(3)
     print(f"Processing {len(subset)} matches ({start_date} → {end_date})\n")
 
     # ── 1. Player stats ───────────────────────────────────────────────────────
@@ -64,7 +64,7 @@ async def main():
     print("=" * 60)
     t0 = time.time()
 
-    fetch_heatmaps_for_dates(df_matches, start_date, end_date, overwrite=overwrite)
+    fetch_heatmaps_for_dates(subset, start_date, end_date, overwrite=overwrite)
 
     print(f"\nHeatmaps done in {(time.time() - t0) / 60:.1f}m\n")
 
@@ -74,7 +74,7 @@ async def main():
     print("=" * 60)
     t0 = time.time()
 
-    fetch_shot_tables_for_dates(df_matches, start_date, end_date, overwrite=overwrite)
+    fetch_shot_tables_for_dates(subset, start_date, end_date, overwrite=overwrite)
 
     print(f"\nShots done in {(time.time() - t0) / 60:.1f}m\n")
 
@@ -84,7 +84,7 @@ async def main():
     print("=" * 60)
     t0 = time.time()
 
-    await fetch_all_maps_for_dates(df_matches, start_date, end_date, overwrite=overwrite)
+    await fetch_all_maps_for_dates(subset, start_date, end_date, overwrite=overwrite)
 
     print(f"\nMaps done in {(time.time() - t0) / 60:.1f}m\n")
 

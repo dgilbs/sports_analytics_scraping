@@ -1,0 +1,45 @@
+version: 2
+
+sources:
+  - name: sofascore
+    schema: sofascore
+    description: "Raw Sofascore NWSL data loaded by sofascore/load_to_db.py"
+    tables:
+      - name: dim_matches
+        description: "Match schedule and metadata"
+        columns:
+          - name: event_id
+            tests: [unique, not_null]
+      - name: fact_player_match_stats
+        description: "Per-player per-match stats from the Sofascore API"
+        columns:
+          - name: event_id
+            tests: [not_null]
+          - name: player_id
+            tests: [not_null]
+      - name: fact_shots
+        description: "Per-shot data from the Sofascore shotmap API"
+        columns:
+          - name: id
+            tests: [unique, not_null]
+      - name: fact_pass_maps
+        description: "Per-player pass map summaries scraped via Playwright"
+        columns:
+          - name: event_id
+            tests: [not_null]
+          - name: player_id
+            tests: [not_null]
+      - name: fact_drib_maps
+        description: "Per-player dribble/carry map summaries scraped via Playwright"
+        columns:
+          - name: event_id
+            tests: [not_null]
+          - name: player_id
+            tests: [not_null]
+      - name: fact_def_maps
+        description: "Per-player defensive action map summaries scraped via Playwright"
+        columns:
+          - name: event_id
+            tests: [not_null]
+          - name: player_id
+            tests: [not_null]
