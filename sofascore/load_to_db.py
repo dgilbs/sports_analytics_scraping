@@ -24,6 +24,18 @@ import pandas as pd
 import psycopg2
 from psycopg2.extras import execute_values
 
+# Auto-load .envrc so NEON_* vars are available without sourcing manually
+_envrc = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", ".envrc")
+if os.path.exists(_envrc):
+    with open(_envrc) as _f:
+        for _line in _f:
+            _line = _line.strip()
+            if _line.startswith("export "):
+                _line = _line[len("export "):]
+            if "=" in _line and not _line.startswith("#"):
+                _k, _, _v = _line.partition("=")
+                os.environ.setdefault(_k.strip(), _v.strip().strip('"\''))
+
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from scraping_script import build_events_df, SEASONS
 

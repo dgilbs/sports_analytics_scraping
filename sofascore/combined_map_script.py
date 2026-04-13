@@ -110,25 +110,53 @@ async def scrape_all_maps(match_url, event_id, row, overwrite=False, game_num=No
         await page.wait_for_selector(
             'img[src*="sofascore.com/api/v1/player"]', timeout=20000
         )
-        await page.evaluate("window.scrollTo(0, 500)")
+
+        # Scroll through full page so all player images lazy-load
+        scroll_y = 0
+        while True:
+            await page.evaluate(f"window.scrollTo(0, {scroll_y})")
+            await asyncio.sleep(0.3)
+            page_height = await page.evaluate("document.body.scrollHeight")
+            scroll_y += 600
+            if scroll_y >= page_height:
+                break
+        await page.evaluate("window.scrollTo(0, 0)")
         await asyncio.sleep(0.5)
 
+        # Only collect player images that are NOT inside an <a> tag pointing to a
+        # player profile — those navigate away instead of opening the modal.
         imgs = await page.locator('img[src*="sofascore.com/api/v1/player"]').all()
         seen = set()
         player_ids = []
         for img in imgs:
             src = await img.get_attribute('src')
             pid = src.split('/player/')[1].split('/')[0]
-            if pid not in seen:
-                seen.add(pid)
-                player_ids.append(pid)
+            if pid in seen:
+                continue
+            # Check if this image is wrapped in a link to a player profile
+            in_link = await img.evaluate(
+                'el => { const a = el.closest("a"); return a ? a.href : ""; }'
+            )
+            if '/player/' in (in_link or '') and '/image' not in (in_link or ''):
+                continue  # skip — this is a nav link, not a modal trigger
+            seen.add(pid)
+            player_ids.append(pid)
 
-        # Only scrape players who played at least 1 minute
-        player_ids = [
-            pid for pid in player_ids
-            if player_meta.get(pid, {}).get('minutes_played', 0) >= 1
-        ]
-        print(f"  {len(player_ids)} players with ≥1 min played")
+        # Filter: keep players in lineups with minutes_played != 0.
+        # If minutes_played is missing/None, keep them (data may be absent for starters).
+        # Only exclude players explicitly recorded as 0 minutes (unused subs).
+        def _played(pid):
+            meta = player_meta.get(pid)
+            if meta is None:
+                return True  # not in lineups API — keep (may still have map data)
+            mp = meta.get('minutes_played')
+            if mp is None:
+                return True  # no stat recorded — assume played
+            return mp != 0
+
+        before = len(player_ids)
+        player_ids = [pid for pid in player_ids if _played(pid)]
+        print(f"  {len(player_ids)} players kept ({before - len(player_ids)} unused subs removed)")
 
         # Check if there's actually anything to do
         any_work = any(
@@ -158,6 +186,16 @@ async def scrape_all_maps(match_url, event_id, row, overwrite=False, game_num=No
             try:
                 img = page.locator(f'img[src*="/player/{player_id}/image"]').first
                 await img.click(force=True)
+                await asyncio.sleep(0.5)
+
+                # If click navigated to a player profile page, go back
+                if '/player/' in page.url and str(event_id) not in page.url:
+                    print(f"    Navigated to player page — going back")
+                    await page.go_back(wait_until='domcontentloaded', timeout=15000)
+                    await asyncio.sleep(0.5)
+                    print(f"    Skipping {meta.get('player_name', player_id)} (no modal trigger found)")
+                    continue
+
                 try:
                     # Wait for the player modal to open — a second [data-testid="tab-pass"]
                     # appears in the modal (the main page already has one)
@@ -165,15 +203,30 @@ async def scrape_all_maps(match_url, event_id, row, overwrite=False, game_num=No
                         'document.querySelectorAll(\'[data-testid="tab-pass"]\').length > 1',
                         timeout=6000
                     )
+                    pass_count = await page.locator('[data-testid="tab-pass"]').count()
+                    print(f"    Modal opened (tab-pass count: {pass_count})")
                 except Exception:
-                    await asyncio.sleep(1.5)  # fallback
+                    pass_count = await page.locator('[data-testid="tab-pass"]').count()
+                    print(f"    Modal wait timed out (tab-pass count: {pass_count}) — continuing anyway")
+                    await asyncio.sleep(1.0)  # fallback
 
                 for cfg in tabs_needed:
                     tab_name = cfg['tab']
 
-                    # Use .last — modal tab buttons appear after the main page tabs in the DOM
-                    tab_btn = page.locator(f'button:has-text("{tab_name}")').last
-                    if await tab_btn.count() == 0:
+                    # Try data-testid first (most reliable), fall back to button text
+                    testid = f'[data-testid="tab-{tab_name.lower()}"]'
+                    all_testid = page.locator(testid)
+                    all_btn_text = page.locator(f'button:has-text("{tab_name}")')
+                    testid_count = await all_testid.count()
+                    btn_count = await all_btn_text.count()
+                    print(f"    [{tab_name}] testid={testid_count} btn_text={btn_count}")
+
+                    if testid_count > 1:
+                        # >1 means modal one is present (first is on main page)
+                        tab_btn = all_testid.last
+                    elif btn_count > 0:
+                        tab_btn = all_btn_text.last
+                    else:
                         print(f"    [{tab_name}] No tab found")
                         continue
 
@@ -262,7 +315,7 @@ async def fetch_all_maps_for_dates(df_matches, start_date, end_date,
     print(f"Scraping all maps for {len(subset)} matches ({start_date} → {end_date})\n")
 
     for game_num, (_, row) in enumerate(subset.iterrows(), 1):
-        print(f"[Game {game_num}/{len(subset)}] {row['home_team']} vs {row['away_team']} ({row['date']})")
+        print(f"[Game {game_num}/{len(subset)}] {row['home_team']} vs {row['away_team']} ({row['date']}) — id: {row['event_id']}")
         await scrape_all_maps(row['match_url'], row['event_id'], row, overwrite=overwrite, game_num=game_num, total_games=len(subset))
         await asyncio.sleep(2)
 

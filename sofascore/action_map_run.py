@@ -1,6 +1,15 @@
 import sys
 import os
-from datetime import datetime
+import asyncio
+import time
+import pandas as pd
+from datetime import date, datetime
+
+from scraping_script import build_events_df, SEASONS
+from action_map_script import (
+    screenshot_all_maps,
+    SHOT_DIR
+)
 
 
 class Tee:
@@ -22,15 +31,7 @@ log_path = f"logs/action_map_{datetime.now().strftime('%Y%m%d_%H%M%S')}.log"
 os.makedirs("logs", exist_ok=True)
 sys.stdout = Tee(log_path)
 print(f"Logging to {log_path}\n")
-import asyncio
-import time
-from datetime import date
-import pandas as pd
-from scraping_script import build_events_df, SEASONS
-from action_map_script import (
-    screenshot_all_maps,
-    SHOT_DIR
-)
+
 
 start_date = '2026-03-01'
 end_date   = '2026-03-17'
@@ -56,10 +57,10 @@ async def main():
     subset = df_matches[mask].reset_index(drop=True)
     print(f"Scraping action maps for {len(subset)} matches ({start_date} → {end_date})\n")
 
-    for i, row in subset.iterrows():
+    for i, (_, row) in enumerate(subset.iterrows(), 1):
         match_url = row['match_url']
         event_id  = row['event_id']
-        print(f"[{i+1}/{len(subset)}] {row['home_team']} vs {row['away_team']} ({row['date']})")
+        print(f"[{i}/{len(subset)}] {row['home_team']} vs {row['away_team']} ({row['date']})")
 
         for tab, output_dir in TABS:
             await screenshot_all_maps(match_url, event_id, tab=tab, output_dir=output_dir)

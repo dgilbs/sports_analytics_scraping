@@ -35,10 +35,11 @@ from combined_map_script import fetch_all_maps_for_dates
 
 # ── Config ────────────────────────────────────────────────────────────────────
 
-start_date = '2026-03-17'
-end_date   = '2026-03-24'
-overwrite  = True   # set to True to re-fetch already-scraped matches
-statuses   = ('Ended', 'AET', 'AP')
+start_date     = '2026-03-17'
+end_date       = str(date.today())
+overwrite      = True   # set to True to re-fetch already-scraped matches
+statuses       = ('Ended', 'AET', 'AP')
+adhoc_event_id = 15388438   # set to an event_id (e.g. 12345678) to scrape a single match
 
 
 # ── Runner ────────────────────────────────────────────────────────────────────
@@ -50,13 +51,20 @@ async def main():
     print(f"Total matches loaded: {len(df_matches)}")
     print(df_matches.groupby(['season', 'status']).size(), "\n")
 
-    mask = (
-        (df_matches['date'] >= pd.to_datetime(start_date).date()) &
-        (df_matches['date'] <= pd.to_datetime(end_date).date()) &
-        (df_matches['status'].isin(statuses))
-    )
-    subset = df_matches[mask].reset_index(drop=True)
-    print(f"Processing {len(subset)} matches ({start_date} → {end_date})\n")
+    if adhoc_event_id:
+        subset = df_matches[df_matches['event_id'] == adhoc_event_id].reset_index(drop=True)
+        if subset.empty:
+            print(f"event_id {adhoc_event_id} not found — exiting")
+            return
+        print(f"Ad-hoc scrape: {subset.iloc[0]['home_team']} vs {subset.iloc[0]['away_team']} ({subset.iloc[0]['date']})\n")
+    else:
+        mask = (
+            (df_matches['date'] >= pd.to_datetime(start_date).date()) &
+            (df_matches['date'] <= pd.to_datetime(end_date).date()) &
+            (df_matches['status'].isin(statuses))
+        )
+        subset = df_matches[mask].reset_index(drop=True)
+        print(f"Processing {len(subset)} matches ({start_date} → {end_date})\n")
 
     # ── 1. Player stats ───────────────────────────────────────────────────────
     print("=" * 60)
@@ -70,7 +78,7 @@ async def main():
     for i, (_, row) in enumerate(to_scrape.iterrows(), 1):
         event_id = row['event_id']
         filename = f"{OUTPUT_DIR}/{event_id}.csv"
-        print(f"[{i}/{len(to_scrape)}] {row['home_team']} vs {row['away_team']} ({row['date']})")
+        print(f"[{i}/{len(to_scrape)}] {row['home_team']} vs {row['away_team']} ({row['date']}) — id: {event_id}")
         rows = get_match_player_stats_full(row)
         if rows:
             pd.DataFrame(rows).to_csv(filename, index=False)

@@ -31,9 +31,10 @@ from passing_map_script import load_pass_map_files
 from dribbling_map_script import load_drib_map_files
 from defensive_map_script import load_def_map_files
 
-start_date = '2026-03-01'
-end_date   = '2026-03-17'
-overwrite  = True  # set to True to re-fetch even if file already exists
+start_date  = '2026-03-01'
+end_date    = '2026-03-17'
+overwrite   = True   # set to True to re-fetch even if file already exists
+adhoc_event_id = None  # set to an event_id (e.g. 12345678) to scrape a single match
 
 
 async def main():
@@ -43,7 +44,17 @@ async def main():
     print(f"Total matches loaded: {len(df_matches)}")
     print(df_matches.groupby(['season', 'status']).size(), "\n")
 
-    await fetch_all_maps_for_dates(df_matches, start_date, end_date, overwrite=overwrite)
+    if adhoc_event_id:
+        row = df_matches[df_matches['event_id'] == adhoc_event_id]
+        if row.empty:
+            print(f"event_id {adhoc_event_id} not found in match list")
+        else:
+            row = row.iloc[0]
+            print(f"Ad-hoc scrape: {row['home_team']} vs {row['away_team']} ({row['date']})")
+            from combined_map_script import scrape_all_maps
+            await scrape_all_maps(row['match_url'], row['event_id'], row, overwrite=overwrite, game_num=1, total_games=1)
+    else:
+        await fetch_all_maps_for_dates(df_matches, start_date, end_date, overwrite=overwrite)
 
     elapsed = time.time() - _start
     print(f"\nTotal run time: {elapsed // 60:.0f}m {elapsed % 60:.1f}s")
