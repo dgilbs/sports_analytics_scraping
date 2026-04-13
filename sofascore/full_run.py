@@ -1,8 +1,30 @@
 import asyncio
 import os
+import sys
 import time
 import pandas as pd
-from datetime import date
+from datetime import date, datetime
+
+
+class Tee:
+    """Write output to both stdout and a log file."""
+    def __init__(self, filepath):
+        self.terminal = sys.stdout
+        self.log = open(filepath, 'a')
+
+    def write(self, msg):
+        self.terminal.write(msg)
+        self.log.write(msg)
+
+    def flush(self):
+        self.terminal.flush()
+        self.log.flush()
+
+
+log_path = f"logs/full_run_{datetime.now().strftime('%Y%m%d_%H%M%S')}.log"
+os.makedirs("logs", exist_ok=True)
+sys.stdout = Tee(log_path)
+print(f"Logging to {log_path}\n")
 
 from scraping_script import (
     build_events_df, get_match_player_stats_full, SEASONS, OUTPUT_DIR
@@ -13,8 +35,8 @@ from combined_map_script import fetch_all_maps_for_dates
 
 # ── Config ────────────────────────────────────────────────────────────────────
 
-start_date = '2026-03-01'
-end_date   = str(date.today())
+start_date = '2026-03-17'
+end_date   = '2026-03-24'
 overwrite  = True   # set to True to re-fetch already-scraped matches
 statuses   = ('Ended', 'AET', 'AP')
 
@@ -33,7 +55,7 @@ async def main():
         (df_matches['date'] <= pd.to_datetime(end_date).date()) &
         (df_matches['status'].isin(statuses))
     )
-    subset = df_matches[mask].reset_index(drop=True).tail(3)
+    subset = df_matches[mask].reset_index(drop=True)
     print(f"Processing {len(subset)} matches ({start_date} → {end_date})\n")
 
     # ── 1. Player stats ───────────────────────────────────────────────────────
@@ -42,13 +64,13 @@ async def main():
     print("=" * 60)
     t0 = time.time()
 
-    for i, row in subset.iterrows():
+    to_scrape = subset if overwrite else subset[~subset['event_id'].apply(lambda eid: os.path.exists(f"{OUTPUT_DIR}/{eid}.csv"))]
+    print(f"  {len(to_scrape)} to scrape, {len(subset) - len(to_scrape)} already exist\n")
+
+    for i, (_, row) in enumerate(to_scrape.iterrows(), 1):
         event_id = row['event_id']
         filename = f"{OUTPUT_DIR}/{event_id}.csv"
-        if os.path.exists(filename) and not overwrite:
-            print(f"[{i+1}/{len(subset)}] Skipping {event_id} — already exists")
-            continue
-        print(f"[{i+1}/{len(subset)}] {row['home_team']} vs {row['away_team']} ({row['date']})")
+        print(f"[{i}/{len(to_scrape)}] {row['home_team']} vs {row['away_team']} ({row['date']})")
         rows = get_match_player_stats_full(row)
         if rows:
             pd.DataFrame(rows).to_csv(filename, index=False)

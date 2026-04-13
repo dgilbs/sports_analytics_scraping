@@ -27,7 +27,9 @@ fotmob/pw_fotmob_profile/
 # dbt build artifacts
 **/target/
 **/dbt.log
-**/logs/dbt.log
+
+# logs
+**/logs/
 
 # Secrets and credentials - NEVER commit these!
 .envrc

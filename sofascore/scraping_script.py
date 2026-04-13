@@ -1,9 +1,9 @@
 import os
 import time
 import random
-import requests
 import pandas as pd
 from datetime import date
+from curl_cffi import requests
 
 # ── Config ───────────────────────────────────────────────────────────────────
 
@@ -11,8 +11,7 @@ OUTPUT_DIR = 'nwsl_match_stats'
 os.makedirs(OUTPUT_DIR, exist_ok=True)
 
 headers = {
-    "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36",
-    "Referer": "https://www.sofascore.com/"
+    "Referer": "https://www.sofascore.com/",
 }
 
 SEASONS = {
@@ -25,7 +24,7 @@ SEASONS = {
 def safe_get(url, headers, max_retries=3, base_sleep=0.3):
     """GET with retry logic and exponential backoff on rate limits."""
     for attempt in range(max_retries):
-        resp = requests.get(url, headers=headers)
+        resp = requests.get(url, headers=headers, impersonate="chrome")
 
         if resp.status_code == 200:
             return resp

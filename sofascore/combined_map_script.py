@@ -1,6 +1,6 @@
 import os
 import asyncio
-import requests
+from curl_cffi import requests
 import pandas as pd
 from playwright.async_api import async_playwright
 
@@ -51,7 +51,7 @@ TAB_CONFIG = [
 
 # ── Core scraper ──────────────────────────────────────────────────────────────
 
-async def scrape_all_maps(match_url, event_id, row, overwrite=False):
+async def scrape_all_maps(match_url, event_id, row, overwrite=False, game_num=None, total_games=None):
     filenames = {cfg['tab']: f"{cfg['data_dir']}/{event_id}.csv" for cfg in TAB_CONFIG}
 
     # Load existing CSVs to know which player IDs are already done per tab
@@ -69,7 +69,7 @@ async def scrape_all_maps(match_url, event_id, row, overwrite=False):
 
     resp = requests.get(
         f"https://api.sofascore.com/api/v1/event/{event_id}/lineups",
-        headers=headers
+        headers=headers, impersonate="chrome"
     )
     if resp.status_code != 200:
         print(f"  No lineups for {event_id}")
@@ -152,7 +152,8 @@ async def scrape_all_maps(match_url, event_id, row, overwrite=False):
                 print(f"  [{i+1}/{len(player_ids)}] {meta.get('player_name', player_id)} — already done")
                 continue
 
-            print(f"  [{i+1}/{len(player_ids)}] {meta.get('player_name', player_id)}...")
+            game_prefix = f"Game {game_num}/{total_games} " if game_num else ""
+            print(f"  {game_prefix}[{i+1}/{len(player_ids)}] {meta.get('player_name', player_id)}...")
 
             try:
                 img = page.locator(f'img[src*="/player/{player_id}/image"]').first
@@ -260,9 +261,9 @@ async def fetch_all_maps_for_dates(df_matches, start_date, end_date,
     subset = df_matches[mask].reset_index(drop=True)
     print(f"Scraping all maps for {len(subset)} matches ({start_date} → {end_date})\n")
 
-    for i, row in subset.iterrows():
-        print(f"[{i+1}/{len(subset)}] {row['home_team']} vs {row['away_team']} ({row['date']})")
-        await scrape_all_maps(row['match_url'], row['event_id'], row, overwrite=overwrite)
+    for game_num, (_, row) in enumerate(subset.iterrows(), 1):
+        print(f"[Game {game_num}/{len(subset)}] {row['home_team']} vs {row['away_team']} ({row['date']})")
+        await scrape_all_maps(row['match_url'], row['event_id'], row, overwrite=overwrite, game_num=game_num, total_games=len(subset))
         await asyncio.sleep(2)
 
     print(f"\nDone")

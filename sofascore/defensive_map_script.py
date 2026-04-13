@@ -1,7 +1,7 @@
 import os
 import time
 import asyncio
-import requests
+from curl_cffi import requests
 import pandas as pd
 from bs4 import BeautifulSoup
 from playwright.async_api import async_playwright
@@ -31,10 +31,12 @@ COLOR_MAP = {
 
 # ── SVG parser ────────────────────────────────────────────────────────────────
 
-def parse_def_svg(svg_outer_html, event_id, player_id):
+def parse_def_svg(svg_outer_html, event_id, player_id, side='home'):
     """
     Extract circle coordinates and action types from defensive map SVG.
     ViewBox is '-12 -12 344 224' — normalize cx/cy to 0-100.
+    Assumes pitch is already normalized to >>> orientation (scraper clicks
+    the flip button if needed before capturing the SVG).
     """
     soup = BeautifulSoup(svg_outer_html, 'html.parser')
 
@@ -151,7 +153,7 @@ async def scrape_def_maps(match_url, event_id, row, overwrite=False):
 
     resp = requests.get(
         f"https://api.sofascore.com/api/v1/event/{event_id}/lineups",
-        headers=headers
+        headers=headers, impersonate="chrome"
     )
     if resp.status_code != 200:
         print(f"  No lineups for {event_id}")
@@ -220,6 +222,14 @@ async def scrape_def_maps(match_url, event_id, row, overwrite=False):
                 await tab_btn.click(force=True)
                 await asyncio.sleep(1.5)
 
+                # Normalize pitch orientation to >>> (attacking right) before scraping.
+                # Left-chevron path means pitch is currently flipped (<<<) — click to reset.
+                LEFT_CHEVRON_PATH = 'm10 14 1.41-1.41L6.83 8l4.58-4.59L10 2 4 8z'
+                flip_btn = page.locator(f'button svg path[d="{LEFT_CHEVRON_PATH}"]').locator('..').locator('..').first
+                if await flip_btn.count() > 0:
+                    await flip_btn.click(force=True)
+                    await asyncio.sleep(0.8)
+
                 svgs = await page.locator('svg').all()
                 svg_outer = None
                 for svg in svgs:
@@ -233,8 +243,13 @@ async def scrape_def_maps(match_url, event_id, row, overwrite=False):
                     png_path = f"{DEF_SVG_DIR}/{event_id}_{player_id}.png"
                     await svg.screenshot(path=png_path)
 
+                    # Save raw SVG HTML so we can re-parse without re-scraping
+                    svg_html_path = f"{DEF_SVG_DIR}/{event_id}_{player_id}.svg"
+                    with open(svg_html_path, 'w') as f:
+                        f.write(svg_outer)
+
                     # Parse structured data
-                    action_rows = parse_def_svg(svg_outer, event_id, player_id)
+                    action_rows = parse_def_svg(svg_outer, event_id, player_id, side=meta.get('side', 'home'))
                     summary = summarize_def_actions(
                         action_rows, event_id, player_id,
                         meta.get('player_name', ''),

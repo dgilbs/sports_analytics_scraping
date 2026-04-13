@@ -1,7 +1,7 @@
 import os
 import time
 import asyncio
-import requests
+from curl_cffi import requests
 import pandas as pd
 from bs4 import BeautifulSoup
 from playwright.async_api import async_playwright
@@ -166,7 +166,7 @@ async def scrape_drib_maps(match_url, event_id, row, overwrite=False):
 
     resp = requests.get(
         f"https://api.sofascore.com/api/v1/event/{event_id}/lineups",
-        headers=headers
+        headers=headers, impersonate="chrome"
     )
     if resp.status_code != 200:
         print(f"  No lineups for {event_id}")

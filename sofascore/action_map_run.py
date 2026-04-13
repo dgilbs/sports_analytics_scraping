@@ -1,3 +1,27 @@
+import sys
+import os
+from datetime import datetime
+
+
+class Tee:
+    """Write output to both stdout and a log file."""
+    def __init__(self, filepath):
+        self.terminal = sys.stdout
+        self.log = open(filepath, 'a')
+
+    def write(self, msg):
+        self.terminal.write(msg)
+        self.log.write(msg)
+
+    def flush(self):
+        self.terminal.flush()
+        self.log.flush()
+
+
+log_path = f"logs/action_map_{datetime.now().strftime('%Y%m%d_%H%M%S')}.log"
+os.makedirs("logs", exist_ok=True)
+sys.stdout = Tee(log_path)
+print(f"Logging to {log_path}\n")
 import asyncio
 import time
 from datetime import date
@@ -9,7 +33,7 @@ from action_map_script import (
 )
 
 start_date = '2026-03-01'
-end_date   = str(date.today())
+end_date   = '2026-03-17'
 statuses   = ('Ended', 'AET', 'AP')
 
 TABS = [

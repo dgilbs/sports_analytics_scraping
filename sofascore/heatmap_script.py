@@ -1,7 +1,7 @@
 import os
 import time
 import random
-import requests
+from curl_cffi import requests
 import pandas as pd
 
 # ── Config ───────────────────────────────────────────────────────────────────
@@ -23,7 +23,7 @@ SEASONS = {
 
 def safe_get(url, headers, max_retries=3, base_sleep=0.3):
     for attempt in range(max_retries):
-        resp = requests.get(url, headers=headers)
+        resp = requests.get(url, headers=headers, impersonate="chrome")
         if resp.status_code == 200:
             return resp
         elif resp.status_code == 429:
