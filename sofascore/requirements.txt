@@ -1,0 +1,7 @@
+requests
+pandas
+numpy
+psycopg2-binary
+playwright
+beautifulsoup4
+dbt-postgres
