@@ -39,7 +39,7 @@ start_date     = '2026-03-17'
 end_date       = str(date.today())
 overwrite      = True   # set to True to re-fetch already-scraped matches
 statuses       = ('Ended', 'AET', 'AP')
-adhoc_event_id = 15388438   # set to an event_id (e.g. 12345678) to scrape a single match
+adhoc_event_id = None   # set to an event_id (e.g. 12345678) to scrape a single match
 
 
 # ── Runner ────────────────────────────────────────────────────────────────────

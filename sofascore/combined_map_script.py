@@ -196,19 +196,7 @@ async def scrape_all_maps(match_url, event_id, row, overwrite=False, game_num=No
                     print(f"    Skipping {meta.get('player_name', player_id)} (no modal trigger found)")
                     continue
 
-                try:
-                    # Wait for the player modal to open — a second [data-testid="tab-pass"]
-                    # appears in the modal (the main page already has one)
-                    await page.wait_for_function(
-                        'document.querySelectorAll(\'[data-testid="tab-pass"]\').length > 1',
-                        timeout=6000
-                    )
-                    pass_count = await page.locator('[data-testid="tab-pass"]').count()
-                    print(f"    Modal opened (tab-pass count: {pass_count})")
-                except Exception:
-                    pass_count = await page.locator('[data-testid="tab-pass"]').count()
-                    print(f"    Modal wait timed out (tab-pass count: {pass_count}) — continuing anyway")
-                    await asyncio.sleep(1.0)  # fallback
+                await asyncio.sleep(1.0)  # wait for modal to render
 
                 for cfg in tabs_needed:
                     tab_name = cfg['tab']

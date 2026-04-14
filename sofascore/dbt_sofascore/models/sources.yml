@@ -10,36 +10,104 @@ sources:
         columns:
           - name: event_id
             tests: [unique, not_null]
+          - name: home_team
+            tests: [not_null]
+          - name: away_team
+            tests: [not_null]
+          - name: match_date
+            tests: [not_null]
+          - name: season
+            tests: [not_null]
+          - name: winner_code
+            tests:
+              - accepted_values:
+                  arguments:
+                    values: [1, 2, 3]
+
       - name: fact_player_match_stats
         description: "Per-player per-match stats from the Sofascore API"
         columns:
           - name: event_id
-            tests: [not_null]
+            tests:
+              - not_null
+              - relationships:
+                  to: source('sofascore', 'dim_matches')
+                  field: event_id
           - name: player_id
             tests: [not_null]
+          - name: side
+            tests:
+              - not_null
+              - accepted_values:
+                  arguments:
+                    values: ['home', 'away']
+          - name: minutes_played
+            tests: [not_null]
+          - name: season
+            tests: [not_null]
+
       - name: fact_shots
         description: "Per-shot data from the Sofascore shotmap API"
         columns:
           - name: id
             tests: [unique, not_null]
+          - name: event_id
+            tests:
+              - not_null
+              - relationships:
+                  to: source('sofascore', 'dim_matches')
+                  field: event_id
+          - name: player_id
+            tests: [not_null]
+
       - name: fact_pass_maps
         description: "Per-player pass map summaries scraped via Playwright"
         columns:
           - name: event_id
-            tests: [not_null]
+            tests:
+              - not_null
+              - relationships:
+                  to: source('sofascore', 'dim_matches')
+                  field: event_id
           - name: player_id
             tests: [not_null]
+          - name: side
+            tests:
+              - accepted_values:
+                  arguments:
+                    values: ['home', 'away']
+
       - name: fact_drib_maps
         description: "Per-player dribble/carry map summaries scraped via Playwright"
         columns:
           - name: event_id
-            tests: [not_null]
+            field: event_id
+            tests:
+              - not_null
+              - relationships:
+                  to: source('sofascore', 'dim_matches')
+                  field: event_id
           - name: player_id
             tests: [not_null]
+          - name: side
+            tests:
+              - accepted_values:
+                  arguments:
+                    values: ['home', 'away']
+
       - name: fact_def_maps
         description: "Per-player defensive action map summaries scraped via Playwright"
         columns:
           - name: event_id
-            tests: [not_null]
+            tests:
+              - not_null
+              - relationships:
+                  to: source('sofascore', 'dim_matches')
+                  field: event_id
           - name: player_id
             tests: [not_null]
+          - name: side
+            tests:
+              - accepted_values:
+                  arguments:
+                    values: ['home', 'away']

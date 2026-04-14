@@ -27,6 +27,7 @@ fotmob/pw_fotmob_profile/
 # dbt build artifacts
 **/target/
 **/dbt.log
+**/dbt_packages/
 
 # logs
 **/logs/

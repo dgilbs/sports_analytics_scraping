@@ -1,0 +1,102 @@
+version: 2
+
+models:
+  - name: player_match_stats
+    description: "Per-player per-match stats joined with match metadata"
+    columns:
+      - name: event_id
+        tests: [not_null]
+      - name: player_id
+        tests: [not_null]
+      - name: side
+        tests:
+          - accepted_values:
+              arguments:
+                values: ['home', 'away']
+      - name: result
+        tests:
+          - accepted_values:
+              arguments:
+                values: ['win', 'loss', 'draw']
+      - name: minutes_played
+        tests:
+          - not_null
+          - dbt_utils.accepted_range:
+              arguments:
+                min_value: 0
+                max_value: 120
+      - name: pass_completion
+        tests:
+          - dbt_utils.accepted_range:
+              arguments:
+                min_value: 0
+                max_value: 1
+                inclusive: true
+      - name: shot_accuracy
+        tests:
+          - dbt_utils.accepted_range:
+              arguments:
+                min_value: 0
+                max_value: 1
+                inclusive: true
+
+  - name: player_season_stats
+    description: "Per-player per-season aggregated stats"
+    columns:
+      - name: player_id
+        tests: [not_null]
+      - name: season
+        tests: [not_null]
+
+  - name: team_match_stats
+    description: "Per-team per-match aggregated stats"
+    columns:
+      - name: event_id
+        tests: [not_null]
+      - name: team
+        tests: [not_null]
+      - name: side
+        tests:
+          - accepted_values:
+              arguments:
+                values: ['home', 'away']
+
+  - name: team_season_stats
+    description: "Per-team per-season aggregated stats"
+    columns:
+      - name: team
+        tests: [not_null]
+      - name: season
+        tests: [not_null]
+
+  - name: pass_map_counts
+    description: "Pass map percentages converted to integer counts"
+    columns:
+      - name: event_id
+        tests: [not_null]
+      - name: player_id
+        tests: [not_null]
+
+  - name: drib_map_counts
+    description: "Dribble map percentages converted to integer counts"
+    columns:
+      - name: event_id
+        tests: [not_null]
+      - name: player_id
+        tests: [not_null]
+
+  - name: def_map_counts
+    description: "Defensive map percentages converted to integer counts"
+    columns:
+      - name: event_id
+        tests: [not_null]
+      - name: player_id
+        tests: [not_null]
+
+  - name: player_map_stats
+    description: "Combined pass/drib/def map counts per player per match"
+    columns:
+      - name: event_id
+        tests: [not_null]
+      - name: player_id
+        tests: [not_null]
