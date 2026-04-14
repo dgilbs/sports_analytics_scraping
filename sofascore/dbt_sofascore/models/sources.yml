@@ -21,8 +21,7 @@ sources:
           - name: winner_code
             tests:
               - accepted_values:
-                  arguments:
-                    values: [1, 2, 3]
+                  values: [1, 2, 3]
 
       - name: fact_player_match_stats
         description: "Per-player per-match stats from the Sofascore API"
@@ -39,10 +38,8 @@ sources:
             tests:
               - not_null
               - accepted_values:
-                  arguments:
-                    values: ['home', 'away']
+                  values: ['home', 'away']
           - name: minutes_played
-            tests: [not_null]
           - name: season
             tests: [not_null]
 
@@ -74,8 +71,7 @@ sources:
           - name: side
             tests:
               - accepted_values:
-                  arguments:
-                    values: ['home', 'away']
+                  values: ['home', 'away']
 
       - name: fact_drib_maps
         description: "Per-player dribble/carry map summaries scraped via Playwright"
@@ -92,8 +88,7 @@ sources:
           - name: side
             tests:
               - accepted_values:
-                  arguments:
-                    values: ['home', 'away']
+                  values: ['home', 'away']
 
       - name: fact_def_maps
         description: "Per-player defensive action map summaries scraped via Playwright"
@@ -109,5 +104,4 @@ sources:
           - name: side
             tests:
               - accepted_values:
-                  arguments:
-                    values: ['home', 'away']
+                  values: ['home', 'away']

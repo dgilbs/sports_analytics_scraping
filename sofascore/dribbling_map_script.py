@@ -235,6 +235,14 @@ async def scrape_drib_maps(match_url, event_id, row, overwrite=False):
                 await tab_btn.click(force=True)
                 await asyncio.sleep(1.5)
 
+                # Normalize pitch orientation to >>> (attacking right).
+                # If the left-chevron path is present, pitch is flipped — click to reset.
+                LEFT_CHEVRON_PATH = 'm10 14 1.41-1.41L6.83 8l4.58-4.59L10 2 4 8z'
+                flip_btn = page.locator(f'button svg path[d="{LEFT_CHEVRON_PATH}"]').locator('..').locator('..').first
+                if await flip_btn.count() > 0:
+                    await flip_btn.click(force=True)
+                    await asyncio.sleep(0.5)
+
                 svgs = await page.locator('svg').all()
                 svg_el = None
                 svg_outer = None
