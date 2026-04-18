@@ -112,3 +112,4 @@ select
 
 from base b
 left join matches m on b.event_id = m.event_id
+where b.minutes_played is not null

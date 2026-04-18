@@ -232,10 +232,33 @@ CREATE TABLE IF NOT EXISTS sofascore.fact_pass_maps (
     acc_dest_left_wing      float,
     acc_dest_central        float,
     acc_dest_right_wing     float,
-    progressive_passes      int,
-    progressive_pass_pct    float,
+    progressive_passes              int,
+    progressive_pass_pct            float,
+    passes_into_final_third         int,
+    acc_passes_into_final_third     int,
+    passes_into_penalty_area        int,
+    acc_passes_into_penalty_area    int,
+    crosses_into_penalty_area       int,
+    passes_short                    int,
+    passes_medium                   int,
+    passes_long                     int,
+    acc_passes_short                int,
+    acc_passes_medium               int,
+    acc_passes_long                 int,
     PRIMARY KEY (event_id, player_id)
 );
+
+ALTER TABLE sofascore.fact_pass_maps ADD COLUMN IF NOT EXISTS passes_into_final_third         int;
+ALTER TABLE sofascore.fact_pass_maps ADD COLUMN IF NOT EXISTS acc_passes_into_final_third     int;
+ALTER TABLE sofascore.fact_pass_maps ADD COLUMN IF NOT EXISTS passes_into_penalty_area        int;
+ALTER TABLE sofascore.fact_pass_maps ADD COLUMN IF NOT EXISTS acc_passes_into_penalty_area    int;
+ALTER TABLE sofascore.fact_pass_maps ADD COLUMN IF NOT EXISTS crosses_into_penalty_area       int;
+ALTER TABLE sofascore.fact_pass_maps ADD COLUMN IF NOT EXISTS passes_short                    int;
+ALTER TABLE sofascore.fact_pass_maps ADD COLUMN IF NOT EXISTS passes_medium                   int;
+ALTER TABLE sofascore.fact_pass_maps ADD COLUMN IF NOT EXISTS passes_long                     int;
+ALTER TABLE sofascore.fact_pass_maps ADD COLUMN IF NOT EXISTS acc_passes_short                int;
+ALTER TABLE sofascore.fact_pass_maps ADD COLUMN IF NOT EXISTS acc_passes_medium               int;
+ALTER TABLE sofascore.fact_pass_maps ADD COLUMN IF NOT EXISTS acc_passes_long                 int;
 
 CREATE TABLE IF NOT EXISTS sofascore.fact_drib_maps (
     event_id                bigint      NOT NULL REFERENCES sofascore.dim_matches(event_id),
@@ -266,11 +289,16 @@ CREATE TABLE IF NOT EXISTS sofascore.fact_drib_maps (
     carry_left_wing         float,
     carry_central           float,
     carry_right_wing        float,
-    drib_won_def_third      float,
-    drib_won_mid_third      float,
-    drib_won_att_third      float,
+    drib_won_def_third          float,
+    drib_won_mid_third          float,
+    drib_won_att_third          float,
+    carries_into_final_third    int,
+    carries_into_penalty_area   int,
     PRIMARY KEY (event_id, player_id)
 );
+
+ALTER TABLE sofascore.fact_drib_maps ADD COLUMN IF NOT EXISTS carries_into_final_third  int;
+ALTER TABLE sofascore.fact_drib_maps ADD COLUMN IF NOT EXISTS carries_into_penalty_area int;
 
 CREATE TABLE IF NOT EXISTS sofascore.fact_def_maps (
     event_id                bigint      NOT NULL REFERENCES sofascore.dim_matches(event_id),
@@ -309,6 +337,30 @@ CREATE TABLE IF NOT EXISTS sofascore.fact_def_maps (
     recovery_att_third      float,
     PRIMARY KEY (event_id, player_id)
 );
+
+CREATE TABLE IF NOT EXISTS sofascore.fact_heatmaps (
+    event_id            bigint          NOT NULL REFERENCES sofascore.dim_matches(event_id),
+    player_id           bigint          NOT NULL,
+    season              varchar(10),
+    match_date          date,
+    home_team           varchar(100),
+    away_team           varchar(100),
+    team                varchar(100),
+    side                varchar(10),
+    player_name         varchar(100),
+    position            varchar(5),
+    substitute          boolean,
+    touch_count         int,
+    defensive_third     float,
+    middle_third        float,
+    attacking_third     float,
+    left_wing           float,
+    central             float,
+    right_wing          float,
+    att_penalty_area    float,
+    PRIMARY KEY (event_id, player_id)
+);
+ALTER TABLE sofascore.fact_heatmaps ADD COLUMN IF NOT EXISTS att_penalty_area float;
 """
 
 # ── Column lists ──────────────────────────────────────────────────────────────
@@ -362,6 +414,17 @@ def to_rows(df, cols):
     ]
 
 
+# ── Helpers ───────────────────────────────────────────────────────────────────
+
+def _event_files(data_dir, event_ids=None):
+    """Return CSV file paths for a directory, optionally filtered to specific event IDs."""
+    if event_ids is not None:
+        files = [os.path.join(data_dir, f"{eid}.csv") for eid in event_ids
+                 if os.path.exists(os.path.join(data_dir, f"{eid}.csv"))]
+        return sorted(files)
+    return sorted(glob.glob(os.path.join(data_dir, "*.csv")))
+
+
 # ── Loaders ───────────────────────────────────────────────────────────────────
 
 def create_tables(conn):
@@ -399,8 +462,8 @@ def load_matches(conn):
     print(f"  Matches: {len(df)} rows upserted.")
 
 
-def load_player_stats(conn):
-    files = sorted(glob.glob(os.path.join(STATS_DIR, "*.csv")))
+def load_player_stats(conn, event_ids=None):
+    files = _event_files(STATS_DIR, event_ids)
     if not files:
         print("  No stat CSV files found in nwsl_match_stats/.")
         return
@@ -473,8 +536,8 @@ SHOTS_NUMERIC_COLS = [
 ]
 
 
-def load_shots(conn):
-    files = sorted(glob.glob(os.path.join(SHOTS_DIR, "*.csv")))
+def load_shots(conn, event_ids=None):
+    files = _event_files(SHOTS_DIR, event_ids)
     if not files:
         print("  No shot CSV files found in nwsl_shot_tables/.")
         return
@@ -547,6 +610,11 @@ PASS_MAP_COLS = [
     "acc_dest_def_third", "acc_dest_mid_third", "acc_dest_att_third",
     "acc_dest_left_wing", "acc_dest_central", "acc_dest_right_wing",
     "progressive_passes", "progressive_pass_pct",
+    "passes_into_final_third", "acc_passes_into_final_third",
+    "passes_into_penalty_area", "acc_passes_into_penalty_area",
+    "crosses_into_penalty_area",
+    "passes_short", "passes_medium", "passes_long",
+    "acc_passes_short", "acc_passes_medium", "acc_passes_long",
 ]
 
 DRIB_MAP_COLS = [
@@ -559,6 +627,7 @@ DRIB_MAP_COLS = [
     "carry_def_third", "carry_mid_third", "carry_att_third",
     "carry_left_wing", "carry_central", "carry_right_wing",
     "drib_won_def_third", "drib_won_mid_third", "drib_won_att_third",
+    "carries_into_final_third", "carries_into_penalty_area",
 ]
 
 DEF_MAP_COLS = [
@@ -579,8 +648,8 @@ _MAP_NON_NUMERIC = {
 }
 
 
-def _load_map_table(conn, data_dir, cols, table_name, label):
-    files = sorted(glob.glob(os.path.join(data_dir, "*.csv")))
+def _load_map_table(conn, data_dir, cols, table_name, label, event_ids=None):
+    files = _event_files(data_dir, event_ids)
     if not files:
         print(f"  No CSV files found in {os.path.basename(data_dir)}/.")
         return
@@ -634,16 +703,166 @@ def _load_map_table(conn, data_dir, cols, table_name, label):
     print(f"  {label}: {len(df)} rows from {len(files)} files upserted.")
 
 
-def load_pass_maps(conn):
-    _load_map_table(conn, PASS_MAP_DIR, PASS_MAP_COLS, "sofascore.fact_pass_maps", "Pass maps")
+def load_pass_maps(conn, event_ids=None):
+    _load_map_table(conn, PASS_MAP_DIR, PASS_MAP_COLS, "sofascore.fact_pass_maps", "Pass maps", event_ids)
 
 
-def load_drib_maps(conn):
-    _load_map_table(conn, DRIB_MAP_DIR, DRIB_MAP_COLS, "sofascore.fact_drib_maps", "Drib maps")
+def load_drib_maps(conn, event_ids=None):
+    _load_map_table(conn, DRIB_MAP_DIR, DRIB_MAP_COLS, "sofascore.fact_drib_maps", "Drib maps", event_ids)
 
 
-def load_def_maps(conn):
-    _load_map_table(conn, DEF_MAP_DIR, DEF_MAP_COLS, "sofascore.fact_def_maps", "Def maps")
+def load_def_maps(conn, event_ids=None):
+    _load_map_table(conn, DEF_MAP_DIR, DEF_MAP_COLS, "sofascore.fact_def_maps", "Def maps", event_ids)
+
+
+HEATMAP_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "nwsl_heatmap_zones")
+
+HEATMAP_COLS = [
+    "event_id", "player_id", "season", "match_date", "home_team", "away_team",
+    "team", "side", "player_name", "position", "substitute",
+    "touch_count",
+    "defensive_third", "middle_third", "attacking_third",
+    "left_wing", "central", "right_wing",
+    "att_penalty_area",
+]
+
+_HEATMAP_NON_NUMERIC = {
+    "event_id", "player_id", "season", "match_date",
+    "home_team", "away_team", "team", "side", "player_name", "position",
+}
+
+
+def load_heatmaps(conn, event_ids=None):
+    files = _event_files(HEATMAP_DIR, event_ids)
+    if not files:
+        print("  No heatmap CSV files found in nwsl_heatmap_zones/.")
+        return
+
+    dfs = []
+    for f in files:
+        try:
+            dfs.append(pd.read_csv(f))
+        except Exception as e:
+            print(f"  Warning: skipping {os.path.basename(f)}: {e}")
+
+    if not dfs:
+        return
+
+    df = pd.concat(dfs, ignore_index=True)
+    df = df.rename(columns={"date": "match_date"})
+
+    for col in [c for c in HEATMAP_COLS if c not in _HEATMAP_NON_NUMERIC and c != "substitute"]:
+        if col in df.columns:
+            df[col] = pd.to_numeric(df[col], errors="coerce")
+
+    df["match_date"] = pd.to_datetime(df["match_date"], errors="coerce").dt.date
+    df["substitute"] = df["substitute"].map(
+        {"True": True, "False": False, True: True, False: False}
+    )
+
+    for col in HEATMAP_COLS:
+        if col not in df.columns:
+            df[col] = None
+
+    with conn.cursor() as cur:
+        cur.execute("SELECT event_id FROM sofascore.dim_matches")
+        known_ids = {row[0] for row in cur.fetchall()}
+
+    unknown = set(df["event_id"].dropna().astype(int)) - known_ids
+    if unknown:
+        print(f"  Skipping {len(unknown)} event IDs not in dim_matches")
+        df = df[df["event_id"].astype(int).isin(known_ids)]
+
+    insert_cols = ", ".join(HEATMAP_COLS)
+    update_set  = ", ".join(f"{c} = EXCLUDED.{c}" for c in HEATMAP_COLS[2:])
+
+    with conn.cursor() as cur:
+        execute_values(cur, f"""
+            INSERT INTO sofascore.fact_heatmaps ({insert_cols})
+            VALUES %s
+            ON CONFLICT (event_id, player_id) DO UPDATE SET {update_set}
+        """, to_rows(df, HEATMAP_COLS))
+
+    conn.commit()
+    print(f"  Heatmaps: {len(df)} rows from {len(files)} files upserted.")
+
+
+def load_for_events(conn, event_ids):
+    """Load all data tables for a specific list of event IDs only."""
+    ids = [int(e) for e in event_ids]
+    load_player_stats(conn, ids)
+    load_shots(conn, ids)
+    load_pass_maps(conn, ids)
+    load_drib_maps(conn, ids)
+    load_def_maps(conn, ids)
+    load_heatmaps(conn, ids)
+
+
+def validate_maps(conn, event_ids=None):
+    """
+    Flag suspicious zone assignments that likely indicate a data error.
+
+    Checks:
+      1. Defender (D) with 0% actions in defensive third — wrong orientation or bad capture.
+      2. Any player with 75%+ actions in attacking third — very likely a zone flip.
+      3. Defender (D) with 75%+ actions in attacking third — catches milder cases too.
+    """
+    id_filter = "AND event_id = ANY(%s)" if event_ids else ""
+    params    = (event_ids,) if event_ids else ()
+
+    checks = [
+        (
+            "Defender with 0% in defensive third",
+            f"""SELECT player_name, side, event_id, total_def_actions,
+                       pct_def_third, pct_mid_third, pct_att_third
+                FROM sofascore.fact_def_maps
+                WHERE position = 'D'
+                  AND total_def_actions >= 5
+                  AND pct_def_third = 0
+                  {id_filter}
+                ORDER BY event_id, player_name""",
+        ),
+        (
+            "Any player with 75%+ actions in attacking third",
+            f"""SELECT player_name, side, event_id, position, total_def_actions,
+                       pct_def_third, pct_mid_third, pct_att_third
+                FROM sofascore.fact_def_maps
+                WHERE total_def_actions >= 5
+                  AND pct_att_third >= 0.75
+                  {id_filter}
+                ORDER BY event_id, player_name""",
+        ),
+        (
+            "Defender with 50%+ actions in attacking third",
+            f"""SELECT player_name, side, event_id, total_def_actions,
+                       pct_def_third, pct_mid_third, pct_att_third
+                FROM sofascore.fact_def_maps
+                WHERE position = 'D'
+                  AND total_def_actions >= 5
+                  AND pct_att_third >= 0.5
+                  {id_filter}
+                ORDER BY event_id, player_name""",
+        ),
+    ]
+
+    any_flagged = False
+    with conn.cursor() as cur:
+        for label, sql in checks:
+            cur.execute(sql, params)
+            rows = cur.fetchall()
+            if rows:
+                any_flagged = True
+                print(f"\n  [WARN] {label}:")
+                for r in rows:
+                    # columns vary slightly by check — unpack generically
+                    name, side, eid = r[0], r[1], r[2]
+                    total = r[3] if len(r) == 7 else r[4]
+                    def_pct, mid_pct, att_pct = r[-3], r[-2], r[-1]
+                    print(f"    {name} ({side}, event {eid}) "
+                          f"total={total}  def={def_pct:.0%}  mid={mid_pct:.0%}  att={att_pct:.0%}")
+
+    if not any_flagged:
+        print("  All map data passed validation checks.")
 
 
 # ── Entry point ───────────────────────────────────────────────────────────────

@@ -21,6 +21,7 @@ class Tee:
         self.log.flush()
 
 
+
 log_path = f"logs/full_run_{datetime.now().strftime('%Y%m%d_%H%M%S')}.log"
 os.makedirs("logs", exist_ok=True)
 sys.stdout = Tee(log_path)
@@ -32,11 +33,12 @@ from scraping_script import (
 from heatmap_script import fetch_heatmaps_for_dates
 from shot_script import fetch_shot_tables_for_dates
 from combined_map_script import fetch_all_maps_for_dates
+from load_to_db import get_conn, create_tables, load_matches, load_for_events
 
 # ── Config ────────────────────────────────────────────────────────────────────
 
-start_date     = '2026-03-17'
-end_date       = str(date.today())
+start_date     = '2026-03-01'
+end_date       = '2026-05-30'
 overwrite      = True   # set to True to re-fetch already-scraped matches
 statuses       = ('Ended', 'AET', 'AP')
 adhoc_event_id = None   # set to an event_id (e.g. 12345678) to scrape a single match
@@ -56,7 +58,8 @@ async def main():
         if subset.empty:
             print(f"event_id {adhoc_event_id} not found — exiting")
             return
-        print(f"Ad-hoc scrape: {subset.iloc[0]['home_team']} vs {subset.iloc[0]['away_team']} ({subset.iloc[0]['date']})\n")
+        eff_start = eff_end = str(subset.iloc[0]['date'])
+        print(f"Ad-hoc scrape: {subset.iloc[0]['home_team']} vs {subset.iloc[0]['away_team']} ({eff_start})\n")
     else:
         mask = (
             (df_matches['date'] >= pd.to_datetime(start_date).date()) &
@@ -64,7 +67,8 @@ async def main():
             (df_matches['status'].isin(statuses))
         )
         subset = df_matches[mask].reset_index(drop=True)
-        print(f"Processing {len(subset)} matches ({start_date} → {end_date})\n")
+        eff_start, eff_end = start_date, end_date
+        print(f"Processing {len(subset)} matches ({eff_start} → {eff_end})\n")
 
     # ── 1. Player stats ───────────────────────────────────────────────────────
     print("=" * 60)
@@ -94,7 +98,7 @@ async def main():
     print("=" * 60)
     t0 = time.time()
 
-    fetch_heatmaps_for_dates(subset, start_date, end_date, overwrite=overwrite)
+    fetch_heatmaps_for_dates(subset, eff_start, eff_end, overwrite=overwrite)
 
     print(f"\nHeatmaps done in {(time.time() - t0) / 60:.1f}m\n")
 
@@ -104,7 +108,7 @@ async def main():
     print("=" * 60)
     t0 = time.time()
 
-    fetch_shot_tables_for_dates(subset, start_date, end_date, overwrite=overwrite)
+    fetch_shot_tables_for_dates(subset, eff_start, eff_end, overwrite=overwrite)
 
     print(f"\nShots done in {(time.time() - t0) / 60:.1f}m\n")
 
@@ -114,9 +118,26 @@ async def main():
     print("=" * 60)
     t0 = time.time()
 
-    await fetch_all_maps_for_dates(subset, start_date, end_date, overwrite=overwrite)
+    await fetch_all_maps_for_dates(subset, eff_start, eff_end, overwrite=overwrite)
 
     print(f"\nMaps done in {(time.time() - t0) / 60:.1f}m\n")
+
+    # ── 5. Load to DB ─────────────────────────────────────────────────────────
+    print("=" * 60)
+    print("  LOAD TO DB")
+    print("=" * 60)
+    t0 = time.time()
+
+    event_ids = subset['event_id'].tolist()
+    conn = get_conn()
+    try:
+        create_tables(conn)
+        load_matches(conn)
+        load_for_events(conn, event_ids)
+    finally:
+        conn.close()
+
+    print(f"\nLoad to DB done in {(time.time() - t0) / 60:.1f}m\n")
 
     # ── Summary ───────────────────────────────────────────────────────────────
     elapsed = time.time() - _total_start

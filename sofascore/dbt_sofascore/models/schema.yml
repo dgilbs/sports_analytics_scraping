@@ -93,3 +93,519 @@ models:
         tests: [not_null]
       - name: player_id
         tests: [not_null]
+
+  - name: player_season_stats_per_90
+    description: >
+      Extends player_season_stats with per-90 columns for all count-based stats
+      not already present in the base model (shots on target, passes, carries,
+      touches, duels, clearances, fouls, etc.). Rate stats (pass_completion,
+      duel_win_rate, etc.) are not duplicated. Uses the per90() macro.
+    columns:
+      - name: player_id
+        tests: [not_null]
+      - name: season
+        tests: [not_null]
+
+  - name: player_season_pass_stats
+    description: >
+      Season-level aggregation of pass map data per player. Sums all count
+      columns from pass_map_counts and recomputes accuracy rates from the
+      season totals. Joins to player_match_stats for total_minutes.
+      Includes direction splits (forward/backward/lateral) and origin/destination
+      zone counts for both all passes and accurate passes only.
+    columns:
+      - name: player_id
+        tests: [not_null]
+      - name: season
+        tests: [not_null]
+      - name: pass_accuracy
+        tests:
+          - dbt_utils.accepted_range:
+              min_value: 0
+              max_value: 1
+              inclusive: true
+
+  - name: player_season_pass_stats_per_90
+    description: >
+      Extends player_season_pass_stats with per-90 columns for pass volume,
+      direction splits, and origin/destination zone counts. Rate stats
+      (pass_accuracy, progressive_pass_pct) are not duplicated.
+    columns:
+      - name: player_id
+        tests: [not_null]
+      - name: season
+        tests: [not_null]
+
+  - name: player_season_def_stats
+    description: >
+      Season-level aggregation of defensive map data per player. Sums all
+      count columns from def_map_counts and recomputes tackle_success from
+      season totals. Joins to player_match_stats for total_minutes.
+      Includes zone breakdowns for all defensive actions, tackles won,
+      interceptions, and recoveries.
+    columns:
+      - name: player_id
+        tests: [not_null]
+      - name: season
+        tests: [not_null]
+      - name: tackle_success
+        tests:
+          - dbt_utils.accepted_range:
+              min_value: 0
+              max_value: 1
+              inclusive: true
+
+  - name: player_season_def_stats_per_90
+    description: >
+      Extends player_season_def_stats with per-90 columns for each defensive
+      action type (tackles, interceptions, clearances, blocks, recoveries)
+      and zone-level defensive action counts.
+    columns:
+      - name: player_id
+        tests: [not_null]
+      - name: season
+        tests: [not_null]
+
+  - name: player_season_drib_stats
+    description: >
+      Season-level aggregation of dribble/carry map data per player. Sums all
+      count columns from drib_map_counts and recomputes dribble_success from
+      season totals. Joins to player_match_stats for total_minutes.
+      Includes zone breakdowns for all dribbles, dribbles won, and carries.
+    columns:
+      - name: player_id
+        tests: [not_null]
+      - name: season
+        tests: [not_null]
+      - name: dribble_success
+        tests:
+          - dbt_utils.accepted_range:
+              min_value: 0
+              max_value: 1
+              inclusive: true
+
+  - name: player_season_drib_stats_per_90
+    description: >
+      Extends player_season_drib_stats with per-90 columns for dribbles,
+      carries, and their zone breakdowns.
+    columns:
+      - name: player_id
+        tests: [not_null]
+      - name: season
+        tests: [not_null]
+
+  - name: player_match_profile
+    description: >
+      Wide per-player per-match profile combining all data sources. API stats
+      from player_match_stats are the primary source; map-only columns
+      (pass direction/zone counts, avg_pass_length, progressive_passes,
+      dribble/carry zone counts, block, def_actions zone counts) are appended
+      via LEFT JOINs on (event_id, player_id). Duplicate columns are dropped
+      in favour of the API values.
+    columns:
+      - name: event_id
+        tests: [not_null]
+      - name: player_id
+        tests: [not_null]
+      - name: side
+        tests:
+          - accepted_values:
+              values: ['home', 'away']
+      - name: result
+        tests:
+          - accepted_values:
+              values: ['win', 'loss', 'draw']
+
+  - name: heatmap_counts
+    description: "Heatmap zone fractions converted to integer touch counts per player per match"
+    columns:
+      - name: event_id
+        tests: [not_null]
+      - name: player_id
+        tests: [not_null]
+
+  - name: player_season_heatmap_stats
+    description: >
+      Season-level aggregation of heatmap touch data per player. Sums touch
+      counts from heatmap_counts and recomputes zone fractions from season
+      totals. Joins to player_match_stats for total_minutes.
+    columns:
+      - name: player_id
+        tests: [not_null]
+      - name: season
+        tests: [not_null]
+      - name: pct_def_third
+        tests:
+          - dbt_utils.accepted_range:
+              min_value: 0
+              max_value: 1
+              inclusive: true
+      - name: pct_att_third
+        tests:
+          - dbt_utils.accepted_range:
+              min_value: 0
+              max_value: 1
+              inclusive: true
+
+  - name: player_position_profile
+    description: >
+      Rule-based sub-position classifier derived from season heatmap zone fractions.
+      Uses the API position (G/D/M/F) as a prior, then applies longitudinal
+      (def/mid/att third) and lateral (left/central/right wing) thresholds to
+      assign one of 12 granular positions: GK, CB, LB, RB, CDM, CM, LM, RM,
+      CAM, LW, RW, ST. Wide midfielders with att_third >= 0.35 are classified
+      before purely wide mids (wing >= 0.50) to capture inverted wingers
+      playing from midfield. All thresholds are approximate and tunable.
+    columns:
+      - name: player_id
+        tests: [not_null]
+      - name: season
+        tests: [not_null]
+      - name: api_position
+        tests:
+          - not_null
+          - accepted_values:
+              values: ['G', 'D', 'M', 'F']
+      - name: position_detailed
+        tests:
+          - not_null
+          - accepted_values:
+              values: ['GK', 'CB', 'LB', 'RB', 'CDM', 'CM', 'LM', 'RM', 'CAM', 'LW', 'RW', 'ST']
+
+  - name: player_season_heatmap_stats_per_90
+    description: >
+      Extends player_season_heatmap_stats with per-90 columns for total
+      touches and each zone's touch count.
+    columns:
+      - name: player_id
+        tests: [not_null]
+      - name: season
+        tests: [not_null]
+
+  - name: player_season_profile
+    description: >
+      Wide per-player per-season profile combining all data sources. API stats
+      from player_season_stats are the primary source. Map season models are
+      joined on (player_id, season, team, position) via LEFT JOINs to append
+      pass direction/zone counts, dribble contest totals and zones, and
+      defensive zone breakdowns. Duplicate columns are dropped in favour of
+      API values. Includes the 8 per-90 columns already present in
+      player_season_stats.
+    columns:
+      - name: player_id
+        tests: [not_null]
+      - name: season
+        tests: [not_null]
+
+  - name: player_match_metrics
+    description: >
+      Calculated analytics metrics per player per match. All inputs come from
+      player_match_profile, which combines Sofascore API stats, map scraper
+      counts (pass/drib/def), heatmap API zone touches, and Fotmob xG/xA.
+      Map-sourced columns are NULL where the match has not been scraped.
+      xG/xA are NULL where no confirmed Fotmob crossref entry exists.
+    columns:
+      - name: event_id
+        tests: [not_null]
+      - name: player_id
+        tests: [not_null]
+
+      # Attacking
+      - name: complete_attacking_threat
+        description: "(goals + assists + shots_on_target + key_passes + xg) / touches"
+      - name: clinical_finishing
+        description: "(goals + shots_on_target) / (shots + xg). Can exceed 1."
+      - name: np_goal_efficiency
+        description: "(np_goals + shots_on_target) / (shots + xg). xg used as npxg proxy. Can exceed 1."
+      - name: final_third_conversion
+        description: "(shots + key_passes + crosses_into_penalty_area + carries_into_penalty_area) / att_third_touches"
+      - name: penalty_area_dominance
+        description: "(att_penalty_area_touches + shots + crosses_into_penalty_area + passes_into_penalty_area) / att_third_touches"
+
+      # Creative
+      - name: creative_playmaking_index
+        description: "(assists + key_passes + passes_into_penalty_area + crosses_into_penalty_area) / passes_attempted"
+      - name: shot_quality_creation
+        description: "xa / (shots + xg). xa used as proxy for xag."
+
+      # Defensive
+      - name: tackling_score
+        description: "tackles_won_per90 × tackle_success_rate × (1 + tackles_attempted / 10)"
+      - name: defensive_impact_score
+        description: "(tackles_won + interceptions + blocks + clearances + aerial_won) / (tackles_att + contests_att + aerial_won + aerial_lost)"
+      - name: defensive_anticipation_index
+        description: "interceptions / (interceptions + tackles_attempted)"
+        tests:
+          - dbt_utils.accepted_range:
+              min_value: 0
+              max_value: 1
+              inclusive: true
+      - name: aerial_dominance_score
+        description: "(aerial_won / (aerial_won + aerial_lost)) × aerial_won"
+
+      # Possession & technical
+      - name: ball_progression_mastery
+        description: "(progressive_passes + progressive_carries + passes_into_final_third + carries_into_final_third) / (passes_attempted + carries)"
+      - name: ball_security_progression
+        description: "(passes_completed + take_ons_won + progressive_passes + carries) / (passes_attempted + take_ons_attempted + unsuccessful_touch + dispossessed)"
+      - name: possession_security_index
+        description: "(passes_completed + take_ons_won + carries - unsuccessful_touch) / (passes_attempted + take_ons_attempted + carries + dispossessed)"
+      - name: progressive_action_rate
+        description: "(progressive_passes + progressive_carries + carries_into_final_third + passes_into_final_third) / touches"
+      - name: progressive_carrying_impact
+        description: "(progressive_carries_distance + progressive_carries_count) / (carries_distance + carries_count)"
+
+      # Defensive splits
+      - name: def_actions_per90
+        description: "(tackles_won + interceptions + blocks + clearances + recoveries) / (minutes / 90)"
+      - name: recovery_rate
+        description: "ball_recovery / total_def_actions"
+        tests:
+          - dbt_utils.accepted_range:
+              min_value: 0
+              max_value: 1
+              inclusive: true
+      - name: block_rate
+        description: "blocks / total_def_actions"
+        tests:
+          - dbt_utils.accepted_range:
+              min_value: 0
+              max_value: 1
+              inclusive: true
+
+      # Pass accuracy splits
+      - name: acc_rate_short
+        description: "acc_passes_short / passes_short. NULL where pass maps not scraped."
+        tests:
+          - dbt_utils.accepted_range:
+              min_value: 0
+              max_value: 1
+              inclusive: true
+      - name: acc_rate_medium
+        description: "acc_passes_medium / passes_medium. NULL where pass maps not scraped."
+        tests:
+          - dbt_utils.accepted_range:
+              min_value: 0
+              max_value: 1
+              inclusive: true
+      - name: acc_rate_long
+        description: "acc_passes_long / passes_long. NULL where pass maps not scraped."
+        tests:
+          - dbt_utils.accepted_range:
+              min_value: 0
+              max_value: 1
+              inclusive: true
+
+      # Carry effectiveness
+      - name: progressive_carry_distance_pct
+        description: "progressive_carries_distance / carries_distance. NULL where drib maps not scraped."
+      - name: carry_into_final_third_rate
+        description: "carries_into_final_third / carries_count. NULL where drib maps not scraped."
+
+      # Versatility
+      - name: duel_winning_ability
+        description: "duel_success_rate × (tackles_won + aerial_won + take_ons_won)"
+      - name: passing_range_versatility
+        description: >
+          Balance across short/medium/long pass buckets. 1.0 = perfectly even split,
+          0.0 = all passes in one bucket. Formula: 1 - (sum of |pct_bucket - 1/3|) / (4/3).
+          NULL where pass maps not scraped.
+
+      # Simple rates
+      - name: shot_accuracy
+        description: "shots_on_target / total_shots"
+        tests:
+          - dbt_utils.accepted_range:
+              min_value: 0
+              max_value: 1
+              inclusive: true
+      - name: xg_per_shot
+        description: "xg / total_shots. NULL where Fotmob crossref not matched."
+      - name: take_on_success_rate
+        description: "take_ons_won / take_ons_attempted"
+        tests:
+          - dbt_utils.accepted_range:
+              min_value: 0
+              max_value: 1
+              inclusive: true
+      - name: aerial_win_rate
+        description: "aerial_won / (aerial_won + aerial_lost)"
+        tests:
+          - dbt_utils.accepted_range:
+              min_value: 0
+              max_value: 1
+              inclusive: true
+      - name: tackle_success_rate
+        description: "tackles_won / tackles_attempted"
+        tests:
+          - dbt_utils.accepted_range:
+              min_value: 0
+              max_value: 1
+              inclusive: true
+      - name: key_pass_rate
+        description: "key_passes / passes_attempted"
+        tests:
+          - dbt_utils.accepted_range:
+              min_value: 0
+              max_value: 1
+              inclusive: true
+      - name: goal_contributions_per90
+        description: "(goals + assists) / (minutes_played / 90)"
+
+      # Pass direction splits
+      - name: pct_passes_forward
+        description: "passes_forward / total_passes. NULL where pass maps not scraped."
+      - name: pct_passes_backward
+        description: "passes_backward / total_passes. NULL where pass maps not scraped."
+      - name: pct_passes_lateral
+        description: "passes_lateral / total_passes. NULL where pass maps not scraped."
+      - name: acc_rate_forward
+        description: "acc_passes_forward / passes_forward. NULL where pass maps not scraped."
+      - name: acc_rate_backward
+        description: "acc_passes_backward / passes_backward. NULL where pass maps not scraped."
+      - name: acc_rate_lateral
+        description: "acc_passes_lateral / passes_lateral. NULL where pass maps not scraped."
+
+      # Progressive pass metrics
+      - name: progressive_pass_rate
+        description: "progressive_passes / total_passes. NULL where pass maps not scraped."
+      - name: passes_into_final_third_rate
+        description: "passes_into_final_third / total_passes. NULL where pass maps not scraped."
+      - name: passes_into_penalty_area_rate
+        description: "passes_into_penalty_area / total_passes. NULL where pass maps not scraped."
+
+      # Territory
+      - name: pct_touches_att_third
+        description: "att_third_touches / total_zone_touches. NULL where heatmap not scraped."
+        tests:
+          - dbt_utils.accepted_range:
+              min_value: 0
+              max_value: 1
+              inclusive: true
+      - name: pct_touches_def_third
+        description: "def_third_touches / total_zone_touches. NULL where heatmap not scraped."
+        tests:
+          - dbt_utils.accepted_range:
+              min_value: 0
+              max_value: 1
+              inclusive: true
+
+  - name: player_season_metrics
+    description: >
+      Calculated analytics metrics per player per season. All inputs come from
+      player_season_profile. Identical logic to player_match_metrics except
+      ball_security_progression, possession_security_index, and
+      progressive_carrying_impact are omitted (columns not available at season
+      level), and progressive_carry_distance_pct is omitted (no carries_distance
+      in season aggregation).
+    columns:
+      - name: player_id
+        tests: [not_null]
+      - name: season
+        tests: [not_null]
+
+      # Attacking
+      - name: complete_attacking_threat
+        description: "(goals + assists + shots_on_target + key_passes + xg) / touches"
+      - name: clinical_finishing
+        description: "(goals + shots_on_target) / (shots + xg)"
+      - name: np_goal_efficiency
+        description: "(np_goals + shots_on_target) / (shots + xg). xg used as npxg proxy."
+      - name: final_third_conversion
+        description: "(shots + key_passes + crosses_into_penalty_area + carries_into_penalty_area) / att_third_touches"
+      - name: penalty_area_dominance
+        description: "(att_penalty_area_touches + shots + crosses_into_penalty_area + passes_into_penalty_area) / att_third_touches"
+
+      # Creative
+      - name: creative_playmaking_index
+        description: "(assists + key_passes + passes_into_penalty_area + crosses_into_penalty_area) / passes_attempted"
+      - name: shot_quality_creation
+        description: "xa / (shots + xg). xa used as proxy for xag."
+
+      # Defensive
+      - name: tackling_score
+        description: "tackles_won_per90 × tackle_success_rate × (1 + tackles_attempted / 10)"
+      - name: defensive_impact_score
+        description: "(tackles_won + interceptions + blocks + clearances + aerial_won) / (tackles_att + contests_att + aerial_won + aerial_lost)"
+      - name: defensive_anticipation_index
+        description: "interceptions / (interceptions + tackles_attempted)"
+      - name: aerial_dominance_score
+        description: "(aerial_won / (aerial_won + aerial_lost)) × aerial_won"
+
+      # Possession & technical
+      - name: ball_progression_mastery
+        description: "(progressive_passes + progressive_carries + passes_into_final_third + carries_into_final_third) / (passes_attempted + carries)"
+      - name: progressive_action_rate
+        description: "(progressive_passes + progressive_carries + carries_into_final_third + passes_into_final_third) / touches"
+
+      # Defensive splits
+      - name: def_actions_per90
+        description: "(tackles_won + interceptions + blocks + clearances + recoveries) / (minutes / 90)"
+      - name: recovery_rate
+        description: "recoveries / total_def_actions"
+      - name: block_rate
+        description: "blocks / total_def_actions"
+
+      # Pass accuracy splits
+      - name: acc_rate_short
+        description: "acc_passes_short / passes_short. NULL where pass maps not scraped."
+      - name: acc_rate_medium
+        description: "acc_passes_medium / passes_medium. NULL where pass maps not scraped."
+      - name: acc_rate_long
+        description: "acc_passes_long / passes_long. NULL where pass maps not scraped."
+
+      # Carry effectiveness
+      - name: carry_into_final_third_rate
+        description: "carries_into_final_third / carries. NULL where drib maps not scraped."
+
+      # Versatility
+      - name: duel_winning_ability
+        description: "duel_success_rate × (tackles_won + aerial_won + take_ons_won)"
+      - name: passing_range_versatility
+        description: >
+          Balance across short/medium/long pass buckets. 1.0 = perfectly even split,
+          0.0 = all passes in one bucket. NULL where pass maps not scraped.
+
+      # Simple rates
+      - name: shot_accuracy
+        description: "shots_on_target / total_shots"
+      - name: xg_per_shot
+        description: "xg / total_shots. NULL where Fotmob crossref not matched."
+      - name: take_on_success_rate
+        description: "dribbles_won / dribbles_total"
+      - name: aerial_win_rate
+        description: "aerial_won / (aerial_won + aerial_lost)"
+      - name: tackle_success_rate
+        description: "tackles_won / total_tackles"
+      - name: key_pass_rate
+        description: "key_passes / total_passes"
+      - name: goal_contributions_per90
+        description: "(goals + assists) / (total_minutes / 90)"
+
+      # Pass direction splits
+      - name: pct_passes_forward
+        description: "passes_forward / total_passes. NULL where pass maps not scraped."
+      - name: pct_passes_backward
+        description: "passes_backward / total_passes. NULL where pass maps not scraped."
+      - name: pct_passes_lateral
+        description: "passes_lateral / total_passes. NULL where pass maps not scraped."
+      - name: acc_rate_forward
+        description: "acc_passes_forward / passes_forward. NULL where pass maps not scraped."
+      - name: acc_rate_backward
+        description: "acc_passes_backward / passes_backward. NULL where pass maps not scraped."
+      - name: acc_rate_lateral
+        description: "acc_passes_lateral / passes_lateral. NULL where pass maps not scraped."
+
+      # Progressive pass metrics
+      - name: progressive_pass_rate
+        description: "progressive_passes / total_passes. NULL where pass maps not scraped."
+      - name: passes_into_final_third_rate
+        description: "passes_into_final_third / total_passes. NULL where pass maps not scraped."
+      - name: passes_into_penalty_area_rate
+        description: "passes_into_penalty_area / total_passes. NULL where pass maps not scraped."
+
+      # Territory
+      - name: pct_touches_att_third
+        description: "att_third_touches / total_zone_touches. NULL where heatmap not scraped."
+      - name: pct_touches_def_third
+        description: "def_third_touches / total_zone_touches. NULL where heatmap not scraped."

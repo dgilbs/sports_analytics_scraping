@@ -44,6 +44,10 @@ select
     coalesce(round(carry_segments * carry_att_third),  0)  as carry_att_third_count,
     coalesce(round(carry_segments * carry_left_wing),  0)  as carry_left_wing_count,
     coalesce(round(carry_segments * carry_central),    0)  as carry_central_count,
-    coalesce(round(carry_segments * carry_right_wing), 0)  as carry_right_wing_count
+    coalesce(round(carry_segments * carry_right_wing), 0)  as carry_right_wing_count,
+
+    -- Penalty area & final third (already counts from scraper)
+    coalesce(carries_into_final_third,  0)  as carries_into_final_third,
+    coalesce(carries_into_penalty_area, 0)  as carries_into_penalty_area
 
 from base

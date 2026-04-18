@@ -101,12 +101,13 @@ def zone_scores(points):
     """
     if not points:
         return {
-            'defensive_third': None,
-            'middle_third':    None,
-            'attacking_third': None,
-            'left_wing':       None,
-            'central':         None,
-            'right_wing':      None,
+            'defensive_third':  None,
+            'middle_third':     None,
+            'attacking_third':  None,
+            'left_wing':        None,
+            'central':          None,
+            'right_wing':       None,
+            'att_penalty_area': None,
         }
 
     total = len(points)
@@ -119,13 +120,19 @@ def zone_scores(points):
     central    = sum(1 for p in points if 33 <= p['y'] < 67) / total
     right_wing = sum(1 for p in points if p['y'] >= 67) / total
 
+    # Attacking penalty area: x > 84.3, 20.4 < y < 79.6
+    att_penalty_area = sum(
+        1 for p in points if p['x'] > 84.3 and 20.4 < p['y'] < 79.6
+    ) / total
+
     return {
-        'defensive_third': round(defensive, 3),
-        'middle_third':    round(middle, 3),
-        'attacking_third': round(attacking, 3),
-        'left_wing':       round(left_wing, 3),
-        'central':         round(central, 3),
-        'right_wing':      round(right_wing, 3),
+        'defensive_third':    round(defensive, 3),
+        'middle_third':       round(middle, 3),
+        'attacking_third':    round(attacking, 3),
+        'left_wing':          round(left_wing, 3),
+        'central':            round(central, 3),
+        'right_wing':         round(right_wing, 3),
+        'att_penalty_area':   round(att_penalty_area, 3),
     }
 
 

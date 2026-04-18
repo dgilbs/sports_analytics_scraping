@@ -20,7 +20,7 @@ headers = {
 
 # ── SVG parser ────────────────────────────────────────────────────────────────
 
-def parse_drib_svg(svg_outer_html, event_id, player_id):
+def parse_drib_svg(svg_outer_html, event_id, player_id, side='home'):
     soup = BeautifulSoup(svg_outer_html, 'html.parser')
 
     vb_x_min, vb_y_min = -12, -12
@@ -54,6 +54,9 @@ def parse_drib_svg(svg_outer_html, event_id, player_id):
         x  = norm_x(cx)
         y  = norm_y(cy)
 
+        if side == 'away':
+            x = round(100 - x, 1)
+
         if fill == 'var(--colors-status-success-default)':
             action = 'dribble_won'
         elif fill == 'var(--colors-status-error-default)':
@@ -82,6 +85,10 @@ def parse_drib_svg(svg_outer_html, event_id, player_id):
         y1 = norm_y(line.get('y1', 0))
         x2 = norm_x(line.get('x2', 0))
         y2 = norm_y(line.get('y2', 0))
+
+        if side == 'away':
+            x1 = round(100 - x1, 1)
+            x2 = round(100 - x2, 1)
 
         carries.append({
             'event_id':  event_id,
@@ -153,6 +160,10 @@ def summarize_drib_actions(rows, event_id, player_id, player_name,
         'drib_won_def_third': zone_pct(won, 'zone_x', 'defensive_third'),
         'drib_won_mid_third': zone_pct(won, 'zone_x', 'middle_third'),
         'drib_won_att_third': zone_pct(won, 'zone_x', 'attacking_third'),
+
+        # Penalty area & final third (raw counts, not percentages)
+        'carries_into_final_third':  int(((carries['x_start'] <= 67) & (carries['x_end'] > 67)).sum()) if carry_count else 0,
+        'carries_into_penalty_area': int(((carries['x_end'] > 84.3) & (carries['y_end'] > 20.4) & (carries['y_end'] < 79.6)).sum()) if carry_count else 0,
     }
 
 

@@ -59,6 +59,21 @@ select
     coalesce(round(passes_accurate * acc_dest_att_third),  0)  as acc_dest_att_third_count,
     coalesce(round(passes_accurate * acc_dest_left_wing),  0)  as acc_dest_left_wing_count,
     coalesce(round(passes_accurate * acc_dest_central),    0)  as acc_dest_central_count,
-    coalesce(round(passes_accurate * acc_dest_right_wing), 0)  as acc_dest_right_wing_count
+    coalesce(round(passes_accurate * acc_dest_right_wing), 0)  as acc_dest_right_wing_count,
+
+    -- Penalty area & final third (already counts from scraper)
+    coalesce(passes_into_final_third,         0)  as passes_into_final_third,
+    coalesce(acc_passes_into_final_third,     0)  as acc_passes_into_final_third,
+    coalesce(passes_into_penalty_area,        0)  as passes_into_penalty_area,
+    coalesce(acc_passes_into_penalty_area,    0)  as acc_passes_into_penalty_area,
+    coalesce(crosses_into_penalty_area,       0)  as crosses_into_penalty_area,
+
+    -- Pass length buckets (Euclidean distance: short <15m, medium 15-32m, long >32m)
+    coalesce(passes_short,      0)  as passes_short,
+    coalesce(passes_medium,     0)  as passes_medium,
+    coalesce(passes_long,       0)  as passes_long,
+    coalesce(acc_passes_short,  0)  as acc_passes_short,
+    coalesce(acc_passes_medium, 0)  as acc_passes_medium,
+    coalesce(acc_passes_long,   0)  as acc_passes_long
 
 from base

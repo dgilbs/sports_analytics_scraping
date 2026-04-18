@@ -20,7 +20,7 @@ headers = {
 
 # ── SVG parser ────────────────────────────────────────────────────────────────
 
-def parse_pass_svg(svg_outer_html, event_id, player_id):
+def parse_pass_svg(svg_outer_html, event_id, player_id, side='home'):
     soup = BeautifulSoup(svg_outer_html, 'html.parser')
 
     vb_x_min, vb_y_min = -12, -12
@@ -57,6 +57,10 @@ def parse_pass_svg(svg_outer_html, event_id, player_id):
         y1 = norm_y(line.get('y1', 0))
         x2 = norm_x(line.get('x2', 0))
         y2 = norm_y(line.get('y2', 0))
+
+        if side == 'away':
+            x1 = round(100 - x1, 1)
+            x2 = round(100 - x2, 1)
 
         style = line.get('style', '')
         try:
@@ -155,6 +159,37 @@ def summarize_pass_actions(passes, event_id, player_id, player_name,
         'acc_dest_right_wing': zone_pct(accurate, 'zone_end_y', 'right_wing'),
         'progressive_passes':     int((df['x_end'] - df['x_start'] > 10).sum()),
         'progressive_pass_pct':   round((df['x_end'] - df['x_start'] > 10).sum() / total, 3) if total else None,
+
+        # Penalty area & final third (raw counts, not percentages)
+        'passes_into_final_third':      int((df['x_end'] > 67).sum()),
+        'acc_passes_into_final_third':  int((accurate['x_end'] > 67).sum()),
+        'passes_into_penalty_area':     int(((df['x_end'] > 84.3) & (df['y_end'] > 20.4) & (df['y_end'] < 79.6)).sum()),
+        'acc_passes_into_penalty_area': int(((accurate['x_end'] > 84.3) & (accurate['y_end'] > 20.4) & (accurate['y_end'] < 79.6)).sum()),
+        'crosses_into_penalty_area':    int((((df['y_start'] < 22) | (df['y_start'] > 78)) & (df['x_end'] > 84.3) & (df['y_end'] > 20.4) & (df['y_end'] < 79.6)).sum()),
+
+        # Pass length buckets — Euclidean distance in metres (pitch 105m × 68m)
+        # short < 15m, medium 15–32m, long > 32m  (FBRef thresholds)
+        **_pass_length_buckets(df, accurate),
+    }
+
+
+def _pass_length_buckets(df, accurate):
+    import numpy as np
+    dist = np.sqrt(
+        ((df['x_end'] - df['x_start']) * 1.05) ** 2 +
+        ((df['y_end'] - df['y_start']) * 0.68) ** 2
+    )
+    acc_dist = np.sqrt(
+        ((accurate['x_end'] - accurate['x_start']) * 1.05) ** 2 +
+        ((accurate['y_end'] - accurate['y_start']) * 0.68) ** 2
+    )
+    return {
+        'passes_short':      int((dist < 15).sum()),
+        'passes_medium':     int(((dist >= 15) & (dist < 32)).sum()),
+        'passes_long':       int((dist >= 32).sum()),
+        'acc_passes_short':  int((acc_dist < 15).sum()),
+        'acc_passes_medium': int(((acc_dist >= 15) & (acc_dist < 32)).sum()),
+        'acc_passes_long':   int((acc_dist >= 32).sum()),
     }
 
 

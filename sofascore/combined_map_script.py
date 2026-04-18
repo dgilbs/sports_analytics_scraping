@@ -106,10 +106,21 @@ async def scrape_all_maps(match_url, event_id, row, overwrite=False, game_num=No
             else route.continue_()
         )
 
-        await page.goto(match_url, wait_until='domcontentloaded', timeout=60000)
+        # Append #id:{event_id} so Sofascore's SPA loads the correct historical
+        # match when two events between the same teams share the same customId.
+        nav_url = f"{match_url}#id:{event_id}"
+        await page.goto(nav_url, wait_until='domcontentloaded', timeout=60000)
         await page.wait_for_selector(
             'img[src*="sofascore.com/api/v1/player"]', timeout=20000
         )
+
+        # Ensure the Lineups tab is active so the pitch graphic renders.
+        # Some matches open on a different default tab, hiding starter images.
+        lineups_tab = page.locator('a:has-text("Lineups"), button:has-text("Lineups")').first
+        if await lineups_tab.count() > 0:
+            print(f"  Clicking Lineups tab")
+            await lineups_tab.click()
+            await asyncio.sleep(2.0)
 
         # Scroll through full page so all player images lazy-load
         scroll_y = 0
@@ -121,26 +132,32 @@ async def scrape_all_maps(match_url, event_id, row, overwrite=False, game_num=No
             if scroll_y >= page_height:
                 break
         await page.evaluate("window.scrollTo(0, 0)")
-        await asyncio.sleep(0.5)
+        await asyncio.sleep(2.0)  # allow pitch graphic to fully render after scroll
 
-        # Only collect player images that are NOT inside an <a> tag pointing to a
-        # player profile — those navigate away instead of opening the modal.
+        # Collect all player images. For each player, prefer the pitch image (non-nav-
+        # linked) over the bench/list image (nav-linked), because only the pitch image
+        # reliably opens the stats modal. A player can appear in both places if they
+        # played (pitch) and are also listed in the subs bench section.
         imgs = await page.locator('img[src*="sofascore.com/api/v1/player"]').all()
-        seen = set()
-        player_ids = []
+        # pid -> best img element: non-nav-linked takes priority
+        best_img = {}  # pid -> img element
+        nav_linked = set()  # pids where only a nav-linked image was found
         for img in imgs:
             src = await img.get_attribute('src')
             pid = src.split('/player/')[1].split('/')[0]
-            if pid in seen:
-                continue
-            # Check if this image is wrapped in a link to a player profile
             in_link = await img.evaluate(
                 'el => { const a = el.closest("a"); return a ? a.href : ""; }'
             )
-            if '/player/' in (in_link or '') and '/image' not in (in_link or ''):
-                continue  # skip — this is a nav link, not a modal trigger
-            seen.add(pid)
-            player_ids.append(pid)
+            is_nav = '/player/' in (in_link or '') and '/image' not in (in_link or '')
+            if pid not in best_img:
+                best_img[pid] = img
+                if is_nav:
+                    nav_linked.add(pid)
+            elif pid in nav_linked and not is_nav:
+                # We previously only had a nav-linked image; now we found a better one
+                best_img[pid] = img
+                nav_linked.discard(pid)
+        player_ids = list(best_img.keys())
 
         # Filter: keep players in lineups with minutes_played != 0.
         # If minutes_played is missing/None, keep them (data may be absent for starters).
@@ -184,7 +201,7 @@ async def scrape_all_maps(match_url, event_id, row, overwrite=False, game_num=No
             print(f"  {game_prefix}[{i+1}/{len(player_ids)}] {meta.get('player_name', player_id)}...")
 
             try:
-                img = page.locator(f'img[src*="/player/{player_id}/image"]').first
+                img = best_img[player_id]
                 await img.click(force=True)
                 await asyncio.sleep(0.5)
 
@@ -233,6 +250,15 @@ async def scrape_all_maps(match_url, event_id, row, overwrite=False, game_num=No
                     except Exception:
                         pass  # SVG may not exist for this player/tab
 
+                    # Normalize pitch orientation to >>> (attacking right).
+                    # If the left-chevron button is present the pitch is flipped — click to reset.
+                    LEFT_CHEVRON_PATH = 'm10 14 1.41-1.41L6.83 8l4.58-4.59L10 2 4 8z'
+                    flip_btn = page.locator(f'button svg path[d="{LEFT_CHEVRON_PATH}"]').locator('..').locator('..').first
+                    if await flip_btn.count() > 0:
+                        print(f"    [{tab_name}] Flipping pitch orientation")
+                        await flip_btn.click(force=True)
+                        await asyncio.sleep(0.8)
+
                     svgs = await page.locator('svg').all()
                     svg_el = None
                     svg_outer = None
@@ -247,7 +273,7 @@ async def scrape_all_maps(match_url, event_id, row, overwrite=False, game_num=No
                         png_path = f"{cfg['svg_dir']}/{event_id}_{player_id}.png"
                         await svg_el.screenshot(path=png_path)
 
-                        action_rows = cfg['parse_fn'](svg_outer, event_id, player_id)
+                        action_rows = cfg['parse_fn'](svg_outer, event_id, player_id, side=meta.get('side', 'home'))
                         summary = cfg['summarize_fn'](
                             action_rows, event_id, player_id,
                             meta.get('player_name', ''),

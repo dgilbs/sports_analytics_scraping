@@ -55,6 +55,11 @@ def parse_def_svg(svg_outer_html, event_id, player_id, side='home'):
         x_norm = round((cx - vb_x_min) / vb_width * 100, 1)
         y_norm = round((cy - vb_y_min) / vb_height * 100, 1)
 
+        # Away team defends on the right in >>> orientation — mirror x so
+        # zones are always relative to the player's own goal.
+        if side == 'away':
+            x_norm = round(100 - x_norm, 1)
+
         action = COLOR_MAP.get(fill, f'unknown:{fill}')
 
         if x_norm < 33:

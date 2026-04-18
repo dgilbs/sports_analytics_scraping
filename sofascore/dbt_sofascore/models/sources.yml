@@ -1,6 +1,18 @@
 version: 2
 
 sources:
+  - name: fotmob
+    schema: fotmob
+    description: "Fotmob NWSL data"
+    tables:
+      - name: player_match_stats
+        description: "Per-player per-match stats from Fotmob including xG and xA"
+        columns:
+          - name: match_id
+            tests: [not_null]
+          - name: player_id
+            tests: [not_null]
+
   - name: sofascore
     schema: sofascore
     description: "Raw Sofascore NWSL data loaded by sofascore/load_to_db.py"
@@ -92,6 +104,43 @@ sources:
 
       - name: fact_def_maps
         description: "Per-player defensive action map summaries scraped via Playwright"
+        columns:
+          - name: event_id
+            tests:
+              - not_null
+              - relationships:
+                  to: source('sofascore', 'dim_matches')
+                  field: event_id
+          - name: player_id
+            tests: [not_null]
+          - name: side
+            tests:
+              - accepted_values:
+                  values: ['home', 'away']
+
+      - name: sofascore_fotmob_match_xref
+        description: "Maps Sofascore event_id to Fotmob match_id via date + home team name"
+        columns:
+          - name: sofascore_event_id
+            tests: [unique, not_null]
+          - name: fotmob_match_id
+            tests: [not_null]
+
+      - name: sofascore_fotmob_crossref
+        description: "Maps Sofascore player_id to Fotmob player_id via fuzzy name matching"
+        columns:
+          - name: sofascore_player_id
+            tests: [unique, not_null]
+          - name: fotmob_player_id
+            tests: [not_null]
+
+      - name: fact_heatmaps
+        description: "Per-player heatmap touch counts and zone fractions from the Sofascore API"
+        tests:
+          - dbt_utils.expression_is_true:
+              expression: "touch_count = 0 or abs(coalesce(defensive_third, 0) + coalesce(middle_third, 0) + coalesce(attacking_third, 0) - 1.0) <= 0.02"
+          - dbt_utils.expression_is_true:
+              expression: "touch_count = 0 or abs(coalesce(left_wing, 0) + coalesce(central, 0) + coalesce(right_wing, 0) - 1.0) <= 0.02"
         columns:
           - name: event_id
             tests:

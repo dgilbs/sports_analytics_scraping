@@ -1,0 +1,34 @@
+version: 2
+
+macros:
+  - name: per90
+    description: >
+      Scales a stat to a per-90-minutes rate. Returns null if minutes is zero
+      or null. Rounds to decimal_places (default 2).
+      Example: per90('goals', 'total_minutes') for season-level,
+      or per90('sum(goals)', 'sum(minutes_played)') inside an aggregation.
+    arguments:
+      - name: stat
+        type: expression
+        description: "Numeric expression for the stat to scale (e.g. 'goals' or 'sum(goals)')."
+      - name: minutes
+        type: expression
+        description: "Numeric expression for minutes played (e.g. 'total_minutes' or 'sum(minutes_played)')."
+      - name: decimal_places
+        type: integer
+        description: "Decimal places to round to. Defaults to 2."
+
+  - name: safe_divide_round
+    description: >
+      Divides numerator by denominator, returning null when the denominator is
+      zero or null. Rounds to decimal_places (default 4).
+    arguments:
+      - name: numerator
+        type: expression
+        description: "Numeric expression for the numerator."
+      - name: denominator
+        type: expression
+        description: "Numeric expression for the denominator."
+      - name: decimal_places
+        type: integer
+        description: "Decimal places to round to. Defaults to 4."
