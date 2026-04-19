@@ -249,6 +249,7 @@ select
     s.pass_value,
     s.dribble_value,
     s.defensive_value,
+    coalesce(s.shot_value, 0) + coalesce(s.pass_value, 0) + coalesce(s.dribble_value, 0) + coalesce(s.defensive_value, 0) as total_value,
 
     -- -------------------------------------------------------------------------
     -- Heatmap — touch counts by zone

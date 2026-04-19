@@ -297,6 +297,90 @@ models:
       - name: season
         tests: [not_null]
 
+  - name: weekly_performance_scores
+    description: >
+      Weekly performance scoring engine for women's soccer analytics. Ranks every
+      player-match appearance (min 45 minutes) by notability, combining four components:
+      (1) position-adjusted composite value weighted by role (F/M/D/G),
+      (2) position-adjusted custom metrics bonus capped at 3.0,
+      (3) rating delta vs. the player's own season average (requires >= 3 prior appearances),
+      (4) contextual bonus/penalty flags (brace, goal+assist, defensive standout, etc.).
+      Intended usage: filter by match_date range, order by notability_score DESC, take top N.
+    columns:
+      - name: event_id
+        tests: [not_null]
+      - name: player_id
+        tests: [not_null]
+
+      - name: season_avg_rating
+        description: "Player's average Sofascore rating for the season. NULL if fewer than 3 appearances."
+      - name: season_matches
+        description: "Number of appearances used to compute season_avg_rating."
+      - name: rating_delta
+        description: "rating - season_avg_rating. 0 when no baseline exists (< 3 appearances)."
+
+      - name: position_adj_value
+        description: >
+          Weighted sum of shot/pass/dribble/defensive_value with position-specific weights.
+          F: shot×1.5, pass×0.8, dribble×1.2, def×0.5.
+          M: shot×1.0, pass×1.2, dribble×1.0, def×0.8.
+          D: shot×0.5, pass×1.2, dribble×0.8, def×1.5.
+          G: pass×1.0, def×2.0.
+      - name: custom_metrics_bonus
+        description: >
+          Position-weighted sum of key metrics from player_match_metrics, capped at 3.0.
+          F: complete_attacking_threat×2 + clinical_finishing×1.5 + final_third_conversion×1.5 + progressive_carrying_impact×1 + xg_per_shot×1.
+          M: creative_playmaking_index×2 + ball_progression_mastery×1.5 + progressive_action_rate×1.5 + complete_attacking_threat×1 + possession_security_index×1 + defensive_impact_score×0.5.
+          D: defensive_impact_score×2 + ball_progression_mastery×1.5 + defensive_anticipation_index×1.5 + possession_security_index×1 + aerial_dominance_score×0.5.
+          G: defensive_impact_score×2 + possession_security_index×1.5.
+
+      - name: notability_score
+        description: >
+          Overall notability score. Formula:
+          position_adj_value×2 + custom_metrics_bonus×0.5 + rating_delta×1.5
+          + flag_brace×2 + flag_goal_and_assist×1.5 + flag_creative_standout×1
+          + flag_defensive_standout×1.5 + flag_defender_scored×1 + flag_interception_machine×1
+          + flag_duel_monster×0.5 + flag_elite_rating×1 + flag_attacking_threat×0.5
+          + flag_progressive_carrier×0.5 + flag_defensive_impact×0.5 + flag_duel_dominator×0.5
+          + flag_high_xg_shots×0.5 - flag_underperformer×2 - flag_poor_match×1.5.
+      - name: narrative_type
+        description: >
+          Primary narrative label for the performance (highest-priority flag wins).
+          Values: Clinical Finisher, Goal Contributor, Defensive Standout, Attacking Defender,
+          Creative Engine, Physical Dominator, Progressive Force, Attacking Threat,
+          All-Round Performer, Underperformer, Poor Performance, Solid Performer.
+
+      - name: flag_brace
+        description: "1 if goals >= 2."
+      - name: flag_goal_and_assist
+        description: "1 if goals >= 1 and assists >= 1."
+      - name: flag_creative_standout
+        description: "1 if key_passes >= 4."
+      - name: flag_defensive_standout
+        description: "1 if position in (D, G) and defensive_value >= 0.5."
+      - name: flag_defender_scored
+        description: "1 if position = D and goals >= 1."
+      - name: flag_interception_machine
+        description: "1 if interception_won >= 4."
+      - name: flag_duel_monster
+        description: "1 if duel_won >= 8."
+      - name: flag_elite_rating
+        description: "1 if rating >= 8.5."
+      - name: flag_attacking_threat
+        description: "1 if complete_attacking_threat >= 0.3."
+      - name: flag_progressive_carrier
+        description: "1 if ball_progression_mastery >= 0.5."
+      - name: flag_defensive_impact
+        description: "1 if defensive_impact_score >= 0.6."
+      - name: flag_duel_dominator
+        description: "1 if duel_winning_ability >= 3.0."
+      - name: flag_high_xg_shots
+        description: "1 if xg_per_shot >= 0.2."
+      - name: flag_underperformer
+        description: "1 if season baseline exists and rating < season_avg_rating - 1.0."
+      - name: flag_poor_match
+        description: "1 if rating < 6.5."
+
   - name: player_match_metrics
     description: >
       Calculated analytics metrics per player per match. All inputs come from
